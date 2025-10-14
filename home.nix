@@ -47,13 +47,15 @@
         emacs
         tmux
         flameshot
+        tor
+        tor-browser
         vesktop
         kdePackages.dolphin
-        yazi
+        nnn
         tmux
-        polybar
         i3-gaps
         i3lock
+        i3status
         zathura
         feh
         dmenu

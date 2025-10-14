@@ -78,6 +78,7 @@
         curl
         wget
         keepassxc
+        networkmanagerapplet
         xclip
         zsh
         unzip

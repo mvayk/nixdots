@@ -26,6 +26,8 @@
             emacs = "emacsclient -c -a 'emacs'";
             vim = "nvim";
             sue = "sudo -E nvim";
+            nix = "sudo -E nvim /etc/nixos/home.nix";
+            nix-rebuild = "sudo nixos-rebuild switch --flake .";
         };
 
         initContent = ''
