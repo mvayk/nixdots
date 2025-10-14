@@ -28,7 +28,11 @@ in
       ".tmux.conf".source = ./home/mvayk/.tmux.conf;
   };
 
-  programs.git.enable = true;
+  programs.git = {
+      enable = true;
+      userName = "mvayk";
+      userEmail = "mvayk@mvayk.mvayk";
+  };
 
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
