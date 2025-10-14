@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  nixDir = /etc/nixos/home/nix;
+  nixDir = ./home/nix;
   
   getNixFiles = dir:
     if builtins.pathExists dir then
@@ -20,10 +20,18 @@ in
   home.homeDirectory = "/home/mvayk";
   home.stateVersion = "25.05";
 
+  # Use relative paths that work in pure evaluation mode
   home.file = {
-    ".config".source = ./home/mvayk/.config;
+    # Copy specific config directories individually
+    ".config/i3".source = ./home/mvayk/.config/i3;
+    ".config/kitty".source = ./home/mvayk/.config/kitty;
+    ".config/polybar".source = ./home/mvayk/.config/polybar;
+    
+    # Copy individual dotfiles
+    ".tmux.conf".source = ./home/mvayk/.tmux.conf;
   };
 
+  # Git configuration
   programs.git.enable = true;
 
   home.pointerCursor = {
