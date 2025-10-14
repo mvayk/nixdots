@@ -226,15 +226,5 @@ in
   '';
   
   home.packages = with pkgs; [
-    xorg.xinput
-    acpi
-    sysstat
-    lm_sensors
-    brightnessctl
-    pamixer
-    iw
-    coreutils
-    feh
-    i3blocks
   ];
 }
