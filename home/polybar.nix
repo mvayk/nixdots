@@ -47,7 +47,7 @@ in
                 separator-foreground = "\${colors.disabled}";
                 font-0 = "Iosevka Nerd Font:size=12;2";
                 modules-left = "xworkspaces xwindow";
-                modules-right = "filesystem cpu memory brightness volume date";
+                modules-right = "filesystem cpu memory brightness battery volume date";
                 cursor-click = "pointer";
                 enable-ipc = true;
                 monitor = "\${env:MONITOR:}";
@@ -86,18 +86,23 @@ in
                 label-unmounted = "%mountpoint% not mounted";
                 label-unmounted-foreground = "\${colors.disabled}";
             };
-
             "module/volume" = {
                 type = "internal/pulseaudio";
                 use-ui-max = true;
                 interval = 5;
                 reverse-scroll = false;
-                format-volume = "VOL <label-volume>";
+                format-volume = "<ramp-volume> <label-volume> ";
                 format-volume-foreground = "\${colors.primary}";
                 label-volume = "%percentage%%";
                 label-volume-foreground = "\${colors.foreground}";
-                label-muted = "Muted";
-                label-muted-foreground = "\${colors.alert}";
+                ramp-volume-0 = "憎";
+                ramp-volume-1 = "愈";
+                ramp-volume-2 = "慎";
+                ramp-volume-3 = "惘";
+                ramp-volume-4 = "徭";
+                format-muted = "<label-muted>";
+                label-muted = "婢 Muted";
+                label-muted-foreground = "\${colors.disabled}";
                 click-left = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
                 click-right = "pavucontrol";
                 scroll-up = "pactl set-sink-volume @DEFAULT_SINK@ +5%";
@@ -129,6 +134,25 @@ in
                 label = "%percentage:2%%";
                 label-foreground = "\${colors.foreground}";
             };
+
+            "module/battery" = {
+                type = "internal/battery";
+                battery = "BAT0";
+                adapter = "AC";
+                full-at = 98;
+                time-format = "%H:%M";
+                format-charging = "BAT <label-charging>";
+                format-charging-foreground = "\${colors.primary}";
+                format-discharging = "BAT <label-discharging>";
+                format-discharging-foreground = "\${colors.foreground}";
+                format-full = "BAT <label-full>";
+                format-full-foreground = "\${colors.secondary}";
+                label-charging = "%percentage%% %time%";
+                label-discharging = "%percentage%% %time%";
+                label-full = "%percentage%%";
+                poll-interval = 5;
+            };
+
             "module/date" = {
                 type = "internal/date";
                 interval = 1;
@@ -136,7 +160,6 @@ in
                 time-alt = "%Y-%m-%d %H:%M:%S";
                 date = "%a %d %b";
                 date-alt = "%Y-%m-%d";
-# Fixed: Use direct color hex instead of variable reference
                 label = "%date% %{F#7aa2f7}%time%%{F-}";
                 label-foreground = "\${colors.primary}";
                 click-left = "alacritty -e calcurse";
@@ -144,13 +167,13 @@ in
             "settings" = {
                 screenchange-reload = true;
                 pseudo-transparency = false;
-# Removed deprecated throttle-output
             };
         };
     };
     home.packages = with pkgs; [
         brightnessctl
-            pamixer
-            pavucontrol
+        pavucontrol
+        # Added for better battery monitoring (optional)
+        acpi
     ];
 }
