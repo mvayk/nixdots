@@ -21,10 +21,11 @@ in
   home.stateVersion = "25.05";
 
   home.file = {
-      "mvayk" = {
-          source = ./home/mvayk;
+      ".config" = {
+          source = ./home/mvayk/.config;
           recursive = true;
       };
+      ".tmux.conf".source = ./home/mvayk/.tmux.conf;
   };
 
   programs.git.enable = true;
