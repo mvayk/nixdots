@@ -20,15 +20,13 @@ in
   home.homeDirectory = "/home/mvayk";
   home.stateVersion = "25.05";
 
-  # Use relative paths that work in pure evaluation mode
   home.file = {
-      ".config" = {
-          source = ./home/mvayk/.config;
+      "mvayk" = {
+          source = ./home/mvayk;
           recursive = true;
       };
   };
 
-  # Git configuration
   programs.git.enable = true;
 
   home.pointerCursor = {
