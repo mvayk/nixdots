@@ -22,13 +22,10 @@ in
 
   # Use relative paths that work in pure evaluation mode
   home.file = {
-    # Copy specific config directories individually
-    ".config/i3".source = ./home/mvayk/.config/i3;
-    ".config/kitty".source = ./home/mvayk/.config/kitty;
-    ".config/polybar".source = ./home/mvayk/.config/polybar;
-    
-    # Copy individual dotfiles
-    ".tmux.conf".source = ./home/mvayk/.tmux.conf;
+      ".config" = {
+          source = ./home/mvayk/.config;
+          recursive = true;
+      };
   };
 
   # Git configuration
