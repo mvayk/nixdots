@@ -63,6 +63,9 @@ in
     neovim
     emacs
     tmux
+    texlive.combined.scheme-medium  # or scheme-full if you want everything
+    imagemagick   # alternative renderer
+    obsidian
     flameshot
     tor
     tor-browser
