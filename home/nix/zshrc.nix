@@ -17,24 +17,23 @@
         envExtra = ''
             export TERM="tmux-256color"
             export COLORTERM="truecolor"
-            '';
+        '';
 
         shellAliases = {
-            fastfetch = "fastfetch -l haiku_small";
             ls = "eza --icons";
-            clear = "clear && fastfetch -l haiku_small";
             emacs = "emacsclient -c -a 'emacs'";
             vim = "nvim";
             sue = "sudo -E nvim";
-            nix = "sudo -E nvim /etc/nixos/home.nix";
-            nix-rebuild = "sudo nixos-rebuild switch --flake .";
+
+            nix-edit = "sudo -E nvim /etc/nixos/home.nix";
+            nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .; popd";
         };
 
         initContent = ''
             if [[ -z "$TMUX" ]]; then
                 tmux new-session
-                    fi
-                    fastfetch -l haiku_small
-                    '';
+            fi
+                fastfetch
+            '';
     };
 }
