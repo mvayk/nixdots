@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 let
-tokyoNight = {
-    bg = "#1a1b26";
-    bg_alt = "#24283b";
-    fg = "#c0caf5";
-    blue = "#7aa2f7";
-    cyan = "#7dcfff";
-    green = "#9ece6a";
-    magenta = "#bb9af7";
-    orange = "#ff9e64";
-    red = "#f7768e";
-    yellow = "#e0af68";
-};
+    tokyoNight = {
+        bg = "#1a1b26";
+        bg_alt = "#24283b";
+        fg = "#c0caf5";
+        blue = "#7aa2f7";
+        cyan = "#7dcfff";
+        green = "#9ece6a";
+        magenta = "#bb9af7";
+        orange = "#ff9e64";
+        red = "#f7768e";
+        yellow = "#e0af68";
+    };
 in
 {
     xsession.windowManager.i3 = {
@@ -149,16 +149,15 @@ in
                 "XF86MonBrightnessUp" = "exec brightnessctl set +10%";
                 "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
                 "${mod}+Shift+r" = "reload";
-                "Ctrl+e" = "exec i3-msg nop";
             };
 
             startup = [
-            { command = "sleep 1 && feh --bg-fill ~/.wallpapers/digital.jpg"; }
-            { command = "feh --bg-fill ~/.wallpapers/first.png"; }
-            { command = "nm-applet"; notification = false; }
-            { command = "xinput --set-prop 'libinput Accel Speed' -1.0"; notification = false; }
-            { command = "xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1, 0"; }
-            { command = "xinput --set-prop 8 'libinput Accel Speed' 0"; }
+                { command = "sleep 1 && feh --bg-fill ~/.wallpapers/digital.jpg"; }
+                { command = "feh --bg-fill ~/.wallpapers/first.png"; }
+                { command = "nm-applet"; notification = false; }
+                { command = "xinput --set-prop 'libinput Accel Speed' -1.0"; notification = false; }
+                { command = "xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1, 0"; }
+                { command = "xinput --set-prop 8 'libinput Accel Speed' 0"; }
             ];
         };
 
@@ -167,12 +166,12 @@ in
             new_float none
             for_window [class="^.*"] border pixel 1
             for_window [class=".*"] fullscreen disable
-            '';
+        '';
     };
 
-# i3blocks configuration
+    # i3blocks configuration
     home.file.".config/i3blocks/config".text = ''
-# i3blocks config with Tokyo Night theme
+        # i3blocks config with Tokyo Night theme
 
         separator=true
         separator_block_width=15
@@ -181,48 +180,48 @@ in
 
         [cpu]
         command=echo "CPU $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf "%.0f%%", usage}')"
-            interval=2
-            color=${tokyoNight.cyan}
+        interval=2
+        color=${tokyoNight.cyan}
 
-    [memory]
+        [memory]
         command=echo "MEM $(free -h | awk '/^Mem:/ {print $3}')"
-            interval=5
-            color=${tokyoNight.green}
+        interval=5
+        color=${tokyoNight.green}
 
-    [disk]
+        [disk]
         command=echo "DISK $(df -h / | awk 'NR==2 {print $4}')"
-            interval=30
-            color=${tokyoNight.magenta}
+        interval=30
+        color=${tokyoNight.magenta}
 
-    [wifi]
+        [wifi]
         command=ssid=$(iw dev | grep ssid | awk '{print $2}'); if [ -z "$ssid" ]; then echo "DISCONNECTED"; else echo "$ssid"; fi
-            interval=5
-            color=${tokyoNight.blue}
+        interval=5
+        color=${tokyoNight.blue}
 
-    [brightness]
+        [brightness]
         command=max=$(brightnessctl max); cur=$(brightnessctl g); echo "BRI $(( cur * 100 / max ))%"
-            interval=1
-            color=${tokyoNight.yellow}
+        interval=1
+        color=${tokyoNight.yellow}
 
-    [volume]
+        [volume]
         command=if pamixer --get-mute | grep -q true; then echo "VOL MUTE"; else echo "VOL $(pamixer --get-volume)%"; fi
-            interval=1
-            color=${tokyoNight.orange}
+        interval=1
+        color=${tokyoNight.orange}
 
-    [battery]
+        [battery]
         command=echo "BAT $(cat /sys/class/power_supply/BAT*/capacity 2>/dev/null || echo 'N/A')%"
-            interval=10
-            color=${tokyoNight.green}
+        interval=10
+        color=${tokyoNight.green}
 
-    [date]
+        [date]
         command=date '+%a %b %d'
-            interval=60
-            color=${tokyoNight.magenta}
+        interval=60
+        color=${tokyoNight.magenta}
 
-    [time]
+        [time]
         command=date '+%H:%M'
-            interval=1
-            color=${tokyoNight.blue}
+        interval=1
+        color=${tokyoNight.blue}
     '';
 
     home.packages = with pkgs; [
