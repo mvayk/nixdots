@@ -70,6 +70,7 @@ in
     tor
     tor-browser
     vesktop
+    qutebrowser
     kdePackages.dolphin
     nnn
     i3-gaps
@@ -86,6 +87,7 @@ in
     brightnessctl
     pamixer
     iw
+    alarm-clock-applet
     coreutils
     i3blocks
     pavucontrol
