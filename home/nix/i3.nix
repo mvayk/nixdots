@@ -175,8 +175,7 @@ in
 
         separator=true
         separator_block_width=15
-        markup=pango
-        font=Iosevka Nerd Font 11
+        font=pango:Iosevka Nerd Font Bold 11
 
         [cpu]
         command=echo "CPU $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf "%.0f%%", usage}')"

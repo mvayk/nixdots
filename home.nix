@@ -57,6 +57,7 @@ in
         lxappearance
         bibata-cursors
         papirus-icon-theme
+        steam
         zsh
         oh-my-zsh
         cmus
@@ -95,6 +96,7 @@ in
         alarm-clock-applet
         coreutils
         i3blocks
+        polybar
         pavucontrol
         kitty
     ];
