@@ -1,16 +1,16 @@
 { config, pkgs, ... }:
 let
-    tokyoNight = {
-        bg = "#1a1b26";
-        bg_alt = "#24283b";
-        fg = "#c0caf5";
-        blue = "#7aa2f7";
-        cyan = "#7dcfff";
-        green = "#9ece6a";
-        magenta = "#bb9af7";
-        orange = "#ff9e64";
-        red = "#f7768e";
-        yellow = "#e0af68";
+    catppuccinMocha = {
+        bg = "#1e1e2e";
+        bg_alt = "#313244";
+        fg = "#cdd6f4";
+        blue = "#89b4fa";
+        cyan = "#89dceb";
+        green = "#a6e3a1";
+        magenta = "#cba6f7";
+        orange = "#fab387";
+        red = "#f38ba8";
+        yellow = "#f9e2af";
     };
 in
 {
@@ -20,7 +20,7 @@ in
         config = {
             modifier = "Mod4";
             terminal = "kitty";
-            menu = "dmenu_run -fn 'Iosevka Nerd Font-14' -nb '${tokyoNight.bg}' -nf '${tokyoNight.fg}' -sb '${tokyoNight.blue}' -sf '${tokyoNight.bg}'";
+            menu = "dmenu_run -fn 'Iosevka Nerd Font-14' -nb '${catppuccinMocha.bg}' -nf '${catppuccinMocha.fg}' -sb '${catppuccinMocha.blue}' -sf '${catppuccinMocha.bg}'";
 
             fonts = {
                 names = [ "Iosevka Nerd Font" ];
@@ -36,32 +36,32 @@ in
 
             colors = {
                 focused = {
-                    border = tokyoNight.blue;
-                    background = tokyoNight.bg;
-                    text = tokyoNight.fg;
-                    indicator = tokyoNight.cyan;
-                    childBorder = tokyoNight.blue;
+                    border = catppuccinMocha.blue;
+                    background = catppuccinMocha.bg;
+                    text = catppuccinMocha.fg;
+                    indicator = catppuccinMocha.cyan;
+                    childBorder = catppuccinMocha.blue;
                 };
                 focusedInactive = {
-                    border = tokyoNight.bg_alt;
-                    background = tokyoNight.bg_alt;
-                    text = tokyoNight.fg;
-                    indicator = tokyoNight.bg_alt;
-                    childBorder = tokyoNight.bg_alt;
+                    border = catppuccinMocha.bg_alt;
+                    background = catppuccinMocha.bg_alt;
+                    text = catppuccinMocha.fg;
+                    indicator = catppuccinMocha.bg_alt;
+                    childBorder = catppuccinMocha.bg_alt;
                 };
                 unfocused = {
-                    border = tokyoNight.bg_alt;
-                    background = tokyoNight.bg_alt;
-                    text = tokyoNight.fg;
-                    indicator = tokyoNight.bg_alt;
-                    childBorder = tokyoNight.bg_alt;
+                    border = catppuccinMocha.bg_alt;
+                    background = catppuccinMocha.bg_alt;
+                    text = catppuccinMocha.fg;
+                    indicator = catppuccinMocha.bg_alt;
+                    childBorder = catppuccinMocha.bg_alt;
                 };
                 urgent = {
-                    border = tokyoNight.red;
-                    background = tokyoNight.red;
-                    text = tokyoNight.fg;
-                    indicator = tokyoNight.red;
-                    childBorder = tokyoNight.red;
+                    border = catppuccinMocha.red;
+                    background = catppuccinMocha.red;
+                    text = catppuccinMocha.fg;
+                    indicator = catppuccinMocha.red;
+                    childBorder = catppuccinMocha.red;
                 };
             };
 
@@ -73,29 +73,29 @@ in
                     size = 11.0;
                 };
                 colors = {
-                    background = tokyoNight.bg;
-                    statusline = tokyoNight.fg;
-                    separator = tokyoNight.bg_alt;
+                    background = catppuccinMocha.bg;
+                    statusline = catppuccinMocha.fg;
+                    separator = catppuccinMocha.bg_alt;
 
                     focusedWorkspace = {
-                        border = tokyoNight.blue;
-                        background = tokyoNight.blue;
-                        text = tokyoNight.bg;
+                        border = catppuccinMocha.blue;
+                        background = catppuccinMocha.blue;
+                        text = catppuccinMocha.bg;
                     };
                     activeWorkspace = {
-                        border = tokyoNight.bg_alt;
-                        background = tokyoNight.bg_alt;
-                        text = tokyoNight.fg;
+                        border = catppuccinMocha.bg_alt;
+                        background = catppuccinMocha.bg_alt;
+                        text = catppuccinMocha.fg;
                     };
                     inactiveWorkspace = {
-                        border = tokyoNight.bg;
-                        background = tokyoNight.bg;
-                        text = tokyoNight.fg;
+                        border = catppuccinMocha.bg;
+                        background = catppuccinMocha.bg;
+                        text = catppuccinMocha.fg;
                     };
                     urgentWorkspace = {
-                        border = tokyoNight.red;
-                        background = tokyoNight.red;
-                        text = tokyoNight.bg;
+                        border = catppuccinMocha.red;
+                        background = catppuccinMocha.red;
+                        text = catppuccinMocha.bg;
                     };
                 };
             }];
@@ -171,7 +171,7 @@ in
 
     # i3blocks configuration
     home.file.".config/i3blocks/config".text = ''
-        # i3blocks config with Tokyo Night theme
+        # i3blocks config with Catppuccin Mocha theme
 
         separator=true
         separator_block_width=15
@@ -180,47 +180,47 @@ in
         [cpu]
         command=echo "CPU $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf "%.0f%%", usage}')"
         interval=2
-        color=${tokyoNight.cyan}
+        color=${catppuccinMocha.cyan}
 
         [memory]
         command=echo "MEM $(free -h | awk '/^Mem:/ {print $3}')"
         interval=5
-        color=${tokyoNight.green}
+        color=${catppuccinMocha.green}
 
         [disk]
         command=echo "DISK $(df -h / | awk 'NR==2 {print $4}')"
         interval=30
-        color=${tokyoNight.magenta}
+        color=${catppuccinMocha.magenta}
 
         [wifi]
         command=ssid=$(iw dev | grep ssid | awk '{print $2}'); if [ -z "$ssid" ]; then echo "DISCONNECTED"; else echo "$ssid"; fi
         interval=5
-        color=${tokyoNight.blue}
+        color=${catppuccinMocha.blue}
 
         [brightness]
         command=max=$(brightnessctl max); cur=$(brightnessctl g); echo "BRI $(( cur * 100 / max ))%"
         interval=1
-        color=${tokyoNight.yellow}
+        color=${catppuccinMocha.yellow}
 
         [volume]
         command=if pamixer --get-mute | grep -q true; then echo "VOL MUTE"; else echo "VOL $(pamixer --get-volume)%"; fi
         interval=1
-        color=${tokyoNight.orange}
+        color=${catppuccinMocha.orange}
 
         [battery]
         command=echo "BAT $(cat /sys/class/power_supply/BAT*/capacity 2>/dev/null || echo 'N/A')%"
         interval=10
-        color=${tokyoNight.green}
+        color=${catppuccinMocha.green}
 
         [date]
         command=date '+%a %b %d'
         interval=60
-        color=${tokyoNight.magenta}
+        color=${catppuccinMocha.magenta}
 
         [time]
         command=date '+%H:%M'
         interval=1
-        color=${tokyoNight.blue}
+        color=${catppuccinMocha.blue}
     '';
 
     home.packages = with pkgs; [

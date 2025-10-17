@@ -11,7 +11,6 @@
             plugins = [
                 "git"
             ];
-            theme = "duellj";
         };
 
         envExtra = ''

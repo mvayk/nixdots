@@ -63,6 +63,7 @@ in
         cmus
         yt-dlp
         eza
+        starship
         fastfetch
         neovim
         mpv
