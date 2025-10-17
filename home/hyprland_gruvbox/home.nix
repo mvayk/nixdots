@@ -50,11 +50,9 @@ in
         lxappearance
         bibata-cursors
         papirus-icon-theme
-        i3-gaps
-        i3lock
-        i3status
-        dmenu
-        i3blocks
-        polybar
+        hyprland
+        waybar
+        rofi
+        swaync
     ];
 }
