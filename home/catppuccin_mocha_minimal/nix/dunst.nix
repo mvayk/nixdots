@@ -75,7 +75,7 @@ in
                 always_run_script = true;
                 title = "Dunst";
                 class = "Dunst";
-                corner_radius = 8;
+                corner_radius = 0;
                 ignore_dbusclose = false;
                 
                 force_xwayland = false;

@@ -31,12 +31,12 @@ in
                 inner = 2;
                 outer = 2;
                 smartGaps = false;
-                smartBorders = "on";
+                smartBorders = "off";
             };
 
             colors = {
                 focused = {
-                    border = catppuccinMocha.blue;
+                    border = catppuccinMocha.magenta;
                     background = catppuccinMocha.bg;
                     text = catppuccinMocha.fg;
                     indicator = catppuccinMocha.cyan;

@@ -68,7 +68,7 @@
 
     programs.neovim.enable = true;
     programs.dconf.enable = true;
-    programs.firefox.enable = true;
+    # programs.firefox.enable = true;
     programs.zsh.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
@@ -83,6 +83,42 @@
         zsh
         unzip
         gcc
+        steam
+        zsh
+        oh-my-zsh
+        cmus
+        yt-dlp
+        eza
+        fastfetch
+        mpv
+        emacs
+        tmux
+        texlive.combined.scheme-medium
+        imagemagick
+        obsidian
+        flameshot
+        tor
+        tor-browser
+        vesktop
+        qutebrowser
+        kdePackages.dolphin
+        ffmpeg
+        nnn
+        zathura
+        feh
+        dmenu
+        cargo
+        xorg.xinput
+        acpi
+        sysstat
+        lm_sensors
+        brightnessctl
+        pamixer
+        iw
+        alarm-clock-applet
+        coreutils
+        pavucontrol
+        kitty
     ];
 
     fonts.packages = with pkgs; [
