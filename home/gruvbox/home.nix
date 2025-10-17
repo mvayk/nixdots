@@ -54,6 +54,5 @@ in
         waybar
         swww
         rofi
-        ghostty
     ];
 }
