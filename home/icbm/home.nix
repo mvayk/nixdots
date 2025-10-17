@@ -52,7 +52,9 @@ in
         papirus-icon-theme
         hyprland
         waybar
+        swww
         rofi
+        ghostty
         pywal
     ];
 }
