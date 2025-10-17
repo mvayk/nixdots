@@ -48,50 +48,11 @@ in
         lxappearance
         bibata-cursors
         papirus-icon-theme
-        steam
-        dunst
-        zsh
-        oh-my-zsh
-        cmus
-        yt-dlp
-        eza
-        starship
-        fastfetch
-        neovim
-        mpv
-        emacs
-        tmux
-        texlive.combined.scheme-medium
-        imagemagick
-        obsidian
-        flameshot
-        tor
-        tor-browser
-        vesktop
-        qutebrowser
-        kdePackages.dolphin
-        ffmpeg
-        nnn
         i3-gaps
         i3lock
         i3status
-        zathura
-        feh
         dmenu
-        cargo
-        xorg.xinput
-        acpi
-        sysstat
-        lm_sensors
-        brightnessctl
-        pamixer
-        iw
-        alarm-clock-applet
-        coreutils
         i3blocks
         polybar
-        pavucontrol
-        kitty
-        tree
     ];
 }
