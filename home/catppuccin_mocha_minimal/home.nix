@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
-
 let
-    nixDir = ./home/nix;
-
+    nixDir = ./nix;
     getNixFiles = dir:
     if builtins.pathExists dir then
     let
@@ -13,28 +11,23 @@ let
         map (name: "${dir}/${name}") nixFiles
     else [];
 in
-
 {
     imports = getNixFiles nixDir;
-
     home.username = "mvayk";
     home.homeDirectory = "/home/mvayk";
     home.stateVersion = "25.05";
-
     home.file = {
         ".config" = {
-            source = ./home/mvayk/.config;
+            source = ./mvayk/.config;
             recursive = true;
         };
-        ".tmux.conf".source = ./home/mvayk/.tmux.conf;
+        ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
-
     programs.git = {
         enable = true;
         userName = "mvayk";
         userEmail = "mvayk@mvayk.mvayk";
     };
-
     home.pointerCursor = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
@@ -43,13 +36,11 @@ in
             enable = true;
         };
     };
-
     home.sessionVariables = {
         XCURSOR_THEME = "Bibata-Modern-Ice";
         XCURSOR_SIZE = "24";
         QT_QPA_PLATFORMTHEME = "qt6ct";
     };
-
     home.packages = with pkgs; [
         tokyo-night-gtk
         qt6ct
@@ -70,8 +61,8 @@ in
         mpv
         emacs
         tmux
-        texlive.combined.scheme-medium  # or scheme-full if you want everything
-        imagemagick   # alternative renderer
+        texlive.combined.scheme-medium
+        imagemagick
         obsidian
         flameshot
         tor
@@ -101,5 +92,6 @@ in
         polybar
         pavucontrol
         kitty
+        tree
     ];
 }
