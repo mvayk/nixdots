@@ -58,6 +58,7 @@ in
         bibata-cursors
         papirus-icon-theme
         steam
+        dunst
         zsh
         oh-my-zsh
         cmus

@@ -24,7 +24,7 @@ in
 
             fonts = {
                 names = [ "Iosevka Nerd Font" ];
-                size = 12.0;
+                size = 14.0;
             };
 
             gaps = {
@@ -70,7 +70,7 @@ in
                 statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
                 fonts = {
                     names = [ "Iosevka Nerd Font" ];
-                    size = 11.0;
+                    size = 12.0;
                 };
                 colors = {
                     background = catppuccinMocha.bg;
