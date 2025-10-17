@@ -43,10 +43,12 @@
     services.printing.enable = true;
     services.xserver = {
         enable = true;	
-        windowManager.i3.enable = true;
+        windowManager.i3.enable = false;
     };
 
     services.displayManager.ly.enable = true;
+
+    programs.hyprland.enable = true;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;

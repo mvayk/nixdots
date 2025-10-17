@@ -53,6 +53,5 @@ in
         hyprland
         waybar
         rofi
-        swaync
     ];
 }
