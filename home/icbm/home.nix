@@ -53,5 +53,6 @@ in
         hyprland
         waybar
         rofi
+        pywal
     ];
 }

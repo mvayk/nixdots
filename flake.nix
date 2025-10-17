@@ -19,7 +19,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/catppuccin_mocha_minimal/home.nix;
+                        home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backup";
                     }
                 ];
@@ -34,7 +34,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/hyprland_gruvbox/home.nix;
+                        home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backup";
                     }
                 ];
