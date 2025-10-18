@@ -43,6 +43,9 @@ in
         XCURSOR_SIZE = "24";
         QT_QPA_PLATFORMTHEME = "qt6ct";
     };
+    services.swaync = {
+        enable = true
+    };
     home.packages = with pkgs; [
         tokyo-night-gtk
         qt6ct

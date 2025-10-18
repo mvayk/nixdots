@@ -94,6 +94,7 @@
         eza
         fastfetch
         mpv
+        starship
         emacs
         tmux
         texlive.combined.scheme-medium
@@ -104,6 +105,7 @@
         tor-browser
         vesktop
         qutebrowser
+        pulseaudio
         kdePackages.dolphin
         ffmpeg
         nnn
@@ -126,6 +128,9 @@
 
     fonts.packages = with pkgs; [
         nerd-fonts.iosevka
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.space-mono
+        nerd-fonts.symbols-only
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
