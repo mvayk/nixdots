@@ -1,0 +1,121 @@
+/* style.css */
+* {
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  font-family: SpaceMono Nerd Font;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+#waybar {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  margin: 10px;
+  padding: 5px 15px;
+}
+
+#workspaces button {
+  color: #ffffff;
+  background: transparent;
+  border-left: 0;
+  padding: 0 5px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+#workspaces button.visible {
+  color: #000000;
+  border-radius: 0;
+}
+
+#workspaces button.active {
+  color: #000000;
+  border-radius: 0px;
+}
+
+#workspaces button.urgent {
+  color: #ffffff;
+  background: rgba(234, 105, 98, 0.8);
+}
+
+/*
+ * Arrows - made transparent for floating bar
+ */
+#custom-arrow-light-on-bg-left,
+#custom-arrow-light-on-bg-right,
+#custom-arrow-light-on-dark-left,
+#custom-arrow-light-on-dark-right,
+#custom-arrow-dark-on-light-left,
+#custom-arrow-dark-on-light-right {
+  font-size: 17px;
+  color: transparent;
+  background: transparent;
+}
+
+/*
+ * General background - all transparent now
+ */
+#network,
+#memory,
+#backlight,
+#language,
+#tray,
+#custom-weather,
+#cpu,
+#pulseaudio,
+#temperature,
+#battery,
+#custom-notification,
+#clock {
+  background: transparent;
+  color: #000000;
+  padding: 0 8px;
+}
+
+/*
+ * Warning plugins state
+ */
+#memory.warning,
+#cpu.warning,
+#battery.warning {
+  color: #d8a657;
+}
+
+/*
+ * Critical plugins state
+ */
+#cpu.critical,
+#temperature.critical,
+#memory.critical,
+#battery.critical,
+#network.disconnected {
+  color: #ea6962;
+}
+
+#mode {
+  color: #000000;
+  background: rgba(234, 105, 98, 0.8);
+  border-radius: 6px;
+  padding: 0 8px;
+}
+
+#battery.charging {
+  color: #a9b665;
+}
+
+#battery.plugged {
+  color: #7daea3;
+}
+
+#pulseaudio.bluetooth {
+  color: #7daea3;
+}
+
+tooltip {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, , 0.1);
+  border-radius: 8px;
+}
