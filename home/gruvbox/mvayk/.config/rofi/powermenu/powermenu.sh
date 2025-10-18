@@ -19,7 +19,7 @@ dir="$HOME/.config/rofi/powermenu"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi --theme wallpaper.rasi"
+rofi_command="rofi --theme ~/.config/rofi/powermenu/powermenu.rasi"
 
 # Options
 shutdown=""
