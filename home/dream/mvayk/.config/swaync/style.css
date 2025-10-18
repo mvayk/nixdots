@@ -1,34 +1,34 @@
-
-@define-color dark-bg      #282828;  /* bg */
-@define-color darker-bg    #3c3836;  /* bg1 */
-@define-color darkest-bg   #1d2021;  /* bg0_h */
-@define-color hover-bg     #665c54;  /* bg3 */
-@define-color light-cream  #fbf1c7;  /* fg0 */
-@define-color cream        #ebdbb2;  /* fg / fg1 */
-@define-color gray         #a89984;  /* gray */
-@define-color green        #98971a;  /* green */
-@define-color red          #cc241d;  /* red */
-@define-color bright-red   #fb4934;  /* red_bright */
-@define-color blue         #458588;  /* blue */
-@define-color yellow       #d79921;  /* yellow */
-@define-color orange       #d4be98;  /* orange // not actually orange */
+@define-color dark-bg      rgba(0, 0, 0, 0.5);
+@define-color darker-bg    rgba(0, 0, 0, 0.7);
+@define-color darkest-bg   rgba(0, 0, 0, 0.9);
+@define-color hover-bg     rgba(255, 255, 255, 0.1);
+@define-color cream        #ffffff;
+@define-color gray         rgba(255, 255, 255, 0.5);
+@define-color green        #a9b665;
+@define-color red          #ea6962;
+@define-color bright-red   #ea6962;
+@define-color blue         #7daea3;
+@define-color yellow       #d8a657;
+@define-color accent       rgba(255, 255, 255, 0.2);
 
 * {
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "SpaceMono Nerd Font";
   font-weight: bold;
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 /* Control Center */
 .control-center {
   background: @dark-bg;
-  border: 2px solid @darker-bg;
+  border: none;
+  border-radius: 8px;
 }
 
 /* Notification rows */
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
-  background: @darker-bg;
+  background: @hover-bg;
+  border-radius: 6px;
 }
 
 .notification-row {
@@ -57,24 +57,25 @@
 .widget-mpris>box>button,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 /* Notifications */
 .notification {
-  background: @dark-bg;
-  border: 2px solid @darker-bg;
-  margin: 0px;
+  background: @darker-bg;
+  border: none;
+  margin: 5px;
+  border-radius: 8px;
 }
 
 .close-button {
   background: @red;
-  color: @dark-bg;
+  color: @cream;
   text-shadow: none;
   padding: 0;
   margin-top: 5px;
   margin-right: 5px;
-  border-radius: 0;
+  border-radius: 6px;
   border: none;
 }
 
@@ -83,21 +84,23 @@
 }
 
 .notification-action {
-  border: 2px solid @orange;
+  border: none;
   border-top: none;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
   color: @cream;
-  background: @dark-bg;
+  background: @hover-bg;
+  border-radius: 6px;
 }
 
 .inline-reply-entry {
-  background: @darker-bg;
+  background: @darkest-bg;
   color: @cream;
   caret-color: @cream;
   border: 1px solid @gray;
+  border-radius: 6px;
 }
 
 .inline-reply-button {
@@ -106,6 +109,7 @@
   background: @darkest-bg;
   border: 1px solid @gray;
   color: @cream;
+  border-radius: 6px;
 }
 
 .inline-reply-button:disabled {
@@ -120,7 +124,7 @@
 
 .summary {
   font-size: 16px;
-  color: @orange;
+  color: @cream;
 }
 
 .time {
@@ -137,40 +141,43 @@
 
 /* Widgets */
 .widget-title {
-  color: @orange;
-  background: @darker-bg;
+  color: @cream;
+  background: transparent;
   padding: 5px 10px;
   margin: 10px;
   font-size: 1.5rem;
+  border-radius: 8px;
 }
 
 .widget-title>button {
   font-size: 1rem;
   color: @cream;
   background: @darkest-bg;
+  border-radius: 6px;
 }
 
 .widget-title>button:hover {
   background: @red;
-  color: @dark-bg;
+  color: @cream;
 }
 
 .widget-dnd {
-  background: @darker-bg;
+  background: transparent;
   padding: 5px 10px;
   margin: 5px 10px;
   font-size: large;
-  color: @blue;
+  color: @cream;
+  border-radius: 8px;
 }
 
 .widget-dnd>switch {
-  background: @blue;
-  border-radius: 0;
+  background: @hover-bg;
+  border-radius: 6px;
 }
 
 .widget-dnd>switch:checked {
-  background: @yellow;
-  border: solid @yellow;
+  background: @accent;
+  border: solid @accent;
 }
 
 .widget-label>label {
@@ -183,32 +190,35 @@
   font-size: x-large;
   padding: 5px;
   margin: 10px;
-  background: @darker-bg;
+  background: transparent;
+  border-radius: 8px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
-  background: @dark-bg;
+  background: @darkest-bg;
   color: @cream;
+  border-radius: 6px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @yellow;
-  color: @dark-bg;
+  background: @hover-bg;
+  color: @cream;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
-  background: @orange;
-  color: @dark-bg;
+  background: @accent;
+  color: @cream;
 }
 
 .widget-volume,
 .widget-backlight {
-  background: @darker-bg;
+  background: transparent;
   padding: 5px;
   margin: 5px 10px;
   font-size: 2rem;
-  color: @orange;
+  color: @cream;
+  border-radius: 8px;
 }
 
 /* Sliders */
@@ -220,7 +230,7 @@
 .widget-volume scale trough,
 .widget-backlight scale trough {
   min-height: 8px;
-  border-radius: 0;
+  border-radius: 6px;
   background: @darkest-bg;
   border: 1px solid @gray;
 }
@@ -228,8 +238,8 @@
 .widget-volume scale highlight,
 .widget-backlight scale highlight {
   min-height: 8px;
-  border-radius: 0;
-  background: @orange;
+  border-radius: 6px;
+  background: @accent;
   border: none;
 }
 
@@ -237,22 +247,23 @@
 .widget-backlight scale slider {
   min-width: 10px;
   min-height: 10px;
-  border-radius: 0;
-  background: @orange;
-  border: 2px solid @orange;
+  border-radius: 6px;
+  background: @cream;
+  border: 2px solid @cream;
 }
 
 .widget-mpris {
   color: @cream;
-  background: @darker-bg;
+  background: transparent;
   padding: 5px 10px;
   margin: 5px 10px;
+  border-radius: 8px;
 }
 
 .widget-mpris>box>button,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  border-radius: 0;
+  border-radius: 6px;
   box-shadow: none;
   padding: 5px 10px;
   margin: 10px 0 0 0;
@@ -263,5 +274,5 @@ progress, trough {
 }
 
 progressbar > trough > progress {
-  background-color: @orange;
+  background-color: @accent;
 }
