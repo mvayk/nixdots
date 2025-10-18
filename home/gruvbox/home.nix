@@ -60,5 +60,7 @@ in
         slurp
         rofi
         wl-clipboard
+        hyprlock
+        hypridle
     ];
 }
