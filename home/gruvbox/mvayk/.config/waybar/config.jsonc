@@ -127,7 +127,7 @@
 
   "memory": {
     "tooltip": true,
-    "format": "{}% ",
+    "format": "{}%  ",
     "states": {
       "warning": 60,
       "critical": 80

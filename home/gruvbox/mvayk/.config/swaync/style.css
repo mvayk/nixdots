@@ -11,7 +11,7 @@
 @define-color bright-red   #fb4934;  /* red_bright */
 @define-color blue         #458588;  /* blue */
 @define-color yellow       #d79921;  /* yellow */
-@define-color orange       #d65d0e;  /* orange */
+@define-color orange       #d4be98;  /* orange // not actually orange */
 
 * {
   font-family: "JetBrainsMono Nerd Font";

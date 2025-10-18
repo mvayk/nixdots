@@ -56,6 +56,9 @@ in
         hyprland
         waybar
         swww
+        grim
+        slurp
         rofi
+        wl-clipboard
     ];
 }

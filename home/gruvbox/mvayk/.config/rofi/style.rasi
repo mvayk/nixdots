@@ -1,5 +1,3 @@
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
-
 * {
     font: "Iosevka Nerd Font 13";
     font-weight: bold;
