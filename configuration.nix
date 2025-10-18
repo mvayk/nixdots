@@ -96,6 +96,7 @@
         mpv
         starship
         emacs
+        libnotify
         tmux
         texlive.combined.scheme-medium
         imagemagick
