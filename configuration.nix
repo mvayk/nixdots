@@ -72,6 +72,7 @@
     programs.dconf.enable = true;
     programs.firefox.enable = true;
     programs.zsh.enable = true;
+    programs.starship.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
@@ -93,6 +94,7 @@
         firefox
         eza
         fastfetch
+        cheese
         mpv
         starship
         emacs
