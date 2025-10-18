@@ -10,7 +10,7 @@ while read -r wallpaper; do
 done |
 rofi -dmenu -i -show-icons \
      -theme-str 'element-icon { size: 8em; }' \
-     -theme ~/.config/rofi/wallpaper.rasi \
+     -theme ~/.config/rofi/wallpaper/wallpaper.rasi \
      -format 'i' # output the index of the selected line
 )
 
