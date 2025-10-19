@@ -14,6 +14,7 @@ in
 {
     imports = getNixFiles nixDir ++ [
         ../../common/zshrc.nix
+        ../../common/fastfetch.nix
     ];
     home.username = "mvayk";
     home.homeDirectory = "/home/mvayk";
