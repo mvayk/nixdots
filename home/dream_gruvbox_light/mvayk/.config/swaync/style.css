@@ -1,15 +1,15 @@
-@define-color dark-bg      #ffffff;
-@define-color darker-bg    #f5f5f5;
-@define-color darkest-bg   #e8e8e8;
-@define-color hover-bg     #e0e0e0;
-@define-color cream        #000000;
-@define-color gray         #666666;
-@define-color green        #5a7a2e;
-@define-color red          #c42f2f;
-@define-color bright-red   #e03030;
-@define-color blue         #2e6b63;
-@define-color yellow       #b8820f;
-@define-color accent       #d0d0d0;
+@define-color dark-bg      #fbf1c7;
+@define-color darker-bg    #ebdbb2;
+@define-color darkest-bg   #d5c4a1;
+@define-color hover-bg     #bdae93;
+@define-color cream        #3c3836;
+@define-color gray         #7c6f64;
+@define-color green        #98971a;
+@define-color red          #cc241d;
+@define-color bright-red   #fb4934;
+@define-color blue         #458588;
+@define-color yellow       #d79921;
+@define-color accent       #d65d0e;
 
 * {
   font-family: "SpaceMono Nerd Font";
@@ -70,7 +70,7 @@
 
 .close-button {
   background: @red;
-  color: #ffffff;
+  color: #fbf1c7;
   text-shadow: none;
   padding: 0;
   margin-top: 5px;
@@ -158,7 +158,7 @@
 
 .widget-title>button:hover {
   background: @red;
-  color: #ffffff;
+  color: #fbf1c7;
 }
 
 .widget-dnd {
@@ -208,7 +208,7 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
   background: @accent;
-  color: @cream;
+  color: @dark-bg;
 }
 
 .widget-volume,

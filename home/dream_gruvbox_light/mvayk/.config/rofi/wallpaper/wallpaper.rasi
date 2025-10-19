@@ -10,10 +10,10 @@ configuration {
 }
 @theme "/dev/null"
 * {
-    bg:       #ffffff;
-    fg:       #000000;
-    accent:   #e0e0e0;
-    button:   #f5f5f5;
+    bg:       #fbf1c7;
+    fg:       #3c3836;
+    accent:   #d65d0e;
+    button:   #ebdbb2;
     background-color: @bg;
     text-color:       @fg;
     padding: 0;
@@ -24,7 +24,7 @@ configuration {
 window {
     width:            40%;
     border:           0px;
-    border-color:     #ffffff;
+    border-color:     #d5c4a1;
     border-radius:    8px;
     padding:          0px;
     background-color: @bg;
@@ -48,7 +48,7 @@ entry {
     placeholder:          "Search";
     background-color:     transparent;
     text-color:           @fg;
-    placeholder-color:    #666666;
+    placeholder-color:    #7c6f64;
     padding:              8px 10px;
 }
 inputbar {
@@ -90,5 +90,5 @@ element-text {
 }
 element selected {
     background-color: @accent;
-    text-color:       #000000;
+    text-color:       #fbf1c7;
 }

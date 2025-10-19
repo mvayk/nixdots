@@ -34,7 +34,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/dream_gruvbox_light/home.nix;
+                        home-manager.users.mvayk = import ./home/dream/home.nix;
                         home-manager.backupFileExtension = "backup";
                     }
                 ];
