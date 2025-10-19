@@ -12,8 +12,8 @@ configuration {
 * {
     bg:       #ffffff;
     fg:       #000000;
-    accent:   #000000;
-    button:   #f0f0f0;
+    accent:   #e0e0e0;
+    button:   #f5f5f5;
     background-color: @bg;
     text-color:       @fg;
     padding: 0;
@@ -24,7 +24,7 @@ configuration {
 window {
     width:       50%;
     border:      0px;
-    border-color: @bg;
+    border-color: #ffffff;
     border-radius: 8px;
     padding:     15px;
     background-color: @bg;
@@ -68,8 +68,4 @@ element {
 }
 element selected {
     background-color: @accent;
-    text-color: #ffffff;
-}
-element selected element-text {
-    text-color: #ffffff;
 }

@@ -11,14 +11,14 @@
 
 #waybar {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 1);
   border-radius: 8px;
   margin: 10px;
   padding: 5px 15px;
 }
 
 #workspaces button {
-  color: #ffffff;
+  color: #000000;
   background: transparent;
   border-left: 0;
   padding: 0 5px;
@@ -103,19 +103,17 @@
 }
 
 #battery.charging {
-  color: #a9b665;
+  color: #5a7a2e;
 }
-
 #battery.plugged {
-  color: #7daea3;
+  color: #2e6b63;
 }
-
 #pulseaudio.bluetooth {
-  color: #7daea3;
+  color: #2e6b63;
 }
 
 tooltip {
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, , 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }

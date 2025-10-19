@@ -2,41 +2,34 @@ configuration {
 	show-icons:                     true;
 	sidebar-mode: 			false;
 }
-
 @theme "/dev/null"
-
 * {
-    bg:       transparent;
-    fg:       #ffffff;
-    accent:   rgba(255, 255, 255, 0.2);
-    button:   rgba(255, 255, 255, 0.1);
-	background-color:		transparent;
+    bg:       #ffffff;
+    fg:       #000000;
+    accent:   #e0e0e0;
+    button:   #f5f5f5;
+	background-color:		@bg;
 	text-color:			@fg;
 }
-
 window {
 	width:			    	40%;
 	padding: 			0px;
     border: 0px;
-    border-color: transparent;
+    border-color: #ffffff;
     border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @bg;
 }
-
 prompt {
 	enabled:			false;
 }
-
 entry {
 	enabled:                        false;
 }
-
 inputbar {
 	children:			[ prompt ];
     	background-color:               transparent;
     	expand:                         false;
 }
-
 listview {
     	columns:                        5;
     	lines:	                        1;
@@ -46,27 +39,23 @@ listview {
     	spacing:                        10px;
     	background-color:		transparent;
 }
-
 mainbox {
     	children:                       [ listview ];
     	spacing:                       	2%;
     	padding:                        2% 1% 2% 1%;
     	background-color:		transparent;
 }
-
 element {
     	orientation:                    vertical;
     	padding:                        2% 0% 2% 0%;
     	border-radius:			6px;
     	background-color:		transparent;
 }
-
 element-icon {
     	size:                           64px;
     	horizontal-align:	 	0.5;
     	background-color:		transparent;
 }
-
 element-text {
     	expand:                         true;
     	horizontal-align:               0.5;
@@ -77,8 +66,7 @@ element-text {
 	font:				"SpaceMono Nerd Font 8";
     	font-weight: 			bold;
 }
-
 element selected {
     	background-color:               @accent;
-    	text-color:			#ffffff;
+    	text-color:			#000000;
 }

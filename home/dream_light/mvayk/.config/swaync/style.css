@@ -1,15 +1,15 @@
-@define-color dark-bg      rgba(0, 0, 0, 0.5);
-@define-color darker-bg    rgba(0, 0, 0, 0.7);
-@define-color darkest-bg   rgba(0, 0, 0, 0.9);
-@define-color hover-bg     rgba(255, 255, 255, 0.1);
-@define-color cream        #ffffff;
-@define-color gray         rgba(255, 255, 255, 0.5);
-@define-color green        #a9b665;
-@define-color red          #ea6962;
-@define-color bright-red   #ea6962;
-@define-color blue         #7daea3;
-@define-color yellow       #d8a657;
-@define-color accent       rgba(255, 255, 255, 0.2);
+@define-color dark-bg      #ffffff;
+@define-color darker-bg    #f5f5f5;
+@define-color darkest-bg   #e8e8e8;
+@define-color hover-bg     #e0e0e0;
+@define-color cream        #000000;
+@define-color gray         #666666;
+@define-color green        #5a7a2e;
+@define-color red          #c42f2f;
+@define-color bright-red   #e03030;
+@define-color blue         #2e6b63;
+@define-color yellow       #b8820f;
+@define-color accent       #d0d0d0;
 
 * {
   font-family: "SpaceMono Nerd Font";
@@ -70,7 +70,7 @@
 
 .close-button {
   background: @red;
-  color: @cream;
+  color: #ffffff;
   text-shadow: none;
   padding: 0;
   margin-top: 5px;
@@ -158,7 +158,7 @@
 
 .widget-title>button:hover {
   background: @red;
-  color: @cream;
+  color: #ffffff;
 }
 
 .widget-dnd {
