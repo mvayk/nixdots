@@ -52,6 +52,8 @@
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
     services.pipewire = {
         enable = true;
         alsa.enable = true;
@@ -66,6 +68,23 @@
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
         ];
+    };
+    i18n.inputMethod = {
+        enable = true;
+        type = "fcitx5";
+        fcitx5 = {
+            addons = with pkgs; [
+                fcitx5-mozc
+                fcitx5-gtk
+            ];
+            waylandFrontend = true;
+        };
+    };
+
+    environment.sessionVariables = {
+        GTK_IM_MODULE = "fcitx";
+        QT_IM_MODULE = "fcitx";
+        XMODIFIERS = "@im=fcitx";
     };
 
     programs.neovim.enable = true;
@@ -92,6 +111,8 @@
         yt-dlp
         firefox
         eza
+        gnome-keyring
+        seahorse
         fastfetch
         cheese
         mpv
@@ -132,6 +153,7 @@
         nerd-fonts.jetbrains-mono
         nerd-fonts.space-mono
         nerd-fonts.symbols-only
+        noto-fonts-cjk-sans
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
