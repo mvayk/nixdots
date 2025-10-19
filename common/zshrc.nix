@@ -11,7 +11,7 @@
             plugins = [
                 "git"
             ];
-            theme = "awesomepanda";
+            theme = "afowler";
         };
 
         envExtra = ''
