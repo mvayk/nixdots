@@ -50,6 +50,11 @@
 
     programs.hyprland.enable = true;
 
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
+
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.gnome.gnome-keyring.enable = true;
@@ -102,10 +107,16 @@
         networkmanagerapplet
         xclip
         zsh
+        cmake
         unzip
         gcc
         steam
         zsh
+        termdown
+        openjdk21
+        openjdk17
+        openjdk8
+        modrinth-app
         oh-my-zsh
         cmus
         yt-dlp

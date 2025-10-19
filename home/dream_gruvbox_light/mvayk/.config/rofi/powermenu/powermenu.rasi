@@ -1,0 +1,75 @@
+configuration {
+	show-icons:                     true;
+	sidebar-mode: 			false;
+}
+@theme "/dev/null"
+* {
+    bg:       #ffffff;
+    fg:       #000000;
+    accent:   #e0e0e0;
+    button:   #f5f5f5;
+	background-color:		@bg;
+	text-color:			@fg;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+window {
+	width:			    	40%;
+	padding: 			10px;
+    border: 0px;
+    border-color: #ffffff;
+    border-radius: 8px;
+    background-color: @bg;
+}
+prompt {
+	enabled:			false;
+}
+entry {
+	enabled:                        false;
+}
+inputbar {
+	children:			[ prompt ];
+    	background-color:               transparent;
+    	expand:                         false;
+}
+listview {
+    	columns:                        5;
+    	lines:	                        1;
+    	cycle:                          false;
+    	dynamic:                        true;
+    	layout:                         vertical;
+    	spacing:                        10px;
+    	background-color:		transparent;
+}
+mainbox {
+    	children:                       [ listview ];
+    	padding:                        10px;
+    	background-color:		transparent;
+}
+element {
+    	orientation:                    vertical;
+    	padding:                        20px;
+    	border-radius:			6px;
+    	background-color:		transparent;
+}
+element-icon {
+    	size:                           64px;
+    	horizontal-align:	 	0.5;
+    	background-color:		transparent;
+}
+element-text {
+    	expand:                         true;
+    	horizontal-align:               0.5;
+    	vertical-align:                 0.5;
+    	margin:                         10px 0px 0px 0px;
+	background-color:		transparent;
+	text-color:			@fg;
+	font:				"SpaceMono Nerd Font 48";
+    	font-weight: 			bold;
+}
+element selected {
+    	background-color:               @accent;
+    	text-color:			#000000;
+}
