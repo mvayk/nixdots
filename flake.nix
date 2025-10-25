@@ -4,8 +4,17 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
         home-manager.url = "github:nix-community/home-manager/release-25.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        quickshell = {
+            url = "github:outfoxxed/quickshell";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        noctalia = {
+            url = "github:noctalia-dev/noctalia-shell";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.quickshell.follows = "quickshell";
+        };
     };
-    outputs = { self, nixpkgs, home-manager, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, ... }:
         let
         system = "x86_64-linux";
     in {
@@ -21,6 +30,7 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backup";
+                        home-manager.extraSpecialArgs = { inherit noctalia; };  # Add this!
                     }
                 ];
             };
@@ -34,8 +44,9 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/kde_mac/home.nix;
+                        home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
                         home-manager.backupFileExtension = "backup";
+                        home-manager.extraSpecialArgs = { inherit noctalia; };  # Add this!
                     }
                 ];
             };

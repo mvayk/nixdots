@@ -25,23 +25,19 @@ in
         };
         ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
-    programs.plasma = {
-        enable = true;
-    };
     programs.git = {
         enable = true;
         userName = "mvayk";
         userEmail = "mvayk@mvayk.mvayk";
     };
-    
-
     home.packages = with pkgs; [
-        kdePackages.full
         qt6ct
         libsForQt5.qt5ct
+        lxappearance
+
         grim
         slurp
-        rofi
         wl-clipboard
     ];
 }
+

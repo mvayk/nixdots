@@ -55,6 +55,7 @@
         enable32Bit = true;
     };
 
+    services.desktopManager.plasma6.enable = false;
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.gnome.gnome-keyring.enable = true;
