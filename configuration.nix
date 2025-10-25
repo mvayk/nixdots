@@ -107,6 +107,8 @@
         networkmanagerapplet
         xclip
         zsh
+        kdePackages.kmines
+        qalculate-qt
         cmake
         unzip
         gcc
@@ -127,6 +129,9 @@
         fastfetch
         cheese
         mpv
+        prismlauncher
+        brave
+        blanket
         emacs
         libnotify
         tmux

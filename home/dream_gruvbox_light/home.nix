@@ -47,7 +47,6 @@ in
         enable = true;
     };
     home.packages = with pkgs; [
-        tokyo-night-gtk
         qt6ct
         libsForQt5.qt5ct
         lxappearance

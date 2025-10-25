@@ -25,41 +25,23 @@ in
         };
         ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
+    programs.plasma = {
+        enable = true;
+    };
     programs.git = {
         enable = true;
         userName = "mvayk";
         userEmail = "mvayk@mvayk.mvayk";
     };
-    home.pointerCursor = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-        size = 24;
-        x11 = {
-            enable = true;
-        };
-    };
-    home.sessionVariables = {
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
-        QT_QPA_PLATFORMTHEME = "qt6ct";
-    };
-    services.swaync = {
-        enable = true;
-    };
+    
+
     home.packages = with pkgs; [
+        kdePackages.full
         qt6ct
         libsForQt5.qt5ct
-        lxappearance
-        bibata-cursors
-        papirus-icon-theme
-        hyprland
-        waybar
-        swww
         grim
         slurp
         rofi
         wl-clipboard
-        hyprlock
-        hypridle
     ];
 }
