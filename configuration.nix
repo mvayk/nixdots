@@ -48,12 +48,22 @@
 
     services.displayManager.ly.enable = true;
 
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
+    };
 
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
+        extraPackages = with pkgs; [
+            intel-media-driver
+                intel-vaapi-driver
+                vaapiVdpau
+                libvdpau-va-gl
+        ];
     };
+    services.upower.enable = true;
 
     services.desktopManager.plasma6.enable = false;
     services.pulseaudio.enable = false;
@@ -75,23 +85,6 @@
         packages = with pkgs; [
         ];
     };
-    i18n.inputMethod = {
-        enable = true;
-        type = "fcitx5";
-        fcitx5 = {
-            addons = with pkgs; [
-                fcitx5-mozc
-                fcitx5-gtk
-            ];
-            waylandFrontend = true;
-        };
-    };
-
-    environment.sessionVariables = {
-        GTK_IM_MODULE = "fcitx";
-        QT_IM_MODULE = "fcitx";
-        XMODIFIERS = "@im=fcitx";
-    };
 
     programs.neovim.enable = true;
     programs.dconf.enable = true;
@@ -107,6 +100,7 @@
         keepassxc
         networkmanagerapplet
         xclip
+        btop
         zsh
         kdePackages.kmines
         qalculate-qt

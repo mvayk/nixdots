@@ -14,7 +14,7 @@
             inputs.quickshell.follows = "quickshell";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, ... }:
         let
         system = "x86_64-linux";
     in {
@@ -30,7 +30,7 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia; };  # Add this!
+                        home-manager.extraSpecialArgs = { inherit noctalia quickshell; };
                     }
                 ];
             };
@@ -46,7 +46,7 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
                         home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia; };  # Add this!
+                        home-manager.extraSpecialArgs = { inherit noctalia quickshell; };
                     }
                 ];
             };
