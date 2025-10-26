@@ -43,6 +43,7 @@ in
     home.sessionVariables = {
         XCURSOR_THEME = "Bibata-Modern-Ice";
         XCURSOR_SIZE = "24";
+        QT_QUICK_BACKEND = "software";
     };
 
     gtk = {
@@ -67,9 +68,9 @@ in
       enable = true;
       settings = {
         settingsVersion = 16;
-        setupCompleted = false;
+        setupCompleted = true;
         bar = {
-          position = "top";
+          position = "left";
           backgroundOpacity = 1;
           monitors = [ ];
           density = "comfortable";
@@ -155,10 +156,10 @@ in
         };
         wallpaper = {
           enabled = true;
-          directory = "";
+          directory = "/home/mvayk/wallpapers";
           enableMultiMonitorDirectories = false;
           setWallpaperOnAllMonitors = true;
-          defaultWallpaper = "~/wallpapers/rosepine.jpg";
+          defaultWallpaper = "/home/mvayk/wallpapers/rosepine.jpg";
           fillMode = "crop";
           fillColor = "#000000";
           randomEnabled = false;
@@ -264,8 +265,8 @@ in
         };
         audio = {
           volumeStep = 5;
-          volumeOverdrive = false;
-          cavaFrameRate = 60;
+          volumeOverdrive = true;
+          cavaFrameRate = 1;
           visualizerType = "linear";
           mprisBlacklist = [ ];
           preferredPlayer = "";
@@ -289,10 +290,10 @@ in
           generateTemplatesForPredefined = true;
         };
         templates = {
-          gtk = true;
-          qt = true;
-          kcolorscheme = true;
-          kitty = true;
+          gtk = false;
+          qt = false;
+          kcolorscheme = false;
+          kitty = false;
           ghostty = false;
           foot = false;
           fuzzel = false;

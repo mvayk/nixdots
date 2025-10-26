@@ -70,13 +70,27 @@
     security.rtkit.enable = true;
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
+services.pipewire = {
+  enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  pulse.enable = true;
+  
+  extraConfig.pipewire = {
+    "10-rt-prio" = {
+      "context.modules" = [
+        {
+          name = "libpipewire-module-rt";
+          args = {
+            "nice.level" = -11;
+            "rt.prio" = 88;
+          };
+          flags = [ "ifexists" "nofail" ];
+        }
+      ];
     };
-
+  };
+};
     users.users.mvayk = {
         isNormalUser = true;
         description = "John";
