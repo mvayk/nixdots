@@ -100,16 +100,29 @@ services.pipewire = {
         ];
     };
 
-    programs.neovim.enable = true;
     programs.dconf.enable = true;
     programs.firefox.enable = true;
     programs.zsh.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
+
+    # Enable nix-ld so Mason can run dynamically linked LSP binaries
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+        stdenv.cc.cc.lib
+        zlib
+        fuse3
+        icu
+        nss
+        openssl
+        curl
+        expat
+    ];
+
     environment.systemPackages = with pkgs; [
         git
-        neovim
         curl
+        neovim
         wget
         keepassxc
         networkmanagerapplet
@@ -171,6 +184,17 @@ services.pipewire = {
         coreutils
         pavucontrol
         kitty
+
+        # Removed: clang-tools, lua-language-server (Mason will handle LSPs)
+        # Keep these - needed for Neovim/Mason to work properly:
+        ripgrep
+        fd
+        python3
+        python3Packages.pynvim
+        nodejs
+        nodePackages.npm
+        tree-sitter
+        luarocks
     ];
 
     fonts.packages = with pkgs; [

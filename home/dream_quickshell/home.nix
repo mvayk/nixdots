@@ -70,11 +70,11 @@ in
         settingsVersion = 16;
         setupCompleted = true;
         bar = {
-          position = "left";
+          position = "bottom";
           backgroundOpacity = 1;
           monitors = [ ];
           density = "comfortable";
-          showCapsule = true;
+          showCapsule = false;
           floating = false;
           marginVertical = 0.25;
           marginHorizontal = 0.25;
@@ -155,7 +155,7 @@ in
           videoSource = "portal";
         };
         wallpaper = {
-          enabled = true;
+          enabled = false;
           directory = "/home/mvayk/wallpapers";
           enableMultiMonitorDirectories = false;
           setWallpaperOnAllMonitors = true;
@@ -341,6 +341,7 @@ in
         hyprlock
         hypridle
         quickshell
+        swww
         nwg-look
         noctalia.packages.${system}.default  # Add this line
     ];

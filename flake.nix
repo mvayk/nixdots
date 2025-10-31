@@ -44,7 +44,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/dream/home.nix;
+                        home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
                         home-manager.backupFileExtension = "backup";
                         home-manager.extraSpecialArgs = { inherit noctalia quickshell; };
                     }
