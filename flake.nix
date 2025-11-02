@@ -13,8 +13,12 @@
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.quickshell.follows = "quickshell";
         };
+        zen-browser = {
+            url = "github:0xc000022070/zen-browser-flake/beta";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, ... }:
         let
         system = "x86_64-linux";
     in {
@@ -30,13 +34,14 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia quickshell; };
+                        home-manager.extraSpecialArgs = { inherit noctalia quickshell zen-browser; };
                     }
                 ];
             };
             
             laptop = nixpkgs.lib.nixosSystem {
                 inherit system;
+                specialArgs = { inherit zen-browser; };
                 modules = [
                     ./configuration.nix
                     ./machines/laptop/hardware-configuration.nix
@@ -44,9 +49,9 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
+                        home-manager.users.mvayk = import ./home/kde/home.nix;
                         home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia quickshell; };
+                        home-manager.extraSpecialArgs = { inherit noctalia quickshell zen-browser; };
                     }
                 ];
             };

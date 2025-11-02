@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, zen-browser, ... }:
 
 {
     imports =
@@ -49,7 +49,7 @@
     services.displayManager.ly.enable = true;
 
     programs.hyprland = {
-        enable = true;
+        enable = false;
         xwayland.enable = true;
     };
 
@@ -65,7 +65,7 @@
     };
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = false;
+    services.desktopManager.plasma6.enable = true;
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.gnome.gnome-keyring.enable = true;
@@ -106,23 +106,11 @@ services.pipewire = {
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
 
-    # Enable nix-ld so Mason can run dynamically linked LSP binaries
-    programs.nix-ld.enable = true;
-    programs.nix-ld.libraries = with pkgs; [
-        stdenv.cc.cc.lib
-        zlib
-        fuse3
-        icu
-        nss
-        openssl
-        curl
-        expat
-    ];
-
     environment.systemPackages = with pkgs; [
         git
         curl
-        neovim
+vim
+neovim
         wget
         keepassxc
         networkmanagerapplet
@@ -131,18 +119,21 @@ services.pipewire = {
         zsh
         kdePackages.kmines
         qalculate-qt
+        epiphany
         cmake
         unzip
         gcc
         steam
         zsh
         termdown
+        zen-browser.packages."${system}".beta
         openjdk21
         openjdk17
         openjdk8
         modrinth-app
         oh-my-zsh
         cmus
+        ungoogled-chromium
         yt-dlp
         firefox
         eza
@@ -185,16 +176,20 @@ services.pipewire = {
         pavucontrol
         kitty
 
-        # Removed: clang-tools, lua-language-server (Mason will handle LSPs)
-        # Keep these - needed for Neovim/Mason to work properly:
         ripgrep
         fd
         python3
         python3Packages.pynvim
         nodejs
         nodePackages.npm
-        tree-sitter
         luarocks
+
+        # Mason dependencies
+        gnumake
+        tree-sitter
+        glibc
+        libgcc
+        stdenv.cc.cc.lib
     ];
 
     fonts.packages = with pkgs; [
@@ -210,3 +205,4 @@ services.pipewire = {
     services.openssh.enable = true;
     system.stateVersion = "25.05";
 }
+
