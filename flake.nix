@@ -33,7 +33,7 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/icbm/home.nix;
-                        home-manager.backupFileExtension = "backup";
+                        home-manager.backupFileExtension = "backupbackup";
                         home-manager.extraSpecialArgs = { inherit noctalia quickshell zen-browser; };
                     }
                 ];
@@ -49,7 +49,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/kde/home.nix;
+                        home-manager.users.mvayk = import ./home/dream/home.nix;
                         home-manager.backupFileExtension = "backup";
                         home-manager.extraSpecialArgs = { inherit noctalia quickshell zen-browser; };
                     }

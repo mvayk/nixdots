@@ -49,7 +49,7 @@
     services.displayManager.ly.enable = true;
 
     programs.hyprland = {
-        enable = false;
+        enable = true;
         xwayland.enable = true;
     };
 
@@ -65,7 +65,7 @@
     };
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = true;
+    services.desktopManager.plasma6.enable = false;
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.gnome.gnome-keyring.enable = true;

@@ -70,7 +70,7 @@ in
         settingsVersion = 16;
         setupCompleted = true;
         bar = {
-          position = "bottom";
+          position = "left";
           backgroundOpacity = 1;
           monitors = [ ];
           density = "comfortable";
