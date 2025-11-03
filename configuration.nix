@@ -40,6 +40,13 @@
         SUDO_EDITOR = "nvim";
     };
 
+    environment.sessionVariables = {
+        C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
+        CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
+        LIBRARY_PATH = "${pkgs.glibc}/lib:${pkgs.gcc.cc.lib}/lib";
+        CPATH = "${pkgs.glibc.dev}/include";
+    };
+
     services.printing.enable = true;
     services.xserver = {
         enable = true;	
@@ -123,6 +130,9 @@ neovim
         cmake
         unzip
         gcc
+        clang
+        clang-tools
+        glibc
         steam
         zsh
         termdown
@@ -183,13 +193,6 @@ neovim
         nodejs
         nodePackages.npm
         luarocks
-
-        # Mason dependencies
-        gnumake
-        tree-sitter
-        glibc
-        libgcc
-        stdenv.cc.cc.lib
     ];
 
     fonts.packages = with pkgs; [
@@ -198,6 +201,16 @@ neovim
         nerd-fonts.space-mono
         nerd-fonts.symbols-only
         noto-fonts-cjk-sans
+    ];
+
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      openssl
+      glibc
+      glibc.dev
+      libgcc
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
