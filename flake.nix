@@ -17,8 +17,25 @@
             url = "github:0xc000022070/zen-browser-flake/beta";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        dgop = {
+            url = "github:AvengeMedia/dgop";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        dms-cli = {
+            url = "github:AvengeMedia/danklinux";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        dankMaterialShell = {
+            url = "github:AvengeMedia/DankMaterialShell";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.dgop.follows = "dgop";
+            inputs.dms-cli.follows = "dms-cli";
+        };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser,  ... }:
         let
         system = "x86_64-linux";
     in {
@@ -49,7 +66,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/dream/home.nix;
+                        home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
                         home-manager.backupFileExtension = "backup";
                         home-manager.extraSpecialArgs = { inherit noctalia quickshell zen-browser; };
                     }
