@@ -1,4 +1,4 @@
-{ config, pkgs, quickshell, caelestia, caelestia-cli, ... }:
+{ config, pkgs, quickshell, caelestia-shell, caelestia-cli, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:

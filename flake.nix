@@ -43,7 +43,7 @@
             inputs.dms-cli.follows = "dms-cli";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia, caelestia-cli, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, ... }:
         let
         system = "x86_64-linux";
     in {
@@ -59,7 +59,7 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backupbackup";
-                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia caelestia-cli; };
+                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli; };
                     }
                 ];
             };
@@ -76,7 +76,7 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/caelestia/home.nix;
                         home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia caelestia-cli; };
+                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli; };
                     }
                 ];
             };
