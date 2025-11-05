@@ -1,4 +1,4 @@
-{ config, pkgs, quickshell, dankMaterialShell, ... }:
+{ config, pkgs, quickshell, caelestia, caelestia-cli, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:
@@ -13,13 +13,8 @@ let
 in
 {
     imports = getNixFiles nixDir ++ [
-            dankMaterialShell.homeModules.dankMaterialShell.default
             ../../common/zshrc.nix
     ];
-
-    programs.dankMaterialShell = {
-        enable = true;
-    };
 
     home.username = "mvayk";
     home.homeDirectory = "/home/mvayk";
@@ -86,5 +81,6 @@ in
         hypridle
         nwg-look
         quickshell
+        caelestia-shell.packages.${system}.default
     ];
 }

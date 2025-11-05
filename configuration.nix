@@ -65,9 +65,8 @@
         enable32Bit = true;
         extraPackages = with pkgs; [
             intel-media-driver
-                intel-vaapi-driver
-                vaapiVdpau
-                libvdpau-va-gl
+            intel-vaapi-driver
+            libvdpau-va-gl
         ];
     };
     services.upower.enable = true;
@@ -140,7 +139,6 @@ neovim
         openjdk21
         openjdk17
         openjdk8
-        modrinth-app
         oh-my-zsh
         cmus
         ungoogled-chromium
