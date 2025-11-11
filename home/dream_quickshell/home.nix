@@ -133,13 +133,13 @@ in
                 showScreenCorners = false;
                 forceBlackScreenCorners = false;
                 scaleRatio = 1;
-                radiusRatio = 1;
+                radiusRatio = 0.25;
                 screenRadiusRatio = 1;
                 animationSpeed = 1;
                 animationDisabled = true;
                 compactLockScreen = false;
                 lockOnSuspend = true;
-                enableShadows = true;
+                enableShadows = false;
                 shadowDirection = "bottom_right";
                 shadowOffsetX = 2;
                 shadowOffsetY = 3;
@@ -147,7 +147,7 @@ in
             };
             ui = {
                 fontDefault = "JetBrainsMono Nerd Font";
-                fontFixed = "JetBrainsMono Nerd Font MOno";
+                fontFixed = "JetBrainsMono Nerd Font Mono";
                 fontDefaultScale = 1;
                 fontFixedScale = 1;
                 tooltipsEnabled = true;
@@ -159,7 +159,7 @@ in
                 weatherEnabled = true;
                 useFahrenheit = false;
                 use12hourFormat = false;
-                showWeekNumberInCalendar = false;
+                showWeekNumberInCalendar = true;
                 showCalendarEvents = true;
                 showCalendarWeather = true;
                 analogClockInCalendar = false;
