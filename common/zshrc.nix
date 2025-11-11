@@ -21,7 +21,8 @@
         '';
 
         shellAliases = {
-            ls = "eza --icons";
+            ls = "eza --icons -l";
+            l = "eza --icons";
             emacs = "emacsclient -c -a 'emacs'";
             vim = "nvim";
             sue = "sudo -E nvim";

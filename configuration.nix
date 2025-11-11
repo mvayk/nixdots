@@ -12,6 +12,8 @@
     networking.hostName = "nixos";
 
     networking.networkmanager.enable = true;
+    hardware.bluetooth.enable = true;
+    services.power-profiles-daemon.enable = true;
 
     time.timeZone = "Australia/Sydney";
 
@@ -57,6 +59,7 @@
 
     programs.hyprland = {
         enable = true;
+        #withUWSM = true;
         xwayland.enable = true;
     };
 
@@ -115,8 +118,8 @@ services.pipewire = {
     environment.systemPackages = with pkgs; [
         git
         curl
-vim
-neovim
+        vim
+        neovim
         wget
         keepassxc
         networkmanagerapplet
@@ -134,6 +137,7 @@ neovim
         glibc
         steam
         zsh
+        qbittorrent
         termdown
         zen-browser.packages."${system}".beta
         openjdk21
@@ -142,6 +146,9 @@ neovim
         oh-my-zsh
         cmus
         ungoogled-chromium
+        scanmem
+        htop
+        gdb
         yt-dlp
         firefox
         eza
