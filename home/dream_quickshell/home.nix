@@ -308,12 +308,12 @@ in
             };
             colorSchemes = {
                 useWallpaperColors = true;
-                predefinedScheme = "Rosepine";
+                predefinedScheme = "";
                 darkMode = true;
                 schedulingMode = "off";
                 manualSunrise = "06:30";
                 manualSunset = "18:30";
-                matugenSchemeType = "scheme-fruit-salad";
+                matugenSchemeType = "scheme-fidelity";
                 generateTemplatesForPredefined = true;
             };
             templates = {
