@@ -71,10 +71,10 @@ in
             settingsVersion = 21;
             setupCompleted = true;
             bar = {
-                position = "left";
+                position = "top";
                 backgroundOpacity = 0.5;
                 monitors = [ "default" ];
-                density = "comfortable";
+                density = "default";
                 showCapsule = false;
                 floating = true;
                 marginVertical = 0.25;

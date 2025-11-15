@@ -129,8 +129,13 @@ services.pipewire = {
         kdePackages.kmines
         qalculate-qt
         epiphany
+        kdePackages.ark
+        kdePackages.kleopatra
         cmake
+        gnumake
+        wine
         unzip
+        p7zip
         gcc
         clang
         clang-tools
@@ -198,6 +203,8 @@ services.pipewire = {
         nodejs
         nodePackages.npm
         luarocks
+        luajit
+        lua
     ];
 
     fonts.packages = with pkgs; [
