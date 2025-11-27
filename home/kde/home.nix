@@ -25,13 +25,8 @@ in
         };
         ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
-    programs.git = {
-        enable = true;
-        userName = "mvayk";
-        userEmail = "mvayk@mvayk.mvayk";
-    };
     home.packages = with pkgs; [
-        qt6ct
+        qt6Packages.qt6ct
         libsForQt5.qt5ct
         lxappearance
 

@@ -44,13 +44,13 @@ in
         QT_QPA_PLATFORMTHEME = "qt6ct";
     };
     home.packages = with pkgs; [
-        tokyo-night-gtk
-        qt6ct
+        tokyonight-gtk-theme
+        qt6Packages.qt6ct
         libsForQt5.qt5ct
         lxappearance
         bibata-cursors
         papirus-icon-theme
-        i3-gaps
+        i3
         i3lock
         i3status
         dmenu

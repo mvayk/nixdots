@@ -72,13 +72,13 @@ in
             setupCompleted = true;
             bar = {
                 position = "top";
-                backgroundOpacity = 0.5;
+                backgroundOpacity = 0.75;
                 monitors = [ "default" ];
                 density = "default";
                 showCapsule = false;
                 floating = true;
                 marginVertical = 0.25;
-                marginHorizontal = 0.25;
+                marginHorizontal = 1.0;
                 outerCorners = false;
                 exclusive = true;
                 widgets = {

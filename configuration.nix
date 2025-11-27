@@ -15,6 +15,11 @@
     hardware.bluetooth.enable = true;
     services.power-profiles-daemon.enable = true;
 
+    programs.gnupg.agent = {
+        enable = true;
+        pinentryPackage = pkgs.pinentry-gnome3;  # or pkgs.pinentry-curses
+    };
+
     time.timeZone = "Australia/Sydney";
 
     i18n.defaultLocale = "en_AU.UTF-8";
@@ -77,29 +82,34 @@
     services.desktopManager.plasma6.enable = false;
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
+    
+    # GNOME Keyring configuration for Dolphin SMB authentication
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
-services.pipewire = {
-  enable = true;
-  alsa.enable = true;
-  alsa.support32Bit = true;
-  pulse.enable = true;
-  
-  extraConfig.pipewire = {
-    "10-rt-prio" = {
-      "context.modules" = [
-        {
-          name = "libpipewire-module-rt";
-          args = {
-            "nice.level" = -11;
-            "rt.prio" = 88;
-          };
-          flags = [ "ifexists" "nofail" ];
-        }
-      ];
+    security.pam.services.hyprland.enableGnomeKeyring = true;
+    programs.seahorse.enable = true;
+
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      
+      extraConfig.pipewire = {
+        "10-rt-prio" = {
+          "context.modules" = [
+            {
+              name = "libpipewire-module-rt";
+              args = {
+                "nice.level" = -11;
+                "rt.prio" = 88;
+              };
+              flags = [ "ifexists" "nofail" ];
+            }
+          ];
+        };
+      };
     };
-  };
-};
     users.users.mvayk = {
         isNormalUser = true;
         description = "John";
@@ -131,12 +141,16 @@ services.pipewire = {
         epiphany
         kdePackages.ark
         kdePackages.kleopatra
+        libsecret
+        pinentry-gnome3
+        gnupg
         cmake
         gnumake
         wine
         unzip
         p7zip
         gcc
+        nasm
         clang
         clang-tools
         glibc
@@ -148,6 +162,7 @@ services.pipewire = {
         openjdk21
         openjdk17
         openjdk8
+        jdk8
         oh-my-zsh
         cmus
         ungoogled-chromium
@@ -178,6 +193,7 @@ services.pipewire = {
         qutebrowser
         pulseaudio
         kdePackages.dolphin
+        nemo
         ffmpeg
         nnn
         zathura
@@ -195,7 +211,13 @@ services.pipewire = {
         coreutils
         pavucontrol
         kitty
+        kdePackages.kdenetwork-filesharing
+        samba
+        cifs-utils
 
+        pkg-config
+        openssl
+        openssl-sys
         ripgrep
         fd
         python3
@@ -223,11 +245,19 @@ services.pipewire = {
       glibc
       glibc.dev
       libgcc
+      libgit2
+      pkg-config
+      curl
+      xorg.libXrender
+      xorg.libXtst
+      xorg.libXi
+      freetype
+      fontconfig
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    services.openssh.enable = true;
+    services.gvfs.enable = true;
+    #services.openssh.enable = true;
     system.stateVersion = "25.05";
 }
-
