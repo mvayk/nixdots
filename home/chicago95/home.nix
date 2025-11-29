@@ -1,0 +1,35 @@
+{ config, pkgs, ... }:
+let
+    nixDir = ./nix;
+    getNixFiles = dir:
+    if builtins.pathExists dir then
+    let
+        files = builtins.attrNames (builtins.readDir dir);
+        isNixFile = name: builtins.match ".*\.nix$" name != null;
+        nixFiles = builtins.filter isNixFile files;
+    in
+        map (name: "${dir}/${name}") nixFiles
+    else [];
+in
+{
+    imports = getNixFiles nixDir ++ [
+        ../../common/zshrc.nix
+    ];
+    home.username = "mvayk";
+    home.homeDirectory = "/home/mvayk";
+    home.stateVersion = "25.05";
+    home.file = {
+        ".config" = {
+            source = ./mvayk/.config;
+            recursive = true;
+        };
+        ".tmux.conf".source = ./mvayk/.tmux.conf;
+    };
+    home.packages = with pkgs; [
+        qt6Packages.qt6ct
+        libsForQt5.qt5ct
+        lxappearance
+        xclip
+    ];
+}
+

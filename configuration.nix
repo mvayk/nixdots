@@ -36,16 +36,17 @@
         LC_TIME = "en_AU.UTF-8";
     };
 
-    services.xserver.xkb = {
-        layout = "au";
-        variant = "";
-    };
+    services.xserver = {
+        xkb = {
+            layout = "au";
+            variant = "";
+        };
 
-    environment.variables = {
-        EDITOR = "nvim";
-        VISUAL = "nvim";
-        SUDO_EDITOR = "nvim";
+        desktopManager = {
+            xfce.enable = true;
+        };
     };
+    services.displayManager.defaultSession = "xfce";
 
     environment.sessionVariables = {
         C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
@@ -63,7 +64,7 @@
     services.displayManager.ly.enable = true;
 
     programs.hyprland = {
-        enable = true;
+        enable = false;
         #withUWSM = true;
         xwayland.enable = true;
     };
@@ -80,6 +81,7 @@
     services.upower.enable = true;
 
     services.desktopManager.plasma6.enable = false;
+
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     
@@ -217,7 +219,6 @@
 
         pkg-config
         openssl
-        openssl-sys
         ripgrep
         fd
         python3
