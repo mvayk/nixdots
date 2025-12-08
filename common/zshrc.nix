@@ -11,7 +11,8 @@
             plugins = [
                 "git"
             ];
-            theme = "afowler";
+            # theme = "afowler";
+            theme = "half-life";
         };
 
         envExtra = ''

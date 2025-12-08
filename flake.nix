@@ -74,7 +74,7 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/chicago95/home.nix;
+                        home-manager.users.mvayk = import ./home/kde/home.nix;
                         home-manager.backupFileExtension = "backup";
                         home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli; };
                     }

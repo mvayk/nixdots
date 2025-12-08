@@ -14,6 +14,9 @@
     networking.networkmanager.enable = true;
     hardware.bluetooth.enable = true;
     services.power-profiles-daemon.enable = true;
+    services.ollama = {
+        enable = true;
+    };
 
     programs.gnupg.agent = {
         enable = true;
@@ -43,7 +46,7 @@
         };
 
         desktopManager = {
-            xfce.enable = true;
+            xfce.enable = false;
         };
     };
     services.displayManager.defaultSession = "xfce";
@@ -80,16 +83,16 @@
     };
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = false;
+    services.desktopManager.plasma6.enable = true;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     
     # GNOME Keyring configuration for Dolphin SMB authentication
-    services.gnome.gnome-keyring.enable = true;
-    security.pam.services.login.enableGnomeKeyring = true;
+    services.gnome.gnome-keyring.enable = false;
+    security.pam.services.login.enableGnomeKeyring = false;
     security.pam.services.hyprland.enableGnomeKeyring = true;
-    programs.seahorse.enable = true;
+    programs.seahorse.enable = false;
 
     services.pipewire = {
       enable = true;
@@ -142,6 +145,7 @@
         qalculate-qt
         epiphany
         kdePackages.ark
+        ollama
         kdePackages.kleopatra
         libsecret
         pinentry-gnome3
@@ -153,8 +157,6 @@
         p7zip
         gcc
         nasm
-        clang
-        clang-tools
         glibc
         steam
         zsh
@@ -215,7 +217,15 @@
         kitty
         kdePackages.kdenetwork-filesharing
         samba
+
         cifs-utils
+        lua-language-server
+        clang
+        clang-tools  # includes clangd
+        rust-analyzer
+        python3Packages.python-lsp-server
+        nodePackages.typescript-language-server
+        nodePackages.vscode-langservers-extracted  # includes html, css, json, eslint
 
         pkg-config
         openssl
@@ -228,6 +238,9 @@
         luarocks
         luajit
         lua
+
+        xfce.xfce4-pulseaudio-plugin  # Adds the plugin binary and XFCE integration
+        xfce.xfce4-whiskermenu-plugin  # Adds the plugin binary and XFCE integration
     ];
 
     fonts.packages = with pkgs; [
