@@ -28,6 +28,10 @@
             url = "github:0xc000022070/zen-browser-flake/beta";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        spicetify-nix = {
+            url = "github:Gerg-L/spicetify-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         dgop = {
             url = "github:AvengeMedia/dgop";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +47,7 @@
             inputs.dms-cli.follows = "dms-cli";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, spicetify-nix, ... }:
         let
         system = "x86_64-linux";
     in {
@@ -53,13 +57,14 @@
                 modules = [
                     ./configuration.nix
                     ./machines/desktop/hardware-configuration.nix
+                    spicetify-nix.nixosModules.default
                     home-manager.nixosModules.home-manager
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/icbm/home.nix;
                         home-manager.backupFileExtension = "backupbackup";
-                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli; };
+                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
                     }
                 ];
             };
@@ -70,13 +75,14 @@
                 modules = [
                     ./configuration.nix
                     ./machines/laptop/hardware-configuration.nix
+                    spicetify-nix.nixosModules.default
                     home-manager.nixosModules.home-manager
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.users.mvayk = import ./home/kde/home.nix;
                         home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli; };
+                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
                     }
                 ];
             };

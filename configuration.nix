@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, ... }:
+{ config, pkgs, zen-browser, spicetify, ... }:
 
 {
     imports =
@@ -129,6 +129,8 @@
     programs.zsh.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
+
+    programs.spicetify.enable = true;
 
     environment.systemPackages = with pkgs; [
         git
