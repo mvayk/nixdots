@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, spicetify, ... }:
+{ config, pkgs, zen-browser, spicetify-nix, ... }:
 
 {
     imports =
@@ -65,6 +65,10 @@
     };
 
     services.displayManager.ly.enable = true;
+    services.syncthing = {
+        enable = true;
+        openDefaultPorts = true;
+    };
 
     programs.hyprland = {
         enable = false;
@@ -130,8 +134,26 @@
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
 
-    programs.spicetify.enable = true;
-
+    programs.spicetify =
+    let
+        spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
+    {
+        enable = true;
+        enabledExtensions = with spicePkgs.extensions; [
+            adblock
+            hidePodcasts
+            shuffle # shuffle+ (special characters are sanitized out of extension names)
+        ];
+        enabledCustomApps = with spicePkgs.apps; [
+            newReleases
+            ncsVisualizer
+        ];
+        enabledSnippets = with spicePkgs.snippets; [
+            rotatingCoverart
+            pointer
+        ];
+    };
     environment.systemPackages = with pkgs; [
         git
         curl
@@ -156,6 +178,7 @@
         gnumake
         wine
         unzip
+        rar
         p7zip
         gcc
         nasm
@@ -164,6 +187,7 @@
         zsh
         qbittorrent
         termdown
+        ani-cli
         zen-browser.packages."${system}".beta
         openjdk21
         openjdk17

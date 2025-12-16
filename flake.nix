@@ -18,7 +18,6 @@
             url = "github:caelestia-dots/shell";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        
         noctalia = {
             url = "github:noctalia-dev/noctalia-shell";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +53,7 @@
         nixosConfigurations = {
             desktop = nixpkgs.lib.nixosSystem {
                 inherit system;
+                specialArgs = { inherit zen-browser spicetify-nix; };
                 modules = [
                     ./configuration.nix
                     ./machines/desktop/hardware-configuration.nix
@@ -71,7 +71,7 @@
             
             laptop = nixpkgs.lib.nixosSystem {
                 inherit system;
-                specialArgs = { inherit zen-browser; };
+                specialArgs = { inherit zen-browser spicetify-nix; };
                 modules = [
                     ./configuration.nix
                     ./machines/laptop/hardware-configuration.nix
