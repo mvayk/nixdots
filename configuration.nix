@@ -70,6 +70,11 @@
         openDefaultPorts = true;
     };
 
+    services.emacs = {
+        enable = true;
+        package = pkgs.emacs;
+    };
+
     programs.hyprland = {
         enable = false;
         #withUWSM = true;
