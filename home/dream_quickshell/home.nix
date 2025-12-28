@@ -104,9 +104,6 @@ in
                     ];
                     right = [
                     {
-                        id = "ScreenRecorder";
-                    }
-                    {
                         id = "Tray";
                     }
                     {
@@ -179,11 +176,11 @@ in
             wallpaper = {
                 enabled = true;
                 overviewEnabled = true;
-                directory = "/home/mvayk/wallpapers/";
+                directory = "/home/mvayk/Pictures/wallpapers/";
                 enableMultiMonitorDirectories = false;
                 recursiveSearch = true;
                 setWallpaperOnAllMonitors = true;
-                defaultWallpaper = "/home/mvayk/wallpapers/rosepine.jpg";
+                defaultWallpaper = "/home/mvayk/Pictures/wallpapers/moon.jpg";
                 fillMode = "crop";
                 fillColor = "#000000";
                 randomEnabled = false;

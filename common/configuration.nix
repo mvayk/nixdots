@@ -1,15 +1,8 @@
 { config, pkgs, zen-browser, spicetify-nix, ... }:
 
 {
-    imports =
-    [
-        ./hardware-configuration.nix
-    ];
-
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
-    networking.hostName = "nixos";
 
     networking.networkmanager.enable = true;
     hardware.bluetooth.enable = true;
@@ -48,6 +41,8 @@
         desktopManager = {
             xfce.enable = false;
         };
+
+	videoDrivers = ["nvidia"];
     };
     services.displayManager.defaultSession = "xfce";
 
@@ -76,23 +71,14 @@
     };
 
     programs.hyprland = {
-        enable = false;
+        enable = true;
         #withUWSM = true;
         xwayland.enable = true;
     };
 
-    hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
-        extraPackages = with pkgs; [
-            intel-media-driver
-            intel-vaapi-driver
-            libvdpau-va-gl
-        ];
-    };
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = true;
+    services.desktopManager.plasma6.enable = false;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -175,6 +161,7 @@
         epiphany
         kdePackages.ark
         ollama
+        openrgb-with-all-plugins
         kdePackages.kleopatra
         libsecret
         pinentry-gnome3
@@ -187,7 +174,9 @@
         p7zip
         gcc
         nasm
+	firefox-beta
         glibc
+        tree
         steam
         zsh
         qbittorrent
@@ -198,6 +187,7 @@
         openjdk17
         openjdk8
         jdk8
+        direnv
         oh-my-zsh
         cmus
         ungoogled-chromium
@@ -213,7 +203,6 @@
         cheese
         mpv
         prismlauncher
-        brave
         blanket
         emacs
         libnotify
@@ -245,6 +234,7 @@
         alarm-clock-applet
         coreutils
         pavucontrol
+	alacritty
         kitty
         kdePackages.kdenetwork-filesharing
         samba
@@ -257,6 +247,24 @@
         python3Packages.python-lsp-server
         nodePackages.typescript-language-server
         nodePackages.vscode-langservers-extracted  # includes html, css, json, eslint
+      raylib
+      libGL
+      libGLU
+      mesa
+      xorg.libXxf86vm
+      wayland
+      wayland-protocols
+      libxkbcommon
+      libGL
+      libGLU
+      xorg.libX11
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXcursor
+      xorg.libXinerama
+      xorg.libXrender
+      xorg.libXtst
+      xorg.libXi
 
         pkg-config
         openssl
@@ -293,6 +301,21 @@
       libgit2
       pkg-config
       curl
+      raylib
+      libGL
+      libGLU
+      mesa
+      xorg.libXxf86vm
+      wayland
+      wayland-protocols
+      libxkbcommon
+      libGL
+      libGLU
+      xorg.libX11
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXcursor
+      xorg.libXinerama
       xorg.libXrender
       xorg.libXtst
       xorg.libXi

@@ -13,7 +13,6 @@
             url = "github:caelestia-dots/cli";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
         caelestia-shell = {
             url = "github:caelestia-dots/shell";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -48,44 +47,48 @@
     };
     outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, spicetify-nix, ... }:
         let
-        system = "x86_64-linux";
-    in {
-        nixosConfigurations = {
-            desktop = nixpkgs.lib.nixosSystem {
-                inherit system;
-                specialArgs = { inherit zen-browser spicetify-nix; };
-                modules = [
-                    ./configuration.nix
-                    ./machines/desktop/hardware-configuration.nix
-                    spicetify-nix.nixosModules.default
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/icbm/home.nix;
-                        home-manager.backupFileExtension = "backupbackup";
-                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
-                    }
-                ];
-            };
-            
-            laptop = nixpkgs.lib.nixosSystem {
-                inherit system;
-                specialArgs = { inherit zen-browser spicetify-nix; };
-                modules = [
-                    ./configuration.nix
-                    ./machines/laptop/hardware-configuration.nix
-                    spicetify-nix.nixosModules.default
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.mvayk = import ./home/kde/home.nix;
-                        home-manager.backupFileExtension = "backup";
-                        home-manager.extraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
-                    }
-                ];
+            system = "x86_64-linux";
+            specialArgs = { inherit zen-browser spicetify-nix; };
+            homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
+        in {
+            nixosConfigurations = {
+                desktop = nixpkgs.lib.nixosSystem {
+                    inherit system;
+                    inherit specialArgs;
+                    modules = [
+                        ./common/configuration.nix
+                        ./machines/desktop/configuration.nix
+                        ./machines/desktop/hardware-configuration.nix
+                        spicetify-nix.nixosModules.default
+                        home-manager.nixosModules.home-manager
+                        {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
+                            home-manager.backupFileExtension = "backupbackup";
+                            home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
+                        }
+                    ];
+                };
+                
+                laptop = nixpkgs.lib.nixosSystem {
+                    inherit system;
+                    inherit specialArgs;
+                    modules = [
+                        ./common/configuration.nix
+                        ./machines/laptop/configuration.nix
+                        ./machines/laptop/hardware-configuration.nix
+                        spicetify-nix.nixosModules.default
+                        home-manager.nixosModules.home-manager
+                        {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.users.mvayk = import ./home/kde/home.nix;
+                            home-manager.backupFileExtension = "backup";
+                            home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
+                        }
+                    ];
+                };
             };
         };
-    };
 }
