@@ -52,17 +52,28 @@ in
             name = "WhiteSur-dark";
             package = pkgs.whitesur-icon-theme;
         };
-        theme = {
-            name = "WhiteSur-Dark";
-            package = pkgs.whitesur-gtk-theme;
-        };
+    theme = {
+      name = "catppuccin-mocha-mauve-standard+default";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];  # Purple accent, closest to Rose Pine
+        variant = "mocha";
+      };
     };
+};
 
-    qt = {
-        enable = true;
-        platformTheme.name = "gtk3";  # Use GTK theme for Qt apps
-        style.name = "adwaita-dark";
-    };
+qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
+  };
+
+  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=Catppuccin-Mocha-Mauve
+  '';
+
+  xdg.configFile."Kvantum/Catppuccin-Mocha-Mauve".source = "${pkgs.catppuccin-kvantum}/share/Kvantum/Catppuccin-Mocha-Mauve";
+
 
     programs.noctalia-shell = {
         enable = true;
@@ -361,7 +372,8 @@ in
         qt6Packages.qt6ct
         libsForQt5.qt5ct
         whitesur-icon-theme
-        whitesur-gtk-theme
+        catppuccin-gtk
+        catppuccin-kvantum
         lxappearance
         bibata-cursors
         hyprland

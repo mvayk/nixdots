@@ -53,6 +53,32 @@
         CPATH = "${pkgs.glibc.dev}/include";
     };
 
+    xdg.mime = {
+        enable = true;
+        defaultApplications = {
+            "image/png" = "feh.desktop";
+            "image/jpeg" = "feh.desktop";
+            "image/jpg" = "feh.desktop";
+            "image/gif" = "feh.desktop";
+            "image/webp" = "feh.desktop";
+            "image/bmp" = "feh.desktop";
+
+            "video/mp4" = "mpv.desktop";
+            "video/x-matroska" = "mpv.desktop";
+            "video/webm" = "mpv.desktop";
+            "video/avi" = "mpv.desktop";
+            "video/x-msvideo" = "mpv.desktop";
+            "video/quicktime" = "mpv.desktop";
+
+            "text/plain" = "emacs.desktop";
+            "text/x-csrc" = "emacs.desktop";
+            "text/x-c++src" = "emacs.desktop";
+            "text/x-python" = "emacs.desktop";
+            "text/markdown" = "emacs.desktop";
+            "application/x-shellscript" = "emacs.desktop";
+        };
+    };
+
     services.printing.enable = true;
     services.xserver = {
         enable = true;	
