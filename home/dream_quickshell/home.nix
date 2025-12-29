@@ -89,15 +89,22 @@ in
                     left = [
                     {
                         id = "ControlCenter";
+                        useDistroLogo = true;
+                    }
+                    {
+                        id = "Spacer";
                     }
                     {
                         id = "SystemMonitor";
                     }
                     {
-                        id = "ActiveWindow";
+                        id = "Spacer";
                     }
                     {
                         id = "MediaMini";
+                    }
+                    {
+                        id = "AudioVisualizer";
                     }
                     ];
                     center = [
@@ -111,6 +118,15 @@ in
                         id = "Tray";
                     }
                     {
+                        id = "Spacer";
+                    }
+                    {
+                        id = "KeyboardLayout";
+                    }
+                    {
+                        id = "Microphone";
+                    }
+                    {
                         id = "NotificationHistory";
                     }
                     {
@@ -121,6 +137,9 @@ in
                     }
                     {
                         id = "Brightness";
+                    }
+                    {
+                        id = "Spacer";
                     }
                     {
                         id = "Clock";
