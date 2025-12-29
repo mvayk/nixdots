@@ -150,6 +150,7 @@
     programs.zsh.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
+    programs.thunar.enable = true;
 
     programs.spicetify =
     let

@@ -52,28 +52,21 @@ in
             name = "WhiteSur-dark";
             package = pkgs.whitesur-icon-theme;
         };
-    theme = {
-      name = "catppuccin-mocha-mauve-standard+default";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];  # Purple accent, closest to Rose Pine
-        variant = "mocha";
-      };
+        # theme = {
+        #     name = "Breeze-Dark";  # or "Breeze" for light
+        #     package = pkgs.kdePackages.breeze-gtk;
+        # };
+        theme = {
+            name = "Orchis-Dark";
+            package = pkgs.orchis-theme;
+        };
     };
-};
 
-qt = {
-    enable = true;
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
-  };
-
-  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
-    [General]
-    theme=Catppuccin-Mocha-Mauve
-  '';
-
-  xdg.configFile."Kvantum/Catppuccin-Mocha-Mauve".source = "${pkgs.catppuccin-kvantum}/share/Kvantum/Catppuccin-Mocha-Mauve";
-
+    qt = {
+        enable = true;
+        platformTheme.name = "kde";
+        style.name = "breeze";
+    };
 
     programs.noctalia-shell = {
         enable = true;
@@ -191,7 +184,7 @@ qt = {
                 enableMultiMonitorDirectories = false;
                 recursiveSearch = true;
                 setWallpaperOnAllMonitors = true;
-                defaultWallpaper = "/home/mvayk/Pictures/wallpapers/moon.jpg";
+                defaultWallpaper = "/home/mvayk/Pictures/wallpapers/bay.JPG";
                 fillMode = "crop";
                 fillColor = "#000000";
                 randomEnabled = false;
@@ -315,18 +308,18 @@ qt = {
                 enableDdcSupport = false;
             };
             colorSchemes = {
-                useWallpaperColors = true;
+                useWallpaperColors = false;
                 predefinedScheme = "";
                 darkMode = true;
                 schedulingMode = "off";
                 manualSunrise = "06:30";
                 manualSunset = "18:30";
-                matugenSchemeType = "scheme-fidelity";
+                matugenSchemeType = "scheme-matugen";
                 generateTemplatesForPredefined = true;
             };
             templates = {
-                gtk = true;
-                qt = true;
+                gtk = false;
+                qt = false;
                 kcolorscheme = false;
                 alacritty = false;
                 kitty = true;
@@ -372,9 +365,9 @@ qt = {
         qt6Packages.qt6ct
         libsForQt5.qt5ct
         whitesur-icon-theme
-        catppuccin-gtk
-        catppuccin-kvantum
+        rose-pine-gtk-theme
         lxappearance
+        catppuccin-qt5ct
         bibata-cursors
         hyprland
         grim
@@ -390,7 +383,6 @@ qt = {
         libpng
         librsvg
         wl-clipboard
-        hyprlock
         hypridle
         matugen
         nwg-look
