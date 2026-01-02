@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-    imports = getNixFiles nixDir ++ [
+    imports = [
         ./zshrc.nix
     ];
 
@@ -16,7 +16,6 @@
 
     services.syncthing = {
         enable = true;
-        openDefaultPorts = true;
     };
 
     programs.zsh = {

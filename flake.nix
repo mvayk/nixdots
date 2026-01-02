@@ -61,7 +61,6 @@
                     inherit specialArgs;
                     modules = [
                         ./common/configuration.nix
-                        ./common/shared-home.nix
                         ./machines/desktop/configuration.nix
                         ./machines/desktop/hardware-configuration.nix
                         spicetify-nix.nixosModules.default
@@ -82,7 +81,6 @@
                     modules = [
                         ./common/configuration.nix
                         ./machines/laptop/configuration.nix
-                        ./common/shared-home.nix
                         ./machines/laptop/hardware-configuration.nix
                         spicetify-nix.nixosModules.default
                         home-manager.nixosModules.home-manager
