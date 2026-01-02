@@ -80,6 +80,7 @@
                     inherit specialArgs;
                     modules = [
                         ./common/configuration.nix
+                        ./common/packages.nix
                         ./machines/laptop/configuration.nix
                         ./machines/laptop/hardware-configuration.nix
                         spicetify-nix.nixosModules.default
