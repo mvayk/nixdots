@@ -1,6 +1,9 @@
 { config, pkgs, zen-browser, spicetify-nix, firefox-nightly, ... }:
 
 {
+    imports = [
+        ./packages.nix
+    ];
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
