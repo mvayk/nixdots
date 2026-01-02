@@ -14,12 +14,8 @@ in
 {
     imports = getNixFiles nixDir ++ [
         noctalia.homeModules.default
-        ../../common/zshrc.nix
+        ../../common/shared-home.nix
     ];
-
-    home.username = "mvayk";
-    home.homeDirectory = "/home/mvayk";
-    home.stateVersion = "25.05";
     home.file = {
         ".config" = {
             source = ./mvayk/.config;
@@ -27,11 +23,7 @@ in
         };
         ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
-    programs.git = {
-        enable = true;
-        userName = "mvayk";
-        userEmail = "mvayk@mvayk.mvayk";
-    };
+
     home.pointerCursor = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
@@ -40,6 +32,7 @@ in
             enable = true;
         };
     };
+
     home.sessionVariables = {
         XCURSOR_THEME = "Bibata-Modern-Ice";
         XCURSOR_SIZE = "24";
@@ -105,6 +98,12 @@ in
                     }
                     {
                         id = "AudioVisualizer";
+                    }
+                    {
+                        id = "Spacer";
+                    }
+                    {
+                        id = "Taskbar";
                     }
                     ];
                     center = [
@@ -203,7 +202,7 @@ in
                 enableMultiMonitorDirectories = false;
                 recursiveSearch = true;
                 setWallpaperOnAllMonitors = true;
-                defaultWallpaper = "/home/mvayk/Pictures/wallpapers/bay.JPG";
+                defaultWallpaper = "/home/mvayk/Pictures/wallpapers/bay.jpg";
                 fillMode = "crop";
                 fillColor = "#000000";
                 randomEnabled = false;

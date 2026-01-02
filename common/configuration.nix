@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, spicetify-nix, ... }:
+{ config, pkgs, zen-browser, spicetify-nix, firefox-nightly, ... }:
 
 {
     boot.loader.systemd-boot.enable = true;
@@ -201,7 +201,8 @@
         p7zip
         gcc
         nasm
-	firefox-beta
+        firefox-beta
+        firefox-nightly.packages.${system}.firefox-nightly-bin
         glibc
         tree
         steam

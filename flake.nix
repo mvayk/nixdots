@@ -44,11 +44,15 @@
             inputs.dgop.follows = "dgop";
             inputs.dms-cli.follows = "dms-cli";
         };
+        firefox-nightly = {
+            url = "github:nix-community/flake-firefox-nightly";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, spicetify-nix, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, spicetify-nix, firefox-nightly, ... }:
         let
             system = "x86_64-linux";
-            specialArgs = { inherit zen-browser spicetify-nix; };
+            specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
             homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
         in {
             nixosConfigurations = {
@@ -57,6 +61,7 @@
                     inherit specialArgs;
                     modules = [
                         ./common/configuration.nix
+                        ./common/shared-home.nix
                         ./machines/desktop/configuration.nix
                         ./machines/desktop/hardware-configuration.nix
                         spicetify-nix.nixosModules.default
@@ -77,6 +82,7 @@
                     modules = [
                         ./common/configuration.nix
                         ./machines/laptop/configuration.nix
+                        ./common/shared-home.nix
                         ./machines/laptop/hardware-configuration.nix
                         spicetify-nix.nixosModules.default
                         home-manager.nixosModules.home-manager
