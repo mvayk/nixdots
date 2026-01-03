@@ -41,9 +41,6 @@ in
 
     programs.starship = {
         enable = true;
-        settings = pkgs.lib.importTOML (pkgs.runCommand "starship-jetpack.toml" {} ''
-            ${pkgs.starship}/bin/starship preset jetpack -o $out
-        '');
     };
 
     gtk = {
