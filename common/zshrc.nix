@@ -10,7 +10,7 @@
             plugins = [
                 "git"
             ];
-            theme = "lamba-glister";
+            theme = "zeta";
             custom = "$HOME/.config/zsh/themes";
             #theme = "half-life";
         };
