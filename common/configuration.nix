@@ -53,6 +53,9 @@
         CPATH = "${pkgs.glibc.dev}/include";
     };
 
+    services.flatpak.enable = true;
+    services.fwupd.enable = true;
+
     xdg.mime = {
         enable = true;
         defaultApplications = {
@@ -148,6 +151,11 @@
     nixpkgs.config.allowUnfree = true;
     programs.thunar.enable = true;
 
+    xdg.portal = {
+        enable = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+
     programs.spicetify =
     let
         spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
@@ -206,6 +214,8 @@
         qbittorrent
         termdown
         ani-cli
+        kdePackages.discover
+        flatpak
         zen-browser.packages."${system}".beta
         openjdk21
         openjdk17
