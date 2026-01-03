@@ -1,10 +1,6 @@
 { config, pkgs, zen-browser, spicetify-nix, firefox-nightly, ... }:
 
 {
-    imports = [
-        ./packages.nix
-    ];
-
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -90,6 +86,10 @@
     };
 
     services.displayManager.ly.enable = true;
+    services.syncthing = {
+        enable = true;
+        openDefaultPorts = true;
+    };
 
     services.emacs = {
         enable = true;
@@ -172,10 +172,187 @@
             pointer
         ];
     };
+    environment.systemPackages = with pkgs; [
+        git
+        curl
+        vim
+        neovim
+        wget
+        keepassxc
+        networkmanagerapplet
+        xclip
+        btop
+        zsh
+        kdePackages.kmines
+        qalculate-qt
+        epiphany
+        kdePackages.ark
+        ollama
+        openrgb-with-all-plugins
+        kdePackages.kleopatra
+        libsecret
+        pinentry-gnome3
+        gnupg
+        cmake
+        gnumake
+        wine
+        unzip
+        rar
+        p7zip
+        gcc
+        nasm
+        firefox-beta
+        firefox-nightly.packages.${system}.firefox-nightly-bin
+        glibc
+        tree
+        steam
+        zsh
+        qbittorrent
+        termdown
+        ani-cli
+        zen-browser.packages."${system}".beta
+        openjdk21
+        openjdk17
+        openjdk8
+        jdk8
+        direnv
+        oh-my-zsh
+        cmus
+        ungoogled-chromium
+        scanmem
+        htop
+        gdb
+        yt-dlp
+        firefox
+        eza
+        gnome-keyring
+        seahorse
+        fastfetch
+        cheese
+        mpv
+        prismlauncher
+        blanket
+        emacs
+        libnotify
+        tmux
+        texlive.combined.scheme-medium
+        imagemagick
+        obsidian
+        flameshot
+        tor
+        tor-browser
+        vesktop
+        qutebrowser
+        pulseaudio
+        kdePackages.dolphin
+        nemo
+        ffmpeg
+        nnn
+        zathura
+        feh
+        dmenu
+        cargo
+        xorg.xinput
+        acpi
+        sysstat
+        lm_sensors
+        brightnessctl
+        pamixer
+        iw
+        alarm-clock-applet
+        coreutils
+        pavucontrol
+	alacritty
+        kitty
+        kdePackages.kdenetwork-filesharing
+        samba
+
+        cifs-utils
+        lua-language-server
+        clang
+        clang-tools  # includes clangd
+        rust-analyzer
+        python3Packages.python-lsp-server
+        nodePackages.typescript-language-server
+        nodePackages.vscode-langservers-extracted  # includes html, css, json, eslint
+      raylib
+      libGL
+      libGLU
+      mesa
+      xorg.libXxf86vm
+      wayland
+      wayland-protocols
+      libxkbcommon
+      libGL
+      libGLU
+      xorg.libX11
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXcursor
+      xorg.libXinerama
+      xorg.libXrender
+      xorg.libXtst
+      xorg.libXi
+
+        pkg-config
+        openssl
+        ripgrep
+        fd
+        python3
+        python3Packages.pynvim
+        nodejs
+        nodePackages.npm
+        luarocks
+        luajit
+        lua
+
+        xfce.xfce4-pulseaudio-plugin  # Adds the plugin binary and XFCE integration
+        xfce.xfce4-whiskermenu-plugin  # Adds the plugin binary and XFCE integration
+    ];
+
+    fonts.packages = with pkgs; [
+        nerd-fonts.iosevka
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.space-mono
+        nerd-fonts.symbols-only
+        noto-fonts-cjk-sans
+    ];
 
     programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      openssl
+      glibc
+      glibc.dev
+      libgcc
+      libgit2
+      pkg-config
+      curl
+      raylib
+      libGL
+      libGLU
+      mesa
+      xorg.libXxf86vm
+      wayland
+      wayland-protocols
+      libxkbcommon
+      libGL
+      libGLU
+      xorg.libX11
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXcursor
+      xorg.libXinerama
+      xorg.libXrender
+      xorg.libXtst
+      xorg.libXi
+      freetype
+      fontconfig
+    ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     services.gvfs.enable = true;
     #services.openssh.enable = true;
     system.stateVersion = "25.05";
