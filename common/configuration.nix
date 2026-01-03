@@ -230,6 +230,7 @@
         gdb
         yt-dlp
         firefox
+        starship
         eza
         gnome-keyring
         seahorse
