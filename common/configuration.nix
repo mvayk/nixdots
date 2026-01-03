@@ -86,10 +86,6 @@
     };
 
     services.displayManager.ly.enable = true;
-    services.syncthing = {
-        enable = true;
-        openDefaultPorts = true;
-    };
 
     services.emacs = {
         enable = true;
