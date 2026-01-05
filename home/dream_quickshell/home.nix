@@ -409,6 +409,6 @@ in
         matugen
         nwg-look
         quickshell.packages.${pkgs.system}.default
-        noctalia.packages.${pkgs.system}.default  # Add this line
+        noctalia.packages.${pkgs.system}.default
     ];
 }
