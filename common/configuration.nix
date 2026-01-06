@@ -250,6 +250,7 @@
         tor-browser
         #vesktop
         qutebrowser
+        yazi
         pulseaudio
         kdePackages.dolphin
         nemo
