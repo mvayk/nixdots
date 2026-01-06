@@ -33,32 +33,6 @@ in
         };
     };
 
-    home.sessionVariables = {
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
-        #QT_QUICK_BACKEND = "software";
-    };
-
-    programs.starship = {
-        enable = true;
-    };
-
-    gtk = {
-        enable = true;
-        iconTheme = {
-            name = "WhiteSur-dark";
-            package = pkgs.whitesur-icon-theme;
-        };
-        # theme = {
-        #     name = "Breeze-Dark";  # or "Breeze" for light
-        #     package = pkgs.kdePackages.breeze-gtk;
-        # };
-    };
-
-    qt = {
-        enable = true;
-    };
-
     programs.noctalia-shell = {
       enable = true;
       settings = {
@@ -546,11 +520,39 @@ in
       };
     };
 
+    home.sessionVariables = {
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24";
+        #QT_QUICK_BACKEND = "software";
+    };
+
+    programs.starship = {
+        enable = true;
+    };
+
+    gtk = {
+        enable = true;
+        iconTheme = {
+            name = "WhiteSur-dark";
+            package = pkgs.whitesur-icon-theme;
+        };
+        # theme = {
+        #     name = "Breeze-Dark";  # or "Breeze" for light
+        #     package = pkgs.kdePackages.breeze-gtk;
+        # };
+    };
+
+    qt = {
+        enable = true;
+    };
+
     home.packages = with pkgs; [
         qt6Packages.qt6ct
         libsForQt5.qt5ct
         whitesur-icon-theme
         lxappearance
+        kdePackages.qtstyleplugin-kvantum
+        kdePackages.breeze-gtk
         catppuccin-qt5ct
         bibata-cursors
         hyprland
@@ -568,6 +570,7 @@ in
         wl-clipboard
         hypridle
         matugen
+        kdePackages.breeze
         nwg-look
         quickshell.packages.${pkgs.system}.default
         noctalia.packages.${pkgs.system}.default
