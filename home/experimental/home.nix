@@ -72,7 +72,7 @@ in
         bar = {
           position = "top";
           monitors = [ ];
-          density = "default";
+          density = "comfortable";
           showOutline = false;
           showCapsule = false;
           capsuleOpacity = 1;
@@ -167,7 +167,7 @@ in
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
           showHibernateOnLockScreen = false;
-          enableShadows = false;
+          enableShadows = true;
           shadowDirection = "bottom_right";
           shadowOffsetX = 2;
           shadowOffsetY = 3;
