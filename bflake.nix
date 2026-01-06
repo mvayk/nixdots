@@ -30,16 +30,26 @@
             url = "github:Gerg-L/spicetify-nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        # dgop = {
+        #     url = "github:AvengeMedia/dgop";
+        #     inputs.nixpkgs.follows = "nixpkgs";
+        # };
+        # dms-cli = {
+        #     url = "github:AvengeMedia/danklinux";
+        #     inputs.nixpkgs.follows = "nixpkgs";
+        # };
         dankMaterialShell = {
             url = "github:AvengeMedia/DankMaterialShell";
             inputs.nixpkgs.follows = "nixpkgs";
+            inputs.dgop.follows = "dgop";
+            inputs.dms-cli.follows = "dms-cli";
         };
         firefox-nightly = {
             url = "github:nix-community/flake-firefox-nightly";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, caelestia-shell, caelestia-cli, spicetify-nix, firefox-nightly, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, dgop, dms-cli, caelestia-shell, caelestia-cli, spicetify-nix, firefox-nightly, ... }:
         let
             system = "x86_64-linux";
             specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
