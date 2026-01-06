@@ -137,6 +137,12 @@ in
                         id = "Brightness";
                     }
                     {
+                        id = "DarkMode";
+                    }
+                    {
+                        id = "WallpaperSelector";
+                    }
+                    {
                         id = "Spacer";
                     }
                     {
@@ -544,7 +550,6 @@ in
         qt6Packages.qt6ct
         libsForQt5.qt5ct
         whitesur-icon-theme
-        rose-pine-gtk-theme
         lxappearance
         catppuccin-qt5ct
         bibata-cursors
@@ -556,7 +561,6 @@ in
 
         libsForQt5.qtimageformats
         libsForQt5.qtsvg
-
         libwebp
         libjpeg
         libpng
