@@ -1,4 +1,4 @@
-# Add to your NixOS configuration.nix or home-manager
+# thanks claude
 { config, pkgs, ... }:
 
 {
@@ -7,7 +7,7 @@
     
     settings = {
       manager = {
-        show_hidden = false;
+        show_hidden = true;
         show_symlink = true;
         sort_by = "natural";
         sort_sensitive = false;
@@ -190,7 +190,7 @@
     ffmpegthumbnailer  # Video thumbnails
     unar              # Archive extraction
     jq                # JSON preview
-    poppler_utils     # PDF preview
+    poppler-utils     # PDF preview
     fd                # Better file finding
     ripgrep           # Better text search
     fzf               # Fuzzy finding

@@ -2,6 +2,7 @@
 {
     imports = [
         ./zshrc.nix
+        ./yazi.nix
     ];
 
     home.username = "mvayk";
@@ -19,6 +20,10 @@
     };
 
     programs.zsh = {
+        enable = true;
+    };
+
+    programs.yazi = {
         enable = true;
     };
 
