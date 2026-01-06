@@ -68,7 +68,7 @@
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.mvayk = import ./home/dream_quickshell/home.nix;
+                            home-manager.users.mvayk = import ./home/experimental/home.nix;
                             home-manager.backupFileExtension = "backupbackup";
                             home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
                         }
