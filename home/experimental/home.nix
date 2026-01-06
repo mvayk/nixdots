@@ -53,16 +53,10 @@ in
         #     name = "Breeze-Dark";  # or "Breeze" for light
         #     package = pkgs.kdePackages.breeze-gtk;
         # };
-        theme = {
-            name = "Orchis-Dark";
-            package = pkgs.orchis-theme;
-        };
     };
 
     qt = {
         enable = true;
-        platformTheme.name = "kde";
-        style.name = "breeze";
     };
 
     programs.noctalia-shell = {
@@ -182,7 +176,7 @@ in
           fontFixedScale = 1;
           tooltipsEnabled = true;
           panelBackgroundOpacity = 0.93;
-          panelsAttachedToBar = true;
+          panelsAttachedToBar = false;
           settingsPanelMode = "attached";
           wifiDetailsViewMode = "grid";
           bluetoothDetailsViewMode = "grid";
