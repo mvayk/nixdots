@@ -73,7 +73,7 @@ in
           position = "top";
           monitors = [ ];
           density = "default";
-          showOutline = true;
+          showOutline = false;
           showCapsule = false;
           capsuleOpacity = 1;
           backgroundOpacity = 0.93;
