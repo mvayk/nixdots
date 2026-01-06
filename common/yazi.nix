@@ -7,7 +7,7 @@
     
     settings = {
       manager = {
-        show_hidden = true;
+        show_hidden = false;
         show_symlink = true;
         sort_by = "natural";
         sort_sensitive = false;
@@ -194,5 +194,6 @@
     fd                # Better file finding
     ripgrep           # Better text search
     fzf               # Fuzzy finding
+    zoxide            # Smart directory jumping
   ];
 }
