@@ -42,7 +42,6 @@
             xfce.enable = false;
         };
 
-	videoDrivers = ["nvidia"];
     };
     services.displayManager.defaultSession = "xfce";
 
