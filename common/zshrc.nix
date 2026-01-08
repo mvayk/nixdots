@@ -33,6 +33,8 @@
                 tmux new-session
             fi
             fastfetch
+
+            eval "$(direnv hook zsh)"
         '';
     };
 }

@@ -149,6 +149,10 @@
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
     programs.thunar.enable = true;
+    programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+    };
 
     xdg.portal = {
         enable = true;
@@ -220,7 +224,6 @@
         openjdk17
         openjdk8
         jdk8
-        direnv
         oh-my-zsh
         cmus
         ungoogled-chromium
