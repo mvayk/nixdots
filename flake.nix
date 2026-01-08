@@ -58,7 +58,7 @@
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.mvayk = import ./home/experimental/home.nix;
+                            home-manager.users.mvayk = import ./machines/desktop/home.nix;
                             home-manager.backupFileExtension = "backupbackup";
                             home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
                         }
@@ -77,7 +77,7 @@
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.mvayk = import ./home/kde/home.nix;
+                            home-manager.users.mvayk = import ./machines/laptop/home.nix;
                             home-manager.backupFileExtension = "backup";
                             home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
                         }

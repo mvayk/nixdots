@@ -2,7 +2,6 @@
 {
     imports = [
         ./zshrc.nix
-        ./yazi.nix
     ];
 
     home.username = "mvayk";
