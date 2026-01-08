@@ -26,7 +26,8 @@
             vim = "nvim";
             sue = "sudo -E nvim";
             nix-edit = "sudo -E nvim /etc/nixos/";
-            nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#desktop; popd";
+            #nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#desktop; popd";
+            nix-rebuild="pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$(hostname); popd";
         };
         initContent = ''
             if [[ -z "$TMUX" ]]; then

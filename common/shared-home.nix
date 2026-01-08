@@ -10,8 +10,12 @@
 
     programs.git = {
         enable = true;
-        userName = "mvayk";
-        userEmail = "mvayk@mvayk.mvayk";
+        settings = {
+            user = {
+                name = "mvayk";
+                email = "mvayk@mvayk.mvayk";
+            };
+        };
     };
 
     services.syncthing = {

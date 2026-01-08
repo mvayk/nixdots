@@ -13,7 +13,7 @@
 
     programs.gnupg.agent = {
         enable = true;
-        pinentryPackage = pkgs.pinentry-gnome3;  # or pkgs.pinentry-curses
+        pinentryPackage = pkgs.pinentry-gnome3;
     };
 
     time.timeZone = "Australia/Sydney";
@@ -314,9 +314,6 @@
         luarocks
         luajit
         lua
-
-        xfce.xfce4-pulseaudio-plugin  # Adds the plugin binary and XFCE integration
-        xfce.xfce4-whiskermenu-plugin  # Adds the plugin binary and XFCE integration
     ];
 
     fonts.packages = with pkgs; [

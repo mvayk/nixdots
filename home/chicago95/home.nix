@@ -13,7 +13,7 @@ let
 in
 {
     imports = getNixFiles nixDir ++ [
-        ../../common/zshrc.nix
+        ../../common/shared-home.nix
     ];
     home.username = "mvayk";
     home.homeDirectory = "/home/mvayk";
@@ -30,6 +30,8 @@ in
         libsForQt5.qt5ct
         lxappearance
         xclip
+        xfce4-pulseaudio-plugin
+        xfce4-whiskermenu-plugin
     ];
 }
 
