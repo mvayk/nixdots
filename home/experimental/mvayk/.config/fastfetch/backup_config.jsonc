@@ -14,9 +14,6 @@
     },
     "modules": [
 	"break",
-	"break",
-	"break",
-	"break",
 	{
             "type": "title",
             "keyWidth": 10
@@ -24,42 +21,42 @@
         "break",
         {
             "type": "os",
-            "key": "os    :",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "kernel",
-            "key": "kernel:",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "packages",
-            "key": "built :",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "shell",
-            "key": "shell :",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "terminal",
-            "key": "term  :",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "wm",
-            "key": "wm    :",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "uptime",
-            "key": "uptime:",
+            "key": " ",
             "keyColor": "33",
         },
         {
             "type": "media",
-            "key": "media :",
+            "key": "󰝚 ",
             "keyColor": "33",
         },
         "break",
