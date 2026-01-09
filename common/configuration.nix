@@ -232,6 +232,7 @@
         gdb
         yt-dlp
         firefox
+        gimp
         starship
         eza
         gnome-keyring
