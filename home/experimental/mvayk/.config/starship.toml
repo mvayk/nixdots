@@ -26,7 +26,7 @@ success_symbol = "[⸸](bold white)"
 error_symbol = "[⸸](bold red)"
 
 [cmd_duration]
-min_time = 200
+min_time = 2000
 format = "[took $duration]($style)"
 style = "bold yellow"
 
