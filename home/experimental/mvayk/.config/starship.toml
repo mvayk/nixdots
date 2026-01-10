@@ -1,5 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """
+$all$username$character"""
+
+[username]
+show_always = true
+style_user = "italic cyan"
+style_root = "bold red"
+format = "[$user]($style) "
+
 [character]
 success_symbol = "[⸸](bold green)"
 error_symbol = "[⸸](bold red)"
