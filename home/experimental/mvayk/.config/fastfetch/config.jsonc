@@ -24,46 +24,41 @@
         "break",
         {
             "type": "os",
-            "key": "os    :",
-            "keyColor": "33",
+            "key": "os     :",
+            "keyColor": "33"
         },
         {
             "type": "kernel",
-            "key": "kernel:",
-            "keyColor": "33",
+            "key": "kernel :",
+            "keyColor": "33"
         },
         {
             "type": "packages",
-            "key": "built :",
-            "keyColor": "33",
+            "key": "built  :",
+            "keyColor": "33"
         },
         {
             "type": "shell",
-            "key": "shell :",
-            "keyColor": "33",
+            "key": "shell  :",
+            "keyColor": "33"
         },
         {
             "type": "terminal",
-            "key": "term  :",
-            "keyColor": "33",
+            "key": "term   :",
+            "keyColor": "33"
         },
         {
             "type": "wm",
-            "key": "wm    :",
-            "keyColor": "33",
+            "key": "wm     :",
+            "keyColor": "33"
         },
         {
             "type": "uptime",
-            "key": "uptime:",
-            "keyColor": "33",
-        },
-        {
-            "type": "media",
-            "key": "media :",
-            "keyColor": "33",
+            "key": "uptime :",
+            "keyColor": "33"
         },
         "break",
         "colors",
-        "break",
+        "break"
     ]
 }

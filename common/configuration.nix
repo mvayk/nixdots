@@ -214,6 +214,7 @@
         tree
         steam
         zsh
+        lazygit
         qbittorrent
         termdown
         ani-cli
