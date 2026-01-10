@@ -3,7 +3,7 @@
 format = """
 $all$username$hostname$character"""
 
-right_format = "$cmd_duration"
+right_format = "$cmd_duration $git_metrics"
 
 [username]
 show_always = true
@@ -18,13 +18,19 @@ style = "bold purple"
 ssh_symbol = " "
 
 [character]
-success_symbol = "[⸸](bold green)"
+success_symbol = "[⸸](bold white)"
 error_symbol = "[⸸](bold red)"
 
 [cmd_duration]
-min_time = 0
+min_time = 200
 format = "[took $duration]($style)"
 style = "bold yellow"
+
+[git_metrics]
+disabled = false
+added_style = "bold green"
+deleted_style = "bold red"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [aws]
 symbol = " "
