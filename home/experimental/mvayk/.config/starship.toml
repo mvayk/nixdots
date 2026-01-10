@@ -1,17 +1,30 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$all$username$character"""
+$all$username$hostname$character"""
+
+right_format = "$cmd_duration"
 
 [username]
 show_always = true
-style_user = "italic cyan"
-style_root = "bold red"
-format = "[$user]($style) "
+style_user = "bold italic cyan"
+style_root = "bold italic red"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+format = "[@](white)[$hostname]($style) "
+style = "bold purple"
+ssh_symbol = " "
 
 [character]
 success_symbol = "[⸸](bold green)"
 error_symbol = "[⸸](bold red)"
+
+[cmd_duration]
+min_time = 0
+format = "[took $duration]($style)"
+style = "bold yellow"
 
 [aws]
 symbol = " "
@@ -90,9 +103,6 @@ symbol = " "
 
 [hg_branch]
 symbol = " "
-
-[hostname]
-ssh_symbol = " "
 
 [java]
 symbol = " "
