@@ -1,9 +1,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$all$username$hostname$character"""
+$os$all$username$hostname$character"""
 
 right_format = "$cmd_duration $git_metrics"
+
+[os]
+disabled = false
+format = "[$symbol]($style) "
 
 [username]
 show_always = true
