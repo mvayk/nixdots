@@ -56,6 +56,8 @@ in
                     {
                         id = "ControlCenter";
                         useDistroLogo = true;
+                        enableColorization = true;
+                        colorizeSystemIcon = "Primary";
                     }
                     {
                         id = "Spacer";
