@@ -4,17 +4,12 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        
+        matugen = {
+            url = "github:/InioX/Matugen";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         quickshell = {
             url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        caelestia-cli = {
-            url = "github:caelestia-dots/cli";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        caelestia-shell = {
-            url = "github:caelestia-dots/shell";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         noctalia = {
@@ -30,20 +25,16 @@
             url = "github:Gerg-L/spicetify-nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        dankMaterialShell = {
-            url = "github:AvengeMedia/DankMaterialShell";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         firefox-nightly = {
             url = "github:nix-community/flake-firefox-nightly";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, dankMaterialShell, caelestia-shell, caelestia-cli, spicetify-nix, firefox-nightly, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, ... }:
         let
             system = "x86_64-linux";
             specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
-            homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell dankMaterialShell caelestia-shell caelestia-cli spicetify-nix; };
+            homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell spicetify-nix matugen; };
         in {
             nixosConfigurations = {
                 desktop = nixpkgs.lib.nixosSystem {

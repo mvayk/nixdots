@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia, quickshell, ... }:
+{ config, pkgs, noctalia, quickshell, matugen, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:
@@ -562,6 +562,7 @@ in
         slurp
         qt6Packages.qtimageformats
         qt6Packages.qtsvg
+        matugen.packages.${pkgs.system}.default
 
         libsForQt5.qtimageformats
         libsForQt5.qtsvg
@@ -571,7 +572,6 @@ in
         librsvg
         wl-clipboard
         hypridle
-        matugen
         kdePackages.breeze
         nwg-look
         quickshell.packages.${pkgs.system}.default
