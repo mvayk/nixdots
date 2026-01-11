@@ -422,7 +422,7 @@ in
             critical = true;
           };
           sounds = {
-            enabled = false;
+            enabled = true;
             volume = 0.5;
             separateSounds = false;
             criticalSoundFile = "";
@@ -433,7 +433,7 @@ in
         };
         osd = {
           enabled = true;
-          location = "top_right";
+          location = "right_center";
           autoHideMs = 2000;
           overlayLayer = true;
           backgroundOpacity = 1;
