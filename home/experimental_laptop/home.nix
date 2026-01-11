@@ -478,7 +478,7 @@ in
           foot = false;
           wezterm = false;
           fuzzel = false;
-          discord = false;
+          discord = true;
           pywalfox = false;
           vicinae = false;
           walker = false;
