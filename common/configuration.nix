@@ -143,6 +143,17 @@
         ];
     };
 
+    documentation = {
+        enable = true;
+        man = {
+            man-db.enable = false;
+            mandoc.enable = true;
+        };
+        dev = {
+            enable = true;
+        };
+    };
+
     programs.dconf.enable = true;
     programs.firefox.enable = true;
     programs.zsh.enable = true;
@@ -225,6 +236,9 @@
         openjdk17
         openjdk8
         jdk8
+        linux-manual
+        man-pages
+        man-pages-posix
         oh-my-zsh
         cmus
         ungoogled-chromium
