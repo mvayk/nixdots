@@ -203,6 +203,7 @@
         zsh
         kdePackages.kmines
         qalculate-qt
+        trilium-desktop
         epiphany
         kdePackages.ark
         ollama
