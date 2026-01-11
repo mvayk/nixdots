@@ -408,7 +408,7 @@ in
         notifications = {
           enabled = true;
           monitors = [ ];
-          location = "top_center";
+          location = "top_right";
           overlayLayer = true;
           backgroundOpacity = 0.93;
           respectExpireTimeout = false;
