@@ -433,10 +433,10 @@ in
         };
         osd = {
           enabled = true;
-          location = "right_center";
+          location = "center_right";
           autoHideMs = 2000;
           overlayLayer = true;
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.93;
           enabledTypes = [
             0
             1
