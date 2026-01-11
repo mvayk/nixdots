@@ -487,7 +487,7 @@ in
           telegram = false;
           cava = false;
           yazi = false;
-          emacs = false;
+          emacs = true;
           niri = false;
           hyprland = true;
           mango = false;
