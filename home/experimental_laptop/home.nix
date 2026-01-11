@@ -433,7 +433,7 @@ in
         };
         osd = {
           enabled = true;
-          location = "center_right";
+          location = "right";
           autoHideMs = 2000;
           overlayLayer = true;
           backgroundOpacity = 0.93;
