@@ -102,7 +102,7 @@
 
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = false;
+    services.desktopManager.plasma6.enable = true;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
