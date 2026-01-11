@@ -138,7 +138,7 @@ in
           boxRadiusRatio = 1;
           screenRadiusRatio = 1;
           animationSpeed = 1;
-          animationDisabled = true;
+          animationDisabled = false;
           compactLockScreen = false;
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
@@ -494,7 +494,7 @@ in
           zed = false;
           helix = false;
           zenBrowser = false;
-          enableUserTemplates = true;
+          enableUserTemplates = false;
         };
         nightLight = {
           enabled = false;
