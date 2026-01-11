@@ -2,6 +2,6 @@
 {
     imports = [
         ../../common/shared-home.nix
-        ../../home/kde/home.nix
+        ../../home/experimental_laptop/home.nix
     ];
 }
