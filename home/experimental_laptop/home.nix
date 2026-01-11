@@ -428,7 +428,7 @@ in
             criticalSoundFile = "";
             normalSoundFile = "";
             lowSoundFile = "";
-            excludedApps = "discord,firefox,chrome,chromium,edge";
+            excludedApps = "spotify";
           };
         };
         osd = {

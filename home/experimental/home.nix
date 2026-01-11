@@ -138,7 +138,7 @@ in
           boxRadiusRatio = 1;
           screenRadiusRatio = 1;
           animationSpeed = 1;
-          animationDisabled = true;
+          animationDisabled = false;
           compactLockScreen = false;
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
@@ -428,7 +428,7 @@ in
             criticalSoundFile = "";
             normalSoundFile = "";
             lowSoundFile = "";
-            excludedApps = "discord,firefox,chrome,chromium,edge";
+            excludedApps = "spotify";
           };
         };
         osd = {
