@@ -215,6 +215,7 @@
         cmake
         gnumake
         wine
+        libreoffice-qt-fresh
         unzip
         rar
         p7zip
