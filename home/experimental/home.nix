@@ -408,9 +408,9 @@ in
         notifications = {
           enabled = true;
           monitors = [ ];
-          location = "top_right";
+          location = "top_center";
           overlayLayer = true;
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.93;
           respectExpireTimeout = false;
           lowUrgencyDuration = 3;
           normalUrgencyDuration = 8;
@@ -422,7 +422,7 @@ in
             critical = true;
           };
           sounds = {
-            enabled = false;
+            enabled = true;
             volume = 0.5;
             separateSounds = false;
             criticalSoundFile = "";
@@ -433,7 +433,7 @@ in
         };
         osd = {
           enabled = true;
-          location = "top_right";
+          location = "right_center";
           autoHideMs = 2000;
           overlayLayer = true;
           backgroundOpacity = 1;
@@ -447,7 +447,7 @@ in
         };
         audio = {
           volumeStep = 5;
-          volumeOverdrive = false;
+          volumeOverdrive = true;
           cavaFrameRate = 30;
           visualizerType = "linear";
           mprisBlacklist = [ ];

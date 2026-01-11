@@ -408,9 +408,9 @@ in
         notifications = {
           enabled = true;
           monitors = [ ];
-          location = "top_right";
+          location = "top_center";
           overlayLayer = true;
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.93;
           respectExpireTimeout = false;
           lowUrgencyDuration = 3;
           normalUrgencyDuration = 8;
@@ -447,7 +447,7 @@ in
         };
         audio = {
           volumeStep = 5;
-          volumeOverdrive = false;
+          volumeOverdrive = true;
           cavaFrameRate = 30;
           visualizerType = "linear";
           mprisBlacklist = [ ];
