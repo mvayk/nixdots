@@ -252,7 +252,7 @@
         flameshot
         tor
         tor-browser
-        #vesktop
+        vesktop
         qutebrowser
         pulseaudio
         kdePackages.dolphin
