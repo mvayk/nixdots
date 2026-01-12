@@ -203,7 +203,6 @@
         zsh
         kdePackages.kmines
         qalculate-qt
-        kdePackages.okular
         trilium-desktop
         epiphany
         kdePackages.ark
@@ -277,6 +276,7 @@
         ffmpeg
         nnn
         zathura
+        foliate
         feh
         dmenu
         cargo
