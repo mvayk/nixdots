@@ -455,7 +455,7 @@ in
           externalMixer = "pwvucontrol || pavucontrol";
         };
         brightness = {
-          brightnessStep = 5;
+          brightnessStep = 10;
           enforceMinimum = true;
           enableDdcSupport = false;
         };
