@@ -280,6 +280,7 @@
         feh
         dmenu
         cargo
+        ispell
         xorg.xinput
         acpi
         sysstat
