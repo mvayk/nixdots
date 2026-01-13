@@ -137,7 +137,8 @@
     users.users.mvayk = {
         isNormalUser = true;
         description = "John";
-        shell = pkgs.zsh;
+        # shell = pkgs.zsh;
+        shell = pkgs.fish;
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
         ];
@@ -156,7 +157,7 @@
 
     programs.dconf.enable = true;
     programs.firefox.enable = true;
-    programs.zsh.enable = true;
+    # programs.zsh.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
     programs.thunar.enable = true;
