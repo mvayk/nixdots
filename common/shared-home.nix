@@ -2,7 +2,6 @@
 {
     imports = [
         ./zshrc.nix
-        ./fish.nix
     ];
 
     home.username = "mvayk";
@@ -23,9 +22,9 @@
         enable = true;
     };
 
-    # programs.zsh = {
-    #     enable = true;
-    # };
+    programs.zsh = {
+        enable = true;
+    };
 
     programs.yazi = {
         enable = true;
