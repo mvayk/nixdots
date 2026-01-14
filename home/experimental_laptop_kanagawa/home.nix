@@ -44,9 +44,11 @@ in
           showOutline = false;
           showCapsule = false;
           capsuleOpacity = 1;
-          backgroundOpacity = 0.93;
+          # backgroundOpacity = 0.93;
+          backgroundOpacity = 1;
           useSeparateOpacity = false;
-          floating = true;
+          # floating = true;
+          floating = false;
           marginVertical = 0.25;
           marginHorizontal = 1.00;
           outerCorners = false;
@@ -133,9 +135,11 @@ in
           showScreenCorners = false;
           forceBlackScreenCorners = false;
           scaleRatio = 1;
-          radiusRatio = 0.25;
+          radiusRatio = 0;
+          # radiusRatio = 0.25;
           iRadiusRatio = 1;
-          boxRadiusRatio = 1;
+          boxRadiusRatio = 0;
+          # boxRadiusRatio = 1;
           screenRadiusRatio = 1;
           animationSpeed = 1;
           animationDisabled = false;
@@ -157,7 +161,8 @@ in
           fontDefaultScale = 1;
           fontFixedScale = 1;
           tooltipsEnabled = true;
-          panelBackgroundOpacity = 0.93;
+          # panelBackgroundOpacity = 0.93;
+          panelBackgroundOpacity = 1;
           panelsAttachedToBar = false;
           settingsPanelMode = "detached";
           wifiDetailsViewMode = "grid";
@@ -410,7 +415,7 @@ in
           monitors = [ ];
           location = "top_right";
           overlayLayer = true;
-          backgroundOpacity = 0.93;
+          backgroundOpacity = 1;
           respectExpireTimeout = false;
           lowUrgencyDuration = 3;
           normalUrgencyDuration = 8;
@@ -460,7 +465,8 @@ in
           enableDdcSupport = false;
         };
         colorSchemes = {
-          useWallpaperColors = true;
+          useWallpaperColors = false;
+          # useWallpaperColors = true;
           predefinedScheme = "Kanagawa";
           darkMode = true;
           schedulingMode = "off";
