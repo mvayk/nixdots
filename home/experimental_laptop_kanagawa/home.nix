@@ -540,7 +540,7 @@ in
 
     programs.zsh = {
         oh-my-zsh = {
-            theme = "gallois";
+            theme = "mh";
         };
     };
 
