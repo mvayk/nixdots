@@ -292,7 +292,8 @@
         alarm-clock-applet
         coreutils
         pavucontrol
-	alacritty
+        alacritty
+        ghostty
         kitty
         kdePackages.kdenetwork-filesharing
         samba

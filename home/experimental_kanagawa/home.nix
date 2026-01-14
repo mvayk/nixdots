@@ -156,7 +156,7 @@ in
           showChangelogOnStartup = true;
         };
         ui = {
-          fontDefault = "JetBrainsMono Nerd Font";
+          fontDefault = "JetBrains Nerd Font";
           fontFixed = "JetBrainsMono Nerd Font Mono";
           fontDefaultScale = 1;
           fontFixedScale = 1;
