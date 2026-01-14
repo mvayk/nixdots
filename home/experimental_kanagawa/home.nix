@@ -21,7 +21,7 @@ in
             source = ./mvayk/.config;
             recursive = true;
         };
-        ".tmux.conf".source = ./mvayk/.tmux.conf;
+        # ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
 
     home.pointerCursor = {
@@ -542,6 +542,78 @@ in
         oh-my-zsh = {
             theme = "mh";
         };
+    };
+    programs.tmux = {
+        enable = true;
+        shell = "${pkgs.zsh}/bin/zsh";
+        terminal = "tmux-256color";
+        historyLimit = 5000;
+        baseIndex = 1;
+        keyMode = "vi";
+        escapeTime = 10;
+        mouse = true;
+        prefix = "C-e";
+
+        plugins = with pkgs.tmuxPlugins; [
+        {
+            plugin = dracula;
+            extraConfig = ''
+                set -g @dracula-colors "
+# simple gruvbox Color Pallette
+white='#EBDBB2'
+gray='#32302F'
+dark_gray='#282828'
+light_purple='#B16286'
+dark_purple='#504945'
+cyan='#689D6A'
+green='#98971A'
+orange='#D65D0E'
+red='#CC241D'
+pink='#D3869B'
+yellow='#D79921'
+                "
+            '';
+        }
+        ];
+        extraConfig = ''
+            set-option -ga terminal-overrides ",*256col*:Tc"
+            set-option -g history-limit 5000
+            set-option -g mode-keys vi
+            set-option -g escape-time 10
+            set-option -g base-index 1
+            set-option -g pane-base-index 1
+            set-option -g aggressive-resize on
+            set-option -g clock-mode-style 24
+            set-option -g status on
+            set-option -g mouse on
+            unbind C-b
+            set -g prefix C-e
+            bind C-e send-prefix
+            set-option -g renumber-windows on
+            set-option -g focus-events on
+            set-option -g status-position top
+            set-option -g status-justify left
+            set-option -g status-left-length 100
+            set-option -g status-right-length 100
+            set-option -g window-status-separator ""
+            bind-key -T copy-mode-vi v send-keys -X begin-selection
+            bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+            bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+            bind h select-pane -L
+            bind j select-pane -D
+            bind k select-pane -U
+            bind l select-pane -R
+            bind -r H resize-pane -L 2
+            bind -r J resize-pane -D 2
+            bind -r K resize-pane -U 2
+            bind -r L resize-pane -R 2
+            bind x kill-pane
+            bind \\ split-window -h -c "#{pane_current_path}"
+            bind - split-window -v -c "#{pane_current_path}"
+            unbind '"'
+            unbind %
+        '';
     };
 
     gtk = {

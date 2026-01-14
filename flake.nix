@@ -55,7 +55,6 @@
                         }
                     ];
                 };
-                
                 laptop = nixpkgs.lib.nixosSystem {
                     inherit system;
                     inherit specialArgs;
