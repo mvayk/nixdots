@@ -535,7 +535,13 @@ in
     };
 
     programs.starship = {
-        enable = true;
+        enable = false;
+    };
+
+    programs.zsh = {
+        oh-my-zsh = {
+            theme = "gallois";
+        };
     };
 
     gtk = {
