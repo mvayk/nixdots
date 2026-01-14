@@ -137,7 +137,7 @@ in
           scaleRatio = 1;
           radiusRatio = 0;
           # radiusRatio = 0.25;
-          iRadiusRatio = 1;
+          iRadiusRatio = 0;
           boxRadiusRatio = 0;
           # boxRadiusRatio = 1;
           screenRadiusRatio = 1;
