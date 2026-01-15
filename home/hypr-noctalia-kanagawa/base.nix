@@ -557,6 +557,7 @@ in
           "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
           "$mainMod, M, exit,"
           "$mainMod, T, exec, ghostty"
+          "$mainMod, W, exec, zen-beta"
           "$mainMod, E, exec, dolphin"
           "$mainMod, V, togglefloating,"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"

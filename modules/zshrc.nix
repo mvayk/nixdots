@@ -24,14 +24,20 @@
             sue = "sudo -E nvim";
             nix-edit = "sudo -E nvim /etc/nixos/";
             #nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#desktop; popd";
-            nix-rebuild="pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$NIXOS_MACHINE-$NIXOS_THEME; popd";
+            nix-rebuild-current = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$NIXOS_MACHINE-$NIXOS_THEME; popd";
 
         };
         initContent = ''
             if [[ -z "$TMUX" ]]; then
                 tmux new-session
             fi
+
             fastfetch
+            nix-rebuild() {
+                noglob pushd /etc/nixos >/dev/null
+                sudo nixos-rebuild switch --flake "$@"
+                popd >/dev/null
+            }
 
             eval "$(direnv hook zsh)"
         '';

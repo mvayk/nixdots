@@ -84,7 +84,7 @@
     services.printing.enable = true;
     services.xserver = {
         enable = true;
-        windowManager.i3.enable = false;
+        windowManager.i3.enable = true;
     };
 
     services.displayManager.ly.enable = true;
