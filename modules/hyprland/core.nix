@@ -1,13 +1,11 @@
-{ config, lib, pkgs, machine, ... }:
+{ config, pkgs, machine, ... }:
 {
     imports = [
-        ./options.nix
         ./${machine}-override.nix
     ];
     wayland.windowManager.hyprland = {
         enable = true;
         settings = {
-            "$mainMod" = config.hyprConfig.mainMod;
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"
                 "XCURSOR_SIZE,24"
