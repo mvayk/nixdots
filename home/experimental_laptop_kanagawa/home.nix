@@ -21,7 +21,6 @@ in
             source = ./mvayk/.config;
             recursive = true;
         };
-        ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
 
     home.pointerCursor = {
