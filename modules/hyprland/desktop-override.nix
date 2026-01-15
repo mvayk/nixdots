@@ -1,8 +1,6 @@
 { config, lib, machine, ... }:
 {
-    hyprConfig = {
-        mainMod = "ALT";
-    };
+    hyprConfig.mainMod = "SUPER";
     wayland.windowManager.hyprland.settings = {
         "monitor" = ["HDMI-A-1, 1920x1080@60, 0x0, 1"
         "DP-3, 2560x1440@240, 1920x0, 1"

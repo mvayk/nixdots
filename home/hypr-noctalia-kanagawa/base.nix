@@ -11,11 +11,9 @@ let
         map (name: "${dir}/${name}") nixFiles
     else [];
 in
-let
-    core = import ../../modules/hyprland/core.nix;
-in
 {
     imports = getNixFiles nixDir ++ [
+        ../../modules/options.nix
         ../../common/shared-home.nix
         ../../modules/hyprland/core.nix
         noctalia.homeModules.default
@@ -551,8 +549,6 @@ in
         "hypridle & nm-applet"
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
-
-      "$mainMod" = core.hyprConfig.mainMod;
 
       binds = [
         "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"

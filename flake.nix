@@ -39,7 +39,6 @@
                 ./common/configuration.nix
                 ./machines/${machine}/configuration.nix
                 ./machines/${machine}/hardware-configuration.nix
-                ./modules/options.nix
                 spicetify-nix.nixosModules.default
                 home-manager.nixosModules.home-manager
                 {
