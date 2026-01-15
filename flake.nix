@@ -15,7 +15,6 @@
         noctalia = {
             url = "github:noctalia-dev/noctalia-shell";
             inputs.nixpkgs.follows = "nixpkgs";
-            #inputs.quickshell.follows = "quickshell";
         };
         zen-browser = {
             url = "github:0xc000022070/zen-browser-flake/beta";
@@ -30,49 +29,51 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
+
     outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, ... }:
         let
-            system = "x86_64-linux";
-            specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
-            homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell spicetify-nix matugen; };
-        in {
-            nixosConfigurations = {
-                desktop = nixpkgs.lib.nixosSystem {
-                    inherit system;
-                    inherit specialArgs;
-                    modules = [
-                        ./common/configuration.nix
-                        ./machines/desktop/configuration.nix
-                        ./machines/desktop/hardware-configuration.nix
-                        spicetify-nix.nixosModules.default
-                        home-manager.nixosModules.home-manager
-                        {
-                            home-manager.useGlobalPkgs = true;
-                            home-manager.useUserPackages = true;
-                            home-manager.users.mvayk = import ./machines/desktop/home.nix;
-                            home-manager.backupFileExtension = "backupbackup";
-                            home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
-                        }
-                    ];
-                };
-                laptop = nixpkgs.lib.nixosSystem {
-                    inherit system;
-                    inherit specialArgs;
-                    modules = [
-                        ./common/configuration.nix
-                        ./machines/laptop/configuration.nix
-                        ./machines/laptop/hardware-configuration.nix
-                        spicetify-nix.nixosModules.default
-                        home-manager.nixosModules.home-manager
-                        {
-                            home-manager.useGlobalPkgs = true;
-                            home-manager.useUserPackages = true;
-                            home-manager.users.mvayk = import ./machines/laptop/home.nix;
-                            home-manager.backupFileExtension = "backup";
-                            home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
-                        }
-                    ];
-                };
+        system = "x86_64-linux";
+    specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
+    homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell spicetify-nix matugen; };
+
+    mkNixosConfig = { machine, theme }: nixpkgs.lib.nixosSystem {
+        inherit system specialArgs;
+        modules = [
+            ./common/configuration.nix
+            ./machines/${machine}/configuration.nix
+            ./machines/${machine}/hardware-configuration.nix
+            spicetify-nix.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.mvayk = import ./home/${theme}/${machine}/base.nix;
+                home-manager.backupFileExtension = "backup";
+                home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
+            }
+        ];
+    };
+    in {
+        nixosConfigurations = {
+            desktop = mkNixosConfig {
+                machine = "desktop";
+                theme = "experimental";
+            };
+
+            laptop = mkNixosConfig {
+                machine = "laptop";
+                theme = "experimental";
+            };
+
+            desktop-experimental = mkNixosConfig {
+                machine = "desktop";
+                theme = "experimental";
+            };
+
+            laptop-experimental = mkNixosConfig {
+                machine = "laptop";
+                theme = "experimental";
             };
         };
+    };
 }

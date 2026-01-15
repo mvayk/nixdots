@@ -14,7 +14,6 @@ in
 {
     imports = getNixFiles nixDir ++ [
         noctalia.homeModules.default
-        ../../common/shared-home.nix
     ];
     home.file = {
         ".config" = {
