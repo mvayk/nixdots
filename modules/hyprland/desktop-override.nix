@@ -1,30 +1,24 @@
 { config, lib, machine, ... }:
 {
+    global_bind = {
+        mainMod = "SUPER";
+    };
     wayland.windowManager.hyprland.settings = {
-        "$mainMod" = "SUPER";
         "monitor" = ["HDMI-A-1, 1920x1080@60, 0x0, 1"
         "DP-3, 2560x1440@240, 1920x0, 1"
         "DP-1, 2560x1440@240, 4480x0, 1"];
 
         bind = [
-            "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
-            ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
-            "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
-            "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
-            "$mainMod, T, exec, $terminal"
-            "$mainMod, W, exec, zen-beta"
-            "$mainMod, Q, killactive,"
-            "$mainMod, M, exit,"
-            "$mainMod, E, exec, $fileManager"
-            "$mainMod, V, togglefloating,"
-            "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
-            "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
-            "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
+
+            ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
+
             "$mainMod, P, pseudo,"
             "$mainMod, N, togglesplit,"
             "$mainMod, F, fullscreen"
+            "$mainMod, V, togglefloating,"
 
-            ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
+            "$mainMod, Q, killactive,"
+            "$mainMod, M, exit,"
 
             "$mainMod, H, movefocus, l"
             "$mainMod, L, movefocus, r"

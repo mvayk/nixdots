@@ -13,22 +13,13 @@ let
 in
 {
     imports = getNixFiles nixDir ++ [
-        ../../common/zshrc.nix
+        ../../common/shared-home.nix
     ];
-    home.username = "mvayk";
-    home.homeDirectory = "/home/mvayk";
-    home.stateVersion = "25.05";
     home.file = {
         ".config" = {
             source = ./mvayk/.config;
             recursive = true;
         };
-        ".tmux.conf".source = ./mvayk/.tmux.conf;
-    };
-    programs.git = {
-        enable = true;
-        userName = "mvayk";
-        userEmail = "mvayk@mvayk.mvayk";
     };
     home.pointerCursor = {
         name = "Bibata-Modern-Ice";

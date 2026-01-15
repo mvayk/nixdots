@@ -1,5 +1,8 @@
 { config, lib, machine, ... }:
 {
+    global_bind = {
+        mainMod = "ALT";
+    };
     home.file = {
         ".config/hypr/scripts/decrease_brightness.sh" = {
             source = ../../modules/hyprland/scripts/decrease_brightness.sh;

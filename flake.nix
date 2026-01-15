@@ -56,11 +56,11 @@
         nixosConfigurations = {
             desktop-noctalia-kanagawa = mkNixosConfig {
                 machine = "desktop";
-                theme = "noctalia-kanagawa";
+                theme = "hypr-noctalia-kanagawa";
             };
             laptop-noctalia-kanagawa = mkNixosConfig {
                 machine = "laptop";
-                theme = "noctalia-kanagawa";
+                theme = "hypr-noctalia-kanagawa";
             };
         };
     };
