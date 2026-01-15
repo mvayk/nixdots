@@ -243,7 +243,10 @@
         man-pages
         man-pages-posix
         oh-my-zsh
+        catgirl
         cmus
+        more
+        bat
         ungoogled-chromium
         scanmem
         htop
