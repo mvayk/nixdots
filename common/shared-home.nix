@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 {
     imports = [
-        ./zshrc.nix
+        ../modules/tmux.nix
+        ../modules/zshrc.nix
     ];
 
     home.username = "mvayk";
