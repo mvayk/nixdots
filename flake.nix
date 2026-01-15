@@ -72,10 +72,20 @@
                 theme = "hypr-noctalia-fancy";
             };
 
+            desktop-i3-catppuccin-minimal= mkNixosConfig {
+                machine = "desktop";
+                theme = "i3-catppuccin-minimal";
+            };
+            laptop-i3-catppuccin-minimal = mkNixosConfig {
+                machine = "laptop";
+                theme = "i3-catppuccin-minimal";
+            };
+
             desktop-hypr-dream= mkNixosConfig {
                 machine = "desktop";
                 theme = "hypr-dream";
             };
+
             laptop-hypr-dream= mkNixosConfig {
                 machine = "laptop";
                 theme = "hypr-dream";
