@@ -1,0 +1,14 @@
+font-family = "Iosevka Nerd Font Mono"
+font-size=22
+window-decoration=false
+background-opacity=1
+window-padding-x=0
+window-padding-y=0
+cursor-style=block
+cursor-style-blink=true
+shell-integration="zsh"
+keybind=ctrl+backspace=text:\x1b\x7f
+
+confirm-close-surface=false
+
+theme = dark:Gruvbox Dark, light:Gruvbox Light
