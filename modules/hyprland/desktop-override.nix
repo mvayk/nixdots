@@ -1,15 +1,16 @@
 { config, lib, machine, ... }:
 {
-    global_bind = {
-        mainMod = "SUPER";
+    hyprConfig = {
+        mainMod = "ALT";
     };
     wayland.windowManager.hyprland.settings = {
         "monitor" = ["HDMI-A-1, 1920x1080@60, 0x0, 1"
         "DP-3, 2560x1440@240, 1920x0, 1"
         "DP-1, 2560x1440@240, 4480x0, 1"];
 
-        bind = [
+        "$mainMod" = config.hyprConfig.mainMod;
 
+        bind = [
             ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
 
             "$mainMod, P, pseudo,"

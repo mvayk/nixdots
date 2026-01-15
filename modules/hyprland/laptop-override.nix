@@ -1,8 +1,6 @@
 { config, lib, machine, ... }:
 {
-    global_bind = {
-        mainMod = "ALT";
-    };
+    hyprConfig.mainMod = "ALT";
     home.file = {
         ".config/hypr/scripts/decrease_brightness.sh" = {
             source = ../../modules/hyprland/scripts/decrease_brightness.sh;
@@ -31,8 +29,9 @@
     };
 
     wayland.windowManager.hyprland.settings = {
-        "$mainMod" = "ALT";
+        # "$mainMod" = "ALT";
         "monitor" = "eDP-1, 1920x1080@60, 0x0, 1";
+        "$mainMod" = config.hyprConfig.mainMod;
 
         bind = [
             ",XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"

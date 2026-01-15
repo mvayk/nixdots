@@ -11,6 +11,9 @@ let
         map (name: "${dir}/${name}") nixFiles
     else [];
 in
+let
+    core = import ../../modules/hyprland/core.nix;
+in
 {
     imports = getNixFiles nixDir ++ [
         ../../common/shared-home.nix
@@ -549,7 +552,7 @@ in
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
 
-      "$mainMod" = vars.global_bind.mainMod;
+      "$mainMod" = core.hyprConfig.mainMod;
 
       binds = [
         "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"

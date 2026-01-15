@@ -11,6 +11,9 @@ let
         map (name: "${dir}/${name}") nixFiles
     else [];
 in
+let
+    core = import ../../modules/hyprland/core.nix;
+in
 {
     imports = getNixFiles nixDir ++ [
         noctalia.homeModules.default
