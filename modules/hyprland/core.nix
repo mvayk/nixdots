@@ -1,8 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, machine, ... }:
 {
     wayland.windowManager.hyprland = {
         enable = true;
         settings = {
+            source = ["./${machine}-override.nix" ];
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"
                 "XCURSOR_SIZE,24"

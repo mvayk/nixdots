@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, machine, ... }:
 {
     wayland.windowManager.hyprland.settings = {
         "$mainMod" = "SUPER";

@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, machine, ... }:
 {
     home.file = {
         ".config/hypr/scripts/decrease_brightness.sh" = {
@@ -91,7 +91,7 @@
 
             "$mainMod, mouse_down, workspace, e+1"
             "$mainMod, mouse_up, workspace, e-1"
-                ];
+        ];
 
         bindl = [
             ", switch::Lid Switch, exec, hyprlock && systemctl suspend"
