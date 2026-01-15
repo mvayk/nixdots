@@ -550,7 +550,7 @@ in
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
 
-      binds = [
+      bind = [
           "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
           ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
           "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
