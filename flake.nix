@@ -54,13 +54,60 @@
         };
     in {
         nixosConfigurations = {
-            desktop-noctalia-kanagawa = mkNixosConfig {
+            desktop-hypr-noctalia-kanagawa = mkNixosConfig {
                 machine = "desktop";
                 theme = "hypr-noctalia-kanagawa";
             };
-            laptop-noctalia-kanagawa = mkNixosConfig {
+            laptop-hypr-noctalia-kanagawa = mkNixosConfig {
                 machine = "laptop";
                 theme = "hypr-noctalia-kanagawa";
+            };
+
+            desktop-hypr-noctalia-fancy= mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-fancy";
+            };
+            laptop-hypr-noctalia-fancy= mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-fancy";
+            };
+
+            desktop-hypr-dream= mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-dream";
+            };
+            laptop-hypr-dream= mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-dream";
+            };
+
+            desktop-hypr-gruvbox= mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-gruvbox";
+            };
+            laptop-hypr-gruvbox= mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-gruvbox";
+            };
+
+
+            desktop-xfce= mkNixosConfig {
+                machine = "desktop";
+                theme = "xfce";
+            };
+            laptop-xfce= mkNixosConfig {
+                machine = "laptop";
+                theme = "xfce";
+            };
+
+
+            desktop-kde= mkNixosConfig {
+                machine = "desktop";
+                theme = "kde";
+            };
+            laptop-kde= mkNixosConfig {
+                machine = "laptop";
+                theme = "kde";
             };
         };
     };

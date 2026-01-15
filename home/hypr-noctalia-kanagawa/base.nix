@@ -546,21 +546,25 @@ in
       ];
       exec-once = [
         "noctalia-shell"
-        "hypridle & nm-applet"
+        "nm-applet"
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
 
       binds = [
-        "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
-        ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
-        "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
-        "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
-        "$mainMod, T, exec, $terminal"
-        "$mainMod, W, exec, zen-beta"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
-        "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
-        "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
+          "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
+          ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
+          "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
+          "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
+          "$mainMod, M, exit,"
+          "$mainMod, T, exec, ghostty"
+          "$mainMod, E, exec, dolphin"
+          "$mainMod, V, togglefloating,"
+          "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
+          "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
+          "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
+          "$mainMod, P, pseudo,"
+          "$mainMod, N, togglesplit,"
+          "$mainMod, F, fullscreen"
       ];
 
       source = "noctalia/noctalia-colors.conf";
@@ -673,7 +677,6 @@ in
         libpng
         librsvg
         wl-clipboard
-        hypridle
         kdePackages.breeze
         nwg-look
         quickshell.packages.${pkgs.system}.default

@@ -13,7 +13,9 @@ let
 in
 {
     imports = getNixFiles nixDir ++ [
+        ../../modules/options.nix
         ../../common/shared-home.nix
+        ../../modules/hyprland/core.nix
     ];
     home.file = {
         ".config" = {
@@ -37,6 +39,7 @@ in
     services.swaync = {
         enable = true;
     };
+
     home.packages = with pkgs; [
         qt6ct
         libsForQt5.qt5ct

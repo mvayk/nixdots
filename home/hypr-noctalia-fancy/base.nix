@@ -11,13 +11,12 @@ let
         map (name: "${dir}/${name}") nixFiles
     else [];
 in
-let
-    core = import ../../modules/hyprland/core.nix;
-in
 {
     imports = getNixFiles nixDir ++ [
         noctalia.homeModules.default
+        ../../modules/options.nix
         ../../common/shared-home.nix
+        ../../modules/hyprland/core.nix
     ];
     home.file = {
         ".config" = {
@@ -534,6 +533,18 @@ wayland.windowManager.hyprland = {
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
+      ];
+      bind = [
+        "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
+        ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
+        "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
+        "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
+        "$mainMod, T, exec, kitty"
+        "$mainMod, W, exec, zen-beta"
+        "$mainMod, E, exec, dolphin"
+        "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
+        "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
+        "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
       ];
       exec-once = [
         "noctalia-shell"

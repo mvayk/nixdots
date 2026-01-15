@@ -15,15 +15,11 @@ in
     imports = getNixFiles nixDir ++ [
         ../../common/shared-home.nix
     ];
-    home.username = "mvayk";
-    home.homeDirectory = "/home/mvayk";
-    home.stateVersion = "25.05";
     home.file = {
         ".config" = {
             source = ./mvayk/.config;
             recursive = true;
         };
-        ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
     home.packages = with pkgs; [
         qt6Packages.qt6ct
