@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, machine, theme, ... }:
 {
     imports = [
         ../modules/tmux.nix
@@ -35,5 +35,7 @@
     ];
 
     home.sessionVariables = {
+        NIXOS_MACHINE = machine;
+        NIXOS_THEME   = theme;
     };
 }

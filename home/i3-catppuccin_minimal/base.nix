@@ -14,6 +14,8 @@ in
 {
     imports = getNixFiles nixDir ++ [
         ../../common/shared-home.nix
+        ./nix/dunst.nix
+        ./nix/i3.nix
     ];
     home.file = {
         ".config" = {

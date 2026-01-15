@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, machine, theme, ... }:
 {
     programs.zsh = {
         enable = true;
@@ -24,7 +24,8 @@
             sue = "sudo -E nvim";
             nix-edit = "sudo -E nvim /etc/nixos/";
             #nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#desktop; popd";
-            nix-rebuild="pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$(hostname); popd";
+            nix-rebuild="pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$NIXOS_MACHINE-$NIXOS_THEME; popd";
+
         };
         initContent = ''
             if [[ -z "$TMUX" ]]; then

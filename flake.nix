@@ -47,7 +47,7 @@
                     home-manager.users.mvayk = import ./home/${theme}/base.nix;
                     home-manager.backupFileExtension = "backup";
                     home-manager.extraSpecialArgs = { 
-                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine; 
+                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine theme; 
                     };
                 }
             ];
@@ -90,7 +90,6 @@
                 theme = "hypr-gruvbox";
             };
 
-
             desktop-xfce= mkNixosConfig {
                 machine = "desktop";
                 theme = "xfce";
@@ -99,7 +98,6 @@
                 machine = "laptop";
                 theme = "xfce";
             };
-
 
             desktop-kde= mkNixosConfig {
                 machine = "desktop";

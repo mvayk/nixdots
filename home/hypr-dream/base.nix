@@ -1,3 +1,4 @@
+# TODO: refactor
 { config, pkgs, ... }:
 let
     nixDir = ./nix;
