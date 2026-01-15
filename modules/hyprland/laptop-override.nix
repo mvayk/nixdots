@@ -29,6 +29,7 @@
 
     wayland.windowManager.hyprland.settings = {
         "$mainMod" = "ALT";
+        "monitor" = "eDP-1, 1920x1080@60, 0x0, 1";
 
         bind = [
             ",XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"

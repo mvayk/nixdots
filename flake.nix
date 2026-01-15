@@ -29,50 +29,38 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-
     outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, ... }:
         let
         system = "x86_64-linux";
-    specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
-    homeManagerExtraSpecialArgs = { inherit noctalia zen-browser quickshell spicetify-nix matugen; };
-
-    mkNixosConfig = { machine, theme }: nixpkgs.lib.nixosSystem {
-        inherit system specialArgs;
-        modules = [
-            ./common/configuration.nix
-            ./machines/${machine}/configuration.nix
-            ./machines/${machine}/hardware-configuration.nix
-            spicetify-nix.nixosModules.default
-            home-manager.nixosModules.home-manager
-            {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.mvayk = import ./home/${theme}/${machine}/base.nix;
-                home-manager.backupFileExtension = "backup";
-                home-manager.extraSpecialArgs = homeManagerExtraSpecialArgs;
-            }
-        ];
-    };
+        specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
+        mkNixosConfig = { machine, theme }: nixpkgs.lib.nixosSystem {
+            inherit system specialArgs;
+            modules = [
+                ./common/configuration.nix
+                ./machines/${machine}/configuration.nix
+                ./machines/${machine}/hardware-configuration.nix
+                spicetify-nix.nixosModules.default
+                home-manager.nixosModules.home-manager
+                {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.mvayk = import ./home/${theme}/base.nix;
+                    home-manager.backupFileExtension = "backup";
+                    home-manager.extraSpecialArgs = { 
+                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine; 
+                    };
+                }
+            ];
+        };
     in {
         nixosConfigurations = {
-            desktop = mkNixosConfig {
+            desktop-noctalia-kanagawa = mkNixosConfig {
                 machine = "desktop";
-                theme = "experimental";
+                theme = "noctalia-kanagawa";
             };
-
-            laptop = mkNixosConfig {
+            laptop-noctalia-kanagawa = mkNixosConfig {
                 machine = "laptop";
-                theme = "experimental";
-            };
-
-            desktop-experimental = mkNixosConfig {
-                machine = "desktop";
-                theme = "experimental";
-            };
-
-            laptop-experimental = mkNixosConfig {
-                machine = "laptop";
-                theme = "experimental";
+                theme = "noctalia-kanagawa";
             };
         };
     };

@@ -2,6 +2,5 @@
 {
     imports = [
         ../../common/shared-home.nix
-        ../../home/experimental_kanagawa/home.nix
     ];
 }

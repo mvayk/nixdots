@@ -1,18 +1,16 @@
 { config, lib, pkgs, machine, ... }:
 {
+
+    imports = [
+        ./${machine}-override.nix
+    ];
     wayland.windowManager.hyprland = {
         enable = true;
         settings = {
-            source = ["./${machine}-override.nix" ];
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"
                 "XCURSOR_SIZE,24"
                 "HYPRCURSOR_SIZE,24"
-            ];
-
-            exec-once = [
-                "noctalia-shell"
-                "nm-applet"
             ];
 
             input = {
