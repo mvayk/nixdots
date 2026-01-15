@@ -21,7 +21,7 @@ in
             source = ./mvayk/.config;
             recursive = true;
         };
-        # ".tmux.conf".source = ./mvayk/.tmux.conf;
+        ".tmux.conf".source = ./mvayk/.tmux.conf;
     };
 
     home.pointerCursor = {
@@ -40,15 +40,13 @@ in
         bar = {
           position = "top";
           monitors = [ ];
-          density = "default";
+          density = "comfortable";
           showOutline = false;
           showCapsule = false;
           capsuleOpacity = 1;
-          # backgroundOpacity = 0.93;
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.93;
           useSeparateOpacity = false;
-          # floating = true;
-          floating = false;
+          floating = true;
           marginVertical = 0.25;
           marginHorizontal = 1.00;
           outerCorners = false;
@@ -135,14 +133,12 @@ in
           showScreenCorners = false;
           forceBlackScreenCorners = false;
           scaleRatio = 1;
-          radiusRatio = 0;
-          # radiusRatio = 0.25;
+          radiusRatio = 0.25;
           iRadiusRatio = 1;
-          boxRadiusRatio = 0;
-          # boxRadiusRatio = 1;
+          boxRadiusRatio = 1;
           screenRadiusRatio = 1;
           animationSpeed = 1;
-          animationDisabled = true;
+          animationDisabled = false;
           compactLockScreen = false;
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
@@ -156,13 +152,12 @@ in
           showChangelogOnStartup = true;
         };
         ui = {
-          fontDefault = "JetBrains Nerd Font";
+          fontDefault = "JetBrainsMono Nerd Font";
           fontFixed = "JetBrainsMono Nerd Font Mono";
           fontDefaultScale = 1;
           fontFixedScale = 1;
           tooltipsEnabled = true;
-          # panelBackgroundOpacity = 0.93;
-          panelBackgroundOpacity = 1;
+          panelBackgroundOpacity = 0.93;
           panelsAttachedToBar = false;
           settingsPanelMode = "detached";
           wifiDetailsViewMode = "grid";
@@ -415,7 +410,7 @@ in
           monitors = [ ];
           location = "top_right";
           overlayLayer = true;
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.93;
           respectExpireTimeout = false;
           lowUrgencyDuration = 3;
           normalUrgencyDuration = 8;
@@ -460,14 +455,13 @@ in
           externalMixer = "pwvucontrol || pavucontrol";
         };
         brightness = {
-          brightnessStep = 10;
+          brightnessStep = 5;
           enforceMinimum = true;
           enableDdcSupport = false;
         };
         colorSchemes = {
-          useWallpaperColors = false;
-          # useWallpaperColors = true;
-          predefinedScheme = "Kanagawa";
+          useWallpaperColors = true;
+          predefinedScheme = "Noctalia (default)";
           darkMode = true;
           schedulingMode = "off";
           manualSunrise = "06:30";
@@ -484,7 +478,7 @@ in
           foot = false;
           wezterm = false;
           fuzzel = false;
-          discord = true;
+          discord = false;
           pywalfox = false;
           vicinae = false;
           walker = false;
@@ -500,7 +494,7 @@ in
           zed = false;
           helix = false;
           zenBrowser = false;
-          enableUserTemplates = false;
+          enableUserTemplates = true;
         };
         nightLight = {
           enabled = false;
@@ -528,6 +522,79 @@ in
       };
     };
 
+wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      env = [
+        "GTK_THEME,WhiteSur-Dark"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
+      ];
+      exec-once = [
+        "noctalia-shell"
+        "hypridle & nm-applet"
+        "hyprctl setcursor Bibata-Modern-Classic 24"
+      ];
+      source = [ "noctalia/noctalia-colors.conf" ];
+      general = {
+        gaps_in = 3;
+        gaps_out = 6;
+        border_size = 2;
+        "col.active_border" = "$primary $secondary $tertiary $error 45deg";
+        "col.inactive_border" = "$surface";
+        resize_on_border = false;
+        allow_tearing = false;
+        layout = "dwindle";
+      };
+      decoration = {
+        rounding = 5;
+        rounding_power = 10;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+        shadow = {
+          enabled = true;
+          range = 24;
+          render_power = 4;
+          color = "rgba(00000055)";
+        };
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+          vibrancy = 0.1696;
+        };
+      };
+      animations = {
+        enabled = true;
+
+        bezier = [
+          "linear, 0, 0, 1, 1"
+          "md3_standard, 0.2, 0, 0, 1"
+          "md3_decel, 0.05, 0.7, 0.1, 1"
+          "md3_accel, 0.3, 0, 0.8, 0.15"
+          "overshot, 0.05, 0.9, 0.1, 1.1"
+          "crazyshot, 0.1, 1.5, 0.76, 0.92"
+          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+          "fluent_decel, 0.1, 1, 0, 1"
+          "easeInOutCirc, 0.85, 0, 0.15, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+          "easeOutExpo, 0.16, 1, 0.3, 1"
+        ];
+
+        animation = [
+          "windows, 1, 3, md3_decel, popin 60%"
+          "border, 1, 1, linear"
+          "borderangle, 1, 80, linear, loop"
+          "fade, 1, 2.5, md3_decel"
+          "workspaces, 1, 3.5, easeOutExpo, slide"
+          "specialWorkspace, 1, 3, md3_decel, slidevert"
+        ];
+      };
+    };
+  };
+
     home.sessionVariables = {
         XCURSOR_THEME = "Bibata-Modern-Ice";
         XCURSOR_SIZE = "24";
@@ -535,85 +602,7 @@ in
     };
 
     programs.starship = {
-        enable = false;
-    };
-
-    programs.zsh = {
-        oh-my-zsh = {
-            theme = "mh";
-        };
-    };
-    programs.tmux = {
         enable = true;
-        shell = "${pkgs.zsh}/bin/zsh";
-        terminal = "tmux-256color";
-        historyLimit = 5000;
-        baseIndex = 1;
-        keyMode = "vi";
-        escapeTime = 10;
-        mouse = true;
-        prefix = "C-e";
-
-        plugins = with pkgs.tmuxPlugins; [
-        {
-            plugin = dracula;
-            extraConfig = ''
-                set -g @dracula-colors "
-# simple gruvbox Color Pallette
-white='#EBDBB2'
-gray='#32302F'
-dark_gray='#282828'
-light_purple='#B16286'
-dark_purple='#504945'
-cyan='#689D6A'
-green='#98971A'
-orange='#D65D0E'
-red='#CC241D'
-pink='#D3869B'
-yellow='#D79921'
-                "
-            '';
-        }
-        ];
-        extraConfig = ''
-            set-option -ga terminal-overrides ",*256col*:Tc"
-            set-option -g history-limit 5000
-            set-option -g mode-keys vi
-            set-option -g escape-time 10
-            set-option -g base-index 1
-            set-option -g pane-base-index 1
-            set-option -g aggressive-resize on
-            set-option -g clock-mode-style 24
-            set-option -g status on
-            set-option -g mouse on
-            unbind C-b
-            set -g prefix C-e
-            bind C-e send-prefix
-            set-option -g renumber-windows on
-            set-option -g focus-events on
-            set-option -g status-position top
-            set-option -g status-justify left
-            set-option -g status-left-length 100
-            set-option -g status-right-length 100
-            set-option -g window-status-separator ""
-            bind-key -T copy-mode-vi v send-keys -X begin-selection
-            bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-            bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-
-            bind h select-pane -L
-            bind j select-pane -D
-            bind k select-pane -U
-            bind l select-pane -R
-            bind -r H resize-pane -L 2
-            bind -r J resize-pane -D 2
-            bind -r K resize-pane -U 2
-            bind -r L resize-pane -R 2
-            bind x kill-pane
-            bind \\ split-window -h -c "#{pane_current_path}"
-            bind - split-window -v -c "#{pane_current_path}"
-            unbind '"'
-            unbind %
-        '';
     };
 
     gtk = {
@@ -631,6 +620,7 @@ yellow='#D79921'
     qt = {
         enable = true;
     };
+
 
     home.packages = with pkgs; [
         qt6Packages.qt6ct
