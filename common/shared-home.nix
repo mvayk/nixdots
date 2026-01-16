@@ -37,5 +37,6 @@
     home.sessionVariables = {
         NIXOS_MACHINE = machine;
         NIXOS_THEME   = theme;
+        PAGER = "bat";
     };
 }

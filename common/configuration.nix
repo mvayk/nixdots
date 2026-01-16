@@ -247,6 +247,7 @@
         cmus
         more
         bat
+        most
         ungoogled-chromium
         scanmem
         htop
@@ -269,6 +270,7 @@
         texlive.combined.scheme-medium
         imagemagick
         obsidian
+        bat
         flameshot
         tor
         tor-browser
