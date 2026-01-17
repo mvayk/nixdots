@@ -346,6 +346,7 @@
     fonts.packages = with pkgs; [
         nerd-fonts.iosevka
         nerd-fonts.jetbrains-mono
+        nerd-fonts.victor-mono
         nerd-fonts.space-mono
         nerd-fonts.symbols-only
         noto-fonts-cjk-sans

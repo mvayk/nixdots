@@ -11,10 +11,10 @@
         mouse = true;
         prefix = "C-e";
         extraConfig = ''
+            # settings
             set-option -g default-shell /run/current-system/sw/bin/zsh
             set-option -g default-terminal "tmux-256color"
             set-option -ga terminal-overrides ",xterm-256color:Tc,tmux-256color:Tc"
-            set-option -ga terminal-overrides ',xterm-kitty:cnorm=\E[?12h\E[?25h' 
             set-option -g history-limit 5000
             set-option -g mode-keys vi
             set-option -g escape-time 10
@@ -24,16 +24,13 @@
             set-option -g clock-mode-style 24
             set-option -g status on
             set-option -g mouse on
+            set-option -g renumber-windows on
+            set-option -g focus-events on
+
+            # bindings
             unbind C-b
             set -g prefix C-e
             bind C-e send-prefix
-            set-option -g renumber-windows on
-            set-option -g focus-events on
-            set-option -g status-position top
-            set-option -g status-justify left
-            set-option -g status-left-length 100
-            set-option -g status-right-length 100
-            set-option -g window-status-separator ""
             bind-key -T copy-mode-vi v send-keys -X begin-selection
             bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
             bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
@@ -41,10 +38,10 @@
             bind j select-pane -D
             bind k select-pane -U
             bind l select-pane -R
-            bind -r H resize-pane -L 2
-            bind -r J resize-pane -D 2
-            bind -r K resize-pane -U 2
-            bind -r L resize-pane -R 2
+            bind -r H resize-pane -L 6
+            bind -r J resize-pane -D 6
+            bind -r K resize-pane -U 6
+            bind -r L resize-pane -R 6
             bind x kill-pane
             bind \\ split-window -h -c "#{pane_current_path}"
             bind - split-window -v -c "#{pane_current_path}"
@@ -52,27 +49,17 @@
             unbind %
             bind r source-file ~/.tmux.conf \; display-message "Config reloaded!"
 
-            set-option -g status-style "bg=default"
-            set-option -g status-position top
+            set-option -g status-style "bg=black"
+            set-option -g status-position bottom
             set-option -g status-justify left
             set-option -g status-left-length 100
             set-option -g status-right-length 100
-            set-option -g status-left "#[fg=brightblue,bold] #S #[fg=brightblack]"
-            set-option -g status-right ""
-            set-option -g window-status-format "#[fg=brightblack] #I #[fg=brightblack]#W "
-            set-option -g window-status-current-format "#[fg=brightred,bold] #I #[fg=white,bold]#W "
+            set-option -g status-left "  "
+            set-option -g status-right "#[fg=brightblack] #S "
+            set-option -g window-status-format "#[fg=brightblack] #I #W "
+            set-option -g window-status-current-format "#[fg=brightblue,bold] #[fg=white,bold]#I #W #[fg=brightblue,bold]"
             set-option -g window-status-separator ""
-
-            set-option -g pane-border-style "fg=brightblack"
-            set-option -g pane-active-border-style "fg=brightblue"
-
-            set-option -g message-style "bg=default,fg=yellow"
-            set-option -g message-command-style "bg=default,fg=yellow"
-            set-option -g mode-style "bg=brightblack,fg=white"
-
-            set-option -g clock-mode-colour "brightcyan"
-            set-option -g display-panes-active-colour "brightred"
-            set-option -g display-panes-colour "brightblack"
         '';
+                #
     };
 }

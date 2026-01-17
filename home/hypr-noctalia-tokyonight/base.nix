@@ -42,8 +42,8 @@ in
           position = "top";
           monitors = [ ];
           density = "default";
-          showOutline = false;
-          showCapsule = false;
+          showOutline = true;
+          showCapsule = true;
           capsuleOpacity = 1;
           # backgroundOpacity = 0.93;
           backgroundOpacity = 0.93;
@@ -136,9 +136,9 @@ in
           showScreenCorners = false;
           forceBlackScreenCorners = false;
           scaleRatio = 1;
-          radiusRatio = 2;
+          radiusRatio = 1;
           # radiusRatio = 0.25;
-          iRadiusRatio = 0;
+          iRadiusRatio = 1;
           boxRadiusRatio = 0;
           # boxRadiusRatio = 1;
           screenRadiusRatio = 1;
@@ -157,8 +157,8 @@ in
           showChangelogOnStartup = true;
         };
         ui = {
-          fontDefault = "JetBrainsMono Nerd Font";
-          fontFixed = "JetBrainsMono Nerd Font Mono";
+          fontDefault = "Victor Mono Nerd Font";
+          fontFixed = "Victor Mono Nerd Font Mono";
           fontDefaultScale = 1;
           fontFixedScale = 1;
           tooltipsEnabled = true;
@@ -574,7 +574,7 @@ in
         gaps_in = 6;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "$primary $secondary $tertiary $error 45deg";
+        "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
         resize_on_border = false;
         allow_tearing = false;
@@ -633,6 +633,9 @@ in
         oh-my-zsh = {
             theme = "mh";
         };
+        initContent = ''
+            eval "$(starship init zsh)"
+        '';
     };
 
     programs.starship = {

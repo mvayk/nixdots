@@ -1,13 +1,14 @@
-font-family = "Iosevka Nerd Font Mono"
+font-family = "Victor Mono Nerd Font Mono"
 font-size=22
 window-decoration=false
-background-opacity= 0.7
-window-padding-x=4
-window-padding-y=4
-cursor-style=block
+background-opacity= 0.9
+window-padding-x=8
+window-padding-y=8
+cursor-style=bar
 cursor-style-blink=true
 shell-integration="zsh"
 keybind=ctrl+backspace=text:\x1b\x7f
+window-padding-balance=true
 
 confirm-close-surface=false
 
