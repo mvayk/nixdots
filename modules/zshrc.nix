@@ -32,7 +32,7 @@
                 tmux new-session
             fi
 
-            bindkey '^I autosuggest-accept
+            bindkey '^I' autosuggest-accept
 
             fastfetch
             nix-rebuild() {
@@ -42,6 +42,7 @@
             }
 
             eval "$(direnv hook zsh)"
+            eval "$(starship init zsh)"
         '';
     };
 }

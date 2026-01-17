@@ -46,13 +46,13 @@ in
           showCapsule = false;
           capsuleOpacity = 1;
           # backgroundOpacity = 0.93;
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.93;
           useSeparateOpacity = false;
           # floating = true;
           floating = false;
           marginVertical = 0.25;
           marginHorizontal = 1.00;
-          outerCorners = false;
+          outerCorners = true;
           exclusive = true;
                 widgets = {
                     left = [
@@ -136,14 +136,14 @@ in
           showScreenCorners = false;
           forceBlackScreenCorners = false;
           scaleRatio = 1;
-          radiusRatio = 0;
+          radiusRatio = 2;
           # radiusRatio = 0.25;
           iRadiusRatio = 0;
           boxRadiusRatio = 0;
           # boxRadiusRatio = 1;
           screenRadiusRatio = 1;
           animationSpeed = 1;
-          animationDisabled = true;
+          animationDisabled = false;
           compactLockScreen = false;
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
@@ -571,8 +571,8 @@ in
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 2;
-        gaps_out = 8;
+        gaps_in = 6;
+        gaps_out = 10;
         border_size = 2;
         "col.active_border" = "$primary $secondary $tertiary $error 45deg";
         "col.inactive_border" = "$surface";
@@ -582,8 +582,8 @@ in
       };
 
       decoration = {
-        rounding = 0;
-        rounding_power = 0;
+        rounding = 10;
+        rounding_power = 3;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 

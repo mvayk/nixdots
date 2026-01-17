@@ -1,9 +1,9 @@
 font-family = "Iosevka Nerd Font Mono"
 font-size=22
 window-decoration=false
-background-opacity=1
-window-padding-x=0
-window-padding-y=0
+background-opacity= 0.7
+window-padding-x=4
+window-padding-y=4
 cursor-style=block
 cursor-style-blink=true
 shell-integration="zsh"
