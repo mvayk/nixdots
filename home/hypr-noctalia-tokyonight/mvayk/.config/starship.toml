@@ -18,7 +18,7 @@ format = "[$user]($style)"
 [hostname]
 ssh_only = false
 format = "[@](white)[$hostname]($style) "
-style = "bold purple"
+style = "bold italic purple"
 ssh_symbol = " "
 
 [character]

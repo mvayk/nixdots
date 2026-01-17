@@ -54,8 +54,8 @@
             set-option -g status-justify left
             set-option -g status-left-length 100
             set-option -g status-right-length 100
-            set-option -g status-left "  "
-            set-option -g status-right "#[fg=brightblack] #S "
+            set-option -g status-left "#[bg=default,fg=black] "
+            set-option -g status-right "#[fg=brightblack] #S#[bg=default,fg=black]"
             set-option -g window-status-format "#[fg=brightblack] #I #W "
             set-option -g window-status-current-format "#[fg=brightblue,bold] #[fg=white,bold]#I #W #[fg=brightblue,bold]"
             set-option -g window-status-separator ""
