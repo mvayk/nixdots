@@ -208,6 +208,7 @@
         epiphany
         kdePackages.ark
         ollama
+        tldr
         openrgb-with-all-plugins
         kdePackages.kleopatra
         libsecret
