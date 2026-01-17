@@ -572,7 +572,7 @@ in
 
       general = {
         gaps_in = 2;
-        gaps_out = 4;
+        gaps_out = 8;
         border_size = 2;
         "col.active_border" = "$primary $secondary $tertiary $error 45deg";
         "col.inactive_border" = "$surface";
@@ -629,14 +629,14 @@ in
     };
   };
 
-    programs.starship = {
-        enable = false;
-    };
-
     programs.zsh = {
         oh-my-zsh = {
             theme = "mh";
         };
+    };
+
+    programs.starship = {
+        enable = true;
     };
 
     gtk = {

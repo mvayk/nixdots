@@ -26,12 +26,13 @@
             nix-edit = "nvim /etc/nixos/";
             #nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#desktop; popd";
             nix-rebuild-current = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$NIXOS_MACHINE-$NIXOS_THEME; popd";
-
         };
         initContent = ''
             if [[ -z "$TMUX" ]]; then
                 tmux new-session
             fi
+
+            bindkey '^I autosuggest-accept
 
             fastfetch
             nix-rebuild() {
