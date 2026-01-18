@@ -33,7 +33,7 @@
                 tmux new-session
             fi
 
-            bindkey '^I' autosuggest-accept
+            bindkey '^[[13;2u' autosuggest-accept
 
             fastfetch
             nix-rebuild() {

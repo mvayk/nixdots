@@ -148,7 +148,7 @@ in
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
           showHibernateOnLockScreen = false;
-          enableShadows = true;
+          enableShadows = false;
           shadowDirection = "bottom_right";
           shadowOffsetX = 2;
           shadowOffsetY = 3;
@@ -557,23 +557,19 @@ in
           "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
           "$mainMod, M, exit,"
           "$mainMod, T, exec, ghostty"
-          "$mainMod, W, exec, zen-beta"
           "$mainMod, E, exec, dolphin"
-          "$mainMod, V, togglefloating,"
+          "$mainMod, W, exec, zen-beta"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
           "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
           "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
-          "$mainMod, P, pseudo,"
-          "$mainMod, N, togglesplit,"
-          "$mainMod, F, fullscreen"
       ];
 
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 2;
-        gaps_out = 4;
-        border_size = 2;
+        gaps_in = 0;
+        gaps_out = 0;
+        border_size = 1;
         "col.active_border" = "$primary $secondary $tertiary $error 45deg";
         "col.inactive_border" = "$surface";
         resize_on_border = false;
@@ -588,7 +584,7 @@ in
         inactive_opacity = 1.0;
 
         shadow = {
-          enabled = true;
+          enabled = false;
           range = 24;
           render_power = 4;
           color = "rgba(00000055)";
@@ -630,7 +626,7 @@ in
   };
 
     programs.starship = {
-        enable = false;
+        enable = true;
     };
 
     programs.zsh = {

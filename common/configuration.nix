@@ -221,6 +221,7 @@
         unzip
         rar
         p7zip
+        raylib
         gcc
         nasm
         firefox-beta

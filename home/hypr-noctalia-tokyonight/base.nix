@@ -157,8 +157,8 @@ in
           showChangelogOnStartup = true;
         };
         ui = {
-          fontDefault = "Victor Mono Nerd Font";
-          fontFixed = "Victor Mono Nerd Font Mono";
+          fontDefault = "JetBrainsMono Nerd Font";
+          fontFixed = "JetBrainsMono Nerd Font";
           fontDefaultScale = 1;
           fontFixedScale = 1;
           tooltipsEnabled = true;
@@ -555,17 +555,12 @@ in
           ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
           "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
           "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
-          "$mainMod, M, exit,"
           "$mainMod, T, exec, ghostty"
           "$mainMod, W, exec, zen-beta"
           "$mainMod, E, exec, dolphin"
-          "$mainMod, V, togglefloating,"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
           "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
           "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
-          "$mainMod, P, pseudo,"
-          "$mainMod, N, togglesplit,"
-          "$mainMod, F, fullscreen"
       ];
 
       source = "noctalia/noctalia-colors.conf";
