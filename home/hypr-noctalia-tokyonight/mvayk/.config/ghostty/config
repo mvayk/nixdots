@@ -11,5 +11,7 @@ keybind=ctrl+backspace=text:\x1b\x7f
 window-padding-balance=true
 
 confirm-close-surface=false
+custom-shader-animation = always
+custom-shader = cursor_warp.glsl
 
 theme = TokyoNight

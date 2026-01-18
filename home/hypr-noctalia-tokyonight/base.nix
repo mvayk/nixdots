@@ -414,7 +414,7 @@ in
         notifications = {
           enabled = true;
           monitors = [ ];
-          location = "top_right";
+          location = "bottom_right";
           overlayLayer = true;
           backgroundOpacity = 1;
           respectExpireTimeout = false;

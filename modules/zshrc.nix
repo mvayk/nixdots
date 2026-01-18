@@ -33,8 +33,6 @@
                 tmux new-session
             fi
 
-            bindkey '^I' autosuggest-accept
-
             fastfetch
             nix-rebuild() {
                 noglob pushd /etc/nixos >/dev/null
