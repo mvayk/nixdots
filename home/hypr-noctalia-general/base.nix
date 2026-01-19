@@ -477,6 +477,9 @@ in
           enforceMinimum = true;
           enableDdcSupport = false;
         };
+        templates = {
+            enableUserTheming = true;
+        };
         colorSchemes = {
           useWallpaperColors = true;
           # useWallpaperColors = true;
