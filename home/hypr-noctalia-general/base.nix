@@ -581,6 +581,7 @@ in
           "$mainMod, P, pseudo,"
           "$mainMod, N, togglesplit,"
           "$mainMod, F, fullscreen"
+          "$mainMod, G, exec, $HOME/.config/hypr/scripts/toggle-gaps.sh"
       ];
 
       source = "noctalia/noctalia-colors.conf";
