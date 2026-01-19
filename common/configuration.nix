@@ -37,11 +37,11 @@
             layout = "au";
             variant = "";
         };
+        xkbOptions = "caps:escape_shifted_capslock";
 
         desktopManager = {
             xfce.enable = false;
         };
-
     };
     services.displayManager.defaultSession = "xfce";
 
@@ -203,6 +203,8 @@
         btop
         zsh
         kdePackages.kmines
+        kdePackages.kolourpaint
+        kdePackages.kpat
         qalculate-qt
         trilium-desktop
         epiphany
