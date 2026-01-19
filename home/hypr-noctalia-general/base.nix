@@ -370,7 +370,7 @@ in
           displayMode = "auto_hide";
           backgroundOpacity = 1;
           floatingRatio = 1;
-          size = 1;
+          size = 1.5;
           onlySameOutput = true;
           monitors = [ ];
           pinnedApps = [ ];
