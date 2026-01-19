@@ -95,7 +95,6 @@ in
                     center = [
                     {
                         id = "Workspace";
-                        labelMode = "none";
                     }
                     ];
                     right = [
@@ -514,7 +513,7 @@ in
           zed = false;
           helix = false;
           zenBrowser = false;
-          enableUserTemplates = false;
+          enableUserTemplates = true;
         };
         nightLight = {
           enabled = false;
