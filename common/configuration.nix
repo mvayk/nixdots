@@ -205,6 +205,7 @@
         kdePackages.kmines
         kdePackages.kolourpaint
         kdePackages.kpat
+        ace-of-penguins
         qalculate-qt
         trilium-desktop
         epiphany

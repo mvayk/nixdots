@@ -81,6 +81,15 @@
                 theme = "hypr-noctalia-tokyonight";
             };
 
+            desktop-hypr-noctalia-general = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-general";
+            };
+            laptop-hypr-noctalia-general = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-general";
+            };
+
             desktop-hypr-noctalia-fancy= mkNixosConfig {
                 machine = "desktop";
                 theme = "hypr-noctalia-fancy";

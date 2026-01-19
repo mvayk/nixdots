@@ -41,17 +41,17 @@ in
         bar = {
           position = "top";
           monitors = [ ];
-          density = "default";
-          showOutline = true;
+          density = "comfortable";
+          showOutline = false;
           showCapsule = true;
           capsuleOpacity = 0;
           # backgroundOpacity = 0.93;
-          backgroundOpacity = 0.60;
+          backgroundOpacity = 1;
           useSeparateOpacity = false;
-          floating = true;
+          floating = false;
           marginVertical = 0.25;
           marginHorizontal = 1.00;
-          outerCorners = false;
+          outerCorners = true;
           exclusive = true;
                 widgets = {
                     left = [
@@ -62,25 +62,13 @@ in
                         colorizeSystemIcon = "Primary";
                     }
                     {
-                        id = "Spacer";
-                    }
-                    {
                         id = "SystemMonitor";
-                    }
-                    {
-                        id = "Spacer";
                     }
                     {
                         id = "MediaMini";
                     }
                     {
                         id = "AudioVisualizer";
-                    }
-                    {
-                        id = "Spacer";
-                    }
-                    {
-                        id = "Taskbar";
                     }
                     ];
                     center = [
@@ -121,10 +109,10 @@ in
                         id = "WallpaperSelector";
                     }
                     {
-                        id = "Spacer";
+                        id = "Clock";
                     }
                     {
-                        id = "Clock";
+                        id = "SessionMenu";
                     }
                     ];
                 };
@@ -163,7 +151,7 @@ in
           tooltipsEnabled = true;
           # panelBackgroundOpacity = 0.93;
           panelBackgroundOpacity = 1;
-          panelsAttachedToBar = false;
+          panelsAttachedToBar = true;
           settingsPanelMode = "detached";
           wifiDetailsViewMode = "grid";
           bluetoothDetailsViewMode = "grid";
