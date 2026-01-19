@@ -490,7 +490,7 @@ in
           kcolorscheme = true;
           alacritty = false;
           kitty = true;
-          ghostty = false;
+          ghostty = true;
           foot = false;
           wezterm = false;
           fuzzel = false;
