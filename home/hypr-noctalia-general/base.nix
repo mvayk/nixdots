@@ -89,19 +89,23 @@ in
                     }
                     {
                         id = "MediaMini";
-                    }
-                    {
-                        id = "AudioVisualizer";
-                        hideWhenIdle = true;
+                        maxWidth = 220;
                     }
                     ];
                     center = [
                     {
                         id = "Workspace";
-                        labelMode = "None";
+                        labelMode = "none";
                     }
                     ];
                     right = [
+                    {
+                        id = "AudioVisualizer";
+                        hideWhenIdle = true;
+                    }
+                    {
+                        id = "Spacer";
+                    }
                     {
                         id = "Tray";
                         # drawerEnabled = false;
@@ -580,8 +584,8 @@ in
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 4;
-        gaps_out = 10;
+        gaps_in = 2;
+        gaps_out = 8;
         border_size = 2;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
