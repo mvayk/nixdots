@@ -62,24 +62,49 @@ in
                         colorizeSystemIcon = "Primary";
                     }
                     {
+                        id = "NotificationHistory";
+                    }
+                    {
+                        id = "Launcher";
+                    }
+                    {
+                        id = "PowerProfile";
+                    }
+                    {
+                        id = "WallpaperSelector";
+                    }
+                    {
+                        id = "NightLight";
+                    }
+                    {
+                        id = "DarkMode";
+                    }
+                    {
                         id = "SystemMonitor";
+                    }
+                    {
+                        id = "Taskbar";
+                        onlyActiveWorkspaces = false;
+                        colorizeIcons = true;
                     }
                     {
                         id = "MediaMini";
                     }
                     {
                         id = "AudioVisualizer";
+                        hideWhenIdle = true;
                     }
                     ];
                     center = [
                     {
                         id = "Workspace";
-
+                        labelMode = "None";
                     }
                     ];
                     right = [
                     {
                         id = "Tray";
+                        # drawerEnabled = false;
                     }
                     {
                         id = "Spacer";
@@ -91,22 +116,19 @@ in
                         id = "Microphone";
                     }
                     {
-                        id = "NotificationHistory";
-                    }
-                    {
-                        id = "Battery";
-                    }
-                    {
                         id = "Volume";
+                    }
+                    {
+                        id = "Bluetooth";
+                    }
+                    {
+                        id = "Network";
                     }
                     {
                         id = "Brightness";
                     }
                     {
-                        id = "DarkMode";
-                    }
-                    {
-                        id = "WallpaperSelector";
+                        id = "Battery";
                     }
                     {
                         id = "Clock";
@@ -152,7 +174,7 @@ in
           # panelBackgroundOpacity = 0.93;
           panelBackgroundOpacity = 1;
           panelsAttachedToBar = true;
-          settingsPanelMode = "detached";
+          settingsPanelMode = "attached";
           wifiDetailsViewMode = "grid";
           bluetoothDetailsViewMode = "grid";
           networkPanelView = "wifi";
@@ -165,7 +187,7 @@ in
           weatherShowEffects = true;
           useFahrenheit = false;
           use12hourFormat = false;
-          showWeekNumberInCalendar = false;
+          showWeekNumberInCalendar = true;
           showCalendarEvents = true;
           showCalendarWeather = true;
           analogClockInCalendar = false;
@@ -303,7 +325,7 @@ in
               id = "audio-card";
             }
             {
-              enabled = false;
+              enabled = true;
               id = "brightness-card";
             }
             {
@@ -453,9 +475,9 @@ in
           enableDdcSupport = false;
         };
         colorSchemes = {
-          useWallpaperColors = false;
+          useWallpaperColors = true;
           # useWallpaperColors = true;
-          predefinedScheme = "Tokyo Night";
+          predefinedScheme = "Ayu";
           darkMode = true;
           schedulingMode = "off";
           manualSunrise = "06:30";
@@ -558,7 +580,7 @@ in
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 6;
+        gaps_in = 4;
         gaps_out = 10;
         border_size = 2;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
@@ -569,8 +591,8 @@ in
       };
 
       decoration = {
-        rounding = 10;
-        # rounding_power = 5;
+        rounding = 20;
+        rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
