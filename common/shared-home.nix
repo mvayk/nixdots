@@ -39,4 +39,7 @@
         NIXOS_THEME   = theme;
         PAGER = "bat";
     };
+    home.sessionPath = [
+        "$HOME/.cargo/bin"
+    ];
 }
