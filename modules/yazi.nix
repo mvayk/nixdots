@@ -64,28 +64,5 @@
             { on = [ "y" ]; run = "yank"; desc = "Yank selected files"; }
             ];
         };
-
-        plugins = {
-            smart-enter = pkgs.fetchFromGitHub {
-                owner = "ourongxing";
-                repo = "ouch.yazi";
-                rev = "694d149be5f96eaa0ec1dabdfaa874fd8943oed9";
-                hash = lib.fakeHash;
-            };
-
-            miller = pkgs.fetchFromGitHub {
-                owner = "Reledia";
-                repo = "miller.yazi";
-                rev = "main";
-                hash = lib.fakeHash;
-            };
-
-            git = pkgs.fetchFromGitHub {
-                owner = "yazi-rs";
-                repo = "plugins";
-                rev = "main";
-                hash = lib.fakeHash;
-            };
-        };
     };
 }
