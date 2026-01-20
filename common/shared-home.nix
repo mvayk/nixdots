@@ -28,10 +28,6 @@
         enable = true;
     };
 
-    programs.yazi = {
-        enable = true;
-    };
-
     home.packages = with pkgs; [
     ];
 
