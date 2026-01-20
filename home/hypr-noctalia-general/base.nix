@@ -661,8 +661,8 @@ in
     gtk = {
         enable = true;
         iconTheme = {
-            name = "WhiteSur-dark";
-            package = pkgs.whitesur-icon-theme;
+            name = "Kora";
+            package = pkgs.kora-icon-theme;
         };
         # theme = {
         #     name = "Breeze-Dark";  # or "Breeze" for light
@@ -688,6 +688,7 @@ in
         slurp
         qt6Packages.qtimageformats
         qt6Packages.qtsvg
+        kora-icon-theme
         matugen.packages.${pkgs.system}.default
 
         libsForQt5.qtimageformats
