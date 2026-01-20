@@ -221,6 +221,11 @@
         gnumake
         wine
         libreoffice-qt-fresh
+        ffmpegthumbnailer
+        unar
+        jq
+        poppler_utils
+
         unzip
         rar
         p7zip
@@ -277,6 +282,8 @@
         bat
         flameshot
         tor
+        fzf
+        zoxide
         tor-browser
         vesktop
         qutebrowser

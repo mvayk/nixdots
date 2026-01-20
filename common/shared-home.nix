@@ -38,6 +38,7 @@
         NIXOS_MACHINE = machine;
         NIXOS_THEME   = theme;
         PAGER = "bat";
+        EDITOR = "nvim";
     };
     home.sessionPath = [
         "$HOME/.cargo/bin"
