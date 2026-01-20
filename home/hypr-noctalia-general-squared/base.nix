@@ -573,7 +573,6 @@ in
           "$mainMod, M, exit,"
           "$mainMod, T, exec, ghostty"
           "$mainMod, W, exec, zen-beta"
-          "$mainMod, E, exec, dolphin"
           "$mainMod, V, togglefloating,"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
           "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
