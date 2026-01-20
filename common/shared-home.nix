@@ -3,6 +3,7 @@
     imports = [
         ../modules/tmux.nix
         ../modules/zshrc.nix
+        ../modules/yazi.nix
     ];
 
     home.username = "mvayk";

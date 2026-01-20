@@ -224,7 +224,7 @@
         ffmpegthumbnailer
         unar
         jq
-        poppler_utils
+        poppler-utils
 
         unzip
         rar
