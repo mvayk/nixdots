@@ -89,6 +89,15 @@
                 machine = "laptop";
                 theme = "hypr-noctalia-general";
             };
+            
+            desktop-hypr-noctalia-general-squared = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-general-squared";
+            };
+            laptop-hypr-noctalia-general-squared = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-general-squared";
+            };
 
             desktop-hypr-noctalia-fancy= mkNixosConfig {
                 machine = "desktop";
