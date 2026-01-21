@@ -45,6 +45,13 @@
     };
     services.displayManager.defaultSession = "xfce";
 
+    xdg.menus.enable = true;
+    xdg.mime.enable = true;
+
+    # https://discuss.kde.org/t/dolphin-file-associations/38934/2
+    # kbuildsycoca6
+    environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
     environment.sessionVariables = {
         C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
         CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
@@ -77,7 +84,7 @@
 
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = true;
+    services.desktopManager.plasma6.enable = false;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -233,7 +240,7 @@
         bat
         most
         nautilus
-        ungoogled-chromium
+        # ungoogled-chromium
         scanmem
         htop
         gdb
@@ -261,7 +268,7 @@
         zoxide
         tor-browser
         vesktop
-        qutebrowser
+        #qutebrowser
         pulseaudio
         kdePackages.dolphin
         nemo
