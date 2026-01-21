@@ -759,6 +759,14 @@ in
             name = "JetBrainsMono Nerd Font";
             size = 10;
         };
+
+        gtk3.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+        
+        gtk4.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
     };
 
     home.sessionVariables = {

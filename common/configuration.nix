@@ -142,7 +142,6 @@
     # programs.fish.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
-    programs.thunar.enable = true;
     programs.direnv = {
         enable = true;
         nix-direnv.enable = true;
@@ -239,7 +238,6 @@
         more
         bat
         most
-        nautilus
         # ungoogled-chromium
         scanmem
         htop
