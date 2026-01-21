@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia, quickshell, matugen, lib, ... }:
+{ config, pkgs, noctalia, quickshell, matugen, future-hyprcursor, lib, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:
@@ -26,12 +26,11 @@ in
     };
 
     home.pointerCursor = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-        size = 24;
-        x11 = {
-            enable = true;
-        };
+        package = future-hyprcursor.packages.${pkgs.system}.default;
+        name = "future-black-hyprcursor";
+        size = 38;
+        gtk.enable = true;
+        x11.enable = true;
     };
 
     programs.noctalia-shell = {
@@ -548,13 +547,13 @@ in
     settings = {
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
+        "XCURSOR_SIZE,38"
+        "HYPRCURSOR_SIZE,38"
       ];
       exec-once = [
         "noctalia-shell"
         "nm-applet"
-        "hyprctl setcursor Bibata-Modern-Classic 24"
+        "hyprctl setcursor future-black-hyprcursor 38"
       ];
 
       bind = [
@@ -770,8 +769,9 @@ in
     };
 
     home.sessionVariables = {
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
+        XCURSOR_THEME = "future-black-hyprcursor";
+        XCURSOR_SIZE = "48";
+        HYPRCURSOR_THEME = "future-black-hyprcursor";
     };
 
     home.packages = with pkgs; [
@@ -803,5 +803,6 @@ in
         wl-clipboard
         quickshell.packages.${pkgs.system}.default
         noctalia.packages.${pkgs.system}.default
+        future-hyprcursor.packages.${pkgs.system}.default
     ];
 }
