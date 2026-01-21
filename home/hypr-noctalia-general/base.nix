@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia, quickshell, matugen, ... }:
+{ config, pkgs, noctalia, quickshell, matugen, lib, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:
@@ -543,21 +543,13 @@ in
         };
       };
     };
-
-    home.sessionVariables = {
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
-        #QT_QUICK_BACKEND = "software";
-    };
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       env = [
-        "GTK_THEME,WhiteSur-Dark"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
       exec-once = [
         "noctalia-shell"
@@ -571,7 +563,7 @@ in
           "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
           "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
           "$mainMod, M, exit,"
-          "$mainMod, E, exec, ghostty -e yazi"
+          "$mainMod, E, exec, dolphin"
           "$mainMod, T, exec, ghostty"
           "$mainMod, W, exec, zen-beta"
           "$mainMod, V, togglefloating,"
@@ -658,37 +650,140 @@ in
         enable = true;
     };
 
+
+# this shit is driving me up the wall
+    qt = {
+        enable = true;
+        platformTheme.name = "qtct";
+        style = {
+            # name = "breeze";
+        };
+    };
+
+
+/* qt.qt5ctSettings = {
+    Appearance = {
+        style = "breeze";
+        icon_theme = "Kora";
+        standar_dialogs = "xdgdesktopportal";
+    };
+    Fonts = {
+        fixed = "\"JetBrainsMono Nerd Font Mono,10\"";
+        general = "\"JetBrainsMono Nerd Font,10\"";
+    };
+}; */
+
+  xdg.configFile."qt5ct/qt5ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt5ct/colors/noctalia.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [SettingsWindow]
+    geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa)
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+  xdg.configFile."qt6ct/qt6ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [SettingsWindow]
+    geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa)
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
     gtk = {
         enable = true;
+        theme = {
+            name = "adw-gtk3-dark";
+            package = pkgs.adw-gtk3;
+        };
+
         iconTheme = {
             name = "Kora";
             package = pkgs.kora-icon-theme;
         };
-        # theme = {
-        #     name = "Breeze-Dark";  # or "Breeze" for light
-        #     package = pkgs.kdePackages.breeze-gtk;
-        # };
+
+        font = {
+            name = "JetBrainsMono Nerd Font";
+            size = 10;
+        };
     };
 
-    qt = {
-        enable = true;
+    home.sessionVariables = {
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24";
     };
 
     home.packages = with pkgs; [
         qt6Packages.qt6ct
         libsForQt5.qt5ct
-        whitesur-icon-theme
         lxappearance
+        kdePackages.kirigami
         kdePackages.qtstyleplugin-kvantum
         kdePackages.breeze-gtk
-        catppuccin-qt5ct
+        kora-icon-theme
+        kdePackages.breeze
+        adw-gtk3
+        nwg-look
+
         bibata-cursors
         hyprland
         grim
         slurp
         qt6Packages.qtimageformats
         qt6Packages.qtsvg
-        kora-icon-theme
         matugen.packages.${pkgs.system}.default
 
         libsForQt5.qtimageformats
@@ -698,8 +793,6 @@ in
         libpng
         librsvg
         wl-clipboard
-        kdePackages.breeze
-        nwg-look
         quickshell.packages.${pkgs.system}.default
         noctalia.packages.${pkgs.system}.default
     ];

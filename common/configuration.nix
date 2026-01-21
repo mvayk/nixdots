@@ -55,31 +55,6 @@
     services.flatpak.enable = true;
     services.fwupd.enable = true;
 
-    xdg.mime = {
-        enable = true;
-        defaultApplications = {
-            "image/png" = "feh.desktop";
-            "image/jpeg" = "feh.desktop";
-            "image/jpg" = "feh.desktop";
-            "image/gif" = "feh.desktop";
-            "image/webp" = "feh.desktop";
-            "image/bmp" = "feh.desktop";
-
-            "video/mp4" = "mpv.desktop";
-            "video/x-matroska" = "mpv.desktop";
-            "video/webm" = "mpv.desktop";
-            "video/avi" = "mpv.desktop";
-            "video/x-msvideo" = "mpv.desktop";
-            "video/quicktime" = "mpv.desktop";
-
-            "text/plain" = "emacs.desktop";
-            "text/x-csrc" = "emacs.desktop";
-            "text/x-c++src" = "emacs.desktop";
-            "text/x-python" = "emacs.desktop";
-            "text/markdown" = "emacs.desktop";
-            "application/x-shellscript" = "emacs.desktop";
-        };
-    };
 
     services.printing.enable = true;
     services.xserver = {
@@ -108,8 +83,8 @@
     security.rtkit.enable = true;
     
     # GNOME Keyring configuration for Dolphin SMB authentication
-    services.gnome.gnome-keyring.enable = false;
-    security.pam.services.login.enableGnomeKeyring = false;
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
     security.pam.services.hyprland.enableGnomeKeyring = true;
     programs.seahorse.enable = false;
 
@@ -257,6 +232,7 @@
         more
         bat
         most
+        nautilus
         ungoogled-chromium
         scanmem
         htop
@@ -278,7 +254,6 @@
         tmux
         texlive.combined.scheme-medium
         imagemagick
-        obsidian
         bat
         flameshot
         tor
