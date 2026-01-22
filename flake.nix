@@ -4,6 +4,7 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        future-hyprcursor.url = "github:mvayk/nix-future-hyprcursor";
         matugen = {
             url = "github:/InioX/Matugen";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +30,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, ... }:
+    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, future-hyprcursor, ... }:
         let
         system = "x86_64-linux";
         specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
@@ -47,7 +48,7 @@
                     home-manager.users.mvayk = import ./home/${theme}/base.nix;
                     home-manager.backupFileExtension = "backup";
                     home-manager.extraSpecialArgs = { 
-                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine theme; 
+                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine theme future-hyprcursor; 
                     };
                 }
             ];
@@ -79,6 +80,24 @@
             laptop-hypr-noctalia-tokyonight = mkNixosConfig {
                 machine = "laptop";
                 theme = "hypr-noctalia-tokyonight";
+            };
+
+            desktop-hypr-noctalia-general = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-general";
+            };
+            laptop-hypr-noctalia-general = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-general";
+            };
+            
+            desktop-hypr-noctalia-general-squared = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-general-squared";
+            };
+            laptop-hypr-noctalia-general-squared = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-general-squared";
             };
 
             desktop-hypr-noctalia-fancy= mkNixosConfig {

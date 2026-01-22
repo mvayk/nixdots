@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia, quickshell, matugen, ... }:
+{ config, pkgs, noctalia, quickshell, matugen, future-hyprcursor, lib, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:
@@ -26,12 +26,11 @@ in
     };
 
     home.pointerCursor = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-        size = 24;
-        x11 = {
-            enable = true;
-        };
+        package = future-hyprcursor.packages.${pkgs.system}.default;
+        name = "future-black-hyprcursor";
+        size = 38;
+        gtk.enable = true;
+        x11.enable = true;
     };
 
     programs.noctalia-shell = {
@@ -41,17 +40,17 @@ in
         bar = {
           position = "top";
           monitors = [ ];
-          density = "default";
-          showOutline = true;
+          density = "comfortable";
+          showOutline = false;
           showCapsule = true;
           capsuleOpacity = 0;
           # backgroundOpacity = 0.93;
-          backgroundOpacity = 0.60;
+          backgroundOpacity = 1;
           useSeparateOpacity = false;
-          floating = true;
+          floating = false;
           marginVertical = 0.25;
           marginHorizontal = 1.00;
-          outerCorners = false;
+          outerCorners = true;
           exclusive = true;
                 widgets = {
                     left = [
@@ -62,36 +61,52 @@ in
                         colorizeSystemIcon = "Primary";
                     }
                     {
-                        id = "Spacer";
+                        id = "NotificationHistory";
+                    }
+                    {
+                        id = "Launcher";
+                    }
+                    {
+                        id = "PowerProfile";
+                    }
+                    {
+                        id = "WallpaperSelector";
+                    }
+                    {
+                        id = "NightLight";
+                    }
+                    {
+                        id = "DarkMode";
                     }
                     {
                         id = "SystemMonitor";
                     }
                     {
-                        id = "Spacer";
+                        id = "Taskbar";
+                        onlyActiveWorkspaces = false;
+                        colorizeIcons = true;
                     }
                     {
                         id = "MediaMini";
-                    }
-                    {
-                        id = "AudioVisualizer";
-                    }
-                    {
-                        id = "Spacer";
-                    }
-                    {
-                        id = "Taskbar";
+                        maxWidth = 220;
                     }
                     ];
                     center = [
                     {
                         id = "Workspace";
-
                     }
                     ];
                     right = [
                     {
+                        id = "AudioVisualizer";
+                        hideWhenIdle = true;
+                    }
+                    {
+                        id = "Spacer";
+                    }
+                    {
                         id = "Tray";
+                        # drawerEnabled = false;
                     }
                     {
                         id = "Spacer";
@@ -103,28 +118,25 @@ in
                         id = "Microphone";
                     }
                     {
-                        id = "NotificationHistory";
-                    }
-                    {
-                        id = "Battery";
-                    }
-                    {
                         id = "Volume";
+                    }
+                    {
+                        id = "Bluetooth";
+                    }
+                    {
+                        id = "Network";
                     }
                     {
                         id = "Brightness";
                     }
                     {
-                        id = "DarkMode";
-                    }
-                    {
-                        id = "WallpaperSelector";
-                    }
-                    {
-                        id = "Spacer";
+                        id = "Battery";
                     }
                     {
                         id = "Clock";
+                    }
+                    {
+                        id = "SessionMenu";
                     }
                     ];
                 };
@@ -157,14 +169,14 @@ in
         };
         ui = {
           fontDefault = "JetBrainsMono Nerd Font";
-          fontFixed = "JetBrainsMono Nerd Font";
+          fontFixed = "JetBrainsMono Nerd Font Mono";
           fontDefaultScale = 1;
           fontFixedScale = 1;
           tooltipsEnabled = true;
           # panelBackgroundOpacity = 0.93;
           panelBackgroundOpacity = 1;
-          panelsAttachedToBar = false;
-          settingsPanelMode = "detached";
+          panelsAttachedToBar = true;
+          settingsPanelMode = "attached";
           wifiDetailsViewMode = "grid";
           bluetoothDetailsViewMode = "grid";
           networkPanelView = "wifi";
@@ -177,7 +189,7 @@ in
           weatherShowEffects = true;
           useFahrenheit = false;
           use12hourFormat = false;
-          showWeekNumberInCalendar = false;
+          showWeekNumberInCalendar = true;
           showCalendarEvents = true;
           showCalendarWeather = true;
           analogClockInCalendar = false;
@@ -315,7 +327,7 @@ in
               id = "audio-card";
             }
             {
-              enabled = false;
+              enabled = true;
               id = "brightness-card";
             }
             {
@@ -357,7 +369,7 @@ in
           displayMode = "auto_hide";
           backgroundOpacity = 1;
           floatingRatio = 1;
-          size = 1;
+          size = 1.5;
           onlySameOutput = true;
           monitors = [ ];
           pinnedApps = [ ];
@@ -464,10 +476,13 @@ in
           enforceMinimum = true;
           enableDdcSupport = false;
         };
+        templates = {
+            enableUserTheming = true;
+        };
         colorSchemes = {
-          useWallpaperColors = false;
+          useWallpaperColors = true;
           # useWallpaperColors = true;
-          predefinedScheme = "Tokyo Night";
+          predefinedScheme = "Ayu";
           darkMode = true;
           schedulingMode = "off";
           manualSunrise = "06:30";
@@ -480,7 +495,7 @@ in
           kcolorscheme = true;
           alacritty = false;
           kitty = true;
-          ghostty = false;
+          ghostty = true;
           foot = false;
           wezterm = false;
           fuzzel = false;
@@ -500,7 +515,7 @@ in
           zed = false;
           helix = false;
           zenBrowser = false;
-          enableUserTemplates = false;
+          enableUserTemplates = true;
         };
         nightLight = {
           enabled = false;
@@ -527,26 +542,18 @@ in
         };
       };
     };
-
-    home.sessionVariables = {
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
-        #QT_QUICK_BACKEND = "software";
-    };
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       env = [
-        "GTK_THEME,WhiteSur-Dark"
         "XDG_CURRENT_DESKTOP,Hyprland"
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
+        "XCURSOR_SIZE,38"
+        "HYPRCURSOR_SIZE,38"
       ];
       exec-once = [
         "noctalia-shell"
         "nm-applet"
-        "hyprctl setcursor Bibata-Modern-Classic 24"
+        "hyprctl setcursor future-black-hyprcursor 38"
       ];
 
       bind = [
@@ -554,19 +561,25 @@ in
           ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
           "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
           "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
+          "$mainMod, M, exit,"
+          "$mainMod, E, exec, dolphin"
           "$mainMod, T, exec, ghostty"
           "$mainMod, W, exec, zen-beta"
-          "$mainMod, E, exec, dolphin"
+          "$mainMod, V, togglefloating,"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
           "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
           "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
+          "$mainMod, P, pseudo,"
+          "$mainMod, N, togglesplit,"
+          "$mainMod, F, fullscreen"
+          "$mainMod, G, exec, $HOME/.config/hypr/scripts/toggle-gaps.sh"
       ];
 
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 6;
-        gaps_out = 10;
+        gaps_in = 2;
+        gaps_out = 8;
         border_size = 2;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
@@ -576,8 +589,8 @@ in
       };
 
       decoration = {
-        rounding = 10;
-        # rounding_power = 5;
+        rounding = 20;
+        rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
@@ -597,7 +610,7 @@ in
       };
 
       animations = {
-        enabled = false;
+        enabled = true;
         bezier = [
           "linear, 0, 0, 1, 1"
           "md3_standard, 0.2, 0, 0, 1"
@@ -636,30 +649,143 @@ in
         enable = true;
     };
 
-    gtk = {
-        enable = true;
-        iconTheme = {
-            name = "WhiteSur-dark";
-            package = pkgs.whitesur-icon-theme;
-        };
-        # theme = {
-        #     name = "Breeze-Dark";  # or "Breeze" for light
-        #     package = pkgs.kdePackages.breeze-gtk;
-        # };
-    };
 
+# this shit is driving me up the wall
     qt = {
         enable = true;
+        platformTheme.name = "qtct";
+        style = {
+            # name = "breeze";
+        };
+    };
+
+
+/* qt.qt5ctSettings = {
+    Appearance = {
+        style = "breeze";
+        icon_theme = "Kora";
+        standar_dialogs = "xdgdesktopportal";
+    };
+    Fonts = {
+        fixed = "\"JetBrainsMono Nerd Font Mono,10\"";
+        general = "\"JetBrainsMono Nerd Font,10\"";
+    };
+}; */
+
+  xdg.configFile."qt5ct/qt5ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt5ct/colors/noctalia.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [SettingsWindow]
+    geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa)
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+  xdg.configFile."qt6ct/qt6ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [SettingsWindow]
+    geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa)
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+    gtk = {
+        enable = true;
+        theme = {
+            name = "adw-gtk3-dark";
+            package = pkgs.adw-gtk3;
+        };
+
+        iconTheme = {
+            name = "Kora";
+            package = pkgs.kora-icon-theme;
+        };
+
+        font = {
+            name = "JetBrainsMono Nerd Font";
+            size = 10;
+        };
+
+        gtk3.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+        
+        gtk4.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+    };
+
+    home.sessionVariables = {
+        XCURSOR_THEME = "future-black-hyprcursor";
+        XCURSOR_SIZE = "48";
+        HYPRCURSOR_THEME = "future-black-hyprcursor";
     };
 
     home.packages = with pkgs; [
         qt6Packages.qt6ct
         libsForQt5.qt5ct
-        whitesur-icon-theme
         lxappearance
+        kdePackages.kirigami
         kdePackages.qtstyleplugin-kvantum
         kdePackages.breeze-gtk
-        catppuccin-qt5ct
+        kora-icon-theme
+        kdePackages.breeze
+        adw-gtk3
+        nwg-look
+
         bibata-cursors
         hyprland
         grim
@@ -675,9 +801,8 @@ in
         libpng
         librsvg
         wl-clipboard
-        kdePackages.breeze
-        nwg-look
         quickshell.packages.${pkgs.system}.default
         noctalia.packages.${pkgs.system}.default
+        future-hyprcursor.packages.${pkgs.system}.default
     ];
 }

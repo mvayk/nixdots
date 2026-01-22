@@ -3,6 +3,7 @@
     imports = [
         ../modules/tmux.nix
         ../modules/zshrc.nix
+        ../modules/yazi.nix
     ];
 
     home.username = "mvayk";
@@ -14,7 +15,7 @@
         settings = {
             user = {
                 name = "mvayk";
-                email = "mvayk@mvayk.mvayk";
+                email = "45300955+mvayk@users.noreply.github.com";
             };
         };
     };
@@ -27,10 +28,6 @@
         enable = true;
     };
 
-    programs.yazi = {
-        enable = true;
-    };
-
     home.packages = with pkgs; [
     ];
 
@@ -38,5 +35,9 @@
         NIXOS_MACHINE = machine;
         NIXOS_THEME   = theme;
         PAGER = "bat";
+        EDITOR = "nvim";
     };
+    home.sessionPath = [
+        "$HOME/.cargo/bin"
+    ];
 }

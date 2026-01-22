@@ -41,14 +41,14 @@ in
         bar = {
           position = "top";
           monitors = [ ];
-          density = "default";
-          showOutline = true;
-          showCapsule = true;
+          density = "comfortable";
+          showOutline = false;
+          showCapsule = false;
           capsuleOpacity = 0;
           # backgroundOpacity = 0.93;
-          backgroundOpacity = 0.60;
+          backgroundOpacity = 1;
           useSeparateOpacity = false;
-          floating = true;
+          floating = false;
           marginVertical = 0.25;
           marginHorizontal = 1.00;
           outerCorners = false;
@@ -62,36 +62,52 @@ in
                         colorizeSystemIcon = "Primary";
                     }
                     {
-                        id = "Spacer";
+                        id = "NotificationHistory";
+                    }
+                    {
+                        id = "Launcher";
+                    }
+                    {
+                        id = "PowerProfile";
+                    }
+                    {
+                        id = "WallpaperSelector";
+                    }
+                    {
+                        id = "NightLight";
+                    }
+                    {
+                        id = "DarkMode";
                     }
                     {
                         id = "SystemMonitor";
                     }
                     {
-                        id = "Spacer";
+                        id = "Taskbar";
+                        onlyActiveWorkspaces = false;
+                        colorizeIcons = true;
                     }
                     {
                         id = "MediaMini";
-                    }
-                    {
-                        id = "AudioVisualizer";
-                    }
-                    {
-                        id = "Spacer";
-                    }
-                    {
-                        id = "Taskbar";
+                        maxWidth = 220;
                     }
                     ];
                     center = [
                     {
                         id = "Workspace";
-
                     }
                     ];
                     right = [
                     {
+                        id = "AudioVisualizer";
+                        hideWhenIdle = true;
+                    }
+                    {
+                        id = "Spacer";
+                    }
+                    {
                         id = "Tray";
+                        # drawerEnabled = false;
                     }
                     {
                         id = "Spacer";
@@ -103,28 +119,25 @@ in
                         id = "Microphone";
                     }
                     {
-                        id = "NotificationHistory";
-                    }
-                    {
-                        id = "Battery";
-                    }
-                    {
                         id = "Volume";
+                    }
+                    {
+                        id = "Bluetooth";
+                    }
+                    {
+                        id = "Network";
                     }
                     {
                         id = "Brightness";
                     }
                     {
-                        id = "DarkMode";
-                    }
-                    {
-                        id = "WallpaperSelector";
-                    }
-                    {
-                        id = "Spacer";
+                        id = "Battery";
                     }
                     {
                         id = "Clock";
+                    }
+                    {
+                        id = "SessionMenu";
                     }
                     ];
                 };
@@ -135,9 +148,9 @@ in
           showScreenCorners = false;
           forceBlackScreenCorners = false;
           scaleRatio = 1;
-          radiusRatio = 1;
+          radiusRatio = 0;
           # radiusRatio = 0.25;
-          iRadiusRatio = 1;
+          iRadiusRatio = 0;
           boxRadiusRatio = 0;
           # boxRadiusRatio = 1;
           screenRadiusRatio = 1;
@@ -157,13 +170,13 @@ in
         };
         ui = {
           fontDefault = "JetBrainsMono Nerd Font";
-          fontFixed = "JetBrainsMono Nerd Font";
+          fontFixed = "JetBrainsMono Nerd Font Mono";
           fontDefaultScale = 1;
           fontFixedScale = 1;
           tooltipsEnabled = true;
           # panelBackgroundOpacity = 0.93;
           panelBackgroundOpacity = 1;
-          panelsAttachedToBar = false;
+          panelsAttachedToBar = true;
           settingsPanelMode = "detached";
           wifiDetailsViewMode = "grid";
           bluetoothDetailsViewMode = "grid";
@@ -177,7 +190,7 @@ in
           weatherShowEffects = true;
           useFahrenheit = false;
           use12hourFormat = false;
-          showWeekNumberInCalendar = false;
+          showWeekNumberInCalendar = true;
           showCalendarEvents = true;
           showCalendarWeather = true;
           analogClockInCalendar = false;
@@ -315,7 +328,7 @@ in
               id = "audio-card";
             }
             {
-              enabled = false;
+              enabled = true;
               id = "brightness-card";
             }
             {
@@ -357,7 +370,7 @@ in
           displayMode = "auto_hide";
           backgroundOpacity = 1;
           floatingRatio = 1;
-          size = 1;
+          size = 1.5;
           onlySameOutput = true;
           monitors = [ ];
           pinnedApps = [ ];
@@ -464,10 +477,13 @@ in
           enforceMinimum = true;
           enableDdcSupport = false;
         };
+        templates = {
+            enableUserTheming = true;
+        };
         colorSchemes = {
-          useWallpaperColors = false;
+          useWallpaperColors = true;
           # useWallpaperColors = true;
-          predefinedScheme = "Tokyo Night";
+          predefinedScheme = "Ayu";
           darkMode = true;
           schedulingMode = "off";
           manualSunrise = "06:30";
@@ -480,7 +496,7 @@ in
           kcolorscheme = true;
           alacritty = false;
           kitty = true;
-          ghostty = false;
+          ghostty = true;
           foot = false;
           wezterm = false;
           fuzzel = false;
@@ -500,7 +516,7 @@ in
           zed = false;
           helix = false;
           zenBrowser = false;
-          enableUserTemplates = false;
+          enableUserTemplates = true;
         };
         nightLight = {
           enabled = false;
@@ -554,19 +570,24 @@ in
           ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
           "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
           "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
+          "$mainMod, M, exit,"
           "$mainMod, T, exec, ghostty"
           "$mainMod, W, exec, zen-beta"
-          "$mainMod, E, exec, dolphin"
+          "$mainMod, V, togglefloating,"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
           "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
           "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
+          "$mainMod, P, pseudo,"
+          "$mainMod, N, togglesplit,"
+          "$mainMod, F, fullscreen"
+          "$mainMod, G, exec, $HOME/.config/hypr/scripts/toggle-gaps.sh"
       ];
 
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 6;
-        gaps_out = 10;
+        gaps_in = 2;
+        gaps_out = 8;
         border_size = 2;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
@@ -576,8 +597,7 @@ in
       };
 
       decoration = {
-        rounding = 10;
-        # rounding_power = 5;
+        rounding = 0;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
@@ -597,7 +617,7 @@ in
       };
 
       animations = {
-        enabled = false;
+        enabled = true;
         bezier = [
           "linear, 0, 0, 1, 1"
           "md3_standard, 0.2, 0, 0, 1"

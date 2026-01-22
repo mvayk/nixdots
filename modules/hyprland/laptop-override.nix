@@ -39,6 +39,8 @@
             ",XF86MonBrightnessUp, exec, ~/.config/hypr/scripts/increase_brightness.sh"
             ",XF86MonBrightnessDown, exec, ~/.config/hypr/scripts/decrease_brightness.sh"
 
+            ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
+
             "$mainMod, Q, killactive,"
 
             "$mainMod, H, movefocus, l"

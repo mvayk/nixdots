@@ -1,10 +1,10 @@
 font-family = "Victor Mono Nerd Font Mono"
-font-size=22
+font-size=17
 window-decoration=false
-background-opacity= 0.9
-window-padding-x=8
-window-padding-y=8
-cursor-style=bar
+background-opacity= 1
+window-padding-x=12
+window-padding-y=16
+cursor-style=block
 cursor-style-blink=true
 shell-integration="zsh"
 keybind=ctrl+backspace=text:\x1b\x7f
@@ -14,4 +14,4 @@ confirm-close-surface=false
 custom-shader-animation = always
 custom-shader = cursor_warp.glsl
 
-theme = TokyoNight
+config-file = themes/noctalia

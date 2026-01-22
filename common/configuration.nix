@@ -37,13 +37,20 @@
             layout = "au";
             variant = "";
         };
+        xkbOptions = "caps:escape_shifted_capslock";
 
         desktopManager = {
             xfce.enable = false;
         };
-
     };
     services.displayManager.defaultSession = "xfce";
+
+    xdg.menus.enable = true;
+    xdg.mime.enable = true;
+
+    # https://discuss.kde.org/t/dolphin-file-associations/38934/2
+    # kbuildsycoca6
+    environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
     environment.sessionVariables = {
         C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
@@ -55,31 +62,6 @@
     services.flatpak.enable = true;
     services.fwupd.enable = true;
 
-    xdg.mime = {
-        enable = true;
-        defaultApplications = {
-            "image/png" = "feh.desktop";
-            "image/jpeg" = "feh.desktop";
-            "image/jpg" = "feh.desktop";
-            "image/gif" = "feh.desktop";
-            "image/webp" = "feh.desktop";
-            "image/bmp" = "feh.desktop";
-
-            "video/mp4" = "mpv.desktop";
-            "video/x-matroska" = "mpv.desktop";
-            "video/webm" = "mpv.desktop";
-            "video/avi" = "mpv.desktop";
-            "video/x-msvideo" = "mpv.desktop";
-            "video/quicktime" = "mpv.desktop";
-
-            "text/plain" = "emacs.desktop";
-            "text/x-csrc" = "emacs.desktop";
-            "text/x-c++src" = "emacs.desktop";
-            "text/x-python" = "emacs.desktop";
-            "text/markdown" = "emacs.desktop";
-            "application/x-shellscript" = "emacs.desktop";
-        };
-    };
 
     services.printing.enable = true;
     services.xserver = {
@@ -102,14 +84,14 @@
 
     services.upower.enable = true;
 
-    services.desktopManager.plasma6.enable = true;
+    services.desktopManager.plasma6.enable = false;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     
     # GNOME Keyring configuration for Dolphin SMB authentication
-    services.gnome.gnome-keyring.enable = false;
-    security.pam.services.login.enableGnomeKeyring = false;
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
     security.pam.services.hyprland.enableGnomeKeyring = true;
     programs.seahorse.enable = false;
 
@@ -160,7 +142,6 @@
     # programs.fish.enable = true;
     programs.neovim.defaultEditor = true;
     nixpkgs.config.allowUnfree = true;
-    programs.thunar.enable = true;
     programs.direnv = {
         enable = true;
         nix-direnv.enable = true;
@@ -203,6 +184,9 @@
         btop
         zsh
         kdePackages.kmines
+        kdePackages.kolourpaint
+        kdePackages.kpat
+        ace-of-penguins
         qalculate-qt
         trilium-desktop
         epiphany
@@ -218,6 +202,11 @@
         gnumake
         wine
         libreoffice-qt-fresh
+        ffmpegthumbnailer
+        unar
+        jq
+        poppler-utils
+
         unzip
         rar
         p7zip
@@ -250,7 +239,7 @@
         more
         bat
         most
-        ungoogled-chromium
+        # ungoogled-chromium
         scanmem
         htop
         gdb
@@ -271,13 +260,14 @@
         tmux
         texlive.combined.scheme-medium
         imagemagick
-        obsidian
         bat
         flameshot
         tor
+        fzf
+        zoxide
         tor-browser
         vesktop
-        qutebrowser
+        #qutebrowser
         pulseaudio
         kdePackages.dolphin
         nemo
