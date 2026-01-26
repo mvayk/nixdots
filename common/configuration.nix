@@ -239,7 +239,6 @@
         more
         bat
         most
-        # ungoogled-chromium
         scanmem
         htop
         gdb

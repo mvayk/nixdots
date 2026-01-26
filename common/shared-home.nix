@@ -28,6 +28,10 @@
         enable = true;
     };
 
+    programs.brave = {
+        enable = true;
+    };
+
     home.packages = with pkgs; [
     ];
 

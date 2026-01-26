@@ -667,7 +667,7 @@ wayland.windowManager.hyprland = {
           "$mainMod, M, exit,"
           "$mainMod, E, exec, dolphin"
           "$mainMod, T, exec, ghostty"
-          "$mainMod, W, exec, zen-beta"
+          "$mainMod, W, exec, brave"
           "$mainMod, V, togglefloating,"
           "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
           "$mainMod, page_up, exec, noctalia-shell ipc call volume increase"
