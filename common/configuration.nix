@@ -276,6 +276,8 @@
         foliate
         feh
         dmenu
+        vscodium
+        catgirl
         cargo
         ispell
         xorg.xinput
