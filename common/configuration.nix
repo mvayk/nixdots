@@ -281,6 +281,7 @@
         ispell
         xorg.xinput
         acpi
+        inxi
         sysstat
         lm_sensors
         brightnessctl
