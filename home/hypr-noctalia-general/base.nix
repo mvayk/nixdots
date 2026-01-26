@@ -111,7 +111,6 @@ programs.noctalia-shell = {
           hideMode = "hidden";
           hideWhenIdle = false;
           id = "MediaMini";
-          maxWidth = 220;
           panelShowAlbumArt = true;
           panelShowVisualizer = true;
           scrollingMode = "hover";
@@ -509,7 +508,7 @@ programs.noctalia-shell = {
   notifications = {
     enabled = true;
     monitors = [];
-    location = "top_right";
+    location = "top_left";
     overlayLayer = true;
     backgroundOpacity = 1;
     respectExpireTimeout = false;
@@ -651,6 +650,7 @@ wayland.windowManager.hyprland = {
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XCURSOR_SIZE,38"
+        "HYPRCURSOR_THEME,future-black-hyprcursor"
         "HYPRCURSOR_SIZE,38"
       ];
       exec-once = [
@@ -872,9 +872,6 @@ wayland.windowManager.hyprland = {
     };
 
     home.sessionVariables = {
-        XCURSOR_THEME = "future-black-hyprcursor";
-        XCURSOR_SIZE = "48";
-        HYPRCURSOR_THEME = "future-black-hyprcursor";
     };
 
     home.packages = with pkgs; [

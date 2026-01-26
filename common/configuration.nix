@@ -206,8 +206,8 @@
         unar
         jq
         poppler-utils
-
         unzip
+        apple-cursor
         rar
         p7zip
         raylib
