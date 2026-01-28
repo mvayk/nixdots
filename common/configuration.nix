@@ -242,6 +242,7 @@
         scanmem
         htop
         gdb
+        rnote
         yt-dlp
         firefox
         gimp
