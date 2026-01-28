@@ -153,7 +153,7 @@ programs.noctalia-shell = {
         }
         {
           blacklist = [];
-          colorizeIcons = false;
+          colorizeIcons = true;
           drawerEnabled = true;
           hidePassive = false;
           id = "Tray";

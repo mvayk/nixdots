@@ -11,11 +11,6 @@
         bind = [
             ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
 
-            "$mainMod, P, pseudo,"
-            "$mainMod, N, togglesplit,"
-            "$mainMod, F, fullscreen"
-            "$mainMod, V, togglefloating,"
-
             "$mainMod, Q, killactive,"
             "$mainMod, M, exit,"
 
