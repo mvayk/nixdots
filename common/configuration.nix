@@ -62,6 +62,9 @@
     services.flatpak.enable = true;
     services.fwupd.enable = true;
 
+    hardware.opentabletdriver.enable = true;
+    hardware.uinput.enable = true;
+    boot.kernelModules = ["uinput"];
 
     services.printing.enable = true;
     services.xserver = {
@@ -149,7 +152,6 @@
 
     xdg.portal = {
         enable = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 
     programs.spicetify =
@@ -269,8 +271,12 @@
         vesktop
         #qutebrowser
         pulseaudio
+        yad
         kdePackages.dolphin
-        nemo
+# use artist mode & launch osu with below
+        # env SDL_VIDEODRIVER=wayland osu-lazer
+        osu-lazer-bin
+        opentabletdriver
         ffmpeg
         nnn
         zathura
@@ -293,6 +299,7 @@
         coreutils
         pavucontrol
         alacritty
+        zenity
         ghostty
         kitty
         kdePackages.kdenetwork-filesharing
@@ -350,6 +357,7 @@
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
       stdenv.cc.cc.lib
+      yad
       zlib
       openssl
       glibc
