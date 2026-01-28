@@ -27,6 +27,7 @@
             nix-edit = "nvim /etc/nixos/";
             #nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#desktop; popd";
             nix-rebuild-current = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$NIXOS_MACHINE-$NIXOS_THEME; popd";
+            launch-osu = "env SDL_VIDEODRIVER=wayland osu!";
         };
         initContent = ''
             if [[ -z "$TMUX" ]]; then
