@@ -13,5 +13,3 @@ window-padding-balance=true
 confirm-close-surface=false
 custom-shader-animation = always
 custom-shader = cursor_warp.glsl
-
-config-file = themes/noctalia
