@@ -37,13 +37,8 @@
             layout = "au";
             variant = "";
         };
-        xkbOptions = "caps:escape_shifted_capslock";
-
-        desktopManager = {
-            xfce.enable = false;
-        };
+        xkb.options = "caps:escape_shifted_capslock";
     };
-    services.displayManager.defaultSession = "xfce";
 
     xdg.menus.enable = true;
     xdg.mime.enable = true;
@@ -65,7 +60,6 @@
     services.printing.enable = true;
     services.xserver = {
         enable = true;
-        windowManager.i3.enable = true;
     };
 
     services.displayManager.ly.enable = true;
@@ -108,7 +102,6 @@
     };
     users.users.mvayk = {
         isNormalUser = true;
-        description = "John";
         shell = pkgs.zsh;
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
@@ -150,7 +143,7 @@
         enabledExtensions = with spicePkgs.extensions; [
             adblock
             hidePodcasts
-            shuffle # shuffle+ (special characters are sanitized out of extension names)
+            shuffle
         ];
         enabledCustomApps = with spicePkgs.apps; [
             newReleases
@@ -261,7 +254,6 @@
         pulseaudio
         yad
         kdePackages.dolphin
-# use artist mode & launch osu with below
         # env SDL_VIDEODRIVER=wayland osu-lazer
         osu-lazer-bin
         opentabletdriver
