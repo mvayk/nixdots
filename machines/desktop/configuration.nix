@@ -13,6 +13,7 @@
     open = false;
     nvidiaSettings = true;
   };
+nixpkgs.config.cudaSupport = true;
 
   hardware.graphics = {
     enable = true;
@@ -28,5 +29,6 @@
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
+    (llama-cpp.override { cudaSupport = true; })
   ];
 }

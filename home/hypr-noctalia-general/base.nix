@@ -222,7 +222,7 @@ programs.noctalia-shell = {
     avatarImage = "";
     dimmerOpacity = 0.2;
     showScreenCorners = true;
-    forceBlackScreenCorners = false;
+    forceBlackScreenCorners = true;
     scaleRatio = 1;
     radiusRatio = 0.75;
     iRadiusRatio = 0.75;
@@ -449,7 +449,7 @@ programs.noctalia-shell = {
     backgroundOpacity = 1;
     floatingRatio = 1;
     size = 1.5;
-    onlySameOutput = true;
+    onlySameOutput = false;
     monitors = [];
     pinnedApps = [];
     colorizeIcons = false;
@@ -569,7 +569,7 @@ programs.noctalia-shell = {
     schedulingMode = "off";
     manualSunrise = "06:30";
     manualSunset = "18:30";
-    generationMethod = "rainbow";
+    generationMethod = "fruit-salad";
   };
   
   templates = {

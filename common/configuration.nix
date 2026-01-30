@@ -140,7 +140,7 @@
     };
 
     programs.dconf.enable = true;
-    programs.firefox.enable = true;
+    programs.firefox.enable = false;
     programs.zsh.enable = true;
     # programs.fish.enable = true;
     programs.neovim.defaultEditor = true;
@@ -194,6 +194,7 @@
         epiphany
         kdePackages.ark
         ollama
+        koboldcpp
         tldr
         openrgb-with-all-plugins
         kdePackages.kleopatra
@@ -215,8 +216,8 @@
         raylib
         gcc
         nasm
-        firefox-beta
-        firefox-nightly.packages.${system}.firefox-nightly-bin
+        # firefox-beta
+        # firefox-nightly.packages.${system}.firefox-nightly-bin
         glibc
         tree
         steam
@@ -246,7 +247,7 @@
         gdb
         rnote
         yt-dlp
-        firefox
+        # firefox
         gimp
         starship
         eza
