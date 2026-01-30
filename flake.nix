@@ -91,7 +91,16 @@
                 machine = "laptop";
                 theme = "hypr-noctalia-general";
             };
-            
+
+            desktop-hypr-noctalia-mac = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-mac";
+            };
+            laptop-hypr-noctalia-mac = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-mac";
+            };
+
             desktop-hypr-noctalia-fancy= mkNixosConfig {
                 machine = "desktop";
                 theme = "hypr-noctalia-fancy";
