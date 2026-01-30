@@ -40,6 +40,7 @@
                 ./common/configuration.nix
                 ./machines/${machine}/configuration.nix
                 ./machines/${machine}/hardware-configuration.nix
+                ./home/${theme}/global.nix
                 spicetify-nix.nixosModules.default
                 home-manager.nixosModules.home-manager
                 {
