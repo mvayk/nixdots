@@ -673,7 +673,7 @@ wayland.windowManager.hyprland = {
       general = {
         gaps_in = 2;
         gaps_out = 8;
-        border_size = 2;
+        border_size = 1;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
         resize_on_border = false;
@@ -682,7 +682,7 @@ wayland.windowManager.hyprland = {
       };
 
       decoration = {
-        rounding = 20;
+        rounding = 10;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
