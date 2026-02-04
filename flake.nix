@@ -65,11 +65,11 @@
                 theme = "hypr-noctalia-general";
             };
 
-            desktop-hypr-noctalia-fancy= mkNixosConfig {
+            desktop-hypr-noctalia-fancy = mkNixosConfig {
                 machine = "desktop";
                 theme = "hypr-noctalia-fancy";
             };
-            laptop-hypr-noctalia-fancy= mkNixosConfig {
+            laptop-hypr-noctalia-fancy = mkNixosConfig {
                 machine = "laptop";
                 theme = "hypr-noctalia-fancy";
             };
