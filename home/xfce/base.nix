@@ -17,7 +17,7 @@ in
     ];
     home.file = {
         ".config" = {
-            source = ./mvayk/.config;
+            source = ./. + "/${config.home.username}/.config";
             recursive = true;
         };
     };
