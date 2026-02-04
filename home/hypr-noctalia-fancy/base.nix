@@ -46,7 +46,7 @@ programs.noctalia-shell = {
       showOutline = false;
       showCapsule = false;
       capsuleOpacity = 1;
-      backgroundOpacity = 0.75;
+      backgroundOpacity = 1;
       useSeparateOpacity = true;
       floating = false;
       marginVertical = 5;
@@ -67,12 +67,6 @@ programs.noctalia-shell = {
             icon = "noctalia";
             id = "ControlCenter";
             useDistroLogo = true;
-          }
-          {
-            hideWhenZero = false;
-            hideWhenZeroUnread = false;
-            id = "NotificationHistory";
-            showUnreadBadge = true;
           }
           {
             icon = "rocket";
@@ -231,8 +225,10 @@ programs.noctalia-shell = {
             usePrimaryColor = false;
           }
           {
-            colorName = "error";
-            id = "SessionMenu";
+            hideWhenZero = false;
+            hideWhenZeroUnread = false;
+            id = "NotificationHistory";
+            showUnreadBadge = true;
           }
         ];
       };
@@ -276,7 +272,7 @@ programs.noctalia-shell = {
       fontDefaultScale = 1;
       fontFixedScale = 1;
       tooltipsEnabled = true;
-      panelBackgroundOpacity = 0.75;
+      panelBackgroundOpacity = 1;
       panelsAttachedToBar = false;
       settingsPanelMode = "centered";
       wifiDetailsViewMode = "grid";
@@ -454,7 +450,7 @@ programs.noctalia-shell = {
       enabled = true;
       position = "bottom";
       displayMode = "auto_hide";
-      backgroundOpacity = 0.75;
+      backgroundOpacity = 1;
       floatingRatio = 1;
       size = 1.5;
       onlySameOutput = false;
@@ -530,7 +526,7 @@ programs.noctalia-shell = {
       monitors = [];
       location = "top_right";
       overlayLayer = true;
-      backgroundOpacity = 0.75;
+      backgroundOpacity = 1;
       respectExpireTimeout = false;
       lowUrgencyDuration = 3;
       normalUrgencyDuration = 8;
@@ -561,7 +557,7 @@ programs.noctalia-shell = {
       location = "right";
       autoHideMs = 2000;
       overlayLayer = true;
-      backgroundOpacity = 0.93;
+      backgroundOpacity = 1;
       enabledTypes = [ 0 1 2 4 ];
       monitors = [];
     };
