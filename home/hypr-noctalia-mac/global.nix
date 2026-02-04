@@ -1,7 +1,6 @@
 
 { config, pkgs, ... }:
 {
-    services.displayManager.defaultSession = "hyprland";
 
     xdg.menus.enable = true;
     xdg.mime.enable = true;
@@ -12,9 +11,5 @@
         enable = true;
         #withUWSM = true;
         xwayland.enable = true;
-    };
-
-    xdg.portal = {
-        enable = true;
     };
 }

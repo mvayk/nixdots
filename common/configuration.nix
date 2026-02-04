@@ -58,7 +58,14 @@
 
     hardware.opentabletdriver.enable = true;
     hardware.uinput.enable = true;
-    boot.kernelModules = ["uinput"];
+boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.kernelModules = [ "uinput" "v4l2loopback" ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+  '';
+  security.polkit.enable = true;
 
     services.printing.enable = true;
     services.xserver = {
@@ -135,6 +142,9 @@
 
     xdg.portal = {
         enable = true;
+        extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+        ];
     };
 
 

@@ -25,10 +25,12 @@ nixpkgs.config.cudaSupport = true;
     ];
   };
 
+
   services.hardware.openrgb.enable = true;
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
     (llama-cpp.override { cudaSupport = true; })
+
   ];
 }

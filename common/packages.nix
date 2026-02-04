@@ -1,5 +1,24 @@
 { config, pkgs, zen-browser, spicetify-nix, firefox-nightly, ... }:
 {
+ programs.obs-studio = {
+    enable = true;
+
+    # optional Nvidia hardware acceleration
+    package = (
+      pkgs.obs-studio.override {
+        cudaSupport = true;
+      }
+    );
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-vaapi #optional AMD hardware acceleration
+      obs-gstreamer
+      obs-vkcapture
+    ];
+  };
     programs.spicetify =
     let
         spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
@@ -46,6 +65,7 @@
         kdePackages.kleopatra
         libsecret
         pinentry-gnome3
+
         gnupg
         cmake
         gnumake
@@ -103,7 +123,6 @@
         cheese
         mpv
         prismlauncher
-        blanket
         emacs
         libnotify
         tmux
@@ -147,7 +166,6 @@
         alacritty
         zenity
         ghostty
-        kitty
         kdePackages.kdenetwork-filesharing
         samba
 
