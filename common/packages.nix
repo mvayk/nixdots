@@ -186,6 +186,12 @@
         alacritty
         zenity
         ghostty
+        (heroic.override {
+         extraPkgs = pkgs: with pkgs; [
+         gamescope
+         gamemode
+         ];
+         })
         kdePackages.kdenetwork-filesharing
         samba
 
@@ -237,6 +243,9 @@
         nerd-fonts.symbols-only
         noto-fonts-cjk-sans
     ];
+
+    programs.gamescope.enable = true;
+    programs.gamemode.enable = true;
 
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
