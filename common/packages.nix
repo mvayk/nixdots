@@ -131,6 +131,7 @@
         yt-dlp
         # firefox
         gimp
+        zed-editor
         starship
         eza
         gnome-keyring
