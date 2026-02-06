@@ -82,6 +82,8 @@
         libsecret
         pinentry-gnome3
 
+        mission-center
+
         gnupg
         cmake
         gnumake
@@ -101,7 +103,6 @@
         # firefox-beta
         # firefox-nightly.packages.${system}.firefox-nightly-bin
         glibc
-        mission-center
         tree
         steam
         zsh
