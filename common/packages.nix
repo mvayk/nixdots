@@ -58,6 +58,21 @@
         trilium-desktop
         epiphany
         kdePackages.ark
+
+        ghidra
+        radare2
+        cutter
+        rizin
+        gdb
+        gef
+        strace
+        ltrace
+        binwalk
+        imhex
+        scanmem
+
+        mousepad
+
         ollama
         koboldcpp
         tldr
@@ -93,6 +108,7 @@
         termdown
         ani-cli
         kdePackages.discover
+        vinegar
         flatpak
         zen-browser.packages."${system}".beta
         openjdk21
