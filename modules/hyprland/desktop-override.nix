@@ -8,6 +8,11 @@
 
         "$mainMod" = config.hyprConfig.mainMod;
 
+        "workspace" = [
+            "9, monitor:HDMI-A-1, gapsin:0, gapsout:0, bordersize:0, rounding:false, decorate:false"
+            "10, monitor:HDMI-A-1, gapsin:0, gapsout:0, bordersize:0, rounding:false, decorate:false"
+        ];
+
         bind = [
             ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
 
