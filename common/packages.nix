@@ -70,6 +70,7 @@
         binwalk
         imhex
         scanmem
+        pince
 
         mousepad
 
@@ -100,6 +101,7 @@
         # firefox-beta
         # firefox-nightly.packages.${system}.firefox-nightly-bin
         glibc
+        mission-center
         tree
         steam
         zsh
