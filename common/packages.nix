@@ -61,6 +61,7 @@
 
         ghidra
         radare2
+        binaryninja-free
         cutter
         rizin
         gdb
@@ -107,6 +108,7 @@
         glibc
         tree
         steam
+        protontricks
         zsh
         lazygit
         qbittorrent
