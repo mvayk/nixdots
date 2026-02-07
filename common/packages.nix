@@ -69,9 +69,11 @@
         ltrace
         binwalk
         imhex
+        hexdump
         scanmem
         pince
 
+        aider-chat
         mousepad
 
         ollama
