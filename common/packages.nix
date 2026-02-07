@@ -59,6 +59,7 @@
         epiphany
         kdePackages.ark
 
+        ida-free
         ghidra
         radare2
         cutter
