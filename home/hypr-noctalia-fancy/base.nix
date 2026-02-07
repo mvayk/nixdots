@@ -73,9 +73,34 @@ programs.noctalia-shell = {
             id = "Launcher";
             usePrimaryColor = false;
           }
-          {
-            id = "plugin:assistant-panel";
-          }
+        {
+          defaultSettings = {
+            ai = {
+              apiKeys = {};
+              maxHistoryLength = 100;
+              model = "llama-server";
+              openaiBaseUrl = "http://127.0.0.1:8080/v1/chat/completions";
+              openaiLocal = true;
+              provider = "openai_compatible";
+              systemPrompt = "";
+              temperature = 0.7;
+            };
+            maxHistoryLength = 100;
+            panelDetached = true;
+            panelHeightRatio = 0.85;
+            panelPosition = "right";
+            panelWidth = 520;
+            scale = 1;
+            translator = {
+              backend = "google";
+              deeplApiKey = "";
+              realTimeTranslation = true;
+              sourceLanguage = "auto";
+              targetLanguage = "en";
+            };
+          };
+          id = "plugin:assistant-panel";
+        }
           {
             id = "plugin:notes-scratchpad";
           }
