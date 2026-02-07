@@ -1,5 +1,15 @@
 { config, pkgs, zen-browser, spicetify-nix, firefox-nightly, ... }:
 {
+
+
+programs.steam = {
+    enable = true;
+
+    extraCompatPackages = with pkgs; [
+        proton-ge-bin
+    ];
+};
+
  programs.obs-studio = {
     enable = true;
 
@@ -9,7 +19,6 @@
         cudaSupport = true;
       }
     );
-
     plugins = with pkgs.obs-studio-plugins; [
       wlrobs
       obs-backgroundremoval
@@ -109,6 +118,7 @@
         tree
         steam
         protontricks
+        protonup-rs
         zsh
         lazygit
         qbittorrent
