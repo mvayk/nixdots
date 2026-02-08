@@ -256,6 +256,7 @@ programs.steam = {
         nerd-fonts.space-mono
         nerd-fonts.symbols-only
         noto-fonts-cjk-sans
+        nerd-fonts._3270
     ];
 
     programs.gamescope.enable = true;

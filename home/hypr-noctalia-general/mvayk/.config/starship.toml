@@ -40,8 +40,8 @@ $character\
 """
 
 [character]
-success_symbol = '[>](bold green)'
-error_symbol = '[>](bold red)'
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
 
 [cmd_duration]
 min_time = 0
@@ -64,7 +64,7 @@ format = '\([$symbol$branch(:$remote_branch)]($style)\)'
 symbol = 'git:'
 
 [fill]
-symbol = '-'
+symbol = ' '
 
 [bun]
 format = '\([$symbol$version]($style)\)'
