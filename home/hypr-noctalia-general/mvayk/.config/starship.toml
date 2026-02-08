@@ -1,238 +1,196 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+'$schema' = 'https://starship.rs/config-schema.json'
+
+add_newline = false
 
 format = """
-$os$all$username$hostname$character"""
+\\[\
+$username\
+$hostname\
+\\]\
+$directory\
+$git_branch\
+$cmd_duration\
+$fill\
+(\
+$bun\
+$c\
+$cmake\
+$dart\
+$dotnet\
+$golang\
+$gradle\
+$java\
+$kotlin\
+$lua\
+$nodejs\
+$package\
+$php\
+$python\
+$rlang\
+$ruby\
+$rust\
+$scala\
+-)\
+$container\
+$os\
+$battery\
+$time\
+$linebreak
+$character\
+"""
 
-right_format = "$cmd_duration $git_metrics"
+[character]
+success_symbol = '[>](bold green)'
+error_symbol = '[>](bold red)'
 
-[os]
-disabled = false
-format = "[$symbol]($style) "
+[cmd_duration]
+min_time = 0
+format = '\([$duration]($style)\)'
 
 [username]
 show_always = true
-style_user = "bold italic cyan"
-style_root = "bold italic red"
-format = "[$user]($style)"
+format = '[$user]($style)'
 
 [hostname]
-ssh_only = false
-format = "[@](white)[$hostname]($style) "
-style = "bold italic purple"
-ssh_symbol = " "
-
-[character]
-success_symbol = "[󰫥](bold white)"
-error_symbol = "[󰫥](bold red)"
-
-[cmd_duration]
-min_time = 2000
-format = "[took $duration]($style)"
-style = "bold yellow"
-
-[git_metrics]
-disabled = false
-added_style = "bold green"
-deleted_style = "bold red"
-format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
-
-[aws]
-symbol = " "
-
-[buf]
-symbol = " "
-
-[bun]
-symbol = " "
-
-[c]
-symbol = " "
-
-[cpp]
-symbol = " "
-
-[cmake]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[deno]
-symbol = " "
+format = '@[$hostname$ssh_symbol]($style)'
+ssh_symbol = '(ssh)'
 
 [directory]
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fortran]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[gcloud]
-symbol = " "
+format = '\[[$path]($style)[($read_only)]($read_only_style)\]'
+read_only = '!'
 
 [git_branch]
-symbol = " "
+format = '\([$symbol$branch(:$remote_branch)]($style)\)'
+symbol = 'git:'
 
-[git_commit]
-tag_symbol = '  '
+[fill]
+symbol = '-'
+
+[bun]
+format = '\([$symbol$version]($style)\)'
+symbol = 'bun:'
+version_format = '${raw}'
+
+[c]
+format = '\([$symbol($name:)$version]($style)\)'
+symbol = 'c:'
+version_format = '${raw}'
+
+[cmake]
+format = '\([$symbol$version]($style)\)'
+symbol = 'cmk:'
+version_format = '${raw}'
+
+[dart]
+format = '\([$symbol$version]($style)\)'
+symbol = 'dart:'
+version_format = '${raw}'
+
+[dotnet]
+format = '\([$symbol$version(:$tfm)]($style)\)'
+symbol = 'net:'
+version_format = '${raw}'
 
 [golang]
-symbol = " "
+format = '\([$symbol$version(<$mod_version)]($style)\)'
+symbol = 'go:'
+version_format = '${raw}'
 
 [gradle]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'gradle:'
+version_format = '${raw}'
 
 [java]
-symbol = " "
-
-[julia]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'java:'
+version_format = '${raw}'
 
 [kotlin]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'kt:'
+version_format = '${raw}'
 
 [lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'lua:'
+version_format = '${raw}'
 
 [nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
-
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-AOSC = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Elementary = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Ios = "󰀷 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
-Zorin = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'node:'
+version_format = '${raw}'
 
 [package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'pkg:'
+version_format = '${raw}'
 
 [php]
-symbol = " "
-
-[pijul_channel]
-symbol = " "
-
-[pixi]
-symbol = "󰏗 "
+format = '\([$symbol$version]($style)\)'
+symbol = 'php:'
+version_format = '${raw}'
 
 [python]
-symbol = " "
+format = '\([$symbol$pyenv_prefix$version(\($virtualenv\))]($style)\)'
+symbol = 'py:'
+version_format = '${raw}'
 
 [rlang]
-symbol = "󰟔 "
+format = '\([$symbol$version]($style)\)'
+symbol = 'r:'
+version_format = '${raw}'
 
 [ruby]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'rb:'
+version_format = '${raw}'
 
 [rust]
-symbol = "󱘗 "
+format = '\([$symbol$version]($style)\)'
+symbol = 'rs:'
+version_format = '${raw}'
 
 [scala]
-symbol = " "
+format = '\([$symbol$version]($style)\)'
+symbol = 'scala:'
+version_format = '${raw}'
 
-[status]
-symbol = " "
+[container]
+format = '\([$symbol$name]($style)\)'
+symbol = 'ctr:'
 
-[swift]
-symbol = " "
+[os]
+disabled = false
+format = '\[[os:$type]($style)\]'
 
-[xmake]
-symbol = " "
+[battery]
+format = '\[[$symbol$percentage]($style)\]'
+full_symbol = 'bat100:'
+charging_symbol = 'bat+:'
+discharging_symbol = 'bat:'
+unknown_symbol = 'bat?'
+empty_symbol = 'bat0:'
 
-[zig]
-symbol = " "
+
+[[battery.display]]
+threshold = 20
+style = 'bold red'
+charging_symbol = 'bat+:'
+discharging_symbol = 'bat:'
+
+[[battery.display]]
+threshold = 50
+style = 'bold orange'
+charging_symbol = 'bat+:'
+discharging_symbol = 'bat:'
+
+[[battery.display]]
+threshold = 90
+style = 'bold green'
+charging_symbol = 'bat+:'
+discharging_symbol = 'bat:'
+
+[time]
+disabled = false
+format = '\[[$time]($style)\]'

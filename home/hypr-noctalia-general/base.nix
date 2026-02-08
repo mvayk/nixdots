@@ -33,50 +33,53 @@ in
         x11.enable = true;
     };
 
-programs.noctalia-shell = {
-  enable = true;
-  settings = {
-  settingsVersion = 42;
+    programs.noctalia-shell = {
+        enable = true;
+        settings = {
+  settingsVersion = 46;
+  
   bar = {
+    barType = "simple";
     position = "top";
     monitors = [];
-    density = "comfortable";
+    density = "default";
     showOutline = false;
-    showCapsule = true;
+    showCapsule = false;
     capsuleOpacity = 1;
     backgroundOpacity = 1;
-    useSeparateOpacity = false;
+    useSeparateOpacity = true;
     floating = false;
     marginVertical = 5;
     marginHorizontal = 18;
-    outerCorners = true;
+    frameThickness = 8;
+    frameRadius = 12;
+    outerCorners = false;
     exclusive = true;
     hideOnOverview = false;
     
     widgets = {
       left = [
         {
-          colorizeDistroLogo = false;
-          colorizeSystemIcon = "Primary";
-          customIconPath = "";
-          enableColorization = true;
-          icon = "noctalia";
-          id = "ControlCenter";
-          useDistroLogo = true;
+          characterCount = 2;
+          colorizeIcons = false;
+          emptyColor = "secondary";
+          enableScrollWheel = true;
+          focusedColor = "primary";
+          followFocusedScreen = false;
+          groupedBorderOpacity = 1;
+          hideUnoccupied = false;
+          iconScale = 0.8;
+          id = "Workspace";
+          labelMode = "index";
+          occupiedColor = "secondary";
+          reverseScroll = false;
+          showApplications = false;
+          showBadge = true;
+          showLabelsOnlyWhenOccupied = true;
+          unfocusedIconsOpacity = 1;
         }
         {
-          hideWhenZero = false;
-          hideWhenZeroUnread = false;
-          id = "NotificationHistory";
-          showUnreadBadge = true;
-        }
-        {
-          icon = "rocket";
-          id = "Launcher";
-          usePrimaryColor = false;
-        }
-        {
-          compactMode = true;
+          compactMode = false;
           diskPath = "/";
           id = "SystemMonitor";
           showCpuTemp = true;
@@ -104,6 +107,9 @@ programs.noctalia-shell = {
           smartWidth = true;
           titleWidth = 120;
         }
+      ];
+      
+      center = [
         {
           compactMode = false;
           compactShowAlbumArt = true;
@@ -111,42 +117,20 @@ programs.noctalia-shell = {
           hideMode = "hidden";
           hideWhenIdle = false;
           id = "MediaMini";
+          maxWidth = 145;
           panelShowAlbumArt = true;
           panelShowVisualizer = true;
           scrollingMode = "hover";
           showAlbumArt = true;
           showArtistFirst = true;
           showProgressRing = true;
-          showVisualizer = false;
+          showVisualizer = true;
           useFixedWidth = false;
           visualizerType = "linear";
         }
       ];
       
-      center = [
-        {
-          characterCount = 2;
-          colorizeIcons = false;
-          enableScrollWheel = true;
-          followFocusedScreen = false;
-          groupedBorderOpacity = 1;
-          hideUnoccupied = false;
-          iconScale = 0.8;
-          id = "Workspace";
-          labelMode = "index";
-          showApplications = false;
-          showLabelsOnlyWhenOccupied = true;
-          unfocusedIconsOpacity = 1;
-        }
-      ];
-      
       right = [
-        {
-          colorName = "primary";
-          hideWhenIdle = true;
-          id = "AudioVisualizer";
-          width = 200;
-        }
         {
           id = "Spacer";
           width = 20;
@@ -210,31 +194,34 @@ programs.noctalia-shell = {
           usePrimaryColor = false;
         }
         {
-          colorName = "error";
-          id = "SessionMenu";
+          hideWhenZero = false;
+          hideWhenZeroUnread = false;
+          id = "NotificationHistory";
+          showUnreadBadge = true;
         }
       ];
     };
+    
     screenOverrides = [];
   };
   
   general = {
     avatarImage = "";
-    dimmerOpacity = 0.2;
-    showScreenCorners = true;
-    forceBlackScreenCorners = true;
+    dimmerOpacity = 0.5;
+    showScreenCorners = false;
+    forceBlackScreenCorners = false;
     scaleRatio = 1;
-    radiusRatio = 0.75;
-    iRadiusRatio = 0.75;
+    radiusRatio = 0;
+    iRadiusRatio = 0;
     boxRadiusRatio = 0;
     screenRadiusRatio = 1;
-    animationSpeed = 1;
-    animationDisabled = false;
+    animationSpeed = 1.2;
+    animationDisabled = true;
     compactLockScreen = false;
     lockOnSuspend = true;
     showSessionButtonsOnLockScreen = true;
     showHibernateOnLockScreen = false;
-    enableShadows = true;
+    enableShadows = false;
     shadowDirection = "bottom_right";
     shadowOffsetX = 2;
     shadowOffsetY = 3;
@@ -244,6 +231,8 @@ programs.noctalia-shell = {
     telemetryEnabled = false;
     enableLockScreenCountdown = true;
     lockScreenCountdownDuration = 10000;
+    autoStartAuth = false;
+    allowPasswordWithFprintd = false;
   };
   
   ui = {
@@ -253,13 +242,13 @@ programs.noctalia-shell = {
     fontFixedScale = 1;
     tooltipsEnabled = true;
     panelBackgroundOpacity = 1;
-    panelsAttachedToBar = true;
-    settingsPanelMode = "attached";
+    panelsAttachedToBar = false;
+    settingsPanelMode = "centered";
     wifiDetailsViewMode = "grid";
     bluetoothDetailsViewMode = "grid";
     networkPanelView = "wifi";
     bluetoothHideUnnamedDevices = false;
-    boxBorderEnabled = true;
+    boxBorderEnabled = false;
   };
   
   location = {
@@ -289,10 +278,6 @@ programs.noctalia-shell = {
       }
       {
         enabled = true;
-        id = "timer-card";
-      }
-      {
-        enabled = true;
         id = "weather-card";
       }
     ];
@@ -304,7 +289,8 @@ programs.noctalia-shell = {
     directory = "/home/mvayk/Pictures/wallpapers/";
     monitorDirectories = [];
     enableMultiMonitorDirectories = false;
-    recursiveSearch = true;
+    showHiddenFiles = false;
+    viewMode = "recursive";
     setWallpaperOnAllMonitors = true;
     fillMode = "crop";
     fillColor = "#000000";
@@ -331,25 +317,28 @@ programs.noctalia-shell = {
     wallhavenResolutionHeight = "";
   };
   
-  appLauncher = {
-    enableClipboardHistory = false;
-    autoPasteClipboard = false;
-    enableClipPreview = true;
-    clipboardWrapText = true;
-    position = "center";
-    pinnedApps = [];
-    useApp2Unit = false;
-    sortByMostUsed = true;
-    terminalCommand = "xterm -e";
-    customLaunchPrefixEnabled = false;
-    customLaunchPrefix = "";
-    viewMode = "list";
-    showCategories = true;
-    iconMode = "tabler";
-    showIconBackground = true;
-    ignoreMouseInput = false;
-    screenshotAnnotationTool = "";
-  };
+    appLauncher = {
+      enableClipboardHistory = false;
+      autoPasteClipboard = false;
+      enableClipPreview = true;
+      clipboardWrapText = true;
+      clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
+      clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
+      position = "center";
+      pinnedApps = [];
+      useApp2Unit = false;
+      sortByMostUsed = true;
+      terminalCommand = "xterm -e";
+      customLaunchPrefixEnabled = false;
+      customLaunchPrefix = "";
+      viewMode = "grid";
+      showCategories = true;
+      iconMode = "tabler";
+      showIconBackground = true;
+      enableSettingsSearch = true;
+      ignoreMouseInput = false;
+      screenshotAnnotationTool = "";
+    };
   
   controlCenter = {
     position = "close_to_bar_button";
@@ -357,33 +346,17 @@ programs.noctalia-shell = {
     
     shortcuts = {
       left = [
-        {
-          id = "Network";
-        }
-        {
-          id = "Bluetooth";
-        }
-        {
-          id = "WallpaperSelector";
-        }
-        {
-          id = "DarkMode";
-        }
+        { id = "Network"; }
+        { id = "Bluetooth"; }
+        { id = "WallpaperSelector"; }
+        { id = "DarkMode"; }
       ];
       
       right = [
-        {
-          id = "Notifications";
-        }
-        {
-          id = "PowerProfile";
-        }
-        {
-          id = "KeepAwake";
-        }
-        {
-          id = "NightLight";
-        }
+        { id = "Notifications"; }
+        { id = "PowerProfile"; }
+        { id = "KeepAwake"; }
+        { id = "NightLight"; }
       ];
     };
     
@@ -443,7 +416,7 @@ programs.noctalia-shell = {
   };
   
   dock = {
-    enabled = true;
+    enabled = false;
     position = "bottom";
     displayMode = "auto_hide";
     backgroundOpacity = 1;
@@ -473,33 +446,45 @@ programs.noctalia-shell = {
     countdownDuration = 10000;
     position = "center";
     showHeader = true;
-    largeButtonsStyle = false;
+    largeButtonsStyle = true;
     largeButtonsLayout = "grid";
     showNumberLabels = true;
     
     powerOptions = [
       {
         action = "lock";
+        command = "";
+        countdownEnabled = true;
         enabled = true;
       }
       {
         action = "suspend";
+        command = "";
+        countdownEnabled = true;
         enabled = true;
       }
       {
         action = "hibernate";
+        command = "";
+        countdownEnabled = true;
         enabled = true;
       }
       {
         action = "reboot";
+        command = "";
+        countdownEnabled = true;
         enabled = true;
       }
       {
         action = "logout";
+        command = "";
+        countdownEnabled = true;
         enabled = true;
       }
       {
         action = "shutdown";
+        command = "";
+        countdownEnabled = true;
         enabled = true;
       }
     ];
@@ -508,7 +493,7 @@ programs.noctalia-shell = {
   notifications = {
     enabled = true;
     monitors = [];
-    location = "top_left";
+    location = "top_right";
     overlayLayer = true;
     backgroundOpacity = 1;
     respectExpireTimeout = false;
@@ -525,7 +510,7 @@ programs.noctalia-shell = {
     
     sounds = {
       enabled = true;
-      volume = 0.5;
+      volume = 1;
       separateSounds = false;
       criticalSoundFile = "";
       normalSoundFile = "";
@@ -541,7 +526,7 @@ programs.noctalia-shell = {
     location = "right";
     autoHideMs = 2000;
     overlayLayer = true;
-    backgroundOpacity = 0.93;
+    backgroundOpacity = 1;
     enabledTypes = [ 0 1 2 4 ];
     monitors = [];
   };
@@ -563,13 +548,14 @@ programs.noctalia-shell = {
   };
   
   colorSchemes = {
-    useWallpaperColors = true;
-    predefinedScheme = "Ayu";
+    useWallpaperColors = false;
+    predefinedScheme = "Vesper";
     darkMode = true;
     schedulingMode = "off";
     manualSunrise = "06:30";
     manualSunset = "18:30";
-    generationMethod = "fruit-salad";
+    generationMethod = "rainbow";
+    monitorForColors = "";
   };
   
   templates = {
@@ -633,17 +619,18 @@ programs.noctalia-shell = {
     screenUnlock = "";
     performanceModeEnabled = "";
     performanceModeDisabled = "";
+    startup = "";
     session = "";
   };
   
   desktopWidgets = {
-    enabled = true;
+    enabled = false;
     gridSnap = false;
     monitorWidgets = [];
   };
-  };
 };
 
+    };
 wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -683,7 +670,7 @@ wayland.windowManager.hyprland = {
       general = {
         gaps_in = 2;
         gaps_out = 8;
-        border_size = 2;
+        border_size = 3;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
         resize_on_border = false;
@@ -692,13 +679,13 @@ wayland.windowManager.hyprland = {
       };
 
       decoration = {
-        rounding = 20;
-        rounding_power = 2;
+        rounding = 0;
+        rounding_power = 0;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
         shadow = {
-          enabled = true;
+          enabled = false;
           range = 24;
           render_power = 4;
           color = "rgba(00000055)";
@@ -713,7 +700,7 @@ wayland.windowManager.hyprland = {
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
         bezier = [
           "linear, 0, 0, 1, 1"
           "md3_standard, 0.2, 0, 0, 1"

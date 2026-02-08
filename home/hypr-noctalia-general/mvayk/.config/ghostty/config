@@ -1,9 +1,9 @@
-font-family = "Victor Mono Nerd Font Mono"
-font-size=17
+font-family = ""
+font-size=15
 window-decoration=false
 background-opacity= 1
-window-padding-x=12
-window-padding-y=16
+window-padding-x=0
+window-padding-y=0
 cursor-style=block
 cursor-style-blink=true
 shell-integration="zsh"
