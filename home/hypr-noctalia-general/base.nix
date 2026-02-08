@@ -26,8 +26,8 @@ in
     };
 
     home.pointerCursor = {
-        package = future-hyprcursor.packages.${pkgs.system}.default;
-        name = "future-black-hyprcursor";
+        package = pkgs.simp1e-cursors;
+        name = "Simp1e";
         size = 38;
         gtk.enable = true;
         x11.enable = true;
@@ -637,13 +637,13 @@ wayland.windowManager.hyprland = {
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XCURSOR_SIZE,38"
-        "HYPRCURSOR_THEME,future-black-hyprcursor"
-        "HYPRCURSOR_SIZE,38"
+        "HYPRCURSOR_THEME,Simp1e"
+        "HYPRCURSOR_SIZE,24"
       ];
       exec-once = [
         "noctalia-shell"
         "nm-applet"
-        "hyprctl setcursor future-black-hyprcursor 38"
+        "hyprctl setcursor Simp1e 24"
       ];
 
       bind = [
