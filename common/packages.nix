@@ -136,6 +136,7 @@ programs.steam = {
         linux-manual
         man-pages
         man-pages-posix
+        qemu
         oh-my-zsh
         catgirl
         cmus
