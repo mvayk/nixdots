@@ -100,6 +100,7 @@ programs.steam = {
         cmake
         gnumake
         wine
+        winetricks
         libreoffice-qt-fresh
         ffmpegthumbnailer
         unar
