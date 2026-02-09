@@ -79,6 +79,17 @@ boot.extraModulePackages = with config.boot.kernelPackages; [
         package = pkgs.emacs;
     };
 
+programs.virt-manager.enable = true;
+virtualisation.libvirtd = {
+  enable = true;
+  qemu = {
+    package = pkgs.qemu_kvm;
+    vhostUserPackages = pkgs.virtiofsd;
+    runAsRoot = true;
+    swtpm.enable = true;
+  };
+};
+
     services.upower.enable = true;
 
     services.pulseaudio.enable = false;
@@ -113,7 +124,7 @@ boot.extraModulePackages = with config.boot.kernelPackages; [
     users.users.mvayk = {
         isNormalUser = true;
         shell = pkgs.zsh;
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
         packages = with pkgs; [
         ];
     };

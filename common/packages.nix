@@ -85,6 +85,7 @@ programs.steam = {
 
         aider-chat
         mousepad
+        dnsmasq
 
         ollama
         koboldcpp
