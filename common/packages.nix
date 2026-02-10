@@ -82,6 +82,7 @@ programs.steam = {
         hexdump
         scanmem
         pince
+        volatility3
 
         aider-chat
         mousepad
