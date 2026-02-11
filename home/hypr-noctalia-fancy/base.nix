@@ -936,6 +936,7 @@ wayland.windowManager.hyprland = {
         qt6Packages.qtimageformats
         qt6Packages.qtsvg
         matugen.packages.${pkgs.system}.default
+        simp1e-cursors
 
         libsForQt5.qtimageformats
         libsForQt5.qtsvg
