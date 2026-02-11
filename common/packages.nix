@@ -67,6 +67,7 @@ programs.steam = {
         trilium-desktop
         epiphany
         kdePackages.ark
+        file
 
         ghidra
         radare2
@@ -102,7 +103,7 @@ programs.steam = {
         gnupg
         cmake
         gnumake
-        wine
+        wineWowPackages.stable
         winetricks
         libreoffice-qt-fresh
         ffmpegthumbnailer
@@ -112,6 +113,7 @@ programs.steam = {
         unzip
         apple-cursor
         rar
+        chromium
         p7zip
         raylib
         gcc
