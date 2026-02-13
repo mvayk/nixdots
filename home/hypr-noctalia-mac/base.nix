@@ -26,12 +26,12 @@ in
     };
 
     home.pointerCursor = {
-        package = pkgs.whitesur-cursor;
+        package = pkgs.whitesur-cursors;
         name = "WhiteSur-Cursor";
         size = 24;
     };
 
-programs.noctalia.shell = {
+programs.noctalia-shell = {
   enable = true;
   settings = {
     settingsVersion = 46;
