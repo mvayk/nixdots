@@ -74,6 +74,15 @@
                 theme = "hypr-noctalia-fancy";
             };
 
+            desktop-hypr-noctalia-mac = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-mac";
+            };
+            laptop-hypr-noctalia-mac = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-mac";
+            };
+
             desktop-i3-catppuccin-minimal= mkNixosConfig {
                 machine = "desktop";
                 theme = "i3-catppuccin-minimal";
