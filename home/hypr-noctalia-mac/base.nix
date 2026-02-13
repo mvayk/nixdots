@@ -81,10 +81,6 @@ programs.noctalia-shell = {
             id = "plugin:pomodoro";
           }
           {
-            defaultSettings = {
-              compactMode = false;
-              defaultDuration = 0;
-            };
             id = "plugin:timer";
           }
           {
