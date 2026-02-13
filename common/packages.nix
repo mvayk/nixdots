@@ -1,7 +1,5 @@
-{ config, pkgs, zen-browser, spicetify-nix, firefox-nightly, ... }:
+{ config, pkgs, pkgs-stable, zen-browser, spicetify-nix, firefox-nightly, ... }:
 {
-
-
 programs.steam = {
     enable = true;
 
@@ -103,7 +101,7 @@ programs.steam = {
         gnupg
         cmake
         gnumake
-        wineWowPackages.stable
+        pkgs-stable.wineWowPackages.stable
         winetricks
         libreoffice-qt-fresh
         ffmpegthumbnailer
@@ -138,7 +136,7 @@ programs.steam = {
         openjdk17
         openjdk8
         jdk8
-        linux-manual
+        # linux-manual # why does kernel 6.19 cause problems with api man pages?
         man-pages
         man-pages-posix
         qemu

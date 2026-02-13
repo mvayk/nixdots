@@ -2,6 +2,7 @@
     description = "NixOS from Scratch";
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11"; 
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         future-hyprcursor.url = "github:mvayk/nix-future-hyprcursor";
@@ -30,10 +31,16 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    outputs = { self, nixpkgs, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, future-hyprcursor, ... }:
-        let
+outputs = { self, nixpkgs, nixpkgs-stable, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, future-hyprcursor, ... }:
+    let
         system = "x86_64-linux";
-        specialArgs = { inherit zen-browser spicetify-nix firefox-nightly; };
+        pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+        };
+        specialArgs = { 
+            inherit zen-browser spicetify-nix firefox-nightly pkgs-stable; 
+        };
         mkNixosConfig = { machine, theme }: nixpkgs.lib.nixosSystem {
             inherit system specialArgs;
             modules = [
@@ -49,7 +56,7 @@
                     home-manager.users.mvayk = import ./home/${theme}/base.nix;
                     home-manager.backupFileExtension = "backup";
                     home-manager.extraSpecialArgs = { 
-                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine theme future-hyprcursor; 
+                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine theme future-hyprcursor pkgs-stable; 
                     };
                 }
             ];

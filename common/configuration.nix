@@ -130,13 +130,13 @@ virtualisation.libvirtd = {
     };
 
     documentation = {
-        enable = true;
+        enable = false;
         man = {
             man-db.enable = false;
-            mandoc.enable = true;
+            mandoc.enable = false;
         };
         dev = {
-            enable = true;
+            enable = false;
         };
     };
 
