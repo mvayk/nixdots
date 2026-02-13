@@ -581,7 +581,7 @@ programs.noctalia-shell = {
           id = "hyprland";
         }
       ];
-      enableUserTheming = false;
+      enableUserTheming = true;
     };
     nightLight = {
       enabled = true;
