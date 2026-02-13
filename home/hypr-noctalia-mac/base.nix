@@ -515,7 +515,7 @@ programs.noctalia-shell = {
     };
     osd = {
       enabled = true;
-      location = "right";
+      location = "top_center";
       autoHideMs = 2000;
       overlayLayer = true;
       backgroundOpacity = 0.7;
