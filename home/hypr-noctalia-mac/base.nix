@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia, quickshell, matugen, future-hyprcursor, lib, ... }:
+{ config, pkgs, noctalia, quickshell, matugen, lib, ... }:
 let
     nixDir = ./nix;
     getNixFiles = dir:
@@ -26,8 +26,8 @@ in
     };
 
     home.pointerCursor = {
-        package = pkgs.whitesur-cursors;
-        name = "WhiteSur-Cursor";
+        package = pkgs.apple-cursor;
+        name = "macOS";
         size = 24;
     };
 
@@ -621,13 +621,13 @@ wayland.windowManager.hyprland = {
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XCURSOR_SIZE,38"
-        "HYPRCURSOR_THEME,future-black-hyprcursor"
-        "HYPRCURSOR_SIZE,38"
+        "HYPRCURSOR_THEME,macOS"
+        "HYPRCURSOR_SIZE,24"
       ];
       exec-once = [
         "noctalia-shell"
         "nm-applet"
-        "hyprctl setcursor future-black-hyprcursor 38"
+        "hyprctl setcursor macOS 24"
       ];
 
       bind = [
@@ -875,6 +875,5 @@ wayland.windowManager.hyprland = {
         wl-clipboard
         quickshell.packages.${pkgs.system}.default
         noctalia.packages.${pkgs.system}.default
-        future-hyprcursor.packages.${pkgs.system}.default
     ];
 }
