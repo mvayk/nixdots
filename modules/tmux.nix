@@ -14,7 +14,7 @@
             # settings
             set-option -g default-shell /run/current-system/sw/bin/zsh
             set-option -g default-terminal "tmux-256color"
-            set-option -ga terminal-overrides ",xterm-256color:Tc,tmux-256color:Tc"
+            set-option -ga terminal-overrides ",xterm-256color:Tc,*:Ss@:Se@"
             set-option -g history-limit 5000
             set-option -g mode-keys vi
             set-option -g escape-time 10
@@ -26,6 +26,7 @@
             set-option -g mouse on
             set-option -g renumber-windows on
             set-option -g focus-events on
+
 
             # bindings
             unbind C-b
