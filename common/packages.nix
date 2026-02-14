@@ -216,12 +216,13 @@ programs.steam = {
 
         cifs-utils
         lua-language-server
+        rustc
         clang
-        clang-tools  # includes clangd
+        clang-tools
         rust-analyzer
         python3Packages.python-lsp-server
         nodePackages.typescript-language-server
-        nodePackages.vscode-langservers-extracted  # includes html, css, json, eslint
+        nodePackages.vscode-langservers-extracted
       raylib
       libGL
       libGLU
