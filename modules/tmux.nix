@@ -15,7 +15,9 @@
             set-option -g default-shell /run/current-system/sw/bin/zsh
             set-option -g default-terminal "tmux-256color"
             set-option -ga terminal-overrides ",xterm-256color:Tc"
-            set-option -ga terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[6 q'
+            set -ga terminal-overrides ",*256col*:Tc"
+            set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
+            set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colors
             set-option -g history-limit 5000
             set-option -g mode-keys vi
             set-option -g escape-time 10

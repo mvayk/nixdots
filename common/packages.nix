@@ -287,16 +287,14 @@ programs.steam = {
       wayland
       wayland-protocols
       libxkbcommon
-      libGL
-      libGLU
-      xorg.libX11
-      xorg.libXrandr
-      xorg.libXi
-      xorg.libXcursor
-      xorg.libXinerama
-      xorg.libXrender
-      xorg.libXtst
-      xorg.libXi
+      libX11
+      libXrandr
+      libXi
+      libXcursor
+      libXinerama
+      libXrender
+      libXtst
+      libXi
       freetype
       fontconfig
     ];
