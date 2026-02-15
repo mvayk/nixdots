@@ -217,30 +217,30 @@ programs.steam = {
         cifs-utils
         lua-language-server
         rustc
-        clang
+        #rust-analyzer
+        xclang
         clang-tools
-        rust-analyzer
         python3Packages.python-lsp-server
         nodePackages.typescript-language-server
         nodePackages.vscode-langservers-extracted
-      raylib
-      libGL
-      libGLU
-      mesa
-      xorg.libXxf86vm
-      wayland
-      wayland-protocols
-      libxkbcommon
-      libGL
-      libGLU
-      xorg.libX11
-      xorg.libXrandr
-      xorg.libXi
-      xorg.libXcursor
-      xorg.libXinerama
-      xorg.libXrender
-      xorg.libXtst
-      xorg.libXi
+          raylib
+          libGL
+          libGLU
+          mesa
+          xorg.libXxf86vm
+          wayland
+          wayland-protocols
+          libxkbcommon
+          libGL
+          libGLU
+          libX11
+          libXrandr
+          libXi
+          libXcursor
+          libXinerama
+          libXrender
+          libXtst
+          libXi
 
         pkg-config
         openssl
