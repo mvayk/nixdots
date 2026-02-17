@@ -539,7 +539,7 @@ programs.noctalia-shell = {
       schedulingMode = "off";
       manualSunrise = "06:30";
       manualSunset = "18:30";
-      generationMethod = "rainbow";
+      generationMethod = "tonal-spot";
       monitorForColors = "";
     };
     templates = {
