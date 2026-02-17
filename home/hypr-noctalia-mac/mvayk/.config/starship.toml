@@ -38,6 +38,9 @@ added_style = "bold green"
 deleted_style = "bold red"
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
+[battery]
+disabled = true
+
 [aws]
 symbol = " "
 
