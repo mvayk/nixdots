@@ -90,6 +90,15 @@ outputs = { self, nixpkgs, nixpkgs-stable, home-manager, noctalia, quickshell, z
                 theme = "hypr-noctalia-mac";
             };
 
+            desktop-hypr-noctalia-mac-override = mkNixosConfig {
+                machine = "desktop";
+                theme = "hypr-noctalia-mac-override";
+            };
+            laptop-hypr-noctalia-mac-override = mkNixosConfig {
+                machine = "laptop";
+                theme = "hypr-noctalia-mac-override";
+            };
+
             desktop-i3-catppuccin-minimal= mkNixosConfig {
                 machine = "desktop";
                 theme = "i3-catppuccin-minimal";

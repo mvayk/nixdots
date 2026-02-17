@@ -36,18 +36,6 @@ programs.noctalia-shell = {
   # i want color overriding
   settings = {
     settingsVersion = 46;
-    theme = {
-        colors = {
-            dark = {
-                mSurface = lib.mkForce "#000000";
-                mSurfaceVariant = lib.mkForce "#000000";
-            };
-            light = {
-                mSurface = lib.mkForce "#fffffff";
-                mSurfaceVariant = lib.mkForce "#ffffff";
-            };
-        };
-    };
     bar = {
       barType = "simple";
       position = "top";
@@ -260,7 +248,7 @@ programs.noctalia-shell = {
       fontDefaultScale = 1;
       fontFixedScale = 1;
       tooltipsEnabled = true;
-      panelBackgroundOpacity = 0.7;
+      panelBackgroundOpacity = 0.4;
       panelsAttachedToBar = false;
       settingsPanelMode = "centered";
       wifiDetailsViewMode = "grid";
@@ -552,7 +540,7 @@ programs.noctalia-shell = {
       schedulingMode = "off";
       manualSunrise = "06:30";
       manualSunset = "18:30";
-      generationMethod = "vibrant";
+      generationMethod = "faithful";
       monitorForColors = "";
     };
     templates = {
@@ -606,9 +594,56 @@ programs.noctalia-shell = {
       manualSunset = "18:30";
     };
     hooks = {
-      enabled = false;
-      wallpaperChange = "";
-      darkModeChange = "";
+      enabled = true;
+wallpaperChange = let
+  overrideScript = pkgs.writeShellScript "override-colors" ''
+    COLOR_FILE="$HOME/.config/noctalia/colors.json"
+    if [ -f "$COLOR_FILE" ]; then
+      sleep 0.4
+      ON_SURFACE=$(${pkgs.jq}/bin/jq -r '.mOnSurface // "#ffffff"' "$COLOR_FILE")
+      RED_VALUE=$((16#''${ON_SURFACE:1:2}))
+      if [ $RED_VALUE -gt 128 ]; then
+        # Light text = dark mode
+        SURFACE="#000000"
+        SURFACE_VARIANT="#000000"
+      else
+        SURFACE="#ffffff"
+        SURFACE_VARIANT="#ffffff"
+      fi
+      ${pkgs.jq}/bin/jq \
+        --arg surface "$SURFACE" \
+        --arg surfaceVariant "$SURFACE_VARIANT" \
+        '.mSurface = $surface | .mSurfaceVariant = $surfaceVariant' \
+        "$COLOR_FILE" > "$COLOR_FILE.tmp" && \
+      mv "$COLOR_FILE.tmp" "$COLOR_FILE"
+    fi
+  '';
+in "${overrideScript}";
+
+darkModeChange = let
+  overrideScript = pkgs.writeShellScript "override-colors-darkmode" ''
+    COLOR_FILE="$HOME/.config/noctalia/colors.json"
+    sleep 0.4
+    if [ -f "$COLOR_FILE" ]; then
+      ON_SURFACE=$(${pkgs.jq}/bin/jq -r '.mOnSurface // "#ffffff"' "$COLOR_FILE")
+      RED_VALUE=$((16#''${ON_SURFACE:1:2}))
+      if [ $RED_VALUE -gt 128 ]; then
+        # Light text = dark mode
+        SURFACE="#000000"
+        SURFACE_VARIANT="#000000"
+      else
+        SURFACE="#ffffff"
+        SURFACE_VARIANT="#ffffff"
+      fi
+      ${pkgs.jq}/bin/jq \
+        --arg surface "$SURFACE" \
+        --arg surfaceVariant "$SURFACE_VARIANT" \
+        '.mSurface = $surface | .mSurfaceVariant = $surfaceVariant' \
+        "$COLOR_FILE" > "$COLOR_FILE.tmp" && \
+      mv "$COLOR_FILE.tmp" "$COLOR_FILE"
+    fi
+  '';
+in "${overrideScript}";
       screenLock = "";
       screenUnlock = "";
       performanceModeEnabled = "";
@@ -622,6 +657,16 @@ programs.noctalia-shell = {
       monitorWidgets = [];
     };
   };
+  #     colors = {
+  #         dark = {
+  #         mSurface = lib.mkForce "#000000";
+  #         mSurfaceVariant = lib.mkForce "#000000";
+  #     };
+  #     light = {
+  #         mSurface = lib.mkForce "#fffffff";
+  #         mSurfaceVariant = lib.mkForce "#ffffff";
+  #     };
+  # };
 };
 
 wayland.windowManager.hyprland = {
@@ -718,6 +763,32 @@ wayland.windowManager.hyprland = {
       };
     };
   };
+
+home.file.".local/bin/noctalia-color-fix".source = pkgs.writeShellScript "noctalia-color-fix" ''
+    #!/usr/bin/env bash
+    COLOR_FILE="$HOME/.config/noctalia/colors.json"
+    
+    while true; do
+      ${pkgs.inotify-tools}/bin/inotifywait -e close_write "$COLOR_FILE" 2>/dev/null
+      
+      sleep 0.2  # Let the write complete
+      
+      if [ -f "$COLOR_FILE" ]; then
+        DARK_MODE=$(${pkgs.jq}/bin/jq -r '.darkMode // true' "$COLOR_FILE")
+        
+        if [ "$DARK_MODE" = "true" ]; then
+          ${pkgs.jq}/bin/jq '.mSurface = "#000000" | .mSurfaceVariant = "#000000"' \
+            "$COLOR_FILE" > "$COLOR_FILE.tmp" && mv "$COLOR_FILE.tmp" "$COLOR_FILE"
+        else
+          ${pkgs.jq}/bin/jq '.mSurface = "#ffffff" | .mSurfaceVariant = "#ffffff"' \
+            "$COLOR_FILE" > "$COLOR_FILE.tmp" && mv "$COLOR_FILE.tmp" "$COLOR_FILE"
+        fi
+      fi
+    done
+  '';
+  
+  # Make it executable
+  home.file.".local/bin/noctalia-color-fix".executable = true;
 
     programs.zsh = {
         oh-my-zsh = {
