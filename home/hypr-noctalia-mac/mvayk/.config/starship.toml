@@ -22,6 +22,7 @@ disabled = false
 format = "[$symbol]($style)"
 
 [character]
+disabled = true
 success_symbol = "[](bold white)"
 error_symbol = "[](bold red)"
 
