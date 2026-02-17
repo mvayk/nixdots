@@ -4,12 +4,10 @@
     enable = true;
 
     interactiveShellInit = ''
-      # Start tmux if not already inside tmux
       if not set -q TMUX
           exec tmux new-session
       end
 
-      # Show system info on shell start
       fastfetch
 
       # direnv hook
