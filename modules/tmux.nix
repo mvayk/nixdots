@@ -21,6 +21,7 @@
             }
             yank
             tmux-fzf
+            tmux-sessionx
         ];
         extraConfig = ''
             # settings
@@ -87,17 +88,17 @@
 
             # left: session · path · git branch
             set-option -g status-left "\
-#[fg=brightblack]│\
+#[fg=brightblack]▊\
 #[fg=blue,bold] #S\
-#[fg=brightblack]:   \
+#[fg=brightblack]:  \
 "
             set-option -g status-right "\
 #[fg=yellow] #(cd #{pane_current_path} && git branch --show-current 2>/dev/null | sed 's/.*/ &/') \
 #[fg=brightblack]\
 #[fg=green]#{=/16/…:pane_current_path}\
-#[fg=brightblack]\
+#[fg=brightblack] │\
 #[fg=white] %H:%M %d %b \
-#[fg=brightblack]│\
+#[fg=brightblack]▊\
 "
             # window tabs (centered via status-justify centre)
             set-option -g window-status-format "#[fg=brightblack]  #I #W  "
