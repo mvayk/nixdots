@@ -218,7 +218,7 @@ programs.steam = {
         lua-language-server
         rustc
         #rust-analyzer
-        xclang
+        clang
         clang-tools
         python3Packages.python-lsp-server
         nodePackages.typescript-language-server

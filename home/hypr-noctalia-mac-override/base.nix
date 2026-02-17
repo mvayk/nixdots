@@ -33,8 +33,21 @@ in
 
 programs.noctalia-shell = {
   enable = true;
+  # i want color overriding
   settings = {
     settingsVersion = 46;
+    theme = {
+        colors = {
+            dark = {
+                mSurface = lib.mkForce "#000000";
+                mSurfaceVariant = lib.mkForce "#000000";
+            };
+            light = {
+                mSurface = lib.mkForce "#fffffff";
+                mSurfaceVariant = lib.mkForce "#ffffff";
+            };
+        };
+    };
     bar = {
       barType = "simple";
       position = "top";
