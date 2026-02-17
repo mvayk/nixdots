@@ -42,6 +42,7 @@
                 popd >/dev/null
             }
 
+            eval "$(zoxide init zsh)"
             eval "$(direnv hook zsh)"
         '';
     };
