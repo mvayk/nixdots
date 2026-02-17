@@ -1,13 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$all$username$hostname$os$character"""
+$all$username$hostname$os"""
 
-right_format = "$cmd_duration"
-
-[os]
-disabled = false
-format = "[$symbol]($style)"
+right_format = ""
 
 [username]
 show_always = true
@@ -21,13 +17,18 @@ format = "[@](white)[$hostname]($style) "
 style = "bold italic purple"
 ssh_symbol = " "
 
+[os]
+disabled = false
+format = "[$symbol]($style)"
+
 [character]
 success_symbol = "[](bold white)"
 error_symbol = "[](bold red)"
 
 [cmd_duration]
+disabled = false
 min_time = 2000
-format = "[took $duration]($style)"
+format = "[$duration]($style)"
 style = "bold yellow"
 
 [git_metrics]
