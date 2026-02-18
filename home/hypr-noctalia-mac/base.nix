@@ -584,7 +584,7 @@ programs.noctalia-shell = {
       enableUserTheming = true;
     };
     nightLight = {
-      enabled = true;
+      enabled = false;
       forced = false;
       autoSchedule = false;
       nightTemp = "1090";
