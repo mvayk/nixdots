@@ -218,6 +218,7 @@ programs.steam = {
         lua-language-server
         rustc
         #rust-analyzer
+        mistral-vibe
         clang
         clang-tools
         python3Packages.python-lsp-server
