@@ -15,7 +15,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         noctalia = {
-            url = "github:noctalia-dev/noctalia-shell";
+            #url = "github:noctalia-dev/noctalia-shell";
+            url = "github:mvayk/noctalia-shell-amoled";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         zen-browser = {
@@ -88,15 +89,6 @@ outputs = { self, nixpkgs, nixpkgs-stable, home-manager, noctalia, quickshell, z
             laptop-hypr-noctalia-mac = mkNixosConfig {
                 machine = "laptop";
                 theme = "hypr-noctalia-mac";
-            };
-
-            desktop-hypr-noctalia-mac-override = mkNixosConfig {
-                machine = "desktop";
-                theme = "hypr-noctalia-mac-override";
-            };
-            laptop-hypr-noctalia-mac-override = mkNixosConfig {
-                machine = "laptop";
-                theme = "hypr-noctalia-mac-override";
             };
 
             desktop-i3-catppuccin-minimal= mkNixosConfig {
