@@ -88,7 +88,7 @@
 
             # left: session · path · git branch
             set-option -g status-left "\
-#[fg=brightblack]▊\
+#[fg=yellow]▊\
 #[fg=blue,bold] #S\
 #[fg=brightblack]:  \
 "
@@ -98,7 +98,7 @@
 #[fg=green]#{=/16/…:pane_current_path}\
 #[fg=brightblack] │\
 #[fg=white] %H:%M %d %b \
-#[fg=brightblack]▊\
+#[fg=yellow]▊\
 "
             # window tabs (centered via status-justify centre)
             set-option -g window-status-format "#[fg=brightblack]  #I #W  "
