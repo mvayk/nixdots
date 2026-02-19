@@ -150,6 +150,7 @@ programs.steam = {
         htop
         gdb
         rnote
+        krita
         yt-dlp
         # firefox
         gimp
