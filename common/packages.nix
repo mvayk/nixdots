@@ -167,6 +167,7 @@ programs.steam = {
         libnotify
         tmux
         texlive.combined.scheme-medium
+        usbutils
         imagemagick
         bat
         flameshot
