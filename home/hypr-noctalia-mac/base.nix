@@ -781,6 +781,8 @@ animations = {
     };
 }; */
 
+/*
+*/
   xdg.configFile."qt5ct/qt5ct.conf".text = ''
     [Appearance]
     color_scheme_path=${config.home.homeDirectory}/.config/qt5ct/colors/noctalia.conf
@@ -788,10 +790,6 @@ animations = {
     icon_theme=kora
     standard_dialogs=xdgdesktopportal
     style=Breeze
-
-    [Fonts]
-    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
 
     [Interface]
     activate_item_on_single_click=1
@@ -807,6 +805,10 @@ animations = {
     toolbutton_style=4
     underline_shortcut=1
     wheel_scroll_lines=3
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
 
     [SettingsWindow]
     geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa)
@@ -816,6 +818,9 @@ animations = {
     ignored_applications=@Invalid()
   '';
 
+/*
+*/
+
   xdg.configFile."qt6ct/qt6ct.conf".text = ''
     [Appearance]
     color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf
@@ -823,10 +828,6 @@ animations = {
     icon_theme=kora
     standard_dialogs=xdgdesktopportal
     style=Breeze
-
-    [Fonts]
-    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
 
     [Interface]
     activate_item_on_single_click=1
@@ -842,6 +843,10 @@ animations = {
     toolbutton_style=4
     underline_shortcut=1
     wheel_scroll_lines=3
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular" 
 
     [SettingsWindow]
     geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\xd3\0\0\x1\xfa)
