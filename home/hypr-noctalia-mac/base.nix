@@ -224,27 +224,6 @@ programs.noctalia-shell = {
                 showPowerProfiles = false;
             }
             {
-                compactMode = true;
-                diskPath = "/";
-                iconColor = "none";
-                id = "SystemMonitor";
-                showCpuFreq = false;
-                showCpuTemp = true;
-                showCpuUsage = true;
-                showDiskAvailable = false;
-                showDiskUsage = false;
-                showDiskUsageAsPercent = false;
-                showGpuTemp = false;
-                showLoadAverage = true;
-                showMemoryAsPercent = false;
-                showMemoryUsage = true;
-                showNetworkStats = false;
-                showSwapUsage = true;
-                textColor = "none";
-                useMonospaceFont = true;
-                usePadding = false;
-            }
-            {
                 clockColor = "none";
                 customFont = "";
                 formatHorizontal = "HH:mm ddd, MMM dd";
