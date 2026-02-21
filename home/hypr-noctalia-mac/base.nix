@@ -88,6 +88,27 @@ programs.noctalia-shell = {
                 unfocusedIconsOpacity = 1;
             }
             {
+                compactMode = true;
+                diskPath = "/";
+                iconColor = "none";
+                id = "SystemMonitor";
+                showCpuFreq = false;
+                showCpuTemp = true;
+                showCpuUsage = true;
+                showDiskAvailable = false;
+                showDiskUsage = false;
+                showDiskUsageAsPercent = false;
+                showGpuTemp = false;
+                showLoadAverage = true;
+                showMemoryAsPercent = false;
+                showMemoryUsage = true;
+                showNetworkStats = false;
+                showSwapUsage = true;
+                textColor = "none";
+                useMonospaceFont = true;
+                usePadding = false;
+            }
+            {
                 icon = "rocket";
                 iconColor = "none";
                 id = "Launcher";
@@ -110,19 +131,6 @@ programs.noctalia-shell = {
                     iconColor = "none";
                 };
                 id = "plugin:timer";
-            }
-            {
-                colorizeIcons = false;
-                hideMode = "hidden";
-                iconScale = 0.8;
-                id = "Taskbar";
-                maxTaskbarWidth = 40;
-                onlyActiveWorkspaces = true;
-                onlySameOutput = false;
-                showPinnedApps = true;
-                showTitle = false;
-                smartWidth = true;
-                titleWidth = 120;
             }
             ];
 
