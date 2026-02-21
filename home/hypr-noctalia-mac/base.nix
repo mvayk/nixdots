@@ -150,7 +150,7 @@ programs.noctalia-shell = {
                 showArtistFirst = false;
                 showProgressRing = true;
                 showVisualizer = true;
-                textColor = "primary";
+                textColor = "none";
                 useFixedWidth = false;
                 visualizerType = "wave";
             }
@@ -571,7 +571,7 @@ programs.noctalia-shell = {
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "fruit-salad";
+        generationMethod = "vibrant";
         monitorForColors = "";
     };
 
