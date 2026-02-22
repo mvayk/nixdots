@@ -64,22 +64,13 @@ outputs = { self, nixpkgs, nixpkgs-stable, home-manager, noctalia, quickshell, z
         };
     in {
         nixosConfigurations = {
-            desktop-hypr-noctalia-general = mkNixosConfig {
+            desktop-hypr-noctalia-gruber = mkNixosConfig {
                 machine = "desktop";
-                theme = "hypr-noctalia-general";
+                theme = "hypr-noctalia-gruber";
             };
-            laptop-hypr-noctalia-general = mkNixosConfig {
+            laptop-hypr-noctalia-gruber = mkNixosConfig {
                 machine = "laptop";
-                theme = "hypr-noctalia-general";
-            };
-
-            desktop-hypr-noctalia-fancy = mkNixosConfig {
-                machine = "desktop";
-                theme = "hypr-noctalia-fancy";
-            };
-            laptop-hypr-noctalia-fancy = mkNixosConfig {
-                machine = "laptop";
-                theme = "hypr-noctalia-fancy";
+                theme = "hypr-noctalia-gruber";
             };
 
             desktop-hypr-noctalia-main = mkNixosConfig {
