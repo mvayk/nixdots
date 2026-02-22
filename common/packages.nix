@@ -119,6 +119,7 @@ programs.steam = {
         # firefox-beta
         # firefox-nightly.packages.${system}.firefox-nightly-bin
         glibc
+        glib
         tree
         steam
         protontricks

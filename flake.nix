@@ -82,13 +82,13 @@ outputs = { self, nixpkgs, nixpkgs-stable, home-manager, noctalia, quickshell, z
                 theme = "hypr-noctalia-fancy";
             };
 
-            desktop-hypr-noctalia-mac = mkNixosConfig {
+            desktop-hypr-noctalia-main = mkNixosConfig {
                 machine = "desktop";
-                theme = "hypr-noctalia-mac";
+                theme = "hypr-noctalia-main";
             };
-            laptop-hypr-noctalia-mac = mkNixosConfig {
+            laptop-hypr-noctalia-main = mkNixosConfig {
                 machine = "laptop";
-                theme = "hypr-noctalia-mac";
+                theme = "hypr-noctalia-main";
             };
 
             desktop-i3-catppuccin-minimal= mkNixosConfig {
