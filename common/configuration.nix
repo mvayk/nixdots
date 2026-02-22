@@ -94,8 +94,7 @@
       kdePackages.qtvirtualkeyboard
     ];
 
-    themes = "sddm-astronaut-theme";
-    embeddedTheme = "hyprland_kath";
+    theme = "sddm-astronaut-theme";
   };
 
   services.emacs = {

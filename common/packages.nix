@@ -205,7 +205,7 @@
     krita
     yt-dlp
     # firefox
-    gimp
+    # gimp
     zed-editor
     starship
     eza
