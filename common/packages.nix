@@ -60,6 +60,7 @@ programs.steam = {
         kdePackages.kmines
         kdePackages.kolourpaint
         kdePackages.kpat
+        kdePackages.kleopatra
         ace-of-penguins
         qalculate-qt
         trilium-desktop
@@ -92,7 +93,6 @@ programs.steam = {
         koboldcpp
         tldr
         openrgb-with-all-plugins
-        kdePackages.kleopatra
         libsecret
         pinentry-gnome3
 

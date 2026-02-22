@@ -16,7 +16,7 @@
 
     programs.gnupg.agent = {
         enable = true;
-        pinentryPackage = pkgs.pinentry-gnome3;
+        pinentryPackage = pkgs.pinentry-qt;
     };
 
     time.timeZone = "Australia/Sydney";
@@ -99,7 +99,9 @@ virtualisation.libvirtd = {
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
     security.pam.services.hyprland.enableGnomeKeyring = true;
-    programs.seahorse.enable = false;
+    programs.seahorse.enable = true;
+
+    # security.pam.services.login.kwallet.enable = true;
 
     services.pipewire = {
       enable = true;
