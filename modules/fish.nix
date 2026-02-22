@@ -27,12 +27,12 @@
     '';
 
     shellAliases = {
-      ls        = "eza --icons -l";
-      l         = "eza --icons";
-      emacs     = "emacsclient -c -a 'emacs'";
-      vim       = "nvim";
-      sue       = "sudo -E nvim";
-      nix-edit  = "sudo -E nvim /etc/nixos/";
+      ls = "eza --icons -l";
+      l = "eza --icons";
+      emacs = "emacsclient -c -a 'emacs'";
+      vim = "nvim";
+      sue = "sudo -E nvim";
+      nix-edit = "sudo -E nvim /etc/nixos/";
       nix-rebuild = "pushd /etc/nixos && sudo nixos-rebuild switch --flake .#$(hostname); popd";
     };
   };

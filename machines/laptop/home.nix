@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-    imports = [
-        ../../common/shared-home.nix
-    ];
+  imports = [
+    ../../common/shared-home.nix
+  ];
 }

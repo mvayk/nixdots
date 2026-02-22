@@ -4,7 +4,7 @@
   networking.hostName = "desktop";
 
   services.xserver = {
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
 
   hardware.nvidia = {
@@ -13,7 +13,8 @@
     open = false;
     nvidiaSettings = true;
   };
-nixpkgs.config.cudaSupport = true;
+
+  nixpkgs.config.cudaSupport = true;
 
   hardware.graphics = {
     enable = true;
@@ -25,20 +26,13 @@ nixpkgs.config.cudaSupport = true;
     ];
   };
 
-# ??? ? ?? 
-#sudo cp /nix/store/r7y9rzqa2hmzhhvym01cj0i77m0dn9dv-xppen_4-4.0.7-250117/usr/lib/pentablet/conf/xppen/config.xml /var/lib/pentablet/conf/xppen/config.xml
+  # xp pentablet fix
+  #sudo cp /nix/store/r7y9rzqa2hmzhhvym01cj0i77m0dn9dv-xppen_4-4.0.7-250117/usr/lib/pentablet/conf/xppen/config.xml /var/lib/pentablet/conf/xppen/config.xml
 
-/* system.activationScripts.xppen-config = {
-  text = ''
-    mkdir -p /var/lib/pentablet/conf/xppen
-    cp $(find /nix/store -name "xppen_4-*" -type d | head -1)/usr/lib/pentablet/conf/xppen/config.xml /var/lib/pentablet/conf/xppen/config.xml
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
   '';
-}; */
-
-services.udev.extraRules = ''
-  SUBSYSTEM=="usb", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
-  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
-'';
 
   services.hardware.openrgb.enable = true;
 
