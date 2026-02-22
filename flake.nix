@@ -1,132 +1,138 @@
 {
-    description = "NixOS from Scratch";
-    inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11"; 
-        home-manager.url = "github:nix-community/home-manager";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        future-hyprcursor.url = "github:mvayk/nix-future-hyprcursor";
-        matugen = {
-            url = "github:/InioX/Matugen";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        quickshell = {
-            url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        noctalia = {
-            #url = "github:noctalia-dev/noctalia-shell";
-            url = "github:mvayk/noctalia-shell-amoled";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        zen-browser = {
-            url = "github:0xc000022070/zen-browser-flake/beta";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        spicetify-nix = {
-            url = "github:Gerg-L/spicetify-nix";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        firefox-nightly = {
-            url = "github:nix-community/flake-firefox-nightly";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+  description = "mvayk nixos config";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-outputs = { self, nixpkgs, nixpkgs-stable, home-manager, noctalia, quickshell, zen-browser, spicetify-nix, firefox-nightly, matugen, future-hyprcursor, ... }:
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:mvayk/noctalia-shell-amoled";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    future-hyprcursor = {
+      url = "github:mvayk/nix-future-hyprcursor";
+    };
+    matugen = {
+      url = "github:/InioX/Matugen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake/beta";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      home-manager,
+      sops-nix,
+      noctalia,
+      future-hyprcursor,
+      matugen,
+      quickshell,
+      zen-browser,
+      spicetify-nix,
+      ...
+    }@inputs:
     let
-        system = "x86_64-linux";
-        pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
+      hostSystem = "x86_64-linux";
+      lib = nixpkgs.lib;
+      pkgs-stable = import nixpkgs-stable {
+        system = hostSystem;
+        config.allowUnfree = true;
+      };
+      extraArgs = {
+        inherit
+          inputs
+          pkgs-stable
+          noctalia
+          quickshell
+          matugen
+          future-hyprcursor
+          zen-browser
+          spicetify-nix
+          ;
+      };
+      mkHost =
+        { machine, de }:
+        lib.nixosSystem {
+          system = hostSystem;
+          specialArgs = extraArgs // {
+            inherit machine de;
+          };
+          modules = [
+            ./hosts/common.nix
+            ./hosts/${machine}/default.nix
+            ./hosts/${machine}/hardware.nix
+            ./modules/nixos/de/${de}.nix
+            sops-nix.nixosModules.sops
+            spicetify-nix.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = extraArgs // {
+                  inherit machine de;
+                };
+                users.mvayk = import ./users/mvayk/home.nix;
+                backupFileExtension = "backup";
+              };
+            }
+            ./users/mvayk/system.nix
+          ];
         };
-        specialArgs = { 
-            inherit zen-browser spicetify-nix firefox-nightly pkgs-stable; 
+    in
+    {
+      nixosConfigurations = {
+        desktop-hyprland = mkHost {
+          machine = "desktop";
+          de = "hyprland";
         };
-        mkNixosConfig = { machine, theme }: nixpkgs.lib.nixosSystem {
-            inherit system specialArgs;
-            modules = [
-                ./common/configuration.nix
-                ./machines/${machine}/configuration.nix
-                ./machines/${machine}/hardware-configuration.nix
-                ./home/${theme}/global.nix
-                spicetify-nix.nixosModules.default
-                home-manager.nixosModules.home-manager
-                {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                    home-manager.users.mvayk = import ./home/${theme}/base.nix;
-                    home-manager.backupFileExtension = "backup";
-                    home-manager.extraSpecialArgs = { 
-                        inherit noctalia zen-browser quickshell spicetify-nix matugen machine theme future-hyprcursor pkgs-stable; 
-                    };
-                }
-            ];
+        desktop-kde = mkHost {
+          machine = "desktop";
+          de = "kde";
         };
-    in {
-        nixosConfigurations = {
-            desktop-hypr-noctalia-gruber = mkNixosConfig {
-                machine = "desktop";
-                theme = "hypr-noctalia-gruber";
-            };
-            laptop-hypr-noctalia-gruber = mkNixosConfig {
-                machine = "laptop";
-                theme = "hypr-noctalia-gruber";
-            };
-
-            desktop-hypr-noctalia-main = mkNixosConfig {
-                machine = "desktop";
-                theme = "hypr-noctalia-main";
-            };
-            laptop-hypr-noctalia-main = mkNixosConfig {
-                machine = "laptop";
-                theme = "hypr-noctalia-main";
-            };
-
-            desktop-i3-catppuccin-minimal= mkNixosConfig {
-                machine = "desktop";
-                theme = "i3-catppuccin-minimal";
-            };
-            laptop-i3-catppuccin-minimal = mkNixosConfig {
-                machine = "laptop";
-                theme = "i3-catppuccin-minimal";
-            };
-
-            desktop-hypr-dream= mkNixosConfig {
-                machine = "desktop";
-                theme = "hypr-dream";
-            };
-
-            laptop-hypr-dream= mkNixosConfig {
-                machine = "laptop";
-                theme = "hypr-dream";
-            };
-
-            desktop-hypr-gruvbox= mkNixosConfig {
-                machine = "desktop";
-                theme = "hypr-gruvbox";
-            };
-            laptop-hypr-gruvbox= mkNixosConfig {
-                machine = "laptop";
-                theme = "hypr-gruvbox";
-            };
-
-            desktop-xfce= mkNixosConfig {
-                machine = "desktop";
-                theme = "xfce";
-            };
-            laptop-xfce= mkNixosConfig {
-                machine = "laptop";
-                theme = "xfce";
-            };
-
-            desktop-kde= mkNixosConfig {
-                machine = "desktop";
-                theme = "kde";
-            };
-            laptop-kde= mkNixosConfig {
-                machine = "laptop";
-                theme = "kde";
-            };
+        desktop-gnome = mkHost {
+          machine = "desktop";
+          de = "gnome";
         };
+        desktop-xfce = mkHost {
+          machine = "desktop";
+          de = "xfce";
+        };
+        laptop-hyprland = mkHost {
+          machine = "laptop";
+          de = "hyprland";
+        };
+        laptop-kde = mkHost {
+          machine = "laptop";
+          de = "kde";
+        };
+        laptop-gnome = mkHost {
+          machine = "laptop";
+          de = "gnome";
+        };
+        laptop-xfce = mkHost {
+          machine = "laptop";
+          de = "xfce";
+        };
+      };
     };
 }

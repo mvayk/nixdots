@@ -1,0 +1,21 @@
+{ pkgs, ... }:
+{
+  users.users.mvayk = {
+    uid          = 1001;
+    isNormalUser = true;
+    shell        = pkgs.zsh;
+    extraGroups  = [
+      "wheel"
+      "networkmanager"
+      "libvirtd"
+      "video"
+      "audio"
+      "plugdev"
+      "input"
+    ];
+    hashedPasswordFile = "/run/secrets/mvayk-password";
+    openssh.authorizedKeys.keys = [
+      # "ssh-ed25519 AAAA... mvayk@desktop"
+    ];
+  };
+}
