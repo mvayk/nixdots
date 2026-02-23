@@ -6,13 +6,13 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    package            = config.boot.kernelPackages.nvidiaPackages.latest;
-    open               = false;
-    nvidiaSettings     = true;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    open = false;
+    nvidiaSettings = true;
   };
 
   hardware.graphics = {
-    enable      = true;
+    enable = true;
     enable32Bit = true;
   };
 

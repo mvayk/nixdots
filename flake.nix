@@ -18,10 +18,6 @@
     future-hyprcursor = {
       url = "github:mvayk/nix-future-hyprcursor";
     };
-    matugen = {
-      url = "github:/InioX/Matugen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,7 +59,6 @@
           pkgs-stable
           noctalia
           quickshell
-          matugen
           future-hyprcursor
           zen-browser
           spicetify-nix
