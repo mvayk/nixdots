@@ -1,4 +1,3 @@
-
 { de, lib, ... }:
 let
   deSettings = {
@@ -12,6 +11,8 @@ let
       background-opacity = "1.0";
       theme = "Vercel";
       font-size = "14";
+      window-padding-x = "6";
+      window-padding-y = "8";
     };
     kde = {
       window-decoration = "true";
