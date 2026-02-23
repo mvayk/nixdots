@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  networking.hostName = "desktop";
+  networking.hostName = "flandre";
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

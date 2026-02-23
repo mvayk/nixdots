@@ -95,36 +95,36 @@
     in
     {
       nixosConfigurations = {
-        desktop-hyprland = mkHost {
-          machine = "desktop";
+        flandre-hyprland = mkHost {
+          machine = "flandre";
           de = "hyprland";
         };
-        desktop-kde = mkHost {
-          machine = "desktop";
+        flandre-kde = mkHost {
+          machine = "flandre";
           de = "kde";
         };
-        desktop-gnome = mkHost {
-          machine = "desktop";
+        flandre-gnome = mkHost {
+          machine = "flandre";
           de = "gnome";
         };
-        desktop-xfce = mkHost {
-          machine = "desktop";
+        flandre-xfce = mkHost {
+          machine = "flandre";
           de = "xfce";
         };
-        laptop-hyprland = mkHost {
-          machine = "laptop";
+        remilia-hyprland = mkHost {
+          machine = "remilia";
           de = "hyprland";
         };
-        laptop-kde = mkHost {
-          machine = "laptop";
+        remilia-kde = mkHost {
+          machine = "remilia";
           de = "kde";
         };
-        laptop-gnome = mkHost {
-          machine = "laptop";
+        remilia-gnome = mkHost {
+          machine = "remilia";
           de = "gnome";
         };
-        laptop-xfce = mkHost {
-          machine = "laptop";
+        remilia-xfce = mkHost {
+          machine = "remilia";
           de = "xfce";
         };
       };

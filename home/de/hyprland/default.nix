@@ -718,7 +718,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      "$mainMod" = if machine == "laptop" then "ALT" else "SUPER";
+      "$mainMod" = "SUPER";
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -907,7 +907,7 @@ in
       ];
 
       monitor =
-        if machine == "desktop" then
+        if machine == "flandre" then
           [
             "HDMI-A-1, 1920x1080@60,  0x0,    1"
             "DP-3,     2560x1440@240, 1920x0, 1"
@@ -918,7 +918,7 @@ in
             "eDP-1, 1920x1080@60, 0x0, 1"
           ];
 
-      workspace = lib.optionals (machine == "desktop") [
+      workspace = lib.optionals (machine == "flandre") [
         "1, monitor:HDMI-A-1, gapsin:0, gapsout:0, bordersize:0, rounding:false, decorate:false"
       ];
     };

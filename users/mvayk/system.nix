@@ -14,8 +14,5 @@
       "input"
     ];
     hashedPasswordFile = "/run/secrets/mvayk-password";
-    openssh.authorizedKeys.keys = [
-      # "ssh-ed25519 AAAA... mvayk@desktop"
-    ];
   };
 }
