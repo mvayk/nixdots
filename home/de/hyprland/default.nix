@@ -3,7 +3,6 @@
   pkgs,
   noctalia,
   quickshell,
-  matugen,
   future-hyprcursor,
   lib,
   machine,
@@ -1045,7 +1044,7 @@ in
     libpng
     librsvg
 
-    matugen.packages.${pkgs.system}.default
+    # matugen.packages.${pkgs.system}.default
     quickshell.packages.${pkgs.system}.default
     noctalia.packages.${pkgs.system}.default
     future-hyprcursor.packages.${pkgs.system}.default
