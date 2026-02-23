@@ -40,7 +40,6 @@
       sops-nix,
       noctalia,
       future-hyprcursor,
-      matugen,
       quickshell,
       zen-browser,
       spicetify-nix,
