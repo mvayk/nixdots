@@ -104,8 +104,8 @@
   security.pam.services.login.enableGnomeKeyring = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
-  security.pam.services.login.kwallet.enable = pkgs.lib.mkForce false;
-  security.pam.services.sddm.kwallet.enable = pkgs.lib.mkForce false;
+  # security.pam.services.login.kwallet.enable = pkgs.lib.mkForce false;
+  # security.pam.services.sddm.kwallet.enable = pkgs.lib.mkForce false;
 
   programs.seahorse.enable = true;
 
