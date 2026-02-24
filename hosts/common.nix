@@ -100,23 +100,21 @@
   };
 
   security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
+  security.pam.services.login.kwallet.enable = pkgs.lib.mkForce false;
+  security.pam.services.sddm.kwallet.enable = pkgs.lib.mkForce false;
 
-  services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
 
-  programs.ssh.askPassword = pkgs.lib.mkForce
-    "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
+  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
 
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-qt;
   };
-
-  security.pam.services.login.kwallet.enable = pkgs.lib.mkForce false;
-  security.pam.services.sddm.kwallet.enable = pkgs.lib.mkForce false;
 
   services = {
     flatpak.enable = true;
@@ -124,7 +122,10 @@
     gvfs.enable = true;
     upower.enable = true;
     printing.enable = true;
-    dbus.enable = true;
+    dbus = {
+      enable = true;
+      packages = [ pkgs.seahorse ];
+    };
 
     power-profiles-daemon.enable = true;
 

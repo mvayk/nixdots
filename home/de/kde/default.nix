@@ -17,4 +17,12 @@
     kdePackages.dolphin
     kdePackages.kleopatra
   ];
+
+  /* home.file.".config/kwalletrc".text = ''
+    [Wallet]
+    Enabled=false
+
+    [org.freedesktop.secrets]
+    apiEnabled=false
+  ''; */
 }
