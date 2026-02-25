@@ -25,7 +25,7 @@
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
-    # (llama-cpp.override { cudaSupport = true; })
+    (llama-cpp.override { cudaSupport = true; })
     wootility
     xppen_4
   ];

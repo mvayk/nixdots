@@ -50,7 +50,7 @@
   };
 
   services.displayManager.sddm = {
-    enable = true;
+    enable = false;
     wayland.enable = true;
     extraPackages = with pkgs.kdePackages; [
       qtsvg
@@ -59,6 +59,7 @@
     ];
     theme = "sddm-astronaut-theme";
   };
+  services.displayManager.ly.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

@@ -15,6 +15,11 @@
       url = "github:mvayk/noctalia-shell-amoled";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     future-hyprcursor = {
       url = "github:mvayk/nix-future-hyprcursor";
     };
@@ -39,6 +44,7 @@
       home-manager,
       sops-nix,
       noctalia,
+      plasma-manager,
       future-hyprcursor,
       quickshell,
       zen-browser,
@@ -59,6 +65,7 @@
           noctalia
           quickshell
           future-hyprcursor
+          plasma-manager
           zen-browser
           spicetify-nix
           ;
@@ -85,6 +92,9 @@
                 extraSpecialArgs = extraArgs // {
                   inherit machine de;
                 };
+                sharedModules  = [
+                    plasma-manager.homeModules.plasma-manager 
+                ];
                 users.mvayk = import ./users/mvayk/home.nix;
                 backupFileExtension = "backup";
               };
