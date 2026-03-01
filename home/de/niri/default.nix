@@ -702,6 +702,7 @@
 
   programs.niri = {
     enable = true;
+    package = pkgs.niri;
     settings = {
       environment = {
         XDG_CURRENT_DESKTOP = "niri";

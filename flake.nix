@@ -12,14 +12,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:mvayk/noctalia-shell-amoled";
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "noctalia-qs";
+    };
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
+    /* plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
+    }; */
     future-hyprcursor = {
       url = "github:mvayk/nix-future-hyprcursor";
     };
@@ -48,7 +53,7 @@
       home-manager,
       sops-nix,
       noctalia,
-      plasma-manager,
+      # plasma-manager,
       future-hyprcursor,
       quickshell,
       zen-browser,
@@ -70,7 +75,7 @@
           noctalia
           quickshell
           future-hyprcursor
-          plasma-manager
+          # plasma-manager
           zen-browser
           spicetify-nix
           ;
@@ -90,7 +95,6 @@
             sops-nix.nixosModules.sops
             spicetify-nix.nixosModules.default
             home-manager.nixosModules.home-manager
-            (lib.optionalAttrs (de == "niri") niri.nixosModules.niri)
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -99,7 +103,8 @@
                   inherit machine de;
                 };
                 sharedModules = [
-                  plasma-manager.homeModules.plasma-manager
+                  #plasma-manager.homeModules.plasma-manager
+                ] ++ lib.optionals (de == "niri") [
                   niri.homeModules.niri
                 ];
                 users.mvayk = import ./users/mvayk/home.nix;
