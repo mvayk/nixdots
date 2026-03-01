@@ -6,6 +6,11 @@ let
       background-opacity = "0.7";
       theme = "noctalia";
     };
+    niri = {
+      window-decoration = "false";
+      background-opacity = "0.7";
+      theme = "noctalia";
+    };
     gnome = {
       window-decoration = "true";
       background-opacity = "1.0";

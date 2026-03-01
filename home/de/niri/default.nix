@@ -17,9 +17,9 @@
   ];
 
   home.pointerCursor = {
-    package = pkgs.apple-cursor;
-    name = "macOS";
-    size = 24;
+    package = future-hyprcursor.packages.${pkgs.system}.default;
+    name = "future-black-hyprcursor";
+    size = 36;
   };
 
   programs.noctalia-shell = {
@@ -662,7 +662,7 @@
           }
           {
             enabled = true;
-            id = "hyprland";
+            id = "niri";
           }
         ];
         enableUserTheming = true;
@@ -706,16 +706,17 @@
     settings = {
       environment = {
         XDG_CURRENT_DESKTOP = "niri";
-        XCURSOR_THEME = "macOS";
-        XCURSOR_SIZE = "24";
+        XCURSOR_THEME = "future-black-hyprcursor";
+        XCURSOR_SIZE = "36";
       };
 
       cursor = {
-        theme = "macOS";
-        size = 24;
+        theme = "future-black-hyprcursor";
+        size = 36;
       };
 
       input = {
+        focus-follows-mouse.enable = true;
         keyboard = {
           xkb = {
             layout = "us";
@@ -750,7 +751,7 @@
               mode = {
                 width = 2560;
                 height = 1440;
-                refresh = 240.0;
+                refresh = 240.001;
               };
               position = {
                 x = 1920;
@@ -761,7 +762,7 @@
               mode = {
                 width = 2560;
                 height = 1440;
-                refresh = 240.0;
+                refresh = 240.001;
               };
               position = {
                 x = 4480;
@@ -787,6 +788,7 @@
       layout = {
         gaps = 8;
         center-focused-column = "never";
+        background-color = "transparent";
 
         preset-column-widths = [
           { proportion = 0.333333; }
@@ -799,13 +801,18 @@
         };
 
         focus-ring = {
-          enable = true;
+          enable = false;
           width = 2;
-          active.color = "#7fc8ff";
-          inactive.color = "#505050";
+          active.color = "#FFFFFFFF";
+          inactive.color = "#000000FF";
         };
 
-        border.enable = false;
+        border = {
+          enable = true;
+          active.color = "#FFFFFFFF";
+          inactive.color = "#000000FF";
+          width = 1;
+        };
 
         shadow = {
           enable = true;
@@ -829,13 +836,30 @@
 
       window-rules = [
         {
-          matches = [ { app-id = "^osu!$"; } ];
+          geometry-corner-radius = {
+            top-left = 10.0;
+            top-right = 10.0;
+            bottom-left = 10.0;
+            bottom-right = 10.0;
+          };
+          clip-to-geometry = true;
+        }
+        {
+          matches = [ { app-id = "^com\\.mitchellh\\.ghostty$"; } ];
+          draw-border-with-background = false;
+        }
+      ];
+
+      layer-rules = [
+        {
+          matches = [ { namespace = "^noctalia-wallpaper"; } ];
+          place-within-backdrop = true;
         }
       ];
 
       binds = {
         "Mod+T".action.spawn = [ "ghostty" ];
-        "Mod+W".action.spawn = [ "brave" ];
+        "Mod+W".action.spawn = [ "chromium" ];
         "Mod+E".action.spawn = [ "dolphin" ];
 
         "Mod+O".action.spawn = [
@@ -968,6 +992,8 @@
         ];
       };
     };
+    # dsjlfk asdjfl kdas 
+    # include = [ "${config.home.homeDirectory}/.config/niri/noctalia.kdl" ];
   };
 
   qt = {
@@ -1074,8 +1100,8 @@
     adw-gtk3
     nwg-look
 
-    apple-cursor
-    bibata-cursors
+    # apple-cursor
+    # bibata-cursors
     grim
     slurp
     wl-clipboard
