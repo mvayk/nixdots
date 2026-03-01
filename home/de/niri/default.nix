@@ -832,6 +832,7 @@
       spawn-at-startup = [
         { command = [ "noctalia-shell" ]; }
         { command = [ "nm-applet" ]; }
+        { command = [ "xwayland-satellite" ]; }
       ];
 
       window-rules = [
@@ -1089,6 +1090,7 @@
   '';
 
   home.packages = with pkgs; [
+    xwayland-satellite
     qt6Packages.qt6ct
     libsForQt5.qt5ct
     lxappearance
