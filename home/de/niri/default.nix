@@ -17,8 +17,8 @@
   ];
 
   home.pointerCursor = {
-    package = future-hyprcursor.packages.${pkgs.system}.default;
-    name = "future-black-hyprcursor";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 36;
   };
 
@@ -706,12 +706,12 @@
     settings = {
       environment = {
         XDG_CURRENT_DESKTOP = "niri";
-        XCURSOR_THEME = "future-black-hyprcursor";
+        XCURSOR_THEME = "Bibata-Modern-Classic";
         XCURSOR_SIZE = "36";
       };
 
       cursor = {
-        theme = "future-black-hyprcursor";
+        theme = "Bibata-Modern-Classic";
         size = 36;
       };
 
@@ -1101,7 +1101,7 @@
     nwg-look
 
     # apple-cursor
-    # bibata-cursors
+    bibata-cursors
     grim
     slurp
     wl-clipboard
@@ -1117,6 +1117,5 @@
 
     quickshell.packages.${pkgs.system}.default
     noctalia.packages.${pkgs.system}.default
-    future-hyprcursor.packages.${pkgs.system}.default
   ];
 }
