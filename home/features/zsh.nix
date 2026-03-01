@@ -18,7 +18,7 @@
       tree = "eza --tree --icons";
       vim = "nvim";
       sue = "sudo -E nvim";
-      emacs = "emacsclient -c -a 'emacs'";
+      #emacs = "emacsclient -c -a 'emacs'";
 
       nix-rebuild = ''pushd /etc/nixos >/dev/null && sudo nixos-rebuild switch --flake ".#$(hostname)-$NIXOS_DE" && popd >/dev/null'';
       nix-update = "pushd /etc/nixos >/dev/null && nix flake update && popd >/dev/null";

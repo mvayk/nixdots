@@ -3,12 +3,12 @@
   services.displayManager.defaultSession = "hyprland";
 
   programs.hyprland = {
-    enable          = true;
+    enable = true;
     xwayland.enable = true;
   };
 
   xdg.portal = {
-    enable       = true;
+    enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 

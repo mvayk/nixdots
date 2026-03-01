@@ -17,6 +17,8 @@ let
     kde = {
       window-decoration = "true";
       background-opacity = "1.0";
+      theme = "Vercel";
+      font-size = "14";
     };
     xfce = {
       window-decoration = "true";
@@ -28,7 +30,7 @@ let
     font-size = "16";
     window-decoration = "false";
     background-opacity = "0.7";
-    adjust-cell-height = "+20%";
+    adjust-cell-height = "+30%";
     window-padding-x = "12";
     window-padding-y = "16";
     cursor-style = "bar";

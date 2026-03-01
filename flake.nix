@@ -35,6 +35,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -49,6 +53,7 @@
       quickshell,
       zen-browser,
       spicetify-nix,
+      niri,
       ...
     }@inputs:
     let
@@ -85,6 +90,7 @@
             sops-nix.nixosModules.sops
             spicetify-nix.nixosModules.default
             home-manager.nixosModules.home-manager
+            (lib.optionalAttrs (de == "niri") niri.nixosModules.niri)
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -92,8 +98,9 @@
                 extraSpecialArgs = extraArgs // {
                   inherit machine de;
                 };
-                sharedModules  = [
-                    plasma-manager.homeModules.plasma-manager 
+                sharedModules = [
+                  plasma-manager.homeModules.plasma-manager
+                  niri.homeModules.niri
                 ];
                 users.mvayk = import ./users/mvayk/home.nix;
                 backupFileExtension = "backup";
@@ -108,6 +115,10 @@
         flandre-hyprland = mkHost {
           machine = "flandre";
           de = "hyprland";
+        };
+        flandre-niri = mkHost {
+          machine = "flandre";
+          de = "niri";
         };
         flandre-kde = mkHost {
           machine = "flandre";
@@ -136,6 +147,10 @@
         remilia-xfce = mkHost {
           machine = "remilia";
           de = "xfce";
+        };
+        remilia-niri = mkHost {
+          machine = "remilia";
+          de = "niri";
         };
       };
     };
