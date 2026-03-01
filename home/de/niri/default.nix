@@ -19,7 +19,7 @@
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 36;
+    size = 24;
   };
 
   programs.noctalia-shell = {
@@ -712,7 +712,7 @@
 
       cursor = {
         theme = "Bibata-Modern-Classic";
-        size = 36;
+        size = 24;
       };
 
       input = {
