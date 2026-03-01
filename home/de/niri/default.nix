@@ -835,6 +835,7 @@
         { command = [ "xwayland-satellite" ]; }
       ];
 
+          prefer-no-csd = true;
       window-rules = [
         {
           geometry-corner-radius = {
@@ -993,7 +994,7 @@
         ];
       };
     };
-    # dsjlfk asdjfl kdas 
+    # dsjlfk asdjfl kdas
     # include = [ "${config.home.homeDirectory}/.config/niri/noctalia.kdl" ];
   };
 
