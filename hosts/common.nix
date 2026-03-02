@@ -276,6 +276,7 @@
     yt-dlp
     imagemagick
     cheese
+    kdePackages.kdenlive
 
     libreoffice-qt-fresh
     zathura
