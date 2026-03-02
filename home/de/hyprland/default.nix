@@ -845,7 +845,7 @@ in
         "$mainMod, F, fullscreen"
         "$mainMod, G, exec, ${toggleGaps}/bin/toggle-gaps"
         "$mainMod, Q, killactive,"
-        ", End, exec, grim -g \"$(slurp)\" - | wl-copy"
+        ", End, exec, grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
 
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
