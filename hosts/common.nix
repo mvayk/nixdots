@@ -424,6 +424,7 @@
     termdown
     ani-cli
     scrcpy
+    android-tools
 
     kdePackages.kmines
     kdePackages.kolourpaint
