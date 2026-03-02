@@ -36,6 +36,9 @@
         showCapsule = false;
         capsuleOpacity = 1;
         capsuleColorKey = "none";
+        widgetSpacing = 6;
+        contentPadding = 2;
+        fontScale = 1;
         backgroundOpacity = 0.7;
         useSeparateOpacity = true;
         floating = true;
@@ -48,6 +51,7 @@
         displayMode = "always_visible";
         autoHideDelay = 500;
         autoShowDelay = 150;
+        showOnWorkspaceSwitch = true;
 
         widgets = {
           left = [
@@ -101,9 +105,13 @@
               usePadding = false;
             }
             {
+              colorizeSystemIcon = "none";
+              customIconPath = "";
+              enableColorization = false;
               icon = "rocket";
               iconColor = "none";
               id = "Launcher";
+              useDistroLogo = false;
             }
             {
               defaultSettings = {
@@ -255,6 +263,7 @@
         lockOnSuspend = true;
         showSessionButtonsOnLockScreen = true;
         showHibernateOnLockScreen = false;
+        enableLockScreenMediaControls = false;
         enableShadows = true;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
@@ -269,10 +278,10 @@
         allowPasswordWithFprintd = false;
         clockStyle = "custom";
         clockFormat = "hh\\nmm";
+        passwordChars = false;
         lockScreenMonitors = [ ];
         lockScreenBlur = 0;
         lockScreenTint = 0;
-        reverseScroll = false;
 
         keybinds = {
           keyUp = [ "Up" ];
@@ -283,6 +292,8 @@
           keyEscape = [ "Esc" ];
           keyRemove = [ "Del" ];
         };
+
+        reverseScroll = false;
       };
 
       ui = {
@@ -291,14 +302,11 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         tooltipsEnabled = true;
+        boxBorderEnabled = true;
         panelBackgroundOpacity = 0.7;
         panelsAttachedToBar = false;
         settingsPanelMode = "centered";
-        wifiDetailsViewMode = "grid";
-        bluetoothDetailsViewMode = "grid";
-        networkPanelView = "wifi";
-        bluetoothHideUnnamedDevices = false;
-        boxBorderEnabled = true;
+        settingsPanelSideBarCardStyle = false;
       };
 
       location = {
@@ -316,20 +324,22 @@
         hideWeatherCityName = false;
       };
 
-      calendar.cards = [
-        {
-          enabled = true;
-          id = "calendar-header-card";
-        }
-        {
-          enabled = true;
-          id = "calendar-month-card";
-        }
-        {
-          enabled = true;
-          id = "weather-card";
-        }
-      ];
+      calendar = {
+        cards = [
+          {
+            enabled = true;
+            id = "calendar-header-card";
+          }
+          {
+            enabled = true;
+            id = "calendar-month-card";
+          }
+          {
+            enabled = true;
+            id = "weather-card";
+          }
+        ];
+      };
 
       wallpaper = {
         enabled = true;
@@ -384,7 +394,7 @@
         terminalCommand = "xterm -e";
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
-        viewMode = "grid";
+        viewMode = "list";
         showCategories = true;
         iconMode = "tabler";
         showIconBackground = true;
@@ -394,12 +404,13 @@
         ignoreMouseInput = false;
         screenshotAnnotationTool = "";
         overviewLayer = false;
-        density = "default";
+        density = "comfortable";
       };
 
       controlCenter = {
         position = "close_to_bar_button";
         diskPath = "/";
+
         shortcuts = {
           left = [
             { id = "Network"; }
@@ -414,6 +425,7 @@
             { id = "NightLight"; }
           ];
         };
+
         cards = [
           {
             enabled = true;
@@ -478,8 +490,15 @@
         monitors = [ ];
         pinnedApps = [ ];
         colorizeIcons = false;
+        showLauncherIcon = false;
+        launcherPosition = "end";
+        launcherIconColor = "none";
         pinnedStatic = false;
         inactiveIndicators = false;
+        groupApps = false;
+        groupContextMenuMode = "extended";
+        groupClickAction = "cycle";
+        groupIndicatorStyle = "dots";
         deadOpacity = 0.6;
         animationSpeed = 1;
         sitOnFrame = false;
@@ -491,6 +510,7 @@
         airplaneModeEnabled = false;
         bluetoothRssiPollingEnabled = false;
         bluetoothRssiPollIntervalMs = 10000;
+        networkPanelView = "wifi";
         wifiDetailsViewMode = "grid";
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
@@ -505,6 +525,7 @@
         showKeybinds = true;
         largeButtonsStyle = true;
         largeButtonsLayout = "grid";
+
         powerOptions = [
           {
             action = "lock";
@@ -548,6 +569,13 @@
             enabled = true;
             keybind = "6";
           }
+          {
+            action = "rebootToUefi";
+            command = "";
+            countdownEnabled = true;
+            enabled = true;
+            keybind = "";
+          }
         ];
       };
 
@@ -564,11 +592,13 @@
         normalUrgencyDuration = 8;
         criticalUrgencyDuration = 15;
         clearDismissed = true;
+
         saveToHistory = {
           low = true;
           normal = true;
           critical = true;
         };
+
         sounds = {
           enabled = true;
           volume = 1;
@@ -578,6 +608,7 @@
           lowSoundFile = "";
           excludedApps = "spotify";
         };
+
         enableMediaToast = false;
         enableKeyboardLayoutToast = true;
         enableBatteryToast = true;
@@ -606,23 +637,24 @@
         mprisBlacklist = [ ];
         preferredPlayer = "";
         volumeFeedback = false;
+        volumeFeedbackSoundFile = "";
       };
 
       brightness = {
         brightnessStep = 10;
         enforceMinimum = true;
         enableDdcSupport = false;
+        backlightDeviceMappings = [ ];
       };
 
       colorSchemes = {
         useWallpaperColors = true;
-        amoledOverride = true;
         predefinedScheme = "Ayu";
         darkMode = true;
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "vibrant";
+        generationMethod = "tonal-spot";
         monitorForColors = "";
       };
 
@@ -690,10 +722,22 @@
         session = "";
       };
 
-      plugins.autoUpdate = false;
+      plugins = {
+        autoUpdate = false;
+      };
+
+      idle = {
+        enabled = true;
+        screenOffTimeout = 600;
+        lockTimeout = 660;
+        suspendTimeout = 1800;
+        fadeDuration = 5;
+        customCommands = "[]";
+      };
 
       desktopWidgets = {
         enabled = true;
+        overviewEnabled = true;
         gridSnap = false;
         monitorWidgets = [ ];
       };
