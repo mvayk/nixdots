@@ -38,7 +38,7 @@
         capsuleColorKey = "none";
         backgroundOpacity = 0.7;
         useSeparateOpacity = true;
-        floating = false;
+        floating = true;
         marginVertical = 5;
         marginHorizontal = 18;
         frameThickness = 8;
