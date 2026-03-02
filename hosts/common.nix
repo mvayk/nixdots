@@ -284,6 +284,7 @@
 
     zen-browser.packages.${pkgs.system}.beta
     chromium
+    qutebrowser
 
     vesktop
 
