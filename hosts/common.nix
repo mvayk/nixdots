@@ -248,6 +248,7 @@
     wget
     vim
     neovim
+    neovide
     file
     tree
     sops
