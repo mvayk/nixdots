@@ -293,7 +293,7 @@
     vesktop
 
     kdePackages.dolphin
-    nautilus
+    #nautilus
     gparted
     kdePackages.ark
     unar
