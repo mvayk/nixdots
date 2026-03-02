@@ -394,7 +394,7 @@
         terminalCommand = "xterm -e";
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
-        viewMode = "list";
+        viewMode = "grid";
         showCategories = true;
         iconMode = "tabler";
         showIconBackground = true;
@@ -404,7 +404,7 @@
         ignoreMouseInput = false;
         screenshotAnnotationTool = "";
         overviewLayer = false;
-        density = "comfortable";
+        density = "default";
       };
 
       controlCenter = {
@@ -490,7 +490,7 @@
         monitors = [ ];
         pinnedApps = [ ];
         colorizeIcons = false;
-        showLauncherIcon = false;
+        showLauncherIcon = true;
         launcherPosition = "end";
         launcherIconColor = "none";
         pinnedStatic = false;
