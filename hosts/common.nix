@@ -423,6 +423,7 @@
     alarm-clock-applet
     termdown
     ani-cli
+    scrcpy
 
     kdePackages.kmines
     kdePackages.kolourpaint
