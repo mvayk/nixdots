@@ -835,7 +835,7 @@
         { command = [ "xwayland-satellite" ]; }
       ];
 
-          prefer-no-csd = true;
+      prefer-no-csd = true;
       window-rules = [
         {
           geometry-corner-radius = {
