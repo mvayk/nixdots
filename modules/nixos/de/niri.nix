@@ -4,8 +4,17 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-    config.common.default = "*";
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+
+    config.niri = {
+      default = lib.mkForce [
+        "hyprland"
+        "gtk"
+      ];
+    };
   };
 
   services.displayManager.defaultSession = "niri";
