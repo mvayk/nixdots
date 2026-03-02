@@ -941,6 +941,13 @@
         "Mod+Shift+K".action.move-window-up = { };
         "Mod+Shift+J".action.move-window-down = { };
 
+        "Mod+Ctrl+H".action.focus-monitor-left = { };
+        "Mod+Ctrl+L".action.focus-monitor-right = { };
+        "Mod+Ctrl+K".action.focus-monitor-up = { };
+        "Mod+Ctrl+J".action.focus-monitor-down = { };
+        "Mod+Shift+Ctrl+H".action.move-window-to-monitor-left = { };
+        "Mod+Shift+Ctrl+L".action.move-window-to-monitor-right = { };
+
         "Mod+Alt+L".action.set-column-width = "+10%";
         "Mod+Alt+H".action.set-column-width = "-10%";
         "Mod+Alt+K".action.set-window-height = "-10%";
