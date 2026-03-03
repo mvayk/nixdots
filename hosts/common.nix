@@ -208,6 +208,8 @@
       pkg-config
       curl
       raylib
+      rustc
+      cargo
       libGL
       libGLU
       mesa
@@ -237,20 +239,20 @@
     };
   };
 
-  # environment.sessionVariables = {
-  #   C_INCLUDE_PATH      = "${pkgs.glibc.dev}/include";
-  #   CPLUS_INCLUDE_PATH  = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
-  #   LIBRARY_PATH        = "${pkgs.glibc}/lib:${pkgs.gcc.cc.lib}/lib";
-  #   CPATH               = "${pkgs.glibc.dev}/include";
-  #   RUST_SRC_PATH       = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-  # };
+  environment.sessionVariables = {
+    C_INCLUDE_PATH      = "${pkgs.glibc.dev}/include";
+    CPLUS_INCLUDE_PATH  = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
+    LIBRARY_PATH        = "${pkgs.glibc}/lib:${pkgs.gcc.cc.lib}/lib";
+    CPATH               = "${pkgs.glibc.dev}/include";
+    RUST_SRC_PATH       = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+  };
 
   environment.systemPackages = with pkgs; [
     git
     curl
     wget
     vim
-    neovim
+    neovim-unwrapped
     neovide
     file
     tree
