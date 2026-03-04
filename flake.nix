@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:mvayk/noctalia-shell-amoled";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.noctalia-qs.follows = "noctalia-qs";
     };
@@ -20,11 +20,13 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    /* plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    }; */
+    /*
+      plasma-manager = {
+        url = "github:nix-community/plasma-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.home-manager.follows = "home-manager";
+      };
+    */
     future-hyprcursor = {
       url = "github:mvayk/nix-future-hyprcursor";
     };
@@ -104,7 +106,8 @@
                 };
                 sharedModules = [
                   #plasma-manager.homeModules.plasma-manager
-                ] ++ lib.optionals (de == "niri") [
+                ]
+                ++ lib.optionals (de == "niri") [
                   niri.homeModules.niri
                 ];
                 users.mvayk = import ./users/mvayk/home.nix;
