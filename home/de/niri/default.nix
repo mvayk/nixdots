@@ -994,11 +994,11 @@
 
         "Mod+WheelScrollUp" = {
           cooldown-ms = 150;
-          action.focus-column-right = { };
+          action.focus-column-left = { };
         };
         "Mod+WheelScrollDown" = {
           cooldown-ms = 150;
-          action.focus-column-left = { };
+          action.focus-column-right = { };
         };
         "Mod+Shift+WheelScrollDown" = {
           cooldown-ms = 150;
