@@ -899,7 +899,7 @@
       layer-rules = [
         {
           matches = [ { namespace = "^noctalia-wallpaper"; } ];
-          place-within-backdrop = true;
+          place-within-backdrop = false;
         }
       ];
 
