@@ -21,6 +21,10 @@
     '';
   };
 
+  imports = [
+    # ../modules/nixos/sddm.nix
+  ];
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Australia/Sydney";
@@ -49,17 +53,20 @@
     };
   };
 
-  services.displayManager.sddm = {
-    enable = false;
-    wayland.enable = true;
-    extraPackages = with pkgs.kdePackages; [
-      qtsvg
-      qtmultimedia
-      qtvirtualkeyboard
-    ];
-    theme = "sddm-astronaut-theme";
-  };
-  services.displayManager.ly.enable = true;
+  /*
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      extraPackages = with pkgs.kdePackages; [
+        qtsvg
+        qtmultimedia
+        qtvirtualkeyboard
+      ];
+      theme = "sddm-astronaut-theme";
+    };
+  */
+
+  services.displayManager.ly.enable = false;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -240,11 +247,11 @@
   };
 
   environment.sessionVariables = {
-    C_INCLUDE_PATH      = "${pkgs.glibc.dev}/include";
-    CPLUS_INCLUDE_PATH  = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
-    LIBRARY_PATH        = "${pkgs.glibc}/lib:${pkgs.gcc.cc.lib}/lib";
-    CPATH               = "${pkgs.glibc.dev}/include";
-    RUST_SRC_PATH       = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+    C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
+    CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
+    LIBRARY_PATH = "${pkgs.glibc}/lib:${pkgs.gcc.cc.lib}/lib";
+    CPATH = "${pkgs.glibc.dev}/include";
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 
   environment.systemPackages = with pkgs; [
