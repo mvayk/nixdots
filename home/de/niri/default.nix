@@ -992,6 +992,23 @@
         "Mod+Shift+Ctrl+H".action.move-window-to-monitor-left = { };
         "Mod+Shift+Ctrl+L".action.move-window-to-monitor-right = { };
 
+        "Mod+WheelScrollRight" = {
+          cooldown-ms = 150;
+          action.focus-column-right = { };
+        };
+        "Mod+WheelScrollLeft" = {
+          cooldown-ms = 150;
+          action.focus-column-left = { };
+        };
+        "Mod+Shift+WheelScrollDown" = {
+          cooldown-ms = 150;
+          action.focus-workspace-down = { };
+        };
+        "Mod+Shift+WheelScrollUp" = {
+          cooldown-ms = 150;
+          action.focus-workspace-up = { };
+        };
+
         "Mod+Alt+L".action.set-column-width = "+10%";
         "Mod+Alt+H".action.set-column-width = "-10%";
         "Mod+Alt+K".action.set-window-height = "-10%";
