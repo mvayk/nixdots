@@ -993,19 +993,19 @@
         "Mod+Shift+Ctrl+L".action.move-window-to-monitor-right = { };
 
         "Mod+WheelScrollUp" = {
-          cooldown-ms = 150;
+          cooldown-ms = 10;
           action.focus-column-left = { };
         };
         "Mod+WheelScrollDown" = {
-          cooldown-ms = 150;
+          cooldown-ms = 10;
           action.focus-column-right = { };
         };
         "Mod+Shift+WheelScrollDown" = {
-          cooldown-ms = 150;
+          cooldown-ms = 10;
           action.focus-workspace-down = { };
         };
         "Mod+Shift+WheelScrollUp" = {
-          cooldown-ms = 150;
+          cooldown-ms = 10;
           action.focus-workspace-up = { };
         };
 

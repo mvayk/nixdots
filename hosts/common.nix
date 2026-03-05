@@ -22,7 +22,7 @@
   };
 
   imports = [
-    # ../modules/nixos/sddm.nix
+    ../modules/nixos/sddm.nix
   ];
 
   networking.networkmanager.enable = true;
