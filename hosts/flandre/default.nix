@@ -26,7 +26,7 @@
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
     # why cude take so long to build
-    (llama-cpp.override { cudaSupport = true; })
+    (llama-cpp.override { cudaSupport = false; })
     wootility
     xppen_4
   ];
