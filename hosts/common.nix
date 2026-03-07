@@ -44,6 +44,8 @@
     };
   };
 
+  services.udisks2.enable = true;
+
   services.xserver = {
     enable = true;
     xkb = {
@@ -302,6 +304,8 @@
     vesktop
 
     kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-extras
     #nautilus
     gparted
     kdePackages.ark
@@ -328,6 +332,10 @@
           gamemode
         ];
     })
+    (lutris.override {
+      extraPkgs = pkgs: [ gamemode ];
+    })
+    mangohud
     protonup-rs
     protontricks
 
