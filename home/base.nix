@@ -11,7 +11,6 @@
   ];
 
   services.syncthing.enable = true;
-  programs.brave.enable = true;
 
   home.packages = with pkgs; [
     nix-tree
