@@ -7,6 +7,7 @@
     ./features/fish.nix
     ./features/git.nix
     ./features/starship.nix
+    ./features/btop.nix
   ];
 
   services.syncthing.enable = true;
