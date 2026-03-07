@@ -141,7 +141,6 @@
     };
 
     power-profiles-daemon.enable = true;
-
     ollama.enable = true;
 
     emacs = {
