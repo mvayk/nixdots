@@ -24,8 +24,8 @@
 
   programs.noctalia-shell = {
     enable = true;
-    settingsVersion = 57;
     settings = {
+      settingsVersion = 57;
       bar = {
         barType = "simple";
         position = "top";
