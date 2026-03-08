@@ -24,9 +24,8 @@
 
   programs.noctalia-shell = {
     enable = true;
+    settingsVersion = 57;
     settings = {
-      settingsVersion = 53;
-
       bar = {
         barType = "simple";
         position = "top";
@@ -37,11 +36,11 @@
         capsuleOpacity = 1;
         capsuleColorKey = "none";
         widgetSpacing = 6;
-        contentPadding = 2;
+        contentPadding = 0;
         fontScale = 1;
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0.5;
         useSeparateOpacity = true;
-        floating = true;
+        floating = false;
         marginVertical = 5;
         marginHorizontal = 18;
         frameThickness = 8;
@@ -71,7 +70,8 @@
               enableScrollWheel = true;
               focusedColor = "primary";
               followFocusedScreen = false;
-              groupedBorderOpacity = 1;
+              fontWeight = "bold";
+              groupedBorderOpacity = 0.3;
               hideUnoccupied = false;
               iconScale = 0.7;
               id = "Workspace";
@@ -88,6 +88,7 @@
               diskPath = "/";
               iconColor = "none";
               id = "SystemMonitor";
+              showCpuCores = false;
               showCpuFreq = false;
               showCpuTemp = true;
               showCpuUsage = true;
@@ -137,14 +138,11 @@
           center = [
             {
               compactMode = true;
-              compactShowAlbumArt = true;
-              compactShowVisualizer = false;
               hideMode = "hidden";
               hideWhenIdle = false;
               id = "MediaMini";
               maxWidth = 2750;
               panelShowAlbumArt = true;
-              panelShowVisualizer = true;
               scrollingMode = "hover";
               showAlbumArt = true;
               showArtistFirst = false;
@@ -224,6 +222,14 @@
               showPowerProfiles = false;
             }
             {
+              hideWhenZero = false;
+              hideWhenZeroUnread = false;
+              iconColor = "none";
+              id = "NotificationHistory";
+              showUnreadBadge = true;
+              unreadBadgeColor = "primary";
+            }
+            {
               clockColor = "none";
               customFont = "";
               formatHorizontal = "HH:mm ddd, MMM dd";
@@ -233,22 +239,27 @@
               useCustomFont = false;
             }
             {
-              hideWhenZero = false;
-              hideWhenZeroUnread = false;
-              iconColor = "none";
-              id = "NotificationHistory";
-              showUnreadBadge = true;
-              unreadBadgeColor = "primary";
+              iconColor = "error";
+              id = "SessionMenu";
             }
           ];
         };
 
+        mouseWheelAction = "none";
+        reverseScroll = false;
+        mouseWheelWrap = true;
+        middleClickAction = "none";
+        middleClickFollowMouse = false;
+        middleClickCommand = "";
+        rightClickAction = "controlCenter";
+        rightClickFollowMouse = true;
+        rightClickCommand = "";
         screenOverrides = [ ];
       };
 
       general = {
         avatarImage = "";
-        dimmerOpacity = 0.5;
+        dimmerOpacity = 0.25;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
         scaleRatio = 0.95;
@@ -265,6 +276,7 @@
         showHibernateOnLockScreen = false;
         enableLockScreenMediaControls = false;
         enableShadows = true;
+        enableBlurBehind = true;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
         shadowOffsetY = 3;
@@ -288,7 +300,10 @@
           keyDown = [ "Down" ];
           keyLeft = [ "Left" ];
           keyRight = [ "Right" ];
-          keyEnter = [ "Return" ];
+          keyEnter = [
+            "Return"
+            "Enter"
+          ];
           keyEscape = [ "Esc" ];
           keyRemove = [ "Del" ];
         };
@@ -303,7 +318,7 @@
         fontFixedScale = 1;
         tooltipsEnabled = true;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 0.7;
+        panelBackgroundOpacity = 0.5;
         panelsAttachedToBar = false;
         settingsPanelMode = "centered";
         settingsPanelSideBarCardStyle = false;
@@ -394,7 +409,7 @@
         terminalCommand = "xterm -e";
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
-        viewMode = "grid";
+        viewMode = "list";
         showCategories = true;
         iconMode = "tabler";
         showIconBackground = true;
@@ -478,6 +493,11 @@
         externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor";
       };
 
+      noctaliaPerformance = {
+        disableWallpaper = true;
+        disableDesktopWidgets = true;
+      };
+
       dock = {
         enabled = true;
         position = "bottom";
@@ -485,7 +505,7 @@
         dockType = "floating";
         backgroundOpacity = 0.7;
         floatingRatio = 1;
-        size = 1.5;
+        size = 1.7;
         onlySameOutput = false;
         monitors = [ ];
         pinnedApps = [ ];
@@ -500,9 +520,12 @@
         groupClickAction = "cycle";
         groupIndicatorStyle = "dots";
         deadOpacity = 0.6;
-        animationSpeed = 1;
+        animationSpeed = 1.6;
         sitOnFrame = false;
-        showFrameIndicator = true;
+        showDockIndicator = false;
+        indicatorThickness = 3;
+        indicatorColor = "primary";
+        indicatorOpacity = 0.6;
       };
 
       network = {
@@ -515,6 +538,7 @@
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
         disableDiscoverability = false;
+        bluetoothAutoConnect = true;
       };
 
       sessionMenu = {
@@ -523,7 +547,7 @@
         position = "center";
         showHeader = true;
         showKeybinds = true;
-        largeButtonsStyle = true;
+        largeButtonsStyle = false;
         largeButtonsLayout = "grid";
 
         powerOptions = [
@@ -574,6 +598,13 @@
             command = "";
             countdownEnabled = true;
             enabled = true;
+            keybind = "7";
+          }
+          {
+            action = "userspaceReboot";
+            command = "";
+            countdownEnabled = true;
+            enabled = false;
             keybind = "";
           }
         ];
@@ -586,7 +617,7 @@
         monitors = [ ];
         location = "top_right";
         overlayLayer = true;
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0.5;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
@@ -632,7 +663,7 @@
       audio = {
         volumeStep = 5;
         volumeOverdrive = true;
-        cavaFrameRate = 30;
+        spectrumFrameRate = 30;
         visualizerType = "linear";
         mprisBlacklist = [ ];
         preferredPlayer = "";
@@ -649,12 +680,13 @@
 
       colorSchemes = {
         useWallpaperColors = true;
+        amoledOverride = true;
         predefinedScheme = "Ayu";
         darkMode = true;
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "tonal-spot";
+        generationMethod = "dysfunctional";
         monitorForColors = "";
       };
 
@@ -732,6 +764,12 @@
         lockTimeout = 660;
         suspendTimeout = 1800;
         fadeDuration = 5;
+        screenOffCommand = "";
+        lockCommand = "";
+        suspendCommand = "";
+        resumeScreenOffCommand = "";
+        resumeLockCommand = "";
+        resumeSuspendCommand = "";
         customCommands = "[]";
       };
 
