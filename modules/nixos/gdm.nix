@@ -121,8 +121,6 @@ let
         color:         rgba(220, 232, 255, 0.88);
         font-size:     64px;
         font-weight:   200;
-        text-shadow:   0 2px 24px rgba(0, 0, 0, 0.50);
-      }
 
       .clock-label {
         color:         rgba(180, 200, 240, 0.65);
