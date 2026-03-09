@@ -680,7 +680,7 @@
 
       colorSchemes = {
         useWallpaperColors = true;
-        amoledOverride = true;
+        amoledOverride = false;
         predefinedScheme = "Ayu";
         darkMode = true;
         schedulingMode = "off";
