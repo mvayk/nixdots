@@ -9,20 +9,21 @@ let
       custom-shader-animation = "always";
       custom-shader = "cursor_tail.glsl";
     };
-    niri = {
+    niri-dms = {
+      window-decoration = "false";
+      background-opacity = "1";
+      theme = "dms";
+      cursor-style = "bar";
+      custom-shader-animation = "always";
+      custom-shader = "cursor_tail.glsl";
+    };
+    niri-noctalia = {
       window-decoration = "false";
       background-opacity = "1";
       theme = "noctalia";
       cursor-style = "bar";
       custom-shader-animation = "always";
       custom-shader = "cursor_tail.glsl";
-    };
-    adhd = {
-      window-decoration = "false";
-      background-opacity = "1";
-      theme = "Vesper";
-      custom-shader-animation = "never";
-      cursor-style = "block";
     };
     gnome = {
       window-decoration = "true";
