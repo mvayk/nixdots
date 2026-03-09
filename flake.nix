@@ -20,6 +20,14 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-plugin-registry = {
+      url = "github:AvengeMedia/dms-plugin-registry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     /*
       plasma-manager = {
         url = "github:nix-community/plasma-manager";
@@ -107,7 +115,7 @@
                 sharedModules = [
                   #plasma-manager.homeModules.plasma-manager
                 ]
-                ++ lib.optionals (de == "niri" || de == "adhd") [
+                ++ lib.optionals (de == "niri" || de == "niri-dms" || de == "niri-noctalia") [
                   niri.homeModules.niri
                 ];
                 users.mvayk = import ./users/mvayk/home.nix;
@@ -124,13 +132,13 @@
           machine = "flandre";
           de = "hyprland";
         };
-        flandre-niri = mkHost {
+        flandre-niri-noctalia = mkHost {
           machine = "flandre";
-          de = "niri";
+          de = "niri-noctalia";
         };
-        flandre-adhd = mkHost {
+        flandre-niri-dms = mkHost {
           machine = "flandre";
-          de = "adhd";
+          de = "niri-dms";
         };
         flandre-kde = mkHost {
           machine = "flandre";

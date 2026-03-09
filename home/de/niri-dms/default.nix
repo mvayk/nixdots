@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  quickshell,
   machine,
   de,
   ...
@@ -13,12 +12,25 @@
     ../../features/fastfetch.nix
   ];
 
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  };
+
   programs.niri = {
     enable = true;
     package = pkgs.niri;
     settings = {
       environment = {
         XDG_CURRENT_DESKTOP = "niri";
+        XCURSOR_THEME = "Bibata-Modern-Classic";
+        XCURSOR_SIZE = "36";
+      };
+
+      cursor = {
+        theme = "Bibata-Modern-Classic";
+        size = 24;
       };
 
       input = {
@@ -121,7 +133,7 @@
         };
 
         shadow = {
-          enable = false;
+          enable = true;
           offset = {
             x = 2;
             y = 3;
@@ -131,11 +143,12 @@
         };
       };
 
-      animations.slowdown = 0;
+      animations.slowdown = 1.0;
 
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
       spawn-at-startup = [
+        { command = [ "noctalia-shell" ]; }
         { command = [ "nm-applet" ]; }
         { command = [ "xwayland-satellite" ]; }
       ];
@@ -144,10 +157,10 @@
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 0.0;
-            top-right = 0.0;
-            bottom-left = 0.0;
-            bottom-right = 0.0;
+            top-left = 10.0;
+            top-right = 10.0;
+            bottom-left = 10.0;
+            bottom-right = 10.0;
           };
           clip-to-geometry = true;
         }
@@ -324,9 +337,124 @@
     # include = [ "${config.home.homeDirectory}/.config/niri/noctalia.kdl" ];
   };
 
-  home.pointerCursor = {
-    package = pkgs.vanilla-dmz;
-    name = "Vanilla-DMZ";
-    size = 24;
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
   };
+
+  xdg.configFile."qt5ct/qt5ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt5ct/colors/noctalia.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+  xdg.configFile."qt6ct/qt6ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+    iconTheme = {
+      name = "kora";
+      package = pkgs.kora-icon-theme;
+    };
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 10;
+    };
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
+  };
+
+  programs.zsh.initContent = ''
+    eval "$(starship init zsh)"
+    export NIXOS_DE="niri"
+  '';
+
+  home.packages = with pkgs; [
+    xwayland-satellite
+    qt6Packages.qt6ct
+    libsForQt5.qt5ct
+    lxappearance
+    kdePackages.kirigami
+    kdePackages.qtstyleplugin-kvantum
+    kdePackages.breeze-gtk
+    kdePackages.breeze
+    kora-icon-theme
+    adw-gtk3
+    nwg-look
+
+    # apple-cursor
+    bibata-cursors
+    grim
+    slurp
+    wl-clipboard
+
+    qt6Packages.qtimageformats
+    qt6Packages.qtsvg
+    libsForQt5.qtimageformats
+    libsForQt5.qtsvg
+    libwebp
+    libjpeg
+    libpng
+    librsvg
+  ];
 }
