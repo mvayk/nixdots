@@ -45,7 +45,7 @@
         marginHorizontal = 18;
         frameThickness = 8;
         frameRadius = 12;
-        outerCorners = false;
+        outerCorners = true;
         hideOnOverview = false;
         displayMode = "always_visible";
         autoHideDelay = 500;
@@ -319,8 +319,8 @@
         tooltipsEnabled = true;
         boxBorderEnabled = true;
         panelBackgroundOpacity = 1;
-        panelsAttachedToBar = false;
-        settingsPanelMode = "centered";
+        panelsAttachedToBar = true;
+        settingsPanelMode = "attached";
         settingsPanelSideBarCardStyle = true;
       };
 
