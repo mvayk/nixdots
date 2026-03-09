@@ -22,7 +22,7 @@
   };
 
   imports = [
-    ../modules/nixos/ly.nix
+    ../modules/nixos/greeter.nix
   ];
 
   networking.networkmanager.enable = true;

@@ -183,53 +183,49 @@
         "Mod+E".action.spawn = [ "dolphin" ];
 
         "Mod+O".action.spawn = [
-          "noctalia-shell"
+          "dms"
           "ipc"
           "call"
-          "lockScreen"
+          "lock"
           "lock"
         ];
         "Pause".action.spawn = [
-          "noctalia-shell"
+          "dms"
           "ipc"
           "call"
-          "volume"
-          "muteInput"
+          "audio"
+          "micmute"
         ];
         "Mod+Semicolon".action.spawn = [
-          "noctalia-shell"
+          "dms"
           "ipc"
           "call"
-          "launcher"
-          "emoji"
-        ];
-        "Mod+I".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
-          "launcher"
-          "calculator"
+          "spotlight"
+          "toggleQuery"
+          "!"
         ];
         "Mod+A".action.spawn = [
-          "noctalia-shell"
+          "dms"
           "ipc"
           "call"
-          "launcher"
+          "spotlight"
           "toggle"
         ];
         "Mod+Page_Up".action.spawn = [
-          "noctalia-shell"
+          "dms"
           "ipc"
           "call"
-          "volume"
-          "increase"
+          "audio"
+          "increment"
+          "5"
         ];
         "Mod+Page_Down".action.spawn = [
-          "noctalia-shell"
+          "dms"
           "ipc"
           "call"
-          "volume"
-          "decrease"
+          "audio"
+          "decrement"
+          "5"
         ];
 
         "End".action.spawn = [
