@@ -12,7 +12,7 @@ let
     niri-dms = {
       window-decoration = "false";
       background-opacity = "1";
-      theme = "dms";
+      theme = "dankcolors";
       cursor-style = "bar";
       custom-shader-animation = "always";
       custom-shader = "cursor_tail.glsl";
