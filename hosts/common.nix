@@ -122,6 +122,8 @@
 
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
 
+  programs.ccache.enable = true;
+
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-qt;
@@ -207,7 +209,6 @@
       stdenv.cc.cc.lib
       zlib
       openssl
-      gpp # what is this
       gcc
       clang
       clang-tools
@@ -250,11 +251,13 @@
   };
 
   environment.sessionVariables = {
-    C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
-    CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.glibc.dev}/include";
+    # CPATH = "${pkgs.glibc.dev}/include";
+    CPATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
+    C_INCLUDE_PATH = "${pkgs.glibc.dev}/include:${pkgs.gcc.cc}/include";
+    # CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}/x86_64-unknown-linux-gnu";
     LIBRARY_PATH = "${pkgs.glibc}/lib:${pkgs.gcc.cc.lib}/lib";
-    CPATH = "${pkgs.glibc.dev}/include";
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+    CLANGD_FLAGS = "--query-driver=${pkgs.gcc}/bin/g++";
   };
 
   environment.systemPackages = with pkgs; [

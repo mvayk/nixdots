@@ -5,11 +5,24 @@ let
       window-decoration = "false";
       background-opacity = "0.7";
       theme = "noctalia";
+      cursor-style = "bar";
+      custom-shader-animation = "always";
+      custom-shader = "cursor_tail.glsl";
     };
     niri = {
       window-decoration = "false";
       background-opacity = "1";
       theme = "noctalia";
+      cursor-style = "bar";
+      custom-shader-animation = "always";
+      custom-shader = "cursor_tail.glsl";
+    };
+    adhd = {
+      window-decoration = "false";
+      background-opacity = "1";
+      theme = "Vesper";
+      custom-shader-animation = "never";
+      cursor-style = "block";
     };
     gnome = {
       window-decoration = "true";
@@ -38,14 +51,11 @@ let
     adjust-cell-height = "+30%";
     window-padding-x = "12";
     window-padding-y = "16";
-    cursor-style = "bar";
     cursor-style-blink = "true";
     shell-integration = "zsh";
     keybind = "ctrl+backspace=text:\\x1b\\x7f";
     window-padding-balance = "true";
     confirm-close-surface = "false";
-    custom-shader-animation = "always";
-    custom-shader = "cursor_tail.glsl";
   }
   // (deSettings.${de} or { });
 in

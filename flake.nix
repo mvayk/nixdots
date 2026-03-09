@@ -107,7 +107,7 @@
                 sharedModules = [
                   #plasma-manager.homeModules.plasma-manager
                 ]
-                ++ lib.optionals (de == "niri") [
+                ++ lib.optionals (de == "niri" || de == "adhd") [
                   niri.homeModules.niri
                 ];
                 users.mvayk = import ./users/mvayk/home.nix;
@@ -127,6 +127,10 @@
         flandre-niri = mkHost {
           machine = "flandre";
           de = "niri";
+        };
+        flandre-adhd = mkHost {
+          machine = "flandre";
+          de = "adhd";
         };
         flandre-kde = mkHost {
           machine = "flandre";
