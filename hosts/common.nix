@@ -207,6 +207,10 @@
       stdenv.cc.cc.lib
       zlib
       openssl
+      gpp # what is this
+      gcc
+      clang
+      clang-tools
       glibc
       glibc.dev
       libgcc

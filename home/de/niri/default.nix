@@ -38,8 +38,8 @@
         widgetSpacing = 6;
         contentPadding = 0;
         fontScale = 1;
-        backgroundOpacity = 0.5;
-        useSeparateOpacity = true;
+        backgroundOpacity = 1;
+        useSeparateOpacity = false;
         floating = false;
         marginVertical = 5;
         marginHorizontal = 18;
@@ -259,7 +259,7 @@
 
       general = {
         avatarImage = "";
-        dimmerOpacity = 0.25;
+        dimmerOpacity = 0;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
         scaleRatio = 0.95;
@@ -318,10 +318,10 @@
         fontFixedScale = 1;
         tooltipsEnabled = true;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 0.5;
+        panelBackgroundOpacity = 1;
         panelsAttachedToBar = false;
         settingsPanelMode = "centered";
-        settingsPanelSideBarCardStyle = false;
+        settingsPanelSideBarCardStyle = true;
       };
 
       location = {
@@ -686,7 +686,7 @@
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "dysfunctional";
+        generationMethod = "rainbow";
         monitorForColors = "";
       };
 

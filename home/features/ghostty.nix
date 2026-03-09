@@ -8,7 +8,7 @@ let
     };
     niri = {
       window-decoration = "false";
-      background-opacity = "0.7";
+      background-opacity = "1";
       theme = "noctalia";
     };
     gnome = {
