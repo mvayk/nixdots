@@ -294,6 +294,7 @@
         pkg-config
         curl
         raylib
+        rustfmt
         rustc
         cargo
         libGL
@@ -492,6 +493,7 @@
       nasm
       clang
       clang-tools
+      rustfmt
       rustc
       cargo
       pkg-config

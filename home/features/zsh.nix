@@ -28,7 +28,7 @@
       tree = "eza --tree --icons";
       vim = "nvim";
       sue = "sudo -E nvim";
-      ghidra = "_JAVA_AWT_WM_NONREPARENTING ghidra";
+      ghidra = "_JAVA_AWT_WM_NONREPARENTING=1 ghidra";
       osu = "env SDL_VIDEODRIVER=wayland osu!";
       #emacs = "emacsclient -c -a 'emacs'";
 
