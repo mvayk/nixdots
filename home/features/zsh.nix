@@ -1,14 +1,24 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   programs.zsh = {
-    enable = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    enableCompletion = true;
+    enable =
+      true;
+    autosuggestion.enable =
+      true;
+    syntaxHighlighting.enable =
+      true;
+    enableCompletion =
+      true;
 
     oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
+      enable =
+        true;
+      plugins = [
+        "git"
+      ];
     };
 
     shellAliases = {
@@ -18,6 +28,8 @@
       tree = "eza --tree --icons";
       vim = "nvim";
       sue = "sudo -E nvim";
+      ghidra = "_JAVA_AWT_WM_NONREPARENTING ghidra";
+      osu = "env SDL_VIDEODRIVER=wayland osu!";
       #emacs = "emacsclient -c -a 'emacs'";
 
       nix-rebuild = ''pushd /etc/nixos >/dev/null && sudo nixos-rebuild switch --flake ".#$(hostname)-$NIXOS_DE" && popd >/dev/null'';
