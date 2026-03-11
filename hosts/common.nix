@@ -392,7 +392,7 @@
       kdePackages.dolphin
       kdePackages.kio
       kdePackages.kio-extras
-      nautilus
+      #nautilus
       gparted
       kdePackages.ark
       unar

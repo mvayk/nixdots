@@ -503,14 +503,14 @@
 
   qt = {
     enable =
-      false;
+      true;
     platformTheme.name = "qtct";
   };
 
   xdg.configFile."qt5ct/qt5ct.conf".text =
     ''
       [Appearance]
-      color_scheme_path=${config.home.homeDirectory}/.config/qt5ct/colors/noctalia.conf
+      color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/matugen.conf
       custom_palette=true
       icon_theme=kora
       standard_dialogs=xdgdesktopportal
@@ -543,7 +543,7 @@
   xdg.configFile."qt6ct/qt6ct.conf".text =
     ''
       [Appearance]
-      color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf
+      color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/matugen.conf
       custom_palette=true
       icon_theme=kora
       standard_dialogs=xdgdesktopportal
@@ -575,7 +575,7 @@
 
   gtk = {
     enable =
-      false;
+      true;
     theme = {
       name = "adw-gtk3-dark";
       package =
