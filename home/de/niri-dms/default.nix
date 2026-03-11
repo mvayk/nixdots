@@ -618,6 +618,10 @@
     export NIXOS_DE="niri"
   '';
 
+  home.sessionVariables = {
+    TERMINAL = "ghostty";
+  };
+
   home.packages =
     with pkgs; [
       xwayland-satellite
