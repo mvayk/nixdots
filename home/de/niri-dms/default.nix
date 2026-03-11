@@ -593,12 +593,10 @@
       size =
         10;
     };
-    /*
-      gtk3.extraConfig.gtk-application-prefer-dark-theme =
-        true;
-      gtk4.extraConfig.gtk-application-prefer-dark-theme =
-        true;
-    */
+    gtk3.extraConfig.gtk-application-prefer-dark-theme =
+      true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme =
+      true;
   };
 
   xdg.configFile = {
@@ -606,6 +604,13 @@
       ''
         @import url("file://${config.home.homeDirectory}/.config/gtk-4.0/dank-colors.css");
       '';
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" =
+      {
+        color-scheme = "prefer-dark";
+      };
   };
 
   programs.zsh.initContent = ''
