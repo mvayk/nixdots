@@ -447,6 +447,7 @@
       tor-browser
       qbittorrent
       catgirl
+      linux-wallpaperengine
 
       ghidra
       radare2

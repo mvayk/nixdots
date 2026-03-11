@@ -1,4 +1,8 @@
-{ de, lib, ... }:
+{
+  de,
+  lib,
+  ...
+}:
 let
   deSettings = {
     hyprland = {
@@ -11,11 +15,11 @@ let
     };
     niri-dms = {
       window-decoration = "false";
-      background-opacity = "1";
-      theme = "dankcolors";
+      background-opacity = "0.7";
       cursor-style = "bar";
       custom-shader-animation = "always";
       custom-shader = "cursor_tail.glsl";
+      theme = "dankcolors";
     };
     niri-noctalia = {
       window-decoration = "false";
@@ -58,11 +62,22 @@ let
     window-padding-balance = "true";
     confirm-close-surface = "false";
   }
-  // (deSettings.${de} or { });
+  // (deSettings.${de}
+    or { }
+  );
 in
 {
-  xdg.configFile."ghostty/config".text = lib.concatStringsSep "\n" (
-    lib.mapAttrsToList (k: v: "${k} = ${v}") settings
-  );
-  xdg.configFile."ghostty/cursor_tail.glsl".source = ./shaders/cursor_tail.glsl;
+  xdg.configFile."ghostty/config".text =
+    lib.concatStringsSep
+      "\n"
+      (
+        lib.mapAttrsToList
+          (
+            k: v:
+            "${k} = ${v}"
+          )
+          settings
+      );
+  xdg.configFile."ghostty/cursor_tail.glsl".source =
+    ./shaders/cursor_tail.glsl;
 }
