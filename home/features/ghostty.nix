@@ -15,7 +15,7 @@ let
     };
     niri-dms = {
       window-decoration = "false";
-      background-opacity = "0.7";
+      background-opacity = "0.4";
       cursor-style = "bar";
       custom-shader-animation = "always";
       custom-shader = "cursor_tail.glsl";

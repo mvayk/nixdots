@@ -117,6 +117,8 @@
       true;
     uinput.enable =
       true;
+    keyboard.qmk.enable =
+      true;
   };
 
   xdg = {
@@ -136,9 +138,12 @@
   environment.etc."xdg/menus/applications.menu".source =
     "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
-  security.polkit.enable =
-    true;
+  services.udev.packages = [
+    pkgs.via
+  ];
   services.gnome.gnome-keyring.enable =
+    true;
+  security.polkit.enable =
     true;
   security.pam.services.login.enableGnomeKeyring =
     true;
@@ -449,6 +454,9 @@
       catgirl
       linux-wallpaperengine
 
+      qmk
+      via
+
       ghidra
       radare2
       binaryninja-free
@@ -569,6 +577,8 @@
       epiphany
       gnome-keyring
       seahorse
+
+      nmap
 
       (
         sddm-astronaut.override
