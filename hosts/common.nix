@@ -416,17 +416,19 @@
 
       osu-lazer-bin
       prismlauncher
-      (
-        heroic.override
-        {
-          extraPkgs =
-            ps:
-            with ps; [
-              gamescope
-              gamemode
-            ];
-        }
-      )
+      /*
+        (
+          heroic.override
+          {
+            extraPkgs =
+              ps:
+              with ps; [
+                gamescope
+                gamemode
+              ];
+          }
+        )
+      */
       (
         lutris.override
         {
