@@ -58,6 +58,8 @@
 
       [[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
 
+      edit() { neovide "$@" & }
+
       nix-rebuild-to() {
         noglob pushd /etc/nixos >/dev/null
         sudo nixos-rebuild switch --flake "$@"
