@@ -13,6 +13,11 @@
     loader.efi.canTouchEfiVariables =
       true;
 
+    kernel.sysctl = {
+      "kernel.yama.ptrace_scope" =
+        0;
+    };
+
     kernelModules = [
       "uinput"
       "v4l2loopback"
@@ -438,8 +443,11 @@
             ];
         }
       )
+      xdotool
+      xorg.xwininfo
       mangohud
       protonup-rs
+      protonup-qt
       protontricks
 
       aider-chat
@@ -493,6 +501,7 @@
       qemu
       pkgs-stable.wineWowPackages.stable
       winetricks
+      steamtinkerlaunch
       vinegar
 
       openjdk21
