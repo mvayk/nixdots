@@ -1,28 +1,39 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   programs.tmux = {
-    enable = true;
+    enable =
+      true;
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
-    historyLimit = 5000;
-    baseIndex = 1;
+    historyLimit =
+      5000;
+    baseIndex =
+      1;
     keyMode = "vi";
-    escapeTime = 10;
-    mouse = true;
+    escapeTime =
+      10;
+    mouse =
+      true;
     prefix = "C-e";
-    plugins = with pkgs.tmuxPlugins; [
-      resurrect
-      {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '10'
-        '';
-      }
-      yank
-      tmux-fzf
-      tmux-sessionx
-    ];
+    plugins =
+      with pkgs.tmuxPlugins; [
+        resurrect
+        {
+          plugin =
+            continuum;
+          extraConfig = ''
+            set -g @continuum-restore 'on'
+            set -g @continuum-save-interval '10'
+          '';
+        }
+        yank
+        tmux-fzf
+        tmux-sessionx
+      ];
     extraConfig = ''
                   # settings
                   set-option -g default-shell /run/current-system/sw/bin/zsh
@@ -81,7 +92,7 @@
                   set-option -g status-right-length 80
                   # left: session · path · git branch
                   set-option -g status-left "\
-      #[fg=yellow]▊\
+      #[fg=yellow]\
       #[fg=blue,bold] #S\
       #[fg=brightblack]: \
       "
@@ -91,7 +102,7 @@
       #[fg=green]#{=/16/…:pane_current_path}\
       #[fg=brightblack] │\
       #[fg=white] %H:%M %d %b \
-      #[fg=yellow]▊\
+      #[fg=yellow]\
       "
                   # window tabs (centered via status-justify centre)
                   set-option -g window-status-format "#[fg=brightblack] #I #W "
