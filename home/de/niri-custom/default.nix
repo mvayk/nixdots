@@ -10,6 +10,8 @@
   imports = [
     ../../features/ghostty.nix
     ../../features/fastfetch.nix
+    ../../features/rofi.nix
+    ../../features/waybar.nix
   ];
 
   programs.niri = {
@@ -477,11 +479,52 @@
     platformTheme.name = "qtct";
   };
 
+  xdg.configFile."qt6ct/colors/black-metal.conf".text =
+    ''
+      [ColorScheme]
+      active_colors=#c1c1c1, #1a1a1a, #606060, #303030, #0d0d0d, #404040, #c1c1c1, #ffffff, #c1c1c1, #0a0a0a, #000000, #282828, #486e6f, #000000, #486e6f, #a06666, #0d0d0d, #000000, #1a1a1a, #c1c1c1
+      disabled_colors=#888888, #111111, #404040, #202020, #0d0d0d, #303030, #888888, #aaaaaa, #888888, #0a0a0a, #000000, #282828, #404040, #888888, #486e6f, #a06666, #0d0d0d, #000000, #1a1a1a, #888888
+      inactive_colors=#999999, #141414, #505050, #282828, #0d0d0d, #383838, #999999, #bbbbbb, #999999, #0a0a0a, #000000, #282828, #404040, #999999, #486e6f, #a06666, #0d0d0d, #000000, #1a1a1a, #999999
+    '';
+
+  xdg.configFile."gtk-4.0/black-metal.css".text =
+    ''
+      @define-color accent_color #486e6f;
+      @define-color accent_bg_color #486e6f;
+      @define-color accent_fg_color #000000;
+      @define-color destructive_color #a06666;
+      @define-color destructive_bg_color #a06666;
+      @define-color destructive_fg_color #000000;
+      @define-color success_color #486e6f;
+      @define-color warning_color #999999;
+      @define-color error_color #a06666;
+      @define-color window_bg_color #000000;
+      @define-color window_fg_color #c1c1c1;
+      @define-color view_bg_color #000000;
+      @define-color view_fg_color #c1c1c1;
+      @define-color headerbar_bg_color #000000;
+      @define-color headerbar_fg_color #c1c1c1;
+      @define-color headerbar_border_color rgba(72,110,111,0.4);
+      @define-color card_bg_color #0a0a0a;
+      @define-color card_fg_color #c1c1c1;
+      @define-color dialog_bg_color #000000;
+      @define-color dialog_fg_color #c1c1c1;
+      @define-color popover_bg_color #000000;
+      @define-color popover_fg_color #c1c1c1;
+      @define-color sidebar_bg_color #000000;
+      @define-color sidebar_fg_color #888888;
+      @define-color thumbnail_bg_color #000000;
+      @define-color thumbnail_fg_color #c1c1c1;
+      @define-color shade_color rgba(0,0,0,0.8);
+      @define-color scrollbar_outline_color #000000;
+    '';
+
   xdg.configFile."qt5ct/qt5ct.conf".text =
     ''
       [Appearance]
+      color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/black-metal.conf
       custom_palette=true
-      icon_theme=tela-dark
+      icon_theme=Tela-dark
       standard_dialogs=xdgdesktopportal
       style=Breeze
 
@@ -512,8 +555,9 @@
   xdg.configFile."qt6ct/qt6ct.conf".text =
     ''
       [Appearance]
+      color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/black-metal.conf
       custom_palette=true
-      icon_theme=tela-dark
+      icon_theme=Tela-dark
       standard_dialogs=xdgdesktopportal
       style=Breeze
 
@@ -544,8 +588,15 @@
   gtk = {
     enable =
       true;
+    /*
+      theme = {
+        name = "adw-gtk3-dark";
+        package =
+          pkgs.adw-gtk3;
+      };
+    */
     iconTheme = {
-      name = "tela-dark";
+      name = "Tela-dark";
       package =
         pkgs.tela-icon-theme;
     };
@@ -558,6 +609,20 @@
       true;
     gtk4.extraConfig.gtk-application-prefer-dark-theme =
       true;
+  };
+
+  xdg.configFile = {
+    "gtk-4.0/gtk.css".text =
+      ''
+        @import url("file://${config.home.homeDirectory}/.config/gtk-4.0/black-metal.css");
+      '';
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" =
+      {
+        color-scheme = "prefer-dark";
+      };
   };
 
   programs.zsh.initContent = ''
