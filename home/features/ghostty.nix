@@ -21,6 +21,15 @@ let
       custom-shader = "cursor_tail.glsl";
       theme = "dankcolors";
     };
+    niri-custom = {
+      window-decoration = "false";
+      background-opacity = "0.8";
+      cursor-style = "block";
+      theme = "Black Metal";
+      adjust-cell-height = "+0%";
+      window-padding-x = "5";
+      window-padding-y = "5";
+    };
     niri-noctalia = {
       window-decoration = "false";
       background-opacity = "1";

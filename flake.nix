@@ -73,11 +73,17 @@
     }@inputs:
     let
       hostSystem = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs-stable = import nixpkgs-stable {
-        system = hostSystem;
-        config.allowUnfree = true;
-      };
+      lib =
+        nixpkgs.lib;
+      pkgs-stable =
+        import
+          nixpkgs-stable
+          {
+            system =
+              hostSystem;
+            config.allowUnfree =
+              true;
+          };
       extraArgs = {
         inherit
           inputs
@@ -91,87 +97,147 @@
           ;
       };
       mkHost =
-        { machine, de }:
-        lib.nixosSystem {
-          system = hostSystem;
-          specialArgs = extraArgs // {
-            inherit machine de;
-          };
-          modules = [
-            ./hosts/common.nix
-            ./hosts/${machine}/default.nix
-            ./hosts/${machine}/hardware.nix
-            ./modules/nixos/de/${de}.nix
-            sops-nix.nixosModules.sops
-            spicetify-nix.nixosModules.default
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = extraArgs // {
-                  inherit machine de;
-                };
-                sharedModules = [
-                  #plasma-manager.homeModules.plasma-manager
-                ]
-                ++ lib.optionals (de == "niri" || de == "niri-dms" || de == "niri-noctalia") [
-                  niri.homeModules.niri
-                ];
-                users.mvayk = import ./users/mvayk/home.nix;
-                backupFileExtension = "backup";
+        {
+          machine,
+          de,
+        }:
+        lib.nixosSystem
+          {
+            system =
+              hostSystem;
+            specialArgs =
+              extraArgs
+              // {
+                inherit
+                  machine
+                  de
+                  ;
               };
-            }
-            ./users/mvayk/system.nix
-          ];
-        };
+            modules = [
+              ./hosts/common.nix
+              ./hosts/${machine}/default.nix
+              ./hosts/${machine}/hardware.nix
+              ./modules/nixos/de/${de}.nix
+              sops-nix.nixosModules.sops
+              spicetify-nix.nixosModules.default
+              home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                  useGlobalPkgs =
+                    true;
+                  useUserPackages =
+                    true;
+                  extraSpecialArgs =
+                    extraArgs
+                    // {
+                      inherit
+                        machine
+                        de
+                        ;
+                    };
+                  sharedModules = [
+                    #plasma-manager.homeModules.plasma-manager
+                  ]
+                  ++
+                    lib.optionals
+                      (
+                        de
+                        == "niri"
+                        ||
+                          de
+                          == "niri-dms"
+                        ||
+                          de
+                          == "niri-noctalia"
+                        ||
+                          de
+                          == "niri-custom"
+                      )
+                      [
+                        niri.homeModules.niri
+                      ];
+                  users.mvayk = import ./users/mvayk/home.nix;
+                  backupFileExtension = "backup";
+                };
+              }
+              ./users/mvayk/system.nix
+            ];
+          };
     in
     {
       nixosConfigurations = {
-        flandre-hyprland = mkHost {
-          machine = "flandre";
-          de = "hyprland";
-        };
-        flandre-niri-noctalia = mkHost {
-          machine = "flandre";
-          de = "niri-noctalia";
-        };
-        flandre-niri-dms = mkHost {
-          machine = "flandre";
-          de = "niri-dms";
-        };
-        flandre-kde = mkHost {
-          machine = "flandre";
-          de = "kde";
-        };
-        flandre-gnome = mkHost {
-          machine = "flandre";
-          de = "gnome";
-        };
-        flandre-xfce = mkHost {
-          machine = "flandre";
-          de = "xfce";
-        };
-        remilia-hyprland = mkHost {
-          machine = "remilia";
-          de = "hyprland";
-        };
-        remilia-kde = mkHost {
-          machine = "remilia";
-          de = "kde";
-        };
-        remilia-gnome = mkHost {
-          machine = "remilia";
-          de = "gnome";
-        };
-        remilia-xfce = mkHost {
-          machine = "remilia";
-          de = "xfce";
-        };
-        remilia-niri = mkHost {
-          machine = "remilia";
-          de = "niri";
-        };
+        flandre-hyprland =
+          mkHost
+            {
+              machine = "flandre";
+              de = "hyprland";
+            };
+        flandre-niri-noctalia =
+          mkHost
+            {
+              machine = "flandre";
+              de = "niri-noctalia";
+            };
+        flandre-niri-dms =
+          mkHost
+            {
+              machine = "flandre";
+              de = "niri-dms";
+            };
+        flandre-niri-custom =
+          mkHost
+            {
+              machine = "flandre";
+              de = "niri-custom";
+            };
+        flandre-kde =
+          mkHost
+            {
+              machine = "flandre";
+              de = "kde";
+            };
+        flandre-gnome =
+          mkHost
+            {
+              machine = "flandre";
+              de = "gnome";
+            };
+        flandre-xfce =
+          mkHost
+            {
+              machine = "flandre";
+              de = "xfce";
+            };
+        remilia-hyprland =
+          mkHost
+            {
+              machine = "remilia";
+              de = "hyprland";
+            };
+        remilia-kde =
+          mkHost
+            {
+              machine = "remilia";
+              de = "kde";
+            };
+        remilia-gnome =
+          mkHost
+            {
+              machine = "remilia";
+              de = "gnome";
+            };
+        remilia-xfce =
+          mkHost
+            {
+              machine = "remilia";
+              de = "xfce";
+            };
+        remilia-niri =
+          mkHost
+            {
+              machine = "remilia";
+              de = "niri";
+            };
       };
     };
 }
