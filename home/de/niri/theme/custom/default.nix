@@ -13,6 +13,7 @@
     ../../../../features/fastfetch.nix
     ../../../../features/rofi.nix
     ../../../../features/waybar.nix
+    ../../../../features/dunst.nix
   ];
 
   home.pointerCursor = {
@@ -84,6 +85,11 @@
       spawn-at-startup = [
         {
           command = [
+            "dunst"
+          ];
+        }
+        {
+          command = [
             "swww-daemon"
           ];
         }
@@ -104,6 +110,12 @@
           "rofi"
           "-show"
           "drun"
+        ];
+        "Mod+Semicolon".action.spawn = [
+          "rofi"
+          "-dmenu"
+          "p"
+          "dunst"
         ];
         "Pause".action.spawn = [
           "wpctl"
@@ -331,6 +343,7 @@
     waybar
     rofi
     swww
+    dunst
 
     pamixer
     wireplumber
