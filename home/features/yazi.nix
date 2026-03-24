@@ -5,6 +5,21 @@
     enableZshIntegration = true;
     shellWrapperName = "y";
 
+    flavors = {
+      ashen = pkgs.fetchFromGitHub {
+        owner = "ficd0";
+        repo = "ashen";
+        rev = "main";
+        hash = "sha256-jH1ueAsL78XR/jowK52k6hZJM7DBYVxNAnlBk3eaVaY=";
+      };
+    };
+
+    theme = {
+      flavor = {
+        dark = "ashen";
+      };
+    };
+
     extraPackages = with pkgs; [
       ffmpeg
       imagemagick
@@ -55,6 +70,9 @@
       require("full-border"):setup()
       require("git"):setup()
       require("relative-motions"):setup({ show_numbers = "relative_absolute", show_motion = true })
+      require("full-border").setup({
+          type = ui.Border.PLAIN,
+      })
       require("mime-ext"):setup({
         with_files = { "Makefile", "Dockerfile", ".gitignore", ".env" },
       })
