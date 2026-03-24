@@ -3,7 +3,6 @@
   pkgs,
   noctalia,
   quickshell,
-  future-hyprcursor,
   lib,
   machine,
   de,
