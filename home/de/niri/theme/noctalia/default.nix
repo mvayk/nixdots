@@ -10,8 +10,8 @@
 }:
 {
   imports = [
-    ../../../features/ghostty.nix
-    ../../../features/fastfetch.nix
+    ../../../../features/ghostty.nix
+    ../../../../features/fastfetch.nix
     noctalia.homeModules.default
   ];
 

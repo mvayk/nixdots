@@ -174,12 +174,6 @@
           "decrement"
           "5"
         ];
-
-        "End".action.spawn = [
-          "sh"
-          "-c"
-          "grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
-        ];
       };
     };
   };
