@@ -94,6 +94,7 @@
         {
           machine,
           de,
+          theme,
         }:
         lib.nixosSystem {
           system = hostSystem;
@@ -101,6 +102,7 @@
             inherit
               machine
               de
+              theme
               ;
           };
           modules = [
@@ -119,6 +121,7 @@
                   inherit
                     machine
                     de
+                    theme
                     ;
                 };
                 sharedModules = [
@@ -127,7 +130,10 @@
                 ++
                   lib.optionals
                     (
-                      de == "niri" || de == "niri-dms" || de == "niri-noctalia" || de == "niri-custom"
+                      theme == "noctalia"
+                      || theme == "dms"
+                      || theme == "noctalia"
+                      || theme == "custom"
                     )
                     [
                       niri.homeModules.niri
@@ -145,50 +151,37 @@
         flandre-hyprland = mkHost {
           machine = "flandre";
           de = "hyprland";
+          theme = "default";
         };
         flandre-niri-noctalia = mkHost {
           machine = "flandre";
-          de = "niri-noctalia";
+          de = "niri";
+          theme = "noctalia";
         };
         flandre-niri-dms = mkHost {
           machine = "flandre";
-          de = "niri-dms";
+          de = "niri";
+          theme = "dms";
         };
         flandre-niri-custom = mkHost {
           machine = "flandre";
-          de = "niri-custom";
+          de = "niri";
+          theme = "custom";
         };
         flandre-kde = mkHost {
           machine = "flandre";
           de = "kde";
+          theme = "default";
         };
         flandre-gnome = mkHost {
           machine = "flandre";
           de = "gnome";
+          theme = "default";
         };
         flandre-xfce = mkHost {
           machine = "flandre";
           de = "xfce";
-        };
-        remilia-hyprland = mkHost {
-          machine = "remilia";
-          de = "hyprland";
-        };
-        remilia-kde = mkHost {
-          machine = "remilia";
-          de = "kde";
-        };
-        remilia-gnome = mkHost {
-          machine = "remilia";
-          de = "gnome";
-        };
-        remilia-xfce = mkHost {
-          machine = "remilia";
-          de = "xfce";
-        };
-        remilia-niri = mkHost {
-          machine = "remilia";
-          de = "niri";
+          theme = "default";
         };
       };
     };

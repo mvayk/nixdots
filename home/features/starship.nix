@@ -4,56 +4,47 @@
 }:
 {
   programs.starship = {
-    enable =
-      true;
+    enable = true;
     settings = {
       format = ''
         $all$username$hostname$os
       '';
       right_format = "";
       username = {
-        show_always =
-          true;
+        show_always = true;
         style_user = "bold italic cyan";
         style_root = "bold italic red";
         format = "[$user]($style)";
       };
       hostname = {
-        ssh_only =
-          false;
+        ssh_only = false;
         format = "[@](white)[$hostname]($style) ";
         style = "bold italic purple";
         ssh_symbol = " ";
       };
       os = {
-        disabled =
-          false;
+        disabled = false;
         format = "[$symbol]($style) ";
       };
       character = {
-        disabled =
-          true;
+        disabled = true;
         success_symbol = "[](bold white)";
         error_symbol = "[](bold red)";
       };
       cmd_duration = {
-        disabled =
-          false;
-        min_time =
-          2000;
+        disabled = false;
+        min_time = 2000;
         format = "[$duration]($style)";
         style = "bold yellow";
       };
       git_metrics = {
-        disabled =
-          false;
+        disabled = false;
         added_style = "bold green";
         deleted_style = "bold red";
         format = "[+$added]($added_style)/[-$deleted]($deleted_style) ";
       };
       battery = {
-        disabled =
-          true;
+        disabled = true;
       };
       aws = {
         symbol = " ";

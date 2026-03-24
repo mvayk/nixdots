@@ -13,24 +13,17 @@ let
 in
 {
   programs.waybar = {
-    enable =
-      true;
-    systemd.enable =
-      true;
+    enable = true;
+    systemd.enable = true;
 
     settings.mainBar = {
       layer = "top";
       position = "top";
-      height =
-        28;
-      spacing =
-        4;
-      margin-top =
-        0;
-      margin-left =
-        0;
-      margin-right =
-        0;
+      height = 28;
+      spacing = 4;
+      margin-top = 0;
+      margin-left = 0;
+      margin-right = 0;
 
       modules-left = [
         "niri/workspaces"
@@ -48,73 +41,57 @@ in
         "tray"
       ];
 
-      "niri/workspaces" =
-        {
-          format = "{index}";
-        };
+      "niri/workspaces" = {
+        format = "{index}";
+      };
 
-      "niri/window" =
-        {
-          max-length =
-            40;
-          separate-outputs =
-            true;
-        };
+      "niri/window" = {
+        max-length = 40;
+        separate-outputs = true;
+      };
 
-      "clock" =
-        {
-          format = "{:%H:%M}";
-          format-alt = "{:%Y-%m-%d}";
-          tooltip-format = "<tt>{calendar}</tt>";
-        };
+      "clock" = {
+        format = "{:%H:%M}";
+        format-alt = "{:%Y-%m-%d}";
+        tooltip-format = "<tt>{calendar}</tt>";
+      };
 
-      "cpu" =
-        {
-          format = "cpu {usage}%";
-          interval =
-            5;
-        };
+      "cpu" = {
+        format = "cpu {usage}%";
+        interval = 5;
+      };
 
-      "memory" =
-        {
-          format = "mem {}%";
-          interval =
-            10;
-        };
+      "memory" = {
+        format = "mem {}%";
+        interval = 10;
+      };
 
-      "network" =
-        {
-          format-wifi = "{essid}";
-          format-ethernet = "eth";
-          format-disconnected = "off";
-          tooltip-format = "{ipaddr}";
-        };
+      "network" = {
+        format-wifi = "{essid}";
+        format-ethernet = "eth";
+        format-disconnected = "off";
+        tooltip-format = "{ipaddr}";
+      };
 
-      "pulseaudio" =
-        {
-          format = "vol {volume}%";
-          format-muted = "muted";
-          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        };
+      "pulseaudio" = {
+        format = "vol {volume}%";
+        format-muted = "muted";
+        on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      };
 
-      "battery" =
-        {
-          format = "bat {capacity}%";
-          format-charging = "chr {capacity}%";
-          format-full = "full";
-          states = {
-            warning =
-              30;
-            critical =
-              15;
-          };
+      "battery" = {
+        format = "bat {capacity}%";
+        format-charging = "chr {capacity}%";
+        format-full = "full";
+        states = {
+          warning = 30;
+          critical = 15;
         };
+      };
 
-      "tray" =
-        {
-          spacing =
-            8;
-        };
+      "tray" = {
+        spacing = 8;
+      };
     };
 
     style = ''

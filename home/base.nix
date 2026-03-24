@@ -12,6 +12,7 @@
 
   services.syncthing.enable = true;
 
+  # why not !!
   home.packages = with pkgs; [
     nix-tree
     nix-output-monitor

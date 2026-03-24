@@ -5,35 +5,28 @@
 }:
 {
   programs.tmux = {
-    enable =
-      true;
+    enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
-    historyLimit =
-      5000;
-    baseIndex =
-      1;
+    historyLimit = 5000;
+    baseIndex = 1;
     keyMode = "vi";
-    escapeTime =
-      10;
-    mouse =
-      true;
+    escapeTime = 10;
+    mouse = true;
     prefix = "C-e";
-    plugins =
-      with pkgs.tmuxPlugins; [
-        resurrect
-        {
-          plugin =
-            continuum;
-          extraConfig = ''
-            set -g @continuum-restore 'on'
-            set -g @continuum-save-interval '10'
-          '';
-        }
-        yank
-        tmux-fzf
-        tmux-sessionx
-      ];
+    plugins = with pkgs.tmuxPlugins; [
+      resurrect
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '10'
+        '';
+      }
+      yank
+      tmux-fzf
+      tmux-sessionx
+    ];
     extraConfig = ''
                   # settings
                   set-option -g default-shell /run/current-system/sw/bin/zsh
