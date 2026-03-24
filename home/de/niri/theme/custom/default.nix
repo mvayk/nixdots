@@ -100,6 +100,11 @@
       ];
 
       binds = {
+        "Mod+A".action.spawn = [
+          "rofi"
+          "-show"
+          "drun"
+        ];
         "Pause".action.spawn = [
           "wpctl"
           "set-mute"
