@@ -17,19 +17,19 @@
 
   home.pointerCursor = {
     package = pkgs.openzone-cursors;
-    name = "Openzone_black";
+    name = "OpenZone_Black_Slim";
     size = 24;
   };
 
   programs.niri = {
     settings = {
       environment = {
-        XCURSOR_THEME = "Openzone_black";
+        XCURSOR_THEME = "OpenZone_Black_Slim";
         XCURSOR_SIZE = "24";
       };
 
       cursor = {
-        theme = "Openzone_black";
+        theme = "OpenZone_Black_Slim";
         size = 24;
       };
 
