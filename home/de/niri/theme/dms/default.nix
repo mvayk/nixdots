@@ -21,7 +21,6 @@
   programs.niri = {
     settings = {
       environment = {
-        XDG_CURRENT_DESKTOP = "niri";
         XCURSOR_THEME = "Bibata-Modern-Classic";
         XCURSOR_SIZE = "36";
       };
@@ -79,8 +78,6 @@
 
       animations.slowdown = 1.0;
 
-      screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
-
       spawn-at-startup = [
         {
           command = [
@@ -132,16 +129,6 @@
       ];
 
       binds = {
-        "Mod+T".action.spawn = [
-          "ghostty"
-        ];
-        "Mod+W".action.spawn = [
-          "chromium"
-        ];
-        "Mod+E".action.spawn = [
-          "dolphin"
-        ];
-
         "Mod+O".action.spawn = [
           "dms"
           "ipc"

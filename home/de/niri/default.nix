@@ -102,25 +102,6 @@
         "Mod+E".action.spawn = [
           "dolphin"
         ];
-
-        "Pause".action.spawn = [
-          "wpctl"
-          "set-mute"
-          "@DEFAULT_AUDIO_SOURCE@"
-          "toggle"
-        ];
-
-        "Mod+Page_Up".action.spawn = [
-          "pamixer"
-          "--increase"
-          "5"
-        ];
-        "Mod+Page_Down".action.spawn = [
-          "pamixer"
-          "--decrease"
-          "5"
-        ];
-
         "End".action.spawn = [
           "sh"
           "-c"
