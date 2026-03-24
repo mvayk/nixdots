@@ -1,6 +1,11 @@
-{ pkgs, lib, ... }:
 {
-  programs.niri.enable = true;
+  pkgs,
+  lib,
+  ...
+}:
+{
+  programs.niri.enable =
+    true;
 
   # xdg.portal = {
   #   enable = true;
