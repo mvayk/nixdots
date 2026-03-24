@@ -89,11 +89,6 @@
         }
         {
           command = [
-            "waybar"
-          ];
-        }
-        {
-          command = [
             "nm-applet"
           ];
         }
