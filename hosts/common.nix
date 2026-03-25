@@ -379,7 +379,7 @@
       ];
     })
     xdotool
-    xorg.xwininfo
+    xwininfo
     mangohud
     protonup-rs
     protonup-qt

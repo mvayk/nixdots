@@ -80,7 +80,7 @@
         };
       };
 
-      animations.slowdown = 1.0;
+      animations.slowdown = 0.5;
 
       spawn-at-startup = [
         {
@@ -159,7 +159,7 @@
 
       layer-rules = [
         {
-          place-within-backdrop = false;
+          place-within-backdrop = true;
         }
       ];
     };

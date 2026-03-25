@@ -5,21 +5,6 @@
     enableZshIntegration = true;
     shellWrapperName = "y";
 
-    flavors = {
-      ashen = pkgs.fetchFromGitHub {
-        owner = "ficd0";
-        repo = "ashen";
-        rev = "main";
-        hash = "sha256-jH1ueAsL78XR/jowK52k6hZJM7DBYVxNAnlBk3eaVaY=";
-      };
-    };
-
-    theme = {
-      flavor = {
-        dark = "ashen";
-      };
-    };
-
     extraPackages = with pkgs; [
       ffmpeg
       imagemagick
@@ -37,7 +22,6 @@
 
       jq
       mediainfo
-      glow
     ];
 
     plugins = with pkgs.yaziPlugins; {
@@ -60,20 +44,22 @@
       glow = glow;
       mediainfo = mediainfo;
       miller = miller;
-      mime-ext = mime-ext;
+
+      #"mime-ext.local" = mime-ext;
+      #"mime-ext.remote" = mime-ext;
+      "mime-ext" = mime-ext;
 
       mount = mount;
       dupes = dupes;
     };
 
     initLua = ''
-      require("full-border"):setup()
       require("git"):setup()
       require("relative-motions"):setup({ show_numbers = "relative_absolute", show_motion = true })
       require("full-border").setup({
           type = ui.Border.PLAIN,
       })
-      require("mime-ext"):setup({
+      require("mime-ext.local"):setup({
         with_files = { "Makefile", "Dockerfile", ".gitignore", ".env" },
       })
     '';
@@ -209,6 +195,33 @@
           4
           3
         ];
+      };
+
+      indicator = {
+        padding = {
+          open = "";
+          close = "";
+        };
+      };
+      tabs = {
+        sep_inner = {
+          open = "";
+          close = "";
+        };
+        sep_outer = {
+          open = "";
+          close = "";
+        };
+      };
+      status = {
+        sep_left = {
+          open = "";
+          close = "";
+        };
+        sep_right = {
+          open = "";
+          close = "";
+        };
       };
 
       preview = {
