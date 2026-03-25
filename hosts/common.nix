@@ -178,7 +178,7 @@
     zsh.enable = true;
     neovim.defaultEditor = true;
     dconf.enable = true;
-    firefox.enable = false;
+    firefox.enable = true;
     nix-ld.enable = true;
 
     direnv = {
@@ -573,10 +573,10 @@
   };
 
   documentation = {
-    enable = false;
-    man.man-db.enable = false;
+    enable = true;
+    man.man-db.enable = true;
     man.mandoc.enable = false;
-    dev.enable = false;
+    dev.enable = true;
   };
 
   system.stateVersion = "25.05";
