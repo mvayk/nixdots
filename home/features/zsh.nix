@@ -3,23 +3,46 @@
   ...
 }:
 {
+  # [[ -f /etc/nixos/home/features/zsh/.p10k.zsh && ! -f ~/.p10k.zsh ]] && ln -s /etc/nixos/home/features/zsh/.p10k.zsh ~/.p10k.zsh
+  home.file.".p10k.zsh".source = ./zsh/.p10k.zsh;
+
   programs.zsh = {
-    enable =
-      true;
-    autosuggestion.enable =
-      true;
-    syntaxHighlighting.enable =
-      true;
-    enableCompletion =
-      true;
+    enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    enableCompletion = true;
 
     oh-my-zsh = {
-      enable =
-        true;
+      enable = true;
       plugins = [
         "git"
+        "copypath"
+        "copyfile"
+        "dirhistory"
+        "extract"
+        "fzf"
+        "colored-man-pages"
+        "command-not-found"
+        "history-substring-search"
       ];
+      theme = "";
     };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "you-should-use";
+        src = pkgs.zsh-you-should-use;
+      }
+      {
+        name = "per-directory-history";
+        src = pkgs.zsh-history-substring-search;
+      }
+    ];
 
     shellAliases = {
       ls = "eza --icons -l";
@@ -32,9 +55,14 @@
       osu = "env SDL_VIDEODRIVER=wayland osu!";
       #emacs = "emacsclient -c -a 'emacs'";
 
-      nix-rebuild = ''pushd /etc/nixos >/dev/null && sudo nixos-rebuild switch --flake ".#$(hostname)-$NIXOS_DE" && popd >/dev/null'';
-      nix-update = "pushd /etc/nixos >/dev/null && nix flake update && popd >/dev/null";
+      #nix-rebuild = ''pushd /etc/nixos >/dev/null && sudo nixos-rebuild switch --flake ".#$(hostname)-$NIXOS_DE" && popd >/dev/null'';
+      #nix-update = "pushd /etc/nixos >/dev/null && nix flake update && popd >/dev/null";
       nix-clean = "sudo nix-collect-garbage -d";
+
+      cat = "bat --style=full";
+      grep = "rg";
+      top = "btm";
+      du = "dust";
     };
 
     envExtra = ''
@@ -60,11 +88,7 @@
 
       edit() { neovide "$@" & }
 
-      nix-rebuild-to() {
-        noglob pushd /etc/nixos >/dev/null
-        sudo nixos-rebuild switch --flake "$@"
-        popd >/dev/null
-      }
+      [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
     '';
   };
 }

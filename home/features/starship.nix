@@ -4,10 +4,10 @@
 }:
 {
   programs.starship = {
-    enable = true;
+    enable = false;
     settings = {
       format = ''
-        $all$username$hostname$os
+        $all$username$hostname$character
       '';
       right_format = "";
       username = {
@@ -23,13 +23,13 @@
         ssh_symbol = " ";
       };
       os = {
-        disabled = false;
+        disabled = true;
         format = "[$symbol]($style) ";
       };
       character = {
-        disabled = true;
-        success_symbol = "[](bold white)";
-        error_symbol = "[](bold red)";
+        disabled = false;
+        success_symbol = "[](bold white)";
+        error_symbol = "[](bold red)";
       };
       cmd_duration = {
         disabled = false;

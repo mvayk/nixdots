@@ -305,10 +305,12 @@
     };
   };
 
-  programs.zsh.initContent = ''
-    eval "$(starship init zsh)"
-    export NIXOS_DE="niri"
-  '';
+  /*
+    programs.zsh.initContent = ''
+      eval "$(starship init zsh)"
+      export NIXOS_DE="niri"
+    '';
+  */
 
   home.sessionVariables = {
     TERMINAL = "ghostty";

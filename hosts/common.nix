@@ -439,6 +439,10 @@
     steamtinkerlaunch
     vinegar
 
+    bottom
+    dust
+    procs
+
     openjdk21
     openjdk17
 

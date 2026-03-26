@@ -88,5 +88,5 @@ in
   xdg.configFile."ghostty/config".text = lib.concatStringsSep "\n" (
     lib.mapAttrsToList (k: v: "${k} = ${v}") settings
   );
-  xdg.configFile."ghostty/cursor_tail.glsl".source = ./shaders/cursor_tail.glsl;
+  xdg.configFile."ghostty/cursor_tail.glsl".source = ./ghostty/cursor_tail.glsl;
 }
