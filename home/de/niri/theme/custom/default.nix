@@ -172,12 +172,12 @@
 
   xdg.configFile."qt6ct/colors/black-metal.conf".text = ''
     [ColorScheme]
-    active_colors=#c1c1c1, #000000, #000000, #999999, #000000, #000000, #c1c1c1, #5f8787, #c1c1c1, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #c1c1c1, #c1c1c1
-    disabled_colors=#999999, #000000, #000000, #333333, #000000, #000000, #999999, #999999, #999999, #000000, #000000, #000000, #444444, #999999, #999999, #999999, #000000, #000000, #000000, #999999, #999999
-    inactive_colors=#999999, #000000, #000000, #333333, #000000, #000000, #999999, #999999, #999999, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #999999, #999999
+    active_colors=#c1c1c1, #000000, #000000, #333333, #000000, #000000, #c1c1c1, #5f8787, #c1c1c1, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #c1c1c1, #c1c1c1
+    disabled_colors=#666666, #000000, #000000, #1a1a1a, #000000, #000000, #666666, #666666, #666666, #000000, #000000, #000000, #333333, #666666, #666666, #666666, #000000, #000000, #000000, #666666, #666666
+    inactive_colors=#888888, #000000, #000000, #1a1a1a, #000000, #000000, #888888, #888888, #888888, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #888888, #888888
 
     [ColorEffects:Disabled]
-    Color=153,153,153
+    Color=102,102,102
     ColorAmount=0
     ColorEffect=0
     ContrastAmount=0.65
@@ -187,7 +187,7 @@
 
     [ColorEffects:Inactive]
     ChangeSelectionColor=true
-    Color=51,51,51
+    Color=26,26,26
     ColorAmount=0.025
     ColorEffect=2
     ContrastAmount=0.1
@@ -197,8 +197,8 @@
     IntensityEffect=0
 
     [Colors:Button]
-    BackgroundAlternate=34,34,34
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
@@ -211,8 +211,8 @@
     ForegroundVisited=136,136,136
 
     [Colors:Complementary]
-    BackgroundAlternate=34,34,34
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
@@ -225,8 +225,8 @@
     ForegroundVisited=136,136,136
 
     [Colors:Header]
-    BackgroundAlternate=18,18,18
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
@@ -239,16 +239,16 @@
     ForegroundVisited=136,136,136
 
     [Colors:Header][Inactive]
-    BackgroundAlternate=18,18,18
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
-    ForegroundInactive=153,153,153
+    ForegroundInactive=136,136,136
     ForegroundLink=221,153,153
     ForegroundNegative=95,135,135
     ForegroundNeutral=136,136,136
-    ForegroundNormal=153,153,153
+    ForegroundNormal=136,136,136
     ForegroundPositive=221,153,153
     ForegroundVisited=136,136,136
 
@@ -267,8 +267,8 @@
     ForegroundVisited=136,136,136
 
     [Colors:Tooltip]
-    BackgroundAlternate=18,18,18
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
@@ -281,8 +281,8 @@
     ForegroundVisited=136,136,136
 
     [Colors:View]
-    BackgroundAlternate=34,34,34
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=10,10,10
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
@@ -295,8 +295,8 @@
     ForegroundVisited=136,136,136
 
     [Colors:Window]
-    BackgroundAlternate=18,18,18
-    BackgroundNormal=18,18,18
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
     DecorationFocus=160,102,102
     DecorationHover=160,102,102
     ForegroundActive=160,102,102
@@ -309,12 +309,12 @@
     ForegroundVisited=136,136,136
 
     [WM]
-    activeBackground=18,18,18
+    activeBackground=0,0,0
     activeBlend=193,193,193
     activeForeground=193,193,193
-    inactiveBackground=18,18,18
-    inactiveBlend=153,153,153
-    inactiveForeground=153,153,153
+    inactiveBackground=0,0,0
+    inactiveBlend=136,136,136
+    inactiveForeground=136,136,136
   '';
 
   xdg.configFile."gtk-4.0/black-metal.css".text = ''
