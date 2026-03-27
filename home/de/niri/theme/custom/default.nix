@@ -172,12 +172,183 @@
 
   xdg.configFile."qt6ct/colors/black-metal.conf".text = ''
     [ColorScheme]
-    active_colors=#c1c1c1, #1a1a1a, #606060, #303030, #0d0d0d, #404040, #c1c1c1, #ffffff, #c1c1c1, #0a0a0a, #000000, #282828, #486e6f, #000000, #486e6f, #a06666, #0d0d0d, #000000, #1a1a1a, #c1c1c1
-    disabled_colors=#888888, #111111, #404040, #202020, #0d0d0d, #303030, #888888, #aaaaaa, #888888, #0a0a0a, #000000, #282828, #404040, #888888, #486e6f, #a06666, #0d0d0d, #000000, #1a1a1a, #888888
-    inactive_colors=#999999, #141414, #505050, #282828, #0d0d0d, #383838, #999999, #bbbbbb, #999999, #0a0a0a, #000000, #282828, #404040, #999999, #486e6f, #a06666, #0d0d0d, #000000, #1a1a1a, #999999
+    active_colors=#c1c1c1, #000000, #000000, #999999, #000000, #000000, #c1c1c1, #5f8787, #c1c1c1, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #c1c1c1, #c1c1c1
+    disabled_colors=#999999, #000000, #000000, #333333, #000000, #000000, #999999, #999999, #999999, #000000, #000000, #000000, #444444, #999999, #999999, #999999, #000000, #000000, #000000, #999999, #999999
+    inactive_colors=#999999, #000000, #000000, #333333, #000000, #000000, #999999, #999999, #999999, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #999999, #999999
+
+    [ColorEffects:Disabled]
+    Color=153,153,153
+    ColorAmount=0
+    ColorEffect=0
+    ContrastAmount=0.65
+    ContrastEffect=1
+    IntensityAmount=0.1
+    IntensityEffect=2
+
+    [ColorEffects:Inactive]
+    ChangeSelectionColor=true
+    Color=51,51,51
+    ColorAmount=0.025
+    ColorEffect=2
+    ContrastAmount=0.1
+    ContrastEffect=2
+    Enable=false
+    IntensityAmount=0
+    IntensityEffect=0
+
+    [Colors:Button]
+    BackgroundAlternate=34,34,34
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=193,193,193
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:Complementary]
+    BackgroundAlternate=34,34,34
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=193,193,193
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:Header]
+    BackgroundAlternate=18,18,18
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=193,193,193
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:Header][Inactive]
+    BackgroundAlternate=18,18,18
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=153,153,153
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=153,153,153
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:Selection]
+    BackgroundAlternate=160,102,102
+    BackgroundNormal=160,102,102
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=0,0,0
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=0,0,0
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:Tooltip]
+    BackgroundAlternate=18,18,18
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=193,193,193
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:View]
+    BackgroundAlternate=34,34,34
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=193,193,193
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [Colors:Window]
+    BackgroundAlternate=18,18,18
+    BackgroundNormal=18,18,18
+    DecorationFocus=160,102,102
+    DecorationHover=160,102,102
+    ForegroundActive=160,102,102
+    ForegroundInactive=193,193,193
+    ForegroundLink=221,153,153
+    ForegroundNegative=95,135,135
+    ForegroundNeutral=136,136,136
+    ForegroundNormal=193,193,193
+    ForegroundPositive=221,153,153
+    ForegroundVisited=136,136,136
+
+    [WM]
+    activeBackground=18,18,18
+    activeBlend=193,193,193
+    activeForeground=193,193,193
+    inactiveBackground=18,18,18
+    inactiveBlend=153,153,153
+    inactiveForeground=153,153,153
   '';
 
   xdg.configFile."gtk-4.0/black-metal.css".text = ''
+    @define-color accent_color #486e6f;
+    @define-color accent_bg_color #486e6f;
+    @define-color accent_fg_color #000000;
+    @define-color destructive_color #a06666;
+    @define-color destructive_bg_color #a06666;
+    @define-color destructive_fg_color #000000;
+    @define-color success_color #486e6f;
+    @define-color warning_color #999999;
+    @define-color error_color #a06666;
+    @define-color window_bg_color #000000;
+    @define-color window_fg_color #c1c1c1;
+    @define-color view_bg_color #000000;
+    @define-color view_fg_color #c1c1c1;
+    @define-color headerbar_bg_color #000000;
+    @define-color headerbar_fg_color #c1c1c1;
+    @define-color headerbar_border_color rgba(72,110,111,0.4);
+    @define-color card_bg_color #0a0a0a;
+    @define-color card_fg_color #c1c1c1;
+    @define-color dialog_bg_color #000000;
+    @define-color dialog_fg_color #c1c1c1;
+    @define-color popover_bg_color #000000;
+    @define-color popover_fg_color #c1c1c1;
+    @define-color sidebar_bg_color #000000;
+    @define-color sidebar_fg_color #888888;
+    @define-color thumbnail_bg_color #000000;
+    @define-color thumbnail_fg_color #c1c1c1;
+    @define-color shade_color rgba(0,0,0,0.8);
+    @define-color scrollbar_outline_color #000000;
+  '';
+
+  xdg.configFile."gtk-3.0/black-metal.css".text = ''
     @define-color accent_color #486e6f;
     @define-color accent_bg_color #486e6f;
     @define-color accent_fg_color #000000;
@@ -274,13 +445,10 @@
 
   gtk = {
     enable = true;
-    /*
-      theme = {
-        name = "adw-gtk3-dark";
-        package =
-          pkgs.adw-gtk3;
-      };
-    */
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
     iconTheme = {
       name = "Tela-dark";
       package = pkgs.tela-icon-theme;
@@ -296,6 +464,10 @@
   xdg.configFile = {
     "gtk-4.0/gtk.css".text = ''
       @import url("file://${config.home.homeDirectory}/.config/gtk-4.0/black-metal.css");
+    '';
+
+    "gtk-3.0/gtk.css".text = ''
+      @import url("file://${config.home.homeDirectory}/.config/gtk-3.0/black-metal.css");
     '';
   };
 
