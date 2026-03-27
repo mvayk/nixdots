@@ -460,6 +460,8 @@
     go
     nil
 
+    libfaketime
+
     lua-language-server
     python3Packages.python-lsp-server
     nodePackages.typescript-language-server
