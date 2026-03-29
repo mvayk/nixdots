@@ -25,7 +25,7 @@ let
         custom-shader = "cursor_tail.glsl";
         theme = "dankcolors";
       };
-      custom = {
+      blackmetal = {
         window-decoration = "false";
         background-opacity = "0.8";
         cursor-style = "block";

@@ -1,5 +1,7 @@
 {
   pkgs,
+  de,
+  theme,
   ...
 }:
 

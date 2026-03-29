@@ -138,7 +138,7 @@
                       theme == "noctalia"
                       || theme == "dms"
                       || theme == "noctalia"
-                      || theme == "custom"
+                      || theme == "blackmetal"
                     )
                     [
                       niri.homeModules.niri
@@ -168,10 +168,10 @@
           de = "niri";
           theme = "dms";
         };
-        flandre-niri-custom = mkHost {
+        flandre-niri-blackmetal = mkHost {
           machine = "flandre";
           de = "niri";
-          theme = "custom";
+          theme = "blackmetal";
         };
         flandre-kde = mkHost {
           machine = "flandre";
