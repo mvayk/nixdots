@@ -170,24 +170,86 @@
     platformTheme.name = "qtct";
   };
 
-  xdg.configFile."qt6ct/colors/black-metal.conf".text = ''
-    [ColorScheme]
-    active_colors=#c1c1c1, #000000, #000000, #333333, #000000, #000000, #c1c1c1, #5f8787, #c1c1c1, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #c1c1c1, #c1c1c1
-    disabled_colors=#666666, #000000, #000000, #1a1a1a, #000000, #000000, #666666, #666666, #666666, #000000, #000000, #000000, #333333, #666666, #666666, #666666, #000000, #000000, #000000, #666666, #666666
-    inactive_colors=#888888, #000000, #000000, #1a1a1a, #000000, #000000, #888888, #888888, #888888, #000000, #000000, #000000, #a06666, #5f8787, #888888, #888888, #000000, #000000, #000000, #888888, #888888
+  xdg.configFile."qt5ct/qt5ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt5ct/colors/black-metal.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
 
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+  xdg.configFile."qt6ct/qt6ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/black-metal.conf
+    custom_palette=true
+    icon_theme=kora
+    standard_dialogs=xdgdesktopportal
+    style=Breeze
+
+    [Interface]
+    activate_item_on_single_click=1
+    buttonbox_layout=0
+    cursor_flash_time=1000
+    dialog_buttons_have_icons=1
+    double_click_interval=400
+    gui_effects=@Invalid()
+    keyboard_scheme=2
+    menus_have_icons=true
+    show_shortcuts_in_context_menus=true
+    stylesheets=@Invalid()
+    toolbutton_style=4
+    underline_shortcut=1
+    wheel_scroll_lines=3
+
+    [Fonts]
+    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+
+    [Troubleshooting]
+    force_raster_widgets=1
+    ignored_applications=@Invalid()
+  '';
+
+  xdg.configFile."qt5ct/colors/black-metal.conf".text = ''
+    [ColorScheme]
+    active_colors=#c1c1c1, #000000, #0a0a0a, #050505, #030303, #0a0a0a, #c1c1c1, #000000, #c1c1c1, #000000, #000000, #000000, #ffffff, #000000, #ffffff, #a06666, #0a0a0a, #000000, #000000, #c1c1c1, #808080
+    disabled_colors=#888888, #0a0a0a, #0a0a0a, #050505, #030303, #0a0a0a, #888888, #888888, #888888, #0a0a0a, #0a0a0a, #000000, #0a0a0a, #888888, #888888, #888888, #0a0a0a, #0a0a0a, #0a0a0a, #888888, #888888
+    inactive_colors=#888888, #000000, #0a0a0a, #050505, #030303, #0a0a0a, #888888, #888888, #888888, #000000, #000000, #000000, #666666, #0a0a0a, #666666, #666666, #0a0a0a, #000000, #000000, #888888, #888888
     [ColorEffects:Disabled]
-    Color=102,102,102
+    Color=136,136,136
     ColorAmount=0
     ColorEffect=0
     ContrastAmount=0.65
     ContrastEffect=1
     IntensityAmount=0.1
     IntensityEffect=2
-
     [ColorEffects:Inactive]
     ChangeSelectionColor=true
-    Color=26,26,26
+    Color=102,102,102
     ColorAmount=0.025
     ColorEffect=2
     ContrastAmount=0.1
@@ -195,119 +257,246 @@
     Enable=false
     IntensityAmount=0
     IntensityEffect=0
-
     [Colors:Button]
-    BackgroundAlternate=0,0,0
+    BackgroundAlternate=10,10,10
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=193,193,193
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:Complementary]
-    BackgroundAlternate=0,0,0
+    BackgroundAlternate=10,10,10
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=193,193,193
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:Header]
     BackgroundAlternate=0,0,0
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=193,193,193
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:Header][Inactive]
     BackgroundAlternate=0,0,0
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
     ForegroundInactive=136,136,136
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
-    ForegroundNormal=136,136,136
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:Selection]
-    BackgroundAlternate=160,102,102
-    BackgroundNormal=160,102,102
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
+    BackgroundAlternate=51,51,51
+    BackgroundNormal=255,255,255
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
     ForegroundActive=0,0,0
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=0,0,0
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:Tooltip]
     BackgroundAlternate=0,0,0
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=193,193,193
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:View]
     BackgroundAlternate=10,10,10
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=193,193,193
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
-
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [Colors:Window]
     BackgroundAlternate=0,0,0
     BackgroundNormal=0,0,0
-    DecorationFocus=160,102,102
-    DecorationHover=160,102,102
-    ForegroundActive=160,102,102
-    ForegroundInactive=193,193,193
-    ForegroundLink=221,153,153
-    ForegroundNegative=95,135,135
-    ForegroundNeutral=136,136,136
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
     ForegroundNormal=193,193,193
-    ForegroundPositive=221,153,153
-    ForegroundVisited=136,136,136
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [WM]
+    activeBackground=0,0,0
+    activeBlend=193,193,193
+    activeForeground=193,193,193
+    inactiveBackground=0,0,0
+    inactiveBlend=136,136,136
+    inactiveForeground=136,136,136
+  '';
 
+  xdg.configFile."qt6ct/colors/black-metal.conf".text = ''
+    [ColorScheme]
+    active_colors=#c1c1c1, #000000, #0a0a0a, #050505, #030303, #0a0a0a, #c1c1c1, #000000, #c1c1c1, #000000, #000000, #000000, #ffffff, #000000, #ffffff, #a06666, #0a0a0a, #000000, #000000, #c1c1c1, #808080
+    disabled_colors=#888888, #0a0a0a, #0a0a0a, #050505, #030303, #0a0a0a, #888888, #888888, #888888, #0a0a0a, #0a0a0a, #000000, #0a0a0a, #888888, #888888, #888888, #0a0a0a, #0a0a0a, #0a0a0a, #888888, #888888
+    inactive_colors=#888888, #000000, #0a0a0a, #050505, #030303, #0a0a0a, #888888, #888888, #888888, #000000, #000000, #000000, #666666, #0a0a0a, #666666, #666666, #0a0a0a, #000000, #000000, #888888, #888888
+    [ColorEffects:Disabled]
+    Color=136,136,136
+    ColorAmount=0
+    ColorEffect=0
+    ContrastAmount=0.65
+    ContrastEffect=1
+    IntensityAmount=0.1
+    IntensityEffect=2
+    [ColorEffects:Inactive]
+    ChangeSelectionColor=true
+    Color=102,102,102
+    ColorAmount=0.025
+    ColorEffect=2
+    ContrastAmount=0.1
+    ContrastEffect=2
+    Enable=false
+    IntensityAmount=0
+    IntensityEffect=0
+    [Colors:Button]
+    BackgroundAlternate=10,10,10
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:Complementary]
+    BackgroundAlternate=10,10,10
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:Header]
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:Header][Inactive]
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:Selection]
+    BackgroundAlternate=51,51,51
+    BackgroundNormal=255,255,255
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=0,0,0
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=0,0,0
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:Tooltip]
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:View]
+    BackgroundAlternate=10,10,10
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
+    [Colors:Window]
+    BackgroundAlternate=0,0,0
+    BackgroundNormal=0,0,0
+    DecorationFocus=255,255,255
+    DecorationHover=255,255,255
+    ForegroundActive=255,255,255
+    ForegroundInactive=136,136,136
+    ForegroundLink=255,255,255
+    ForegroundNegative=160,102,102
+    ForegroundNeutral=193,193,193
+    ForegroundNormal=193,193,193
+    ForegroundPositive=255,255,255
+    ForegroundVisited=193,193,193
     [WM]
     activeBackground=0,0,0
     activeBlend=193,193,193
@@ -377,70 +566,6 @@
     @define-color thumbnail_fg_color #c1c1c1;
     @define-color shade_color rgba(0,0,0,0.8);
     @define-color scrollbar_outline_color #000000;
-  '';
-
-  xdg.configFile."qt5ct/qt5ct.conf".text = ''
-    [Appearance]
-    color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/black-metal.conf
-    custom_palette=true
-    icon_theme=Tela-dark
-    standard_dialogs=xdgdesktopportal
-    style=Breeze
-
-    [Interface]
-    activate_item_on_single_click=1
-    buttonbox_layout=0
-    cursor_flash_time=1000
-    dialog_buttons_have_icons=1
-    double_click_interval=400
-    gui_effects=@Invalid()
-    keyboard_scheme=2
-    menus_have_icons=true
-    show_shortcuts_in_context_menus=true
-    stylesheets=@Invalid()
-    toolbutton_style=4
-    underline_shortcut=1
-    wheel_scroll_lines=3
-
-    [Fonts]
-    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-
-    [Troubleshooting]
-    force_raster_widgets=1
-    ignored_applications=@Invalid()
-  '';
-
-  xdg.configFile."qt6ct/qt6ct.conf".text = ''
-    [Appearance]
-    color_scheme_path=${config.home.homeDirectory}/.config/qt6ct/colors/black-metal.conf
-    custom_palette=true
-    icon_theme=Tela-dark
-    standard_dialogs=xdgdesktopportal
-    style=Breeze
-
-    [Interface]
-    activate_item_on_single_click=1
-    buttonbox_layout=0
-    cursor_flash_time=1000
-    dialog_buttons_have_icons=1
-    double_click_interval=400
-    gui_effects=@Invalid()
-    keyboard_scheme=2
-    menus_have_icons=true
-    show_shortcuts_in_context_menus=true
-    stylesheets=@Invalid()
-    toolbutton_style=4
-    underline_shortcut=1
-    wheel_scroll_lines=3
-
-    [Fonts]
-    fixed="JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-    general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-
-    [Troubleshooting]
-    force_raster_widgets=1
-    ignored_applications=@Invalid()
   '';
 
   gtk = {
