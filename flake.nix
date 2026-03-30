@@ -170,6 +170,11 @@
           de = "hyprland";
           theme = "default";
         };
+        flandre-hyprland-noctalia = mkHost {
+          machine = "flandre";
+          de = "hyprland";
+          theme = "noctalia";
+        };
         flandre-hyprland-caelestia = mkHost {
           machine = "flandre";
           de = "hyprland";
