@@ -7,6 +7,6 @@
 {
   services.displayManager.dms-greeter = {
     enable = true;
-    compositor.name = "hyprland";
+    compositor.name = "niri";
   };
 }

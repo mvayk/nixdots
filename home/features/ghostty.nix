@@ -36,9 +36,17 @@ let
       };
       noctalia = {
         window-decoration = "false";
-        background-opacity = "1";
+        background-opacity = "0.7";
         theme = "noctalia";
-        cursor-style = "bar";
+        cursor-style = "block";
+        custom-shader-animation = "always";
+        custom-shader = "cursor_tail.glsl";
+      };
+      noctalia-glass = {
+        window-decoration = "false";
+        background-opacity = "0.7";
+        theme = "noctalia";
+        cursor-style = "block";
         custom-shader-animation = "always";
         custom-shader = "cursor_tail.glsl";
       };

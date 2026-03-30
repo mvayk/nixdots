@@ -144,6 +144,7 @@
                       theme == "noctalia"
                       || theme == "dms"
                       || theme == "noctalia"
+                      || theme == "noctalia-glass"
                       || theme == "blackmetal"
                     )
                     [
@@ -173,6 +174,11 @@
           machine = "flandre";
           de = "niri";
           theme = "noctalia";
+        };
+        flandre-niri-noctalia-glass = mkHost {
+          machine = "flandre";
+          de = "niri";
+          theme = "noctalia-glass";
         };
         flandre-niri-dms = mkHost {
           machine = "flandre";

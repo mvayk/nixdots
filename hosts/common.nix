@@ -388,7 +388,7 @@
     aider-chat
     ollama
     koboldcpp
-    mistral-vibe
+    #mistral-vibe
 
     networkmanagerapplet
     inetutils

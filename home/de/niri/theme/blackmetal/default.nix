@@ -145,6 +145,7 @@
             bottom-left = 0.0;
             bottom-right = 0.0;
           };
+
           clip-to-geometry = true;
         }
         {
