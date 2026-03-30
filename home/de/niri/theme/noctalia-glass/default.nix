@@ -3,6 +3,8 @@
   pkgs,
   noctalia,
   quickshell,
+  inputs,
+  niri,
   lib,
   machine,
   de,
@@ -264,8 +266,8 @@
         showScreenCorners = false;
         forceBlackScreenCorners = false;
         scaleRatio = 0.95;
-        radiusRatio = 0.5;
-        iRadiusRatio = 0.5;
+        radiusRatio = 1.0;
+        iRadiusRatio = 1.0;
         boxRadiusRatio = 0;
         screenRadiusRatio = 1;
         animationSpeed = 1;
@@ -806,6 +808,16 @@
         XCURSOR_SIZE = "24";
       };
 
+      /*
+        blur = {
+          on = true;
+          passes = 3;
+          radius = 1.0;
+          noise = 0.03;
+          saturation = 1.0;
+        };
+      */
+
       cursor = {
         theme = "Bibata-Modern-Classic";
         size = 24;
@@ -889,6 +901,7 @@
           clip-to-geometry = true;
         }
         # what compositor doesnt have blur??!??!
+        # niri
         {
           matches = [
             {

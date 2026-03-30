@@ -59,8 +59,13 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-blur = {
+      url = "github:niri-wm/niri/wip/branch";
+      flake = false;
+    };
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.niri-unstable.follows = "niri-blur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

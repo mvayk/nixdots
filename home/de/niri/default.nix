@@ -5,6 +5,7 @@
   machine,
   de,
   theme,
+  inputs,
   ...
 }:
 {
@@ -14,7 +15,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    package = inputs.niri.packages.${pkgs.system}.niri-unstable;
     settings = {
       environment = {
         XDG_CURRENT_DESKTOP = "niri";
