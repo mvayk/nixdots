@@ -902,6 +902,7 @@
         }
         # what compositor doesnt have blur??!??!
         # niri
+        # why doesnt hgome manager have include or blur for niri??!?!?!??!?!
         {
           matches = [
             {
