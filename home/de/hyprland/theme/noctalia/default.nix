@@ -743,6 +743,10 @@
             enabled = true;
             id = "niri";
           }
+          {
+            enabled = true;
+            id = "hyprland";
+          }
         ];
         enableUserTheming = true;
       };
@@ -804,7 +808,7 @@
     enable = true;
     settings = {
       env = [
-        "XCURSOR_SIZE,38"
+        "XCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,macOS"
         "HYPRCURSOR_SIZE,24"
       ];
@@ -841,8 +845,8 @@
         };
         blur = {
           enabled = true;
-          size = 3;
-          passes = 1;
+          size = 15;
+          passes = 4;
           vibrancy = 0.1696;
         };
       };

@@ -69,7 +69,7 @@ in
         "$mainMod, M, exit,"
         "$mainMod, E, exec, dolphin"
         "$mainMod, T, exec, ghostty"
-        "$mainMod, W, exec, brave"
+        "$mainMod, W, exec, firefox"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
         "$mainMod, N, togglesplit,"
