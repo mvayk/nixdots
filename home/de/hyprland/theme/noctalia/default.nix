@@ -850,7 +850,6 @@
           vibrancy = 0.1696;
         };
       };
-
       animations = {
         enabled = true;
         bezier = [

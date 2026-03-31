@@ -15,7 +15,6 @@
 
   programs.niri = {
     enable = true;
-    package = inputs.niri.packages.${pkgs.system}.niri-unstable;
     settings = {
       environment = {
         XDG_CURRENT_DESKTOP = "niri";

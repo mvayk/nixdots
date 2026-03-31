@@ -3,10 +3,27 @@
   pkgs,
   lib,
   quickshell ? null,
+  inputs,
   ...
 }:
 {
-  programs.niri.enable = true;
+
+  nixpkgs.overlays = [
+    inputs.niri.overlays.niri
+
+    (final: prev: {
+      niri-unstable = prev.niri-unstable.override {
+        src = inputs.niri-blur;
+      };
+    })
+  ];
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable.override {
+      src = inputs.niri-blur;
+    };
+  };
 
   services.displayManager.defaultSession = "niri";
 

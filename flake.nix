@@ -65,7 +65,7 @@
     };
     niri = {
       url = "github:sodiboo/niri-flake";
-      inputs.niri-unstable.follows = "niri-blur";
+      # inputs.niri.follows = "niri-blur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -129,6 +129,7 @@
             sops-nix.nixosModules.sops
             spicetify-nix.nixosModules.default
             home-manager.nixosModules.home-manager
+            # niri.nixosModules.niri
             {
               home-manager = {
                 useGlobalPkgs = true;

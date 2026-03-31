@@ -4,12 +4,27 @@
   noctalia,
   quickshell,
   inputs,
-  niri,
   lib,
   machine,
   de,
   ...
 }:
+let
+  call = pkgs.lib.flip import {
+    inherit
+      inputs
+      kdl
+      docs
+      binds
+      settings
+      ;
+    inherit (pkgs) lib;
+  };
+  kdl = call "${inputs.niri}/kdl.nix";
+  binds = call "${inputs.niri}/parse-binds.nix";
+  docs = call "${inputs.niri}/generate-docs.nix";
+  settings = call "${inputs.niri}/settings.nix";
+in
 {
   imports = [
     ../../../../features/ghostty.nix
@@ -18,8 +33,8 @@
   ];
 
   home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    package = pkgs.google-cursor;
+    name = "GoogleDot-White";
     size = 24;
   };
 
@@ -517,7 +532,7 @@
         position = "bottom";
         displayMode = "auto_hide";
         dockType = "floating";
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0;
         floatingRatio = 1;
         size = 1.7;
         onlySameOutput = false;
@@ -802,24 +817,15 @@
   };
 
   programs.niri = {
+    package = pkgs.niri-unstable;
     settings = {
       environment = {
         XCURSOR_THEME = "Bibata-Modern-Classic";
         XCURSOR_SIZE = "24";
       };
 
-      /*
-        blur = {
-          on = true;
-          passes = 3;
-          radius = 1.0;
-          noise = 0.03;
-          saturation = 1.0;
-        };
-      */
-
       cursor = {
-        theme = "Bibata-Modern-Classic";
+        theme = "GoogleDot-White";
         size = 24;
       };
 
@@ -900,9 +906,6 @@
           };
           clip-to-geometry = true;
         }
-        # what compositor doesnt have blur??!??!
-        # niri
-        # why doesnt hgome manager have include or blur for niri??!?!?!??!?!
         {
           matches = [
             {
@@ -971,6 +974,24 @@
         ];
       };
     };
+
+    config =
+      with inputs.niri.lib.kdl;
+      (settings.render config.programs.niri.settings)
+      ++ [
+        (plain "blur" [
+          (leaf "passes" 2)
+          (leaf "offset" 3.0)
+          (leaf "noise" 0.03)
+          (leaf "saturation" 1.0)
+        ])
+        (plain "window-rule" [
+          (plain "background-effect" [
+            (leaf "blur" true)
+            (leaf "xray" false)
+          ])
+        ])
+      ];
   };
 
   qt = {
@@ -1060,11 +1081,6 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  programs.zsh.initContent = ''
-    eval "$(starship init zsh)"
-    export NIXOS_DE="niri"
-  '';
-
   home.packages = with pkgs; [
     xwayland-satellite
     qt6Packages.qt6ct
@@ -1079,6 +1095,7 @@
     nwg-look
 
     # apple-cursor
+    google-cursor
     bibata-cursors
     grim
     slurp
