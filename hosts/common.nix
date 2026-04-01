@@ -323,7 +323,7 @@
     mpv
     ffmpeg
     yt-dlp
-    imagemagick
+    # imagemagick < memory leak noctalia?
     cheese
     kdePackages.kdenlive
 
@@ -532,6 +532,7 @@
     seahorse
 
     nmap
+    hollywood
 
     (sddm-astronaut.override {
       embeddedTheme = "hyprland_kath";
