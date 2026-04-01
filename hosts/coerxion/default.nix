@@ -6,22 +6,29 @@
 {
   networking.hostName = "coerxion";
 
+    boot.initrd.availableKernelModules = [ "i915" ];
+
   services.xserver.videoDrivers = [
       "modesetting"
+      "nvidia"
+      "intel"
   ];
 
   hardware.nvidia = {
     modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     open = false;
     nvidiaSettings = true;
-	powerManagement.enable = true;
-    powerManagement.finegrained = true; 
+	powerManagement.enable = false;
+    powerManagement.finegrained = false;
 
     prime = {
         offload = {
-            enable = true;	
-            enableOffloadCmd = true;
+            enable = false;
+            enableOffloadCmd = false;
+        };
+        sync = {
+            enable = true;
         };
 
 	intelBusId  = "PCI:0:2:0";
