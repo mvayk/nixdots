@@ -180,7 +180,7 @@
 
         "Mod+S".action.toggle-overview = { };
       }
-      // lib.optionalAttrs (machine == "laptop") {
+      // lib.optionalAttrs (machine == "coerxion") {
         "XF86AudioRaiseVolume".action.spawn = [
           "pamixer"
           "--increase"

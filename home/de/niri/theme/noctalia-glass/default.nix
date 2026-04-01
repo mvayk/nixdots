@@ -820,7 +820,7 @@ in
     package = pkgs.niri-unstable;
     settings = {
       environment = {
-        XCURSOR_THEME = "Bibata-Modern-Classic";
+        XCURSOR_THEME = "GoogleDot-White";
         XCURSOR_SIZE = "24";
       };
 
