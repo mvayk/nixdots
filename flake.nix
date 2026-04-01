@@ -175,7 +175,13 @@
           machine = "flandre";
           de = "hyprland";
           theme = "noctalia";
+        };       
+  	coerxion-niri-noctalia-glass = mkHost {
+          machine = "coerxion";
+          de = "niri";
+          theme = "noctalia-glass";
         };
+
         flandre-hyprland-caelestia = mkHost {
           machine = "flandre";
           de = "hyprland";

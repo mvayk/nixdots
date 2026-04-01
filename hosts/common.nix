@@ -11,6 +11,9 @@
     loader.systemd-boot.enable = false;
     loader.efi.canTouchEfiVariables = true;
 
+    kernelPackages = pkgs.linuxPackages_latest;
+
+
     loader.grub = {
       enable = true;
       device = "nodev";
@@ -18,24 +21,24 @@
       useOSProber = true;
     };
 
-    kernel.sysctl = {
-      "kernel.yama.ptrace_scope" = 0;
-    };
+#    kernel.sysctl = {
+ #     "kernel.yama.ptrace_scope" = 0;
+  #  };
 
-    kernelModules = [
-      "uinput"
-      "v4l2loopback"
-    ];
-    extraModulePackages = with config.boot.kernelPackages; [
-      v4l2loopback
-    ];
-    extraModprobeConfig = ''
-      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-    '';
-
-    supportedFilesystems = [
-      "ntfs"
-    ];
+    #kernelModules = [
+    #  "uinput"
+    #  "v4l2loopback"
+    #];
+    #extraModulePackages = with config.boot.kernelPackages; [
+   #   v4l2loopback
+    #];
+   # extraModprobeConfig = ''
+  #    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+ #   '';
+#
+  #  supportedFilesystems = [
+ #     "ntfs"
+#    ];
   };
 
   imports = [
