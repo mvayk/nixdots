@@ -176,10 +176,15 @@
           de = "hyprland";
           theme = "noctalia";
         };       
-  	coerxion-niri-noctalia-glass = mkHost {
-          machine = "coerxion";
-          de = "niri";
-          theme = "noctalia-glass";
+        coerxion-niri-noctalia-glass = mkHost {
+            machine = "coerxion";
+            de = "niri";
+            theme = "noctalia-glass";
+        };
+        coerxion-hyprland-noctalia = mkHost {
+            machine = "coerxion";
+            de = "hyprland";
+            theme = "noctalia";
         };
 
         flandre-hyprland-caelestia = mkHost {
@@ -219,6 +224,11 @@
         };
         flandre-xfce = mkHost {
           machine = "flandre";
+          de = "xfce";
+          theme = "default";
+        };
+        coerxion-xfce = mkHost {
+          machine = "coerxion";
           de = "xfce";
           theme = "default";
         };

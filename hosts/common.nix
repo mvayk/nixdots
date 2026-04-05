@@ -569,6 +569,8 @@
     nerd-fonts.symbols-only
     noto-fonts-cjk-sans
     nerd-fonts._3270
+    nerd-fonts.terminess-ttf
+    nerd-fonts.bigblue-terminal
   ];
 
   nixpkgs.config.allowUnfree = true;
