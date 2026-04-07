@@ -151,6 +151,7 @@
                       || theme == "dms"
                       || theme == "noctalia"
                       || theme == "noctalia-glass"
+                      || theme == "custom"
                       || theme == "blackmetal"
                     )
                     [
@@ -175,11 +176,21 @@
           machine = "flandre";
           de = "hyprland";
           theme = "noctalia";
-        };       
+        };
         coerxion-niri-noctalia-glass = mkHost {
             machine = "coerxion";
             de = "niri";
             theme = "noctalia-glass";
+        };
+        coerxion-niri-custom = mkHost {
+            machine = "coerxion";
+            de = "niri";
+            theme = "custom";
+        };
+        coerxion-hyprland-custom = mkHost {
+            machine = "coerxion";
+            de = "hyprland";
+            theme = "custom";
         };
         coerxion-hyprland-noctalia = mkHost {
             machine = "coerxion";
@@ -230,6 +241,11 @@
         coerxion-xfce = mkHost {
           machine = "coerxion";
           de = "xfce";
+          theme = "default";
+        };
+        coerxion-kde = mkHost {
+          machine = "coerxion";
+          de = "kde";
           theme = "default";
         };
       };

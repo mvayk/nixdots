@@ -15,8 +15,30 @@ let
         custom-shader-animation = "always";
         custom-shader = "cursor_tail.glsl";
       };
+      custom = {
+        window-decoration = "false";
+        background-opacity = "1";
+        cursor-style = "block";
+        theme = "noctalia";
+        font-family = "BigBlueTermPlus Nerd Font Mono";
+        adjust-cell-height = "+0%";
+        window-padding-x = "2";
+        window-padding-y = "2";
+      };
     };
     niri = {
+      custom = {
+        window-decoration = "false";
+        background-opacity = "1";
+        cursor-style = "block";
+        custom-shader-animation = "false";
+        custom-shader = "cursor_tail.glsl";
+        theme = "noctalia";
+        font-family = "BigBlueTermPlus Nerd Font Mono";
+        adjust-cell-height = "+0%";
+        window-padding-x = "2";
+        window-padding-y = "2";
+      };
       dms = {
         window-decoration = "false";
         background-opacity = "0.7";

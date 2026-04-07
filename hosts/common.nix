@@ -359,6 +359,8 @@
     rnote
 
     krita
+    audacity
+    gimp2-with-plugins
 
     osu-lazer-bin
     prismlauncher

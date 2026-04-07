@@ -146,7 +146,7 @@ in
           ]
         else
           [
-            "eDP-1, 1920x1080@60, 0x0, 1"
+            "eDP-1, 1920x1080@144.00, 0x0, 1"
           ];
 
       workspace = lib.optionals (machine == "flandre") [
