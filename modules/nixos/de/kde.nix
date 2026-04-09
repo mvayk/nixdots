@@ -10,4 +10,9 @@
   ];
 
   xdg.portal.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    darkly
+    kde-rounded-corners
+  ];
 }

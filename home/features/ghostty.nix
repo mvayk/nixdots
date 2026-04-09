@@ -34,7 +34,7 @@ let
         custom-shader-animation = "false";
         custom-shader = "cursor_tail.glsl";
         theme = "noctalia";
-        font-family = "BigBlueTermPlus Nerd Font Mono";
+        font-family = "BigBlueTermPlus Mono Nerd Font Mono";
         adjust-cell-height = "+0%";
         window-padding-x = "2";
         window-padding-y = "2";
@@ -87,8 +87,11 @@ let
       default = {
         window-decoration = "true";
         background-opacity = "1.0";
-        theme = "Vercel";
+        theme = "Citruszest";
         font-size = "14";
+        adjust-cell-height = "0%";
+        window-padding-x = "0";
+        window-padding-y = "0";
       };
     };
     xfce = {
