@@ -24,6 +24,5 @@
     eza
     ripgrep
     fd
-    wl-clipboard
   ];
 }
