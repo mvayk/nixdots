@@ -69,7 +69,7 @@ in
         "$mainMod, M, exit,"
         "$mainMod, E, exec, dolphin"
         "$mainMod, T, exec, ghostty"
-        "$mainMod, W, exec, firefox"
+        "$mainMod, W, exec, ${if machine == "coerxion" then "nvidia-offload firefox" else "firefox"}"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
         "$mainMod, N, togglesplit,"
@@ -121,14 +121,14 @@ in
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up,   workspace, e-1"
       ]
-      ++ lib.optionals (machine == "laptop") [
+      ++ lib.optionals (machine == "coerxion") [
         ",XF86AudioRaiseVolume,  exec, pamixer --increase 5"
         ",XF86AudioLowerVolume,  exec, pamixer --decrease 5"
         ",XF86MonBrightnessUp,   exec, brightnessctl set 1%+"
         ",XF86MonBrightnessDown, exec, brightnessctl set 1%-"
       ];
 
-      bindl = lib.optionals (machine == "laptop") [
+      bindl = lib.optionals (machine == "coerxion") [
         ", switch::Lid Switch, exec, hyprlock && systemctl suspend"
       ];
 

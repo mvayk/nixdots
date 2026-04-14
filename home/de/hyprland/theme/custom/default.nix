@@ -666,8 +666,8 @@ programs.noctalia-shell = {
       source = "noctalia/noctalia-colors.conf";
 
       general = {
-        gaps_in = 2;
-        gaps_out = 8;
+        gaps_in = 4;
+        gaps_out = 12;
         border_size = 1;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
         "col.inactive_border" = "$surface";
