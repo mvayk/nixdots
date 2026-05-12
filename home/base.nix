@@ -8,6 +8,7 @@
     ./features/git.nix
     ./features/starship.nix
     ./features/btop.nix
+    ./features/ghostty.nix
   ];
 
   services.syncthing.enable = true;

@@ -360,7 +360,7 @@
 
     krita
     audacity
-    gimp2-with-plugins
+    #gimp2-with-plugins
 
     osu-lazer-bin
     prismlauncher
@@ -377,7 +377,7 @@
         }
       )
     */
-    (lutris.override {
+    (pkgs-stable.lutris.override {
       extraPkgs = pkgs: [
         gamemode
       ];
@@ -409,7 +409,7 @@
     ghidra
     radare2
     binaryninja-free
-    cutter
+    #cutter
     rizin
     gdb
     gef
@@ -468,13 +468,13 @@
 
     lua-language-server
     python3Packages.python-lsp-server
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted
 
     python3
     python3Packages.pynvim
     nodejs
-    nodePackages.npm
+    /* nodePackages.npm
+    nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted */
     lua
     luajit
     luarocks
