@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   users.users.mvayk = {
-    uid          = 1000;
+    uid = 1001;
     isNormalUser = true;
-    shell        = pkgs.zsh;
-    extraGroups  = [
+    shell = pkgs.zsh;
+    extraGroups = [
       "wheel"
       "networkmanager"
       "libvirtd"

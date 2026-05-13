@@ -69,8 +69,9 @@ let
         background-opacity = "0.7";
         theme = "noctalia";
         cursor-style = "block";
-        custom-shader-animation = "always";
-        custom-shader = "cursor_tail.glsl";
+        adjust-cell-height = "0%";
+        window-padding-x = "10";
+        window-padding-y = "10";
       };
     };
     gnome = {
