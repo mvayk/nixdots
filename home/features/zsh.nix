@@ -66,7 +66,6 @@
     };
 
     envExtra = ''
-      export TERM="tmux-256color"
       export COLORTERM="truecolor"
 
       export NIX_LD=$(nix eval --impure --raw --expr \
@@ -75,6 +74,9 @@
     '';
 
     initContent = ''
+      if [[ -n "$TMUX" ]]; then
+        export TERM="tmux-256color"
+      fi
       if [[ -z "$TMUX" ]]; then
         tmux attach 2>/dev/null || tmux new-session
       fi
