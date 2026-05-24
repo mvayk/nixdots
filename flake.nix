@@ -248,6 +248,12 @@
           de = "kde";
           theme = "default";
         };
+
+        coerxion-niri-noctalia = mkHost {
+          machine = "coerxion";
+          de = "niri";
+          theme = "noctalia";
+        };
       };
     };
 }

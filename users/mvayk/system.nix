@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   users.users.mvayk = {
+# somehow differs on machines
     uid = 1000;
     isNormalUser = true;
     shell = pkgs.zsh;

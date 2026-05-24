@@ -326,11 +326,12 @@
         fontDefault = "JetBrainsMono Nerd Font";
         fontFixed = "JetBrainsMono Nerd Font Mono";
         fontDefaultScale = 1;
+        translucentWidgets = true;
         fontFixedScale = 1;
         tooltipsEnabled = true;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 1;
-        panelsAttachedToBar = true;
+        panelBackgroundOpacity = 0.6;
+        panelsAttachedToBar = false;
         settingsPanelMode = "attached";
         settingsPanelSideBarCardStyle = true;
       };
@@ -984,7 +985,7 @@
     custom_palette=true
     icon_theme=kora
     standard_dialogs=xdgdesktopportal
-    style=Breeze
+    style=Darkly
 
     [Interface]
     activate_item_on_single_click=1
@@ -1016,7 +1017,7 @@
     custom_palette=true
     icon_theme=kora
     standard_dialogs=xdgdesktopportal
-    style=Breeze
+    style=Darkly
 
     [Interface]
     activate_item_on_single_click=1
@@ -1092,6 +1093,8 @@
     libjpeg
     libpng
     librsvg
+
+    darkly
 
     quickshell.packages.${pkgs.system}.default
     noctalia.packages.${pkgs.system}.default

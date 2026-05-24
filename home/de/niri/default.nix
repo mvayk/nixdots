@@ -97,7 +97,7 @@
           "ghostty"
         ];
         "Mod+W".action.spawn = [
-          "chromium"
+          "zen-beta"
         ];
         "Mod+E".action.spawn = [
           "dolphin"
