@@ -279,34 +279,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778104114,
-        "narHash": "sha256-+tbqLv7IW5Aem8kGF6cp4n3MtNBcwqmuGlMt6S1kQjs=",
-        "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
-        "rev": "eb2b53ddaa7564f5c93031cbe65cd5b6ef3c12a9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
-        "type": "github"
-      }
-    },
-    "noctalia-amoled": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "noctalia-qs": [
-          "noctalia-qs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1773146517,
-        "narHash": "sha256-JWzWyHg9tRLwTEAdec9dY9KItpfVeEdi+9wgWl3fN7w=",
+        "lastModified": 1779630987,
+        "narHash": "sha256-odDOD76+OUtkIDC4fx3s1LOSsifY89nW5KZ0wnU2XGA=",
         "owner": "mvayk",
         "repo": "noctalia-shell-amoled",
-        "rev": "56ed8e889b8e65d2852ae5c0eddc9ed8b94a94ef",
+        "rev": "f9c605bcd9a98d0b3db3b3c42ae7e3f8a2338277",
         "type": "github"
       },
       "original": {
@@ -411,7 +388,6 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "noctalia": "noctalia",
-        "noctalia-amoled": "noctalia-amoled",
         "noctalia-qs": "noctalia-qs",
         "quickshell": "quickshell_3",
         "sops-nix": "sops-nix",

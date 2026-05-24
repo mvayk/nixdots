@@ -11,13 +11,9 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia-amoled = {
-      url = "github:mvayk/noctalia-shell-amoled";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.noctalia-qs.follows = "noctalia-qs";
-    };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      #url = "github:noctalia-dev/noctalia-shell";
+      url = "github:mvayk/noctalia-shell-amoled";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.noctalia-qs.follows = "noctalia-qs";
     };
@@ -59,10 +55,12 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    /* niri-blur = {
-      url = "github:niri-wm/niri/wip/branch";
-      flake = false;
-    }; */
+    /*
+      niri-blur = {
+        url = "github:niri-wm/niri/wip/branch";
+        flake = false;
+      };
+    */
     niri = {
       url = "github:sodiboo/niri-flake";
       # inputs.niri.follows = "niri-blur";
@@ -178,24 +176,24 @@
           theme = "noctalia";
         };
         coerxion-niri-noctalia-glass = mkHost {
-            machine = "coerxion";
-            de = "niri";
-            theme = "noctalia-glass";
+          machine = "coerxion";
+          de = "niri";
+          theme = "noctalia-glass";
         };
         coerxion-niri-custom = mkHost {
-            machine = "coerxion";
-            de = "niri";
-            theme = "custom";
+          machine = "coerxion";
+          de = "niri";
+          theme = "custom";
         };
         coerxion-hyprland-custom = mkHost {
-            machine = "coerxion";
-            de = "hyprland";
-            theme = "custom";
+          machine = "coerxion";
+          de = "hyprland";
+          theme = "custom";
         };
         coerxion-hyprland-noctalia = mkHost {
-            machine = "coerxion";
-            de = "hyprland";
-            theme = "noctalia";
+          machine = "coerxion";
+          de = "hyprland";
+          theme = "noctalia";
         };
 
         flandre-hyprland-caelestia = mkHost {
