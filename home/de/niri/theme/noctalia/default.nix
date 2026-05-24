@@ -37,7 +37,7 @@
         widgetSpacing = 6;
         contentPadding = 0;
         fontScale = 1;
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.6;
         useSeparateOpacity = false;
         floating = false;
         marginVertical = 5;
@@ -531,9 +531,9 @@
         position = "bottom";
         displayMode = "auto_hide";
         dockType = "floating";
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0.6;
         floatingRatio = 1;
-        size = 1.7;
+        size = 1;
         onlySameOutput = false;
         monitors = [ ];
         pinnedApps = [ ];
@@ -645,7 +645,7 @@
         monitors = [ ];
         location = "top_right";
         overlayLayer = true;
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.6;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
@@ -678,7 +678,7 @@
         location = "top_center";
         autoHideMs = 2000;
         overlayLayer = true;
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0.6;
         enabledTypes = [
           0
           1
