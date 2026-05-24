@@ -911,12 +911,12 @@
 
       layer-rules = [
         {
-          matches = [
-            {
-              namespace = "^noctalia-wallpaper";
-            }
-          ];
-          place-within-backdrop = false;
+          # matches = [
+          #   {
+          #     namespace = "^noctalia-wallpaper";
+          #   }
+          # ];
+          place-within-backdrop = true;
         }
       ];
 
