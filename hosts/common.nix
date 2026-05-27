@@ -498,6 +498,7 @@
     libxkbcommon
     glibc
     glib
+    next
 
     usbutils
     acpi
@@ -522,6 +523,7 @@
     ani-cli
     scrcpy
     android-tools
+    gparted
 
     kdePackages.kmines
     kdePackages.kolourpaint
