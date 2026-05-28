@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   users.users.mvayk = {
-# somehow differs on machines
-    uid = 1000;
+    # somehow differs on machines
+    uid = 1001;
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [

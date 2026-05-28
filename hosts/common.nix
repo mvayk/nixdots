@@ -41,7 +41,7 @@
   };
 
   imports = [
-    ../modules/nixos/ly.nix
+    ../modules/nixos/sddm.nix
   ];
 
   networking.networkmanager.enable = true;
@@ -283,6 +283,10 @@
     };
   };
 
+  systemd.services.libvirtd.serviceConfig = {
+    LoadCredentialEncrypted = pkgs.lib.mkForce [ ];
+  };
+
   environment.sessionVariables = {
     # CPATH = "${pkgs.glibc.dev}/include";
     CPATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.cc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
@@ -498,7 +502,6 @@
     libxkbcommon
     glibc
     glib
-    next
 
     usbutils
     acpi
