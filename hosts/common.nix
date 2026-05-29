@@ -268,9 +268,39 @@
       libXrender
       libXtst
       freetype
+      freetype.dev
       fontconfig
       yad
       libXxf86vm
+
+    gnumake
+    pkg-config
+    flex
+    bison
+    freetype
+    freetype.dev
+    fontconfig
+    libXext
+    libXrandr
+    libXinerama
+    libXcomposite
+    libXcursor
+    libxkbcommon
+    libGL
+    libGLU
+    libxkbcommon
+    libxcb
+    libX11
+    libXrandr
+    libXinerama
+    libXcursor
+    libXxf86vm
+    SDL2
+    vulkan-loader
+    gnutls
+    libpulseaudio
+    alsa-lib
+    wayland
     ];
   };
 
@@ -467,6 +497,7 @@
     openssl
     go
     nil
+    flex
 
     libfaketime
 
@@ -568,6 +599,35 @@
     lazygit
     starship
     ispell
+
+    gnumake
+    pkg-config
+    flex
+    bison
+    freetype
+    freetype.dev
+    fontconfig
+    libXext
+    libXrandr
+    libXinerama
+    libXcomposite
+    libXcursor
+    libxkbcommon
+    libGL
+    libGLU
+    libxkbcommon
+    libxcb
+    libX11
+    libXrandr
+    libXinerama
+    libXcursor
+    libXxf86vm
+    SDL2
+    vulkan-loader
+    gnutls
+    libpulseaudio
+    alsa-lib
+    wayland
   ];
 
   fonts.packages = with pkgs; [

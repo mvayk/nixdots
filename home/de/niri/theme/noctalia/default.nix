@@ -37,15 +37,15 @@
         widgetSpacing = 6;
         contentPadding = 0;
         fontScale = 1;
-        backgroundOpacity = 0.6;
+        backgroundOpacity = 1.0;
         useSeparateOpacity = false;
         floating = false;
         marginVertical = 5;
         marginHorizontal = 18;
         frameThickness = 8;
         frameRadius = 12;
-        outerCorners = true;
-        hideOnOverview = false;
+        outerCorners = false;
+        hideOnOverview = true;
         displayMode = "always_visible";
         autoHideDelay = 500;
         autoShowDelay = 150;
@@ -274,7 +274,7 @@
         showSessionButtonsOnLockScreen = true;
         showHibernateOnLockScreen = false;
         enableLockScreenMediaControls = false;
-        enableShadows = true;
+        enableShadows = false;
         enableBlurBehind = true;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
@@ -330,8 +330,8 @@
         fontFixedScale = 1;
         tooltipsEnabled = true;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 0.6;
-        panelsAttachedToBar = false;
+        panelBackgroundOpacity = 1;
+        panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         settingsPanelSideBarCardStyle = true;
       };
@@ -531,7 +531,7 @@
         position = "bottom";
         displayMode = "auto_hide";
         dockType = "floating";
-        backgroundOpacity = 0.6;
+        backgroundOpacity = 1;
         floatingRatio = 1;
         size = 1;
         onlySameOutput = false;
@@ -645,7 +645,7 @@
         monitors = [ ];
         location = "top_right";
         overlayLayer = true;
-        backgroundOpacity = 0.6;
+        backgroundOpacity = 1.0;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
@@ -678,7 +678,7 @@
         location = "top_center";
         autoHideMs = 2000;
         overlayLayer = true;
-        backgroundOpacity = 0.6;
+        backgroundOpacity = 1.0;
         enabledTypes = [
           0
           1
@@ -858,7 +858,7 @@
         };
 
         shadow = {
-          enable = true;
+          enable = false;
           offset = {
             x = 2;
             y = 3;
