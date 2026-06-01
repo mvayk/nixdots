@@ -17,7 +17,7 @@
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    name = "Bibata-Modern-Ice";
     size = 24;
   };
 
@@ -261,7 +261,7 @@
         dimmerOpacity = 0;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
-        scaleRatio = 0.95;
+        scaleRatio = 1.0;
         radiusRatio = 0.5;
         iRadiusRatio = 0.5;
         boxRadiusRatio = 0;
@@ -275,7 +275,7 @@
         showHibernateOnLockScreen = false;
         enableLockScreenMediaControls = false;
         enableShadows = false;
-        enableBlurBehind = true;
+        enableBlurBehind = false;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
         shadowOffsetY = 3;
@@ -808,17 +808,24 @@
         monitorWidgets = [ ];
       };
     };
+      user-templates = ''
+          [config]
+          [templates.nvim-base16]
+          input_path = "~/.config/nvim/lua/matugen-template.lua"
+          output_path = "~/.config/nvim/lua/matugen.lua"
+          post_hook = 'pkill -SIGUSR1 nvim'
+      '';
   };
 
   programs.niri = {
     settings = {
       environment = {
-        XCURSOR_THEME = "Bibata-Modern-Classic";
-        XCURSOR_SIZE = "36";
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24";
       };
 
       cursor = {
-        theme = "Bibata-Modern-Classic";
+        theme = "Bibata-Modern-Ice";
         size = 24;
       };
 
