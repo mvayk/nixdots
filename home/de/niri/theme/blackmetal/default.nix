@@ -11,9 +11,9 @@
   imports = [
     ../../../../features/ghostty.nix
     ../../../../features/fastfetch.nix
-    ../../../../features/rofi.nix
-    ../../../../features/waybar.nix
-    ../../../../features/dunst.nix
+    ../features/rofi.nix
+    ../features/waybar.nix
+    ../features/dunst.nix
   ];
 
   home.pointerCursor = {
@@ -571,7 +571,7 @@
 
   gtk = {
     enable = true;
-    theme = {
+    gtk4.theme = {
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };

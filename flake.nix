@@ -4,7 +4,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
@@ -88,7 +88,7 @@
       hostSystem = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs-stable = import nixpkgs-stable {
-        system = hostSystem;
+        localSystem = hostSystem;
         config.allowUnfree = true;
       };
       extraArgs = {
@@ -111,7 +111,7 @@
           theme,
         }:
         lib.nixosSystem {
-          system = hostSystem;
+          #system = hostSystem;
           specialArgs = extraArgs // {
             inherit
               machine
@@ -120,6 +120,7 @@
               ;
           };
           modules = [
+            { nixpkgs.hostPlatform = hostSystem; }
             ./hosts/common.nix
             ./hosts/${machine}/default.nix
             ./hosts/${machine}/hardware.nix
@@ -147,7 +148,6 @@
                     (
                       theme == "noctalia"
                       || theme == "dms"
-                      || theme == "noctalia"
                       || theme == "noctalia-glass"
                       || theme == "custom"
                       || theme == "blackmetal"

@@ -6,14 +6,14 @@
   ];
 
   home = {
-    username     = "mvayk";
+    username = "mvayk";
     homeDirectory = "/home/mvayk";
     stateVersion = "25.05";
   };
 
   home.sessionVariables = {
-    EDITOR   = "nvim";
-    PAGER    = "bat";
+    EDITOR = "nvim";
+    PAGER = "bat";
     MANPAGER = "bat";
     CARGO_HOME = "$HOME/.cargo";
   };

@@ -42,6 +42,7 @@
 
   imports = [
     ../modules/nixos/ly.nix
+    #../modules/nixos/sops.nix
   ];
 
   networking.networkmanager.enable = true;
@@ -273,34 +274,34 @@
       yad
       libXxf86vm
 
-    gnumake
-    pkg-config
-    flex
-    bison
-    freetype
-    freetype.dev
-    fontconfig
-    libXext
-    libXrandr
-    libXinerama
-    libXcomposite
-    libXcursor
-    libxkbcommon
-    libGL
-    libGLU
-    libxkbcommon
-    libxcb
-    libX11
-    libXrandr
-    libXinerama
-    libXcursor
-    libXxf86vm
-    SDL2
-    vulkan-loader
-    gnutls
-    libpulseaudio
-    alsa-lib
-    wayland
+      gnumake
+      pkg-config
+      flex
+      bison
+      freetype
+      freetype.dev
+      fontconfig
+      libXext
+      libXrandr
+      libXinerama
+      libXcomposite
+      libXcursor
+      libxkbcommon
+      libGL
+      libGLU
+      libxkbcommon
+      libxcb
+      libX11
+      libXrandr
+      libXinerama
+      libXcursor
+      libXxf86vm
+      SDL2
+      vulkan-loader
+      gnutls
+      libpulseaudio
+      alsa-lib
+      wayland
     ];
   };
 
