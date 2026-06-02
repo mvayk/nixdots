@@ -69,12 +69,14 @@ let
       };
       noctalia-glass = {
         window-decoration = "false";
-        background-opacity = "0.7";
+        background-opacity = "0.5";
         theme = "noctalia";
         cursor-style = "block";
         adjust-cell-height = "0%";
         window-padding-x = "10";
         window-padding-y = "10";
+        custom-shader-animation = "always";
+        custom-shader = "cursor_tail.glsl";
       };
     };
     gnome = {

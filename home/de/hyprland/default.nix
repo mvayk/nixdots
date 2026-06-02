@@ -52,7 +52,7 @@ in
       };
 
       dwindle = {
-        pseudotile = true;
+        #pseudotile = true;
         preserve_split = true;
       };
 
@@ -69,10 +69,11 @@ in
         "$mainMod, M, exit,"
         "$mainMod, E, exec, dolphin"
         "$mainMod, T, exec, ghostty"
-        "$mainMod, W, exec, ${if machine == "coerxion" then "nvidia-offload firefox" else "firefox"}"
+        #"$mainMod, W, exec, ${if machine == "coerxion" then "nvidia-offload firefox" else "firefox"}"
+        "$mainMod, W, exec, zen-beta"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
-        "$mainMod, N, togglesplit,"
+        #"$mainMod, N, togglesplit,"
         "$mainMod, F, fullscreen"
         "$mainMod, G, exec, ${toggleGaps}/bin/toggle-gaps"
         "$mainMod, Q, killactive,"

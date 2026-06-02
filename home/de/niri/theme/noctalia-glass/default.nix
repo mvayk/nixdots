@@ -9,22 +9,6 @@
   de,
   ...
 }:
-let
-  call = pkgs.lib.flip import {
-    inherit
-      inputs
-      kdl
-      docs
-      binds
-      settings
-      ;
-    inherit (pkgs) lib;
-  };
-  kdl = call "${inputs.niri}/kdl.nix";
-  binds = call "${inputs.niri}/parse-binds.nix";
-  docs = call "${inputs.niri}/generate-docs.nix";
-  settings = call "${inputs.niri}/settings.nix";
-in
 {
   imports = [
     ../../../../features/ghostty.nix
@@ -159,7 +143,7 @@ in
               hideMode = "hidden";
               hideWhenIdle = false;
               id = "MediaMini";
-              maxWidth = 2750;
+              maxWidth = 145;
               panelShowAlbumArt = true;
               scrollingMode = "hover";
               showAlbumArt = true;
@@ -817,7 +801,7 @@ in
   };
 
   programs.niri = {
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
     settings = {
       environment = {
         XCURSOR_THEME = "GoogleDot-White";
@@ -899,10 +883,10 @@ in
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 10.0;
-            top-right = 10.0;
-            bottom-left = 10.0;
-            bottom-right = 10.0;
+            top-left = 20.0;
+            top-right = 20.0;
+            bottom-left = 20.0;
+            bottom-right = 20.0;
           };
           clip-to-geometry = true;
         }
@@ -974,24 +958,6 @@ in
         ];
       };
     };
-
-    config =
-      with inputs.niri.lib.kdl;
-      (settings.render config.programs.niri.settings)
-      ++ [
-        (plain "blur" [
-          (leaf "passes" 2)
-          (leaf "offset" 3.0)
-          (leaf "noise" 0.03)
-          (leaf "saturation" 1.0)
-        ])
-        (plain "window-rule" [
-          (plain "background-effect" [
-            (leaf "blur" true)
-            (leaf "xray" false)
-          ])
-        ])
-      ];
   };
 
   qt = {
