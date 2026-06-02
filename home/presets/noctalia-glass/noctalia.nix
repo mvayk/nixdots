@@ -27,7 +27,7 @@
         enableExclusionZoneInset = true;
         backgroundOpacity = 1;
         useSeparateOpacity = false;
-        marginVertical = 5;
+        marginVertical = 8;
         marginHorizontal = 180;
         frameThickness = 8;
         frameRadius = 12;

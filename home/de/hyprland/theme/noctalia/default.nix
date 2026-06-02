@@ -1,20 +1,20 @@
 {
   pkgs,
+  lib,
   noctalia,
   quickshell,
   future-hyprcursor,
   ...
 }:
+let
+  dir = ../../../../presets/noctalia-glass;
+  fileNames = builtins.attrNames (builtins.readDir dir);
+  nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
+in
 {
-  imports = [
-    ../../../../features/ghostty.nix
+  imports = map (n: dir + "/${n}") nixFiles ++ [
     ../../../../features/fastfetch.nix
-    ../../../../presets/gtk.nix
-    ../../../../presets/qt.nix
-    ../../../../presets/wayland.nix
-    ../../../../presets/noctalia-glass.nix
   ];
-
   home.pointerCursor = {
     package = pkgs.apple-cursor;
     name = "macOS";

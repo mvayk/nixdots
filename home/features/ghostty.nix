@@ -1,112 +1,8 @@
 {
-  de,
-  theme,
   lib,
   ...
 }:
 let
-  themeSettings = {
-    hyprland = {
-      default = {
-        window-decoration = "false";
-        background-opacity = "0.7";
-        theme = "noctalia";
-        cursor-style = "bar";
-        custom-shader-animation = "always";
-        custom-shader = "cursor_tail.glsl";
-      };
-      custom = {
-        window-decoration = "false";
-        background-opacity = "1";
-        cursor-style = "block";
-        theme = "noctalia";
-        font-family = "BigBlueTermPlus Nerd Font Mono";
-        adjust-cell-height = "+0%";
-        window-padding-x = "2";
-        window-padding-y = "2";
-      };
-    };
-    niri = {
-      custom = {
-        window-decoration = "false";
-        background-opacity = "1";
-        cursor-style = "block";
-        custom-shader-animation = "false";
-        custom-shader = "cursor_tail.glsl";
-        theme = "noctalia";
-        font-family = "BigBlueTermPlus Mono Nerd Font Mono";
-        adjust-cell-height = "+0%";
-        window-padding-x = "2";
-        window-padding-y = "2";
-      };
-      dms = {
-        window-decoration = "false";
-        background-opacity = "0.7";
-        cursor-style = "bar";
-        custom-shader-animation = "always";
-        custom-shader = "cursor_tail.glsl";
-        theme = "dankcolors";
-      };
-      blackmetal = {
-        window-decoration = "false";
-        background-opacity = "0.8";
-        cursor-style = "block";
-        theme = "Black Metal";
-        adjust-cell-height = "+0%";
-        window-padding-x = "5";
-        window-padding-y = "5";
-      };
-      noctalia = {
-        window-decoration = "false";
-        background-opacity = "1";
-        theme = "noctalia";
-        cursor-style = "block";
-        custom-shader-animation = "always";
-        custom-shader = "cursor_tail.glsl";
-        adjust-cell-height = "+0%";
-        window-padding-x = "5";
-        window-padding-y = "5";
-      };
-      noctalia-glass = {
-        window-decoration = "false";
-        background-opacity = "0.5";
-        theme = "noctalia";
-        cursor-style = "block";
-        adjust-cell-height = "0%";
-        window-padding-x = "10";
-        window-padding-y = "10";
-        custom-shader-animation = "always";
-        custom-shader = "cursor_tail.glsl";
-      };
-    };
-    gnome = {
-      default = {
-        window-decoration = "true";
-        background-opacity = "1.0";
-        theme = "Vercel";
-        font-size = "14";
-        window-padding-x = "6";
-        window-padding-y = "8";
-      };
-    };
-    kde = {
-      default = {
-        window-decoration = "true";
-        background-opacity = "1.0";
-        theme = "Citruszest";
-        font-size = "14";
-        adjust-cell-height = "0%";
-        window-padding-x = "0";
-        window-padding-y = "0";
-      };
-    };
-    xfce = {
-      default = {
-        window-decoration = "true";
-        background-opacity = "1.0";
-      };
-    };
-  };
   settings = {
     font-family = "VictorMono Nerd Font Mono";
     font-size = "16";
@@ -120,8 +16,7 @@ let
     keybind = "ctrl+backspace=text:\\x1b\\x7f";
     window-padding-balance = "true";
     confirm-close-surface = "false";
-  }
-  // ((themeSettings.${de} or { }).${theme} or { theme = theme; });
+  };
 in
 {
   xdg.configFile."ghostty/config".text = lib.concatStringsSep "\n" (

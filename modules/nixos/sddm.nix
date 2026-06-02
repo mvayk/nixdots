@@ -15,7 +15,7 @@ in
       enable = true;
       package = pkgs.kdePackages.sddm;
       wayland = {
-        enable = false;
+        enable = true;
         compositor = "kwin";
       };
       theme = "sddm-astronaut-theme";
