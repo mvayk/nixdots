@@ -190,10 +190,15 @@
           de = "hyprland";
           theme = "custom";
         };
-        coerxion-hyprland-noctalia = mkHost {
+        coerxion-hyprland-noctalia-glass = mkHost {
           machine = "coerxion";
           de = "hyprland";
           theme = "noctalia";
+        };
+        coerxion-hyprland-blackmetal = mkHost {
+          machine = "coerxion";
+          de = "hyprland";
+          theme = "blackmetal";
         };
 
         flandre-hyprland-caelestia = mkHost {

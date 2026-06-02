@@ -38,8 +38,6 @@ in
         gaps_in = 4;
         gaps_out = 12;
         border_size = 1;
-        "col.active_border" = "FFFFFFFF";
-        "col.inactive_border" = "000000FF";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -66,7 +64,7 @@ in
 
       bind = [
         "$mainMod, semicolon, exec, rofi dmenu p dunst"
-        "PAUSE, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE toggle"
+        ", PAUSE, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE toggle"
         "$mainMod, A, exec, rofi -show drun"
         "$mainMod, page_up,   exec, pamixer --increase 5"
         "$mainMod, page_down, exec, pamixer --decrease 5"
