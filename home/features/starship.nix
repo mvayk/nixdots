@@ -4,7 +4,7 @@
 }:
 {
   programs.starship = {
-    enable = false;
+    enable = true;
     settings = {
       format = ''
         $all$username$hostname$character
