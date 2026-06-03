@@ -3,7 +3,10 @@
   ...
 }:
 {
-  import = [
+
+  imports = [
+    ../modules/nixos/ly.nix
+    #../modules/nixos/sops.nix
     ./programs.nix
   ];
 
@@ -39,11 +42,6 @@
     #     "ntfs"
     #    ];
   };
-
-  imports = [
-    ../modules/nixos/ly.nix
-    #../modules/nixos/sops.nix
-  ];
 
   networking.networkmanager.enable = true;
 
