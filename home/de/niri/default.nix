@@ -11,6 +11,7 @@
 {
   imports = [
     ./theme/${theme}/default.nix
+    ../../presets/wayland.nix
   ];
 
   programs.niri = {

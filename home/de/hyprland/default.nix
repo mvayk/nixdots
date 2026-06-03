@@ -25,6 +25,7 @@ in
 {
   imports = [
     ./theme/${theme}/default.nix
+    ../../presets/wayland.nix
   ];
 
   wayland.windowManager.hyprland = {
