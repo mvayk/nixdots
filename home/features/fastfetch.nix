@@ -1,42 +1,126 @@
 { ... }:
 {
   xdg.configFile."fastfetch/config.jsonc".text = ''
-    {
-      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-      "logo": {
-        "type": "kitty",
-        "source": "/etc/nixos/home/features/fastfetch/uruha_rushia_render_jmsg7.png",
-        "height": 12,
-        "padding": {
-          "top": 2,
-          "right": 5,
-          "left": 3
-        }
-      },
-      "display": {
-        "separator": "  ",
-        "color": "white"
+      {
+        "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+        "logo": {
+          "type": "kitty",
+          "source": "/etc/nixos/home/features/fastfetch/uruha_rushia_render_jmsg7.png",
+          "height": 12,
+          "padding": {
+            "top": 2,
+            "right": 5,
+            "left": 3
+          }
+        },
+    "display": {
+          "separator": " ⟫  ",
+          "color": {
+              "keys": "magenta",
+              "title": "red"
+          },
+          "constants": [
+              "──────────────────────────────────────────"
+          ]
       },
       "modules": [
-        "break",
-        { "type": "custom", "key": "╭─────────────────────────────────────────╮" },
-        { "type": "custom", "key": "│                                         │" },
-        { "type": "os",      "key": "│  OS           ", "format": "{pretty-name>22}  │" },
-        { "type": "command", "key": "│  Kernel       ", "text": "uname -r | cut -d '-' -f1", "format": "{>22}  │" },
-        { "type": "command", "key": "│  Uptime       ", "text": "uptime -p | sed -E 's/up //; s/ days?/d/g; s/ hours?/h/g; s/ minutes?/m/g'", "format": "{>22}  │" },
-        { "type": "shell",   "key": "│  Shell        ", "format": "{pretty-name>22}  │" },
-        { "type": "command", "key": "│  WM           ", "text": "echo $XDG_CURRENT_DESKTOP", "format": "{>22}  │" },
-        { "type": "disk",    "key": "│  OS Age                      ", "folders": "/", "format": "{days} days  │" },
-        { "type": "command", "key": "│  Ram          ", "text": "free -m | awk 'NR==2{printf \"%.2f / %.2f GiB\",$3/1024,$2/1024}'", "format": "{>22}  │" },
-        { "type": "command", "key": "│  CPU          ", "text": "lscpu | grep 'Model name' | sed -E 's/.*(i[0-9]-[0-9A-Za-z]+).*/\\1/'", "format": "{>22}  │" },
-        { "type": "command", "key": "│  Disk         ", "text": "df -h --output=size,used,fstype / | awk 'NR==2 {gsub(/G/,\"\",$1); gsub(/G/,\"\",$2); print $2 \" / \" $1 \" GiB - \" $3}'", "format": "{>22}  │" },
-        { "type": "packages", "key": "│  Packages     ", "format": "{all>22}  │" },
-        { "type": "command", "key": "│  Owner        ", "text": "echo $USER | tr '[:lower:]' '[:upper:]'", "format": "{>22}  │" },
-        { "type": "custom",  "key": "│                                         │" },
-        { "type": "command", "key": " ", "shell": "/bin/bash", "text": "echo '│     WE ARE LIBRE ! ── 我々は自由だ！    │'", "format": "{1}" },
-        { "type": "custom",  "key": "╰─────────────────────────────────────────╯" },
-        "break"
+          {
+              "type": "title",
+              "format": " {user-name-colored}@{host-name-colored} ",
+              "output": {
+                  "color": {
+                      "user": "red",
+                      "at": "white",
+                      "host": "yellow"
+                  }
+              }
+          },
+          {
+              "type": "custom",
+              "format": "{$1}",
+              "output": { "color": "red" }
+          },
+          {
+              "type": "os",
+              "key": " 󰌢  DISTRO   ",
+              "format": "{2}"
+          },
+          {
+              "type": "kernel",
+              "key": " 󰚀  KERNEL   ",
+              "format": "{2}"
+          },
+          {
+              "type": "uptime",
+              "key": " 󱎫  ACTIVE   "
+          },
+          {
+              "type": "custom",
+              "format": "{$1}",
+              "output": { "color": "red" }
+          },
+          {
+              "type": "cpu",
+              "key": " 󰻠  CPU      ",
+              "format": "{1} @ {6}"
+          },
+          {
+              "type": "gpu",
+              "key": " 󰢮  GPU      ",
+              "format": "{2}"
+          },
+          {
+              "type": "memory",
+              "key": " 󰍛  MEMORY   ",
+              "format": "{1} / {2} ({3})"
+          },
+          {
+              "type": "disk",
+              "key": " 󰋊  STORAGE  ",
+              "format": "{1} / {2} ({3})",
+              "folders": "/"
+          },
+          {
+              "type": "custom",
+              "format": "{$1}",
+              "output": { "color": "red" }
+          },
+          {
+              "type": "shell",
+              "key": "   SHELL    ",
+              "format": "{1} {4}"
+          },
+          {
+              "type": "wm",
+              "key": " 󱂬  WM       ",
+              "format": "{1}"
+          },
+          {
+              "type": "terminal",
+              "key": "   CONSOLE  "
+          },
+          {
+              "type": "custom",
+              "format": "{$1}",
+              "output": { "color": "red" }
+          },
+          {
+              "type": "command",
+              "key": " 󱐋  BATTERY  ",
+              "text": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'",
+              "format": "{}"
+          },
+          {
+              "type": "break"
+          },
+          {
+              "type": "colors",
+              "symbol": "circle",
+              "block": {
+                  "range": [1, 6]
+              }
+          }
       ]
-    }
+      }
   '';
 }
