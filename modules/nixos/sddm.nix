@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 let
@@ -30,20 +31,17 @@ in
           CursorTheme = "Bibata-Original-Classic";
           CursorSize = 24;
         };
-        /*
-          General = {
-            GreeterEnvironment = lib.concatStringsSep "," [
-              "QT_WAYLAND_SHELL_INTEGRATION=layer-shell"
-              "QT_SCREEN_SCALE_FACTORS=1;1"
-              "QT_FONT_DPI=96"
-              "XCURSOR_THEME=Bibata-Original-Classic"
-              "XCURSOR_SIZE=24"
-              "XCURSOR_PATH=/run/current-system/sw/share/icons"
-            ];
-          };
-        */
+        General = {
+          GreeterEnvironment = lib.concatStringsSep "," [
+            "QT_WAYLAND_SHELL_INTEGRATION=layer-shell"
+            "XCURSOR_THEME=Bibata-Original-Classic"
+            "XCURSOR_SIZE=24"
+            "XCURSOR_PATH=/run/current-system/sw/share/icons"
+          ];
+        };
         Wayland = {
-          CompositorCommand = "kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1";
+          # Removed --drm; let KWin auto-detect the backend for hybrid setups
+          CompositorCommand = "kwin_wayland --no-lockscreen --no-global-shortcuts --locale1";
         };
       };
     };
