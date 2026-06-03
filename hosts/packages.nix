@@ -244,7 +244,7 @@
     kdePackages.kleopatra
     kdePackages.kdenetwork-filesharing
     kdePackages.discover
-    ace-of-penguins
+    #ace-of-penguins
 
     gnome-calendar
     gnome-weather
