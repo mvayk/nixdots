@@ -4,7 +4,7 @@
 }:
 {
   # [[ -f /etc/nixos/home/features/zsh/.p10k.zsh && ! -f ~/.p10k.zsh ]] && ln -s /etc/nixos/home/features/zsh/.p10k.zsh ~/.p10k.zsh
-  home.file.".p10k.zsh".source = ./zsh/.p10k.zsh;
+  ### home.file.".p10k.zsh".source = ./zsh/.p10k.zsh;
 
   programs.zsh = {
     enable = true;
@@ -29,11 +29,11 @@
     };
 
     plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
+      # {
+      #   name = "powerlevel10k";
+      #   src = pkgs.zsh-powerlevel10k;
+      #   file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      # }
       {
         name = "you-should-use";
         src = pkgs.zsh-you-should-use;
