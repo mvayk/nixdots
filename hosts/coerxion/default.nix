@@ -9,16 +9,16 @@
   boot.initrd.availableKernelModules = [ "i915" ];
 
   services.xserver.videoDrivers = [
-      "modesetting"
-      "nvidia"
-      "intel"
+    "modesetting"
+    "nvidia"
+    "intel"
   ];
 
   environment.sessionVariables = {
-      __NV_PRIME_RENDER_OFFLOAD = "1";
-      __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      __VK_LAYER_NV_optimus = "NVIDIA_only";
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+    __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    __VK_LAYER_NV_optimus = "NVIDIA_only";
   };
 
   hardware.nvidia = {
@@ -26,20 +26,20 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     open = false;
     nvidiaSettings = true;
-	powerManagement.enable = true;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
 
     prime = {
-        offload = {
-            enable = true;
-            enableOffloadCmd = true;
-        };
-        sync = {
-            enable = false;
-        };
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      sync = {
+        enable = false;
+      };
 
-	intelBusId  = "PCI:0:2:0";
-	nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
   };
 

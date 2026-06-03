@@ -193,7 +193,7 @@
         coerxion-hyprland-noctalia-glass = mkHost {
           machine = "coerxion";
           de = "hyprland";
-          theme = "noctalia";
+          theme = "noctalia-glass";
         };
         coerxion-hyprland-blackmetal = mkHost {
           machine = "coerxion";
