@@ -73,12 +73,12 @@
         2>/dev/null)
     '';
 
+    # if [[ -z "$TMUX" ]]; then
+    #   tmux attach 2>/dev/null || tmux new-session
+    # fi
     initContent = ''
       if [[ -n "$TMUX" ]]; then
         export TERM="tmux-256color"
-      fi
-      if [[ -z "$TMUX" ]]; then
-        tmux attach 2>/dev/null || tmux new-session
       fi
 
       bindkey '^[[13;2u' autosuggest-accept

@@ -1,67 +1,42 @@
 { ... }:
 {
-  xdg.configFile."fastfetch/config.jsonc".text = builtins.toJSON {
-    "$schema" =
-      "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
-
-    logo = {
-      source = "none";
-      padding = {
-        top = 1;
-        right = 4;
-      };
-    };
-
-    display.separator = " ";
-
-    modules = [
-      "break"
-      "break"
-      "break"
-      "break"
-      {
-        type = "title";
-        keyWidth = 10;
-      }
-      "break"
-      {
-        type = "os";
-        key = "os     :";
-        keyColor = "33";
-      }
-      {
-        type = "kernel";
-        key = "kernel :";
-        keyColor = "33";
-      }
-      {
-        type = "packages";
-        key = "built  :";
-        keyColor = "33";
-      }
-      {
-        type = "shell";
-        key = "shell  :";
-        keyColor = "33";
-      }
-      {
-        type = "terminal";
-        key = "term   :";
-        keyColor = "33";
-      }
-      {
-        type = "wm";
-        key = "wm     :";
-        keyColor = "33";
-      }
-      {
-        type = "uptime";
-        key = "uptime :";
-        keyColor = "33";
-      }
-      "break"
-      "colors"
-      "break"
-    ];
-  };
+  xdg.configFile."fastfetch/config.jsonc".text = ''
+    {
+      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+      "logo": {
+        "type": "kitty",
+        "source": "/etc/nixos/home/features/fastfetch/uruha_rushia_render_jmsg7.png",
+        "height": 12,
+        "padding": {
+          "top": 2,
+          "right": 5,
+          "left": 3
+        }
+      },
+      "display": {
+        "separator": "  ",
+        "color": "white"
+      },
+      "modules": [
+        "break",
+        { "type": "custom", "key": "╭─────────────────────────────────────────╮" },
+        { "type": "custom", "key": "│                                         │" },
+        { "type": "os",      "key": "│  OS           ", "format": "{pretty-name>22}  │" },
+        { "type": "command", "key": "│  Kernel       ", "text": "uname -r | cut -d '-' -f1", "format": "{>22}  │" },
+        { "type": "command", "key": "│  Uptime       ", "text": "uptime -p | sed -E 's/up //; s/ days?/d/g; s/ hours?/h/g; s/ minutes?/m/g'", "format": "{>22}  │" },
+        { "type": "shell",   "key": "│  Shell        ", "format": "{pretty-name>22}  │" },
+        { "type": "command", "key": "│  WM           ", "text": "echo $XDG_CURRENT_DESKTOP", "format": "{>22}  │" },
+        { "type": "disk",    "key": "│  OS Age                      ", "folders": "/", "format": "{days} days  │" },
+        { "type": "command", "key": "│  Ram          ", "text": "free -m | awk 'NR==2{printf \"%.2f / %.2f GiB\",$3/1024,$2/1024}'", "format": "{>22}  │" },
+        { "type": "command", "key": "│  CPU          ", "text": "lscpu | grep 'Model name' | sed -E 's/.*(i[0-9]-[0-9A-Za-z]+).*/\\1/'", "format": "{>22}  │" },
+        { "type": "command", "key": "│  Disk         ", "text": "df -h --output=size,used,fstype / | awk 'NR==2 {gsub(/G/,\"\",$1); gsub(/G/,\"\",$2); print $2 \" / \" $1 \" GiB - \" $3}'", "format": "{>22}  │" },
+        { "type": "packages", "key": "│  Packages     ", "format": "{all>22}  │" },
+        { "type": "command", "key": "│  Owner        ", "text": "echo $USER | tr '[:lower:]' '[:upper:]'", "format": "{>22}  │" },
+        { "type": "custom",  "key": "│                                         │" },
+        { "type": "command", "key": " ", "shell": "/bin/bash", "text": "echo '│     WE ARE LIBRE ! ── 我々は自由だ！    │'", "format": "{1}" },
+        { "type": "custom",  "key": "╰─────────────────────────────────────────╯" },
+        "break"
+      ]
+    }
+  '';
 }
