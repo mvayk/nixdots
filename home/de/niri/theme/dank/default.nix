@@ -184,9 +184,8 @@ in
     TERMINAL = "ghostty";
   };
 
-  home.packages = with pkgs; [
-    bibata-cursors
-    matugen.packages.${pkgs.system}.default
+  home.packages = [
+    pkgs.bibata-cursors
     quickshell.packages.${pkgs.system}.default
   ];
 }

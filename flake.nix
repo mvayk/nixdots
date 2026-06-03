@@ -147,7 +147,7 @@
                   lib.optionals
                     (
                       theme == "noctalia"
-                      || theme == "dms"
+                      || theme == "dank"
                       || theme == "noctalia-glass"
                       || theme == "custom"
                       || theme == "blackmetal"
@@ -205,6 +205,11 @@
           de = "hyprland";
           theme = "dank";
         };
+        flandre-hyprland-dank = mkHost {
+          machine = "flandre";
+          de = "hyprland";
+          theme = "dank";
+        };
 
         flandre-hyprland-caelestia = mkHost {
           machine = "flandre";
@@ -221,10 +226,10 @@
           de = "niri";
           theme = "noctalia-glass";
         };
-        flandre-niri-dms = mkHost {
+        flandre-niri-dank = mkHost {
           machine = "flandre";
           de = "niri";
-          theme = "dms";
+          theme = "dank";
         };
         flandre-niri-blackmetal = mkHost {
           machine = "flandre";
