@@ -5,7 +5,7 @@
 {
 
   imports = [
-    ../modules/nixos/sddm.nix
+    ../modules/nixos/ly.nix
     #../modules/nixos/sops.nix
     ./programs.nix
     ./packages.nix
