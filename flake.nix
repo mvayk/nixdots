@@ -207,6 +207,11 @@
           de = "hyprland";
           theme = "blackmetal";
         };
+        coerxion-hyprland-caelestia = mkHost {
+          machine = "coerxion";
+          de = "hyprland";
+          theme = "caelestia";
+        };
         coerxion-hyprland-dank = mkHost {
           machine = "coerxion";
           de = "hyprland";
