@@ -5,23 +5,6 @@
   theme,
   ...
 }:
-
-let
-  toggleGaps = pkgs.writeShellScriptBin "toggle-gaps" ''
-    ROUNDING=$(hyprctl getoption decoration:rounding | grep "int:" | awk '{print $2}')
-    if [ "$ROUNDING" -eq 0 ]; then
-      hyprctl keyword general:gaps_out 8
-      hyprctl keyword general:gaps_in 2
-      hyprctl keyword decoration:rounding 10
-      hyprctl keyword decoration:rounding_power 2
-    else
-      hyprctl keyword general:gaps_out 0
-      hyprctl keyword general:gaps_in 0
-      hyprctl keyword decoration:rounding 0
-      hyprctl keyword decoration:rounding_power 1
-    fi
-  '';
-in
 {
   imports = [
     ./theme/${theme}/default.nix
@@ -49,6 +32,7 @@ in
         follow_mouse = 1;
         sensitivity = 3;
         touchpad.natural_scroll = false;
+        touchpad.scroll_factor = 0.5;
       };
 
       dwindle = {
@@ -75,7 +59,6 @@ in
         "$mainMod, P, pseudo,"
         #"$mainMod, N, togglesplit,"
         "$mainMod, F, fullscreen"
-        "$mainMod, G, exec, ${toggleGaps}/bin/toggle-gaps"
         "$mainMod, Q, killactive,"
         ", End, exec, grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
 

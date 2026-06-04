@@ -36,6 +36,7 @@
         touchpad = {
           natural-scroll = false;
           tap = true;
+          scroll-factor = 0.5;
         };
       };
 
