@@ -14,7 +14,7 @@
       window-decoration = false;
       background-opacity = 1.0;
       cursor-style = "block";
-      theme = "TokyoNight Moon";
+      theme = "TokyoNight";
       adjust-cell-height = "0%";
       window-padding-x = 10;
       window-padding-y = 10;

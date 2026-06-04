@@ -83,6 +83,16 @@ in
       spawn-at-startup = [
         {
           command = [
+            "awww-daemon"
+          ];
+        }
+        {
+          command = [
+            "awww img ~/Pictures/wallpapers/tokyonight.png"
+          ];
+        }
+        {
+          command = [
             "nm-applet"
           ];
         }
@@ -116,12 +126,7 @@ in
 
       layer-rules = [
         {
-          matches = [
-            {
-              namespace = "^noctalia-wallpaper";
-            }
-          ];
-          place-within-backdrop = false;
+          place-within-backdrop = true;
         }
       ];
 
