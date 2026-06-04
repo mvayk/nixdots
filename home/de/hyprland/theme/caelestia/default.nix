@@ -44,6 +44,8 @@ in
         layout = "dwindle";
       };
 
+      source = "scheme/current.conf";
+
       decoration = {
         rounding = 20;
         rounding_power = 2;

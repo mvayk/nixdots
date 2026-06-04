@@ -13,6 +13,7 @@
       confirm-close-surface = false;
       window-decoration = false;
       background-opacity = 1.0;
+      theme = "Vague";
       cursor-style = "block";
       adjust-cell-height = "0%";
       window-padding-x = 10;
