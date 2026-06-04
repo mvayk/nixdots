@@ -238,6 +238,11 @@
           de = "niri";
           theme = "noctalia-glass";
         };
+        coerxion-niri-dank = mkHost {
+          machine = "coerxion";
+          de = "niri";
+          theme = "dank";
+        };
         flandre-niri-dank = mkHost {
           machine = "flandre";
           de = "niri";
