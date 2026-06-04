@@ -3,6 +3,7 @@
   pkgs-stable,
   zen-browser,
   spicetify-nix,
+  helium,
   ...
 }:
 {
@@ -48,6 +49,7 @@
     texlive.combined.scheme-medium
 
     zen-browser.packages.${pkgs.system}.beta
+    helium.packages.${system}.default
     chromium
     qutebrowser
 

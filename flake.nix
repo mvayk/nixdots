@@ -51,6 +51,10 @@
       url = "github:0xc000022070/zen-browser-flake/beta";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -80,6 +84,7 @@
       future-hyprcursor,
       quickshell,
       zen-browser,
+      helium,
       spicetify-nix,
       niri,
       ...
@@ -101,6 +106,7 @@
           future-hyprcursor
           # plasma-manager
           zen-browser
+          helium
           spicetify-nix
           ;
       };
