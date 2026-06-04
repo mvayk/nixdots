@@ -32,7 +32,7 @@
         follow_mouse = 1;
         sensitivity = 3;
         touchpad.natural_scroll = false;
-        touchpad.scroll_factor = 0.5;
+        touchpad.scroll_factor = 0.25;
       };
 
       dwindle = {
@@ -54,7 +54,7 @@
         "$mainMod, E, exec, dolphin"
         "$mainMod, T, exec, ghostty"
         #"$mainMod, W, exec, ${if machine == "coerxion" then "nvidia-offload firefox" else "firefox"}"
-        "$mainMod, W, exec, zen-beta"
+        "$mainMod, W, exec, helium"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
         #"$mainMod, N, togglesplit,"

@@ -6,6 +6,7 @@
 
   imports = [
     ../modules/nixos/ly.nix
+    ../modules/nixos/dank.nix
     #../modules/nixos/sops.nix
     ./programs.nix
     ./packages.nix

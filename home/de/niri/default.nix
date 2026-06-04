@@ -36,7 +36,7 @@
         touchpad = {
           natural-scroll = false;
           tap = true;
-          scroll-factor = 0.5;
+          scroll-factor = 0.25;
         };
       };
 
@@ -99,7 +99,7 @@
           "ghostty"
         ];
         "Mod+W".action.spawn = [
-          "zen-beta"
+          "helium"
         ];
         "Mod+E".action.spawn = [
           "dolphin"

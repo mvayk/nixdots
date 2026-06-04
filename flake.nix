@@ -157,6 +157,7 @@
                       || theme == "noctalia-glass"
                       || theme == "custom"
                       || theme == "blackmetal"
+                      || theme == "wayle"
                     )
                     [
                       niri.homeModules.niri
@@ -210,6 +211,11 @@
           machine = "coerxion";
           de = "hyprland";
           theme = "dank";
+        };
+        coerxion-niri-wayle = mkHost {
+          machine = "coerxion";
+          de = "niri";
+          theme = "wayle";
         };
         flandre-hyprland-dank = mkHost {
           machine = "flandre";
