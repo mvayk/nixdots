@@ -33,6 +33,10 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     /*
       plasma-manager = {
         url = "github:nix-community/plasma-manager";
@@ -80,6 +84,7 @@
       sops-nix,
       noctalia,
       caelestia-shell,
+      caelestia-cli,
       # plasma-manager,
       future-hyprcursor,
       quickshell,
@@ -102,6 +107,7 @@
           pkgs-stable
           noctalia
           caelestia-shell
+          caelestia-cli
           quickshell
           future-hyprcursor
           # plasma-manager
@@ -148,6 +154,7 @@
                 };
                 sharedModules = [
                   #plasma-manager.homeModules.plasma-manager
+                  caelestia-shell.homeManagerModules.default
                 ]
                 ++
                   lib.optionals

@@ -31,7 +31,6 @@ in
       ];
 
       exec-once = [
-        "caelestia-shell"
         "nm-applet"
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
@@ -107,9 +106,4 @@ in
   home.sessionVariables = {
     TERMINAL = "ghostty";
   };
-
-  home.packages = [
-    caelestia-shell.packages.${pkgs.system}.default
-    quickshell.packages.${pkgs.system}.default
-  ];
 }
