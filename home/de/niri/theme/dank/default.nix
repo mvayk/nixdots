@@ -121,12 +121,7 @@ in
 
       layer-rules = [
         {
-          matches = [
-            {
-              namespace = "^noctalia-wallpaper";
-            }
-          ];
-          place-within-backdrop = false;
+          place-within-backdrop = true;
         }
       ];
 

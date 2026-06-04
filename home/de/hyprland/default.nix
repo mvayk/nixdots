@@ -138,7 +138,4 @@
       ];
     };
   };
-
-  home.packages = with pkgs; [
-  ];
 }
