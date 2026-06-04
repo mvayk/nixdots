@@ -17,4 +17,8 @@
       };
     };
   };
+
+  home.packages = with pkgs; [
+    awww
+  ];
 }
