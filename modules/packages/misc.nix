@@ -1,0 +1,31 @@
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    qmk
+    via
+    networkmanagerapplet
+    inetutils
+    dnsmasq
+    qbittorrent
+    catgirl
+    scrcpy
+    android-tools
+    usbutils
+    acpi
+    inxi
+    sysstat
+    lm_sensors
+    brightnessctl
+    pamixer
+    iw
+    pulseaudio
+    pavucontrol
+    libsecret
+    pinentry-gnome3
+    openrgb-with-all-plugins
+    gparted
+    samba
+    cifs-utils
+    jq
+  ];
+}

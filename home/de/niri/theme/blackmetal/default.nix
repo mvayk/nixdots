@@ -4,7 +4,7 @@
   ...
 }:
 let
-  dir = ../../../../presets/noctalia-glass;
+  dir = ../../../../presets/blackmetal;
   fileNames = builtins.attrNames (builtins.readDir dir);
   nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
 in

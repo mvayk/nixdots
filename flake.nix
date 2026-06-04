@@ -127,10 +127,10 @@
           };
           modules = [
             { nixpkgs.hostPlatform = hostSystem; }
-            ./hosts/common.nix
+            ./modules/core.nix
             ./hosts/${machine}/default.nix
             ./hosts/${machine}/hardware.nix
-            ./modules/nixos/de/${de}.nix
+            ./modules/de/${de}.nix
             sops-nix.nixosModules.sops
             spicetify-nix.nixosModules.default
             home-manager.nixosModules.home-manager

@@ -5,11 +5,11 @@
 {
 
   imports = [
-    ../modules/nixos/ly.nix
-    ../modules/nixos/dank.nix
-    #../modules/nixos/sops.nix
+    ../modules/features/ly.nix
+    ../modules/features/dank.nix
     ./programs.nix
     ./packages.nix
+    #../modules/sops.nix
   ];
 
   boot = {
@@ -74,19 +74,6 @@
       options = "caps:escape_shifted_capslock";
     };
   };
-
-  /*
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      extraPackages = with pkgs.kdePackages; [
-        qtsvg
-        qtmultimedia
-        qtvirtualkeyboard
-      ];
-      theme = "sddm-astronaut-theme";
-    };
-  */
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
