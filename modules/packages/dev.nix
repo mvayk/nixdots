@@ -35,6 +35,8 @@
     lua
     luajit
     luarocks
+    qt6.qtdeclarative
+    qt6.qttools
     raylib
     libGL
     libGLU
@@ -82,5 +84,6 @@
     libpulseaudio
     alsa-lib
     wayland
+    kdePackages.qtdeclarative
   ];
 }

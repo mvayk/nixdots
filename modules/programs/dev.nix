@@ -13,6 +13,9 @@
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
+        qt6.qtdeclarative
+        qt6.qttools
+        kdePackages.qtdeclarative
         stdenv.cc.cc.lib
         zlib
         openssl

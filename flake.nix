@@ -273,6 +273,11 @@
           de = "niri";
           theme = "blackmetal";
         };
+        coerxion-niri-default = mkHost {
+          machine = "coerxion";
+          de = "niri";
+          theme = "default";
+        };
         flandre-niri-default = mkHost {
           machine = "flandre";
           de = "niri";
