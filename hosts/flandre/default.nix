@@ -4,6 +4,10 @@
   ...
 }:
 {
+  imports = [
+    ../../modules/core.nix
+  ];
+
   networking.hostName = "flandre";
 
   services.xserver.videoDrivers = [

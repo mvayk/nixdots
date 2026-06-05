@@ -133,7 +133,6 @@
           };
           modules = [
             { nixpkgs.hostPlatform = hostSystem; }
-            ./modules/core.nix
             ./hosts/${machine}/default.nix
             ./hosts/${machine}/hardware.nix
             ./modules/de/${de}.nix

@@ -4,6 +4,10 @@
   ...
 }:
 {
+  imports = [
+    ../../modules/core.nix
+  ];
+
   networking.hostName = "coerxion";
 
   boot.initrd.availableKernelModules = [ "i915" ];
