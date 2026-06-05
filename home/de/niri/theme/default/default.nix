@@ -1,6 +1,10 @@
-{ pkgs, quickshell, ... }:
+{
+  pkgs,
+  mshell,
+  ...
+}:
 {
   home.packages = [
-    quickshell.packages.${pkgs.system}.default
+    mshell.packages.${pkgs.system}.default
   ];
 }

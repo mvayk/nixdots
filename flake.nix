@@ -22,13 +22,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mshell = {
-      url = "github:mvayk/mshell";
-      flake = false;
-    };
-    qml-niri = {
-      url = "github:imiric/qml-niri/main";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
+      #url = "github:mvayk/mshell";
+      url = "path:/home/mvayk/dev/mshell";
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
@@ -101,6 +97,7 @@
       helium,
       spicetify-nix,
       niri,
+      mshell,
       ...
     }@inputs:
     let
@@ -123,6 +120,7 @@
           zen-browser
           helium
           spicetify-nix
+          mshell
           ;
       };
       mkHost =
@@ -163,6 +161,7 @@
                 sharedModules = [
                   #plasma-manager.homeModules.plasma-manager
                   caelestia-shell.homeManagerModules.default
+                  mshell.homeManagerModules.default
                 ]
                 ++
                   lib.optionals
