@@ -21,6 +21,15 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mshell = {
+      url = "github:mvayk/mshell";
+      flake = false;
+    };
+    qml-niri = {
+      url = "github:imiric/qml-niri/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
+    };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -161,6 +170,7 @@
                       theme == "noctalia"
                       || theme == "dank"
                       || theme == "noctalia-glass"
+                      || theme == "default"
                       || theme == "custom"
                       || theme == "blackmetal"
                       || theme == "wayle"
@@ -263,6 +273,11 @@
           machine = "flandre";
           de = "niri";
           theme = "blackmetal";
+        };
+        flandre-niri-default = mkHost {
+          machine = "flandre";
+          de = "niri";
+          theme = "default";
         };
         flandre-kde = mkHost {
           machine = "flandre";
