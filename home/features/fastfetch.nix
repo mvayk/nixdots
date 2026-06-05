@@ -43,16 +43,19 @@
           {
               "type": "os",
               "key": " 󰌢  DISTRO   ",
-              "format": "{2}"
+              "format": "{2}",
+              "output": { "color": "red" }
           },
           {
               "type": "kernel",
               "key": " 󰚀  KERNEL   ",
-              "format": "{2}"
+              "format": "{2}",
+              "output": { "color": "red" }
           },
           {
               "type": "uptime",
-              "key": " 󱎫  ACTIVE   "
+              "key": " 󱎫  ACTIVE   ",
+              "output": { "color": "red" }
           },
           {
               "type": "custom",
@@ -62,23 +65,27 @@
           {
               "type": "cpu",
               "key": " 󰻠  CPU      ",
-              "format": "{1} @ {6}"
+              "format": "{1} @ {6}",
+              "output": { "color": "red" }
           },
           {
               "type": "gpu",
               "key": " 󰢮  GPU      ",
-              "format": "{2}"
+              "format": "{2}",
+              "output": { "color": "red" }
           },
           {
               "type": "memory",
               "key": " 󰍛  MEMORY   ",
-              "format": "{1} / {2} ({3})"
+              "format": "{1} / {2} ({3})",
+              "output": { "color": "red" }
           },
           {
               "type": "disk",
               "key": " 󰋊  STORAGE  ",
               "format": "{1} / {2} ({3})",
-              "folders": "/"
+              "folders": "/",
+              "output": { "color": "red" }
           },
           {
               "type": "custom",
@@ -88,27 +95,24 @@
           {
               "type": "shell",
               "key": "   SHELL    ",
-              "format": "{1} {4}"
+              "format": "{1} {4}",
+              "output": { "color": "red" }
           },
           {
               "type": "wm",
               "key": " 󱂬  WM       ",
-              "format": "{1}"
+              "format": "{1}",
+              "output": { "color": "red" }
           },
           {
               "type": "terminal",
-              "key": "   CONSOLE  "
+              "key": "   CONSOLE  ",
+              "output": { "color": "red" }
           },
           {
               "type": "custom",
               "format": "{$1}",
               "output": { "color": "red" }
-          },
-          {
-              "type": "command",
-              "key": " 󱐋  BATTERY  ",
-              "text": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'",
-              "format": "{}"
           },
           {
               "type": "break"

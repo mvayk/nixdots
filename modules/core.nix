@@ -134,7 +134,7 @@
 
   services = {
     flatpak.enable = true;
-    fwupd.enable = true;
+    fwupd.enable = false;
     gvfs.enable = true;
     upower.enable = true;
     printing.enable = true;
