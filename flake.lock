@@ -242,8 +242,8 @@
         "quickshell": "quickshell_4"
       },
       "locked": {
-        "lastModified": 1780703869,
-        "narHash": "sha256-us1Lh+ZA1btjHrLL2WQWo7JpukkqmiFhyszQozwf3o8=",
+        "lastModified": 1780752186,
+        "narHash": "sha256-nNmOQgfkf3oElC5qsKMf7zZiYtqtY3WTaeRgfgqTno0=",
         "path": "/home/mvayk/dev/mshell",
         "type": "path"
       },

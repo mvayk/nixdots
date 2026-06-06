@@ -15,12 +15,21 @@ in
   home.pointerCursor = {
     package = pkgs.apple-cursor;
     name = "macOS";
-    size = 36;
+    size = 48;
   };
 
   programs.niri = {
     package = pkgs.niri;
     settings = {
+      environment = {
+        XCURSOR_THEME = "macOS";
+        XCURSOR_SIZE = "48";
+      };
+
+      cursor = {
+        theme = "macOS";
+        size = 48;
+      };
       layout = {
         gaps = 12;
         center-focused-column = "never";
@@ -82,6 +91,11 @@ in
       spawn-at-startup = [
         {
           command = [
+            "awww-daemon"
+          ];
+        }
+        {
+          command = [
             "qs"
           ];
         }
@@ -100,6 +114,7 @@ in
   };
 
   home.packages = [
+    pkgs.awww
     pkgs.wallust
     mshell.packages.${pkgs.system}.default
   ];
