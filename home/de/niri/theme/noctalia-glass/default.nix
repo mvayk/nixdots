@@ -36,23 +36,6 @@ in
         gaps = 14;
         center-focused-column = "never";
         background-color = "transparent";
-
-        preset-column-widths = [
-          {
-            proportion = 0.333333;
-          }
-          {
-            proportion = 0.5;
-          }
-          {
-            proportion = 0.666667;
-          }
-        ];
-
-        default-column-width = {
-          proportion = 0.5;
-        };
-
         focus-ring = {
           enable = false;
           width = 2;

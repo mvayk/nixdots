@@ -21,6 +21,24 @@
         XDG_CURRENT_DESKTOP = "niri";
       };
 
+      layout = {
+        preset-column-widths = [
+          {
+            proportion = 0.5;
+          }
+          {
+            proportion = 0.333333;
+          }
+          {
+            proportion = 0.666667;
+          }
+        ];
+
+        default-column-width = {
+          proportion = 0.5;
+        };
+      };
+
       input = {
         focus-follows-mouse.enable = true;
         keyboard = {
