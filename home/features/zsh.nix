@@ -23,7 +23,6 @@
         "fzf"
         "colored-man-pages"
         "command-not-found"
-        "history-substring-search"
       ];
       theme = "";
     };
@@ -89,9 +88,8 @@
       [[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
 
       edit() { neovide "$@" & }
-
-      eval "$(starship init zsh)"
     '';
+    #eval "$(starship init zsh)"
     #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
   };
 }
