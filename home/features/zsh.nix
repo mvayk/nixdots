@@ -58,6 +58,8 @@
       #nix-update = "pushd /etc/nixos >/dev/null && nix flake update && popd >/dev/null";
       nix-clean = "sudo nix-collect-garbage -d";
 
+      ns = "niri msg action spawn --";
+
       cat = "bat --style=full";
       grep = "rg";
       top = "btm";
@@ -88,7 +90,6 @@
       [[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
 
       edit() { neovide "$@" & }
-      starship preset pure-preset -o ~/.config/starship.toml
     '';
     #eval "$(starship init zsh)"
     #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
