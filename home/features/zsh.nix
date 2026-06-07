@@ -88,6 +88,7 @@
       [[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
 
       edit() { neovide "$@" & }
+      starship preset pure-preset -o ~/.config/starship.toml
     '';
     #eval "$(starship init zsh)"
     #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

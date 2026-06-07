@@ -31,7 +31,7 @@ in
         size = 48;
       };
       layout = {
-        gaps = 12;
+        gaps = 18;
         center-focused-column = "never";
         background-color = "transparent";
 
@@ -50,13 +50,13 @@ in
         };
 
         shadow = {
-          enable = false;
+          enable = true;
           offset = {
-            x = 3;
-            y = 4;
+            x = 0;
+            y = 0;
           };
           softness = 18;
-          color = "#00000055";
+          color = "#FFFFFF33";
         };
       };
 
@@ -64,10 +64,10 @@ in
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 10.0;
-            top-right = 10.0;
-            bottom-left = 10.0;
-            bottom-right = 10.0;
+            top-left = 20.0;
+            top-right = 20.0;
+            bottom-left = 20.0;
+            bottom-right = 20.0;
           };
           clip-to-geometry = true;
         }
