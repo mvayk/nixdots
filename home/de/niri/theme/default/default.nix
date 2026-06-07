@@ -87,6 +87,17 @@ in
         }
       ];
 
+      binds = {
+        "Mod+A".action.spawn = [
+          "qs"
+          "ipc"
+          "call"
+          "trigger"
+          "handle"
+          "launcher"
+        ];
+      };
+
       animations.slowdown = 1.0;
       spawn-at-startup = [
         {
@@ -115,7 +126,6 @@ in
 
   home.packages = [
     pkgs.awww
-    pkgs.wallust
     mshell.packages.${pkgs.system}.default
   ];
 }
