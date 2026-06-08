@@ -35,5 +35,6 @@
     linux-wallpaperengine
     kdePackages.kmines
     kdePackages.kpat
+    pcsx2
   ];
 }

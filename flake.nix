@@ -97,7 +97,7 @@
       helium,
       spicetify-nix,
       niri,
-      mshell,
+      #mshell,
       ...
     }@inputs:
     let
@@ -120,7 +120,7 @@
           zen-browser
           helium
           spicetify-nix
-          mshell
+          #mshell
           ;
       };
       mkHost =
@@ -161,7 +161,7 @@
                 sharedModules = [
                   #plasma-manager.homeModules.plasma-manager
                   caelestia-shell.homeManagerModules.default
-                  mshell.homeManagerModules.default
+                  #mshell.homeManagerModules.default
                 ]
                 ++
                   lib.optionals
@@ -169,6 +169,7 @@
                       theme == "noctalia"
                       || theme == "dank"
                       || theme == "noctalia-glass"
+                      || theme == "noctalia"
                       || theme == "default"
                       || theme == "custom"
                       || theme == "blackmetal"
