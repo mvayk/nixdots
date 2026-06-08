@@ -388,7 +388,7 @@
         enableClipboardChips = true;
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
-        position = "center";
+        position = "top_center";
         pinnedApps = [ ];
         sortByMostUsed = true;
         terminalCommand = "xterm -e";
@@ -484,20 +484,20 @@
       };
 
       dock = {
-        enabled = false;
+        enabled = true;
         position = "bottom";
-        displayMode = "auto_hide";
+        displayMode = "exclusive";
         dockType = "floating";
         backgroundOpacity = 0;
         floatingRatio = 1;
-        size = 1.7;
+        size = 1.0;
         onlySameOutput = false;
         monitors = [ ];
         pinnedApps = [ ];
         colorizeIcons = false;
         showLauncherIcon = true;
         launcherPosition = "end";
-        launcherUseDistroLogo = false;
+        launcherUseDistroLogo = true;
         launcherIcon = "";
         launcherIconColor = "none";
         pinnedStatic = false;
@@ -509,7 +509,7 @@
         deadOpacity = 0.6;
         animationSpeed = 1.6;
         sitOnFrame = false;
-        showDockIndicator = false;
+        showDockIndicator = true;
         indicatorThickness = 3;
         indicatorColor = "primary";
         indicatorOpacity = 0.6;

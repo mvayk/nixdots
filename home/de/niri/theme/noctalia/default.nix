@@ -32,7 +32,7 @@ in
         size = 48;
       };
       layout = {
-        gaps = 18;
+        gaps = 8;
         center-focused-column = "never";
         background-color = "transparent";
 
