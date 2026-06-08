@@ -68,6 +68,7 @@
 
   services.xserver = {
     enable = true;
+    desktopManager.xterm.enable = false;
     xkb = {
       layout = "au";
       variant = "";
@@ -151,6 +152,15 @@
     emacs = {
       enable = true;
       package = pkgs.emacs;
+    };
+  };
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
     };
   };
 

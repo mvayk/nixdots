@@ -13,6 +13,6 @@
       "plugdev"
       "input"
     ];
-    hashedPasswordFile = "/run/secrets/mvayk-password";
+    #hashedPasswordFile = "/run/secrets/mvayk-password";
   };
 }
