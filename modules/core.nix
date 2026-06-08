@@ -171,5 +171,6 @@
     dev.enable = true;
   };
 
+  # hey dont touch remember
   system.stateVersion = "25.05";
 }

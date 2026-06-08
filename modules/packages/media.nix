@@ -15,7 +15,6 @@
     zathura
     foliate
     texlive.combined.scheme-medium
-
     ffmpegthumbnailer
     poppler-utils
   ];

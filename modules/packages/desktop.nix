@@ -9,13 +9,10 @@
     ghostty
     zen-browser.packages.${pkgs.system}.beta
     helium.packages.${pkgs.system}.default
-    chromium
-    qutebrowser
     vesktop
     kdePackages.dolphin
     kdePackages.kio
     kdePackages.kio-extras
-    nautilus
     kdePackages.ark
     unar
     unzip
@@ -26,11 +23,8 @@
     kdePackages.discover
     gnome-calendar
     gnome-weather
-    epiphany
     gnome-keyring
     seahorse
-    trilium-desktop
-    rnote
     qalculate-qt
     alarm-clock-applet
     mission-center
