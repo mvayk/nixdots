@@ -35,8 +35,6 @@
     lua
     luajit
     luarocks
-    qt6.qtdeclarative
-    qt6.qttools
     raylib
     libGL
     libGLU
@@ -49,6 +47,9 @@
     libXrender
     libXtst
     libXxf86vm
+    libXext
+    libXcomposite
+    libxcb
     wayland
     wayland-protocols
     libxkbcommon
@@ -56,34 +57,19 @@
     glib
     libfaketime
     ispell
-    gnumake
-    pkg-config
-    flex
-    bison
     freetype
     freetype.dev
     fontconfig
-    libXext
-    libXrandr
-    libXinerama
-    libXcomposite
-    libXcursor
-    libxkbcommon
-    libGL
-    libGLU
-    libxkbcommon
-    libxcb
-    libX11
-    libXrandr
-    libXinerama
-    libXcursor
-    libXxf86vm
     SDL2
     vulkan-loader
     gnutls
     libpulseaudio
     alsa-lib
-    wayland
+    brotli
+    unixodbc
+    qt6.qtbase
+    qt6.qtdeclarative
+    qt6.qttools
     kdePackages.qtdeclarative
   ];
 }

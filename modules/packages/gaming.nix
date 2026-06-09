@@ -36,5 +36,6 @@
     kdePackages.kmines
     kdePackages.kpat
     pcsx2
+    retroarch
   ];
 }

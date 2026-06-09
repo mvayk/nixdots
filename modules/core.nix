@@ -121,6 +121,14 @@
   environment.etc."xdg/menus/applications.menu".source =
     "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
+  environment.sessionVariables = {
+    CPATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
+    CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
+    LIBRARY_PATH = "${pkgs.gcc.cc.lib}/lib:${pkgs.glibc}/lib";
+    LD_LIBRARY_PATH = "${pkgs.gcc.cc.lib}/lib:${pkgs.glibc}/lib";
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+  };
+
   services.udev.packages = [
     pkgs.via
   ];

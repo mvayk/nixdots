@@ -14,22 +14,21 @@ in
   imports = map (n: dir + "/${n}") nixFiles ++ [ ];
 
   home.pointerCursor = {
-    package = pkgs.apple-cursor;
-    name = "macOS";
-    size = 48;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
   };
 
   programs.niri = {
-    package = pkgs.niri;
     settings = {
       environment = {
-        XCURSOR_THEME = "macOS";
-        XCURSOR_SIZE = "48";
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24";
       };
 
       cursor = {
-        theme = "macOS";
-        size = 48;
+        theme = "Bibata-Modern-Ice";
+        size = 24;
       };
       layout = {
         gaps = 8;

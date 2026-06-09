@@ -9,6 +9,7 @@
     ghostty
     zen-browser.packages.${pkgs.system}.beta
     helium.packages.${pkgs.system}.default
+    chromium
     vesktop
     kdePackages.dolphin
     kdePackages.kio
@@ -28,5 +29,7 @@
     qalculate-qt
     alarm-clock-applet
     mission-center
+    calibre
+    kdePackages.okular
   ];
 }

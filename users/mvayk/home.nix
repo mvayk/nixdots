@@ -9,6 +9,7 @@
     ../../home/features/fish.nix
     ../../home/features/starship.nix
     ../../home/features/btop.nix
+    ../../home/features/tmux.nix
   ];
 
   home = {

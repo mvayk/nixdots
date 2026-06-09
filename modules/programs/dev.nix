@@ -13,9 +13,6 @@
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
-        qt6.qtdeclarative
-        qt6.qttools
-        kdePackages.qtdeclarative
         stdenv.cc.cc.lib
         zlib
         openssl
@@ -39,6 +36,7 @@
         wayland
         wayland-protocols
         libxkbcommon
+        libxcb
         libX11
         libXrandr
         libXi
@@ -46,39 +44,27 @@
         libXinerama
         libXrender
         libXtst
+        libXext
+        libXcomposite
+        libXxf86vm
         freetype
         freetype.dev
         fontconfig
         yad
-        libXxf86vm
         gnumake
-        pkg-config
         flex
         bison
-        freetype
-        freetype.dev
-        fontconfig
-        libXext
-        libXrandr
-        libXinerama
-        libXcomposite
-        libXcursor
-        libxkbcommon
-        libGL
-        libGLU
-        libxkbcommon
-        libxcb
-        libX11
-        libXrandr
-        libXinerama
-        libXcursor
-        libXxf86vm
         SDL2
         vulkan-loader
         gnutls
         libpulseaudio
         alsa-lib
-        wayland
+        brotli
+        unixodbc
+        qt6.qtbase
+        qt6.qtdeclarative
+        qt6.qttools
+        kdePackages.qtdeclarative
       ];
     };
   };
