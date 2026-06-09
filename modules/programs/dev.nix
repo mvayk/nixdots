@@ -20,6 +20,7 @@
         gcc
         clang
         clang-tools
+        glib
         glibc
         glibc.dev
         libgcc
