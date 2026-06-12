@@ -56,7 +56,7 @@
 
       #nix-rebuild = ''pushd /etc/nixos >/dev/null && sudo nixos-rebuild switch --flake ".#$(hostname)-$NIXOS_DE" && popd >/dev/null'';
       #nix-update = "pushd /etc/nixos >/dev/null && nix flake update && popd >/dev/null";
-      nix-clean = "sudo nix-collect-garbage -d";
+      nix-clean = "nix-env --delete-generations old && sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
 
       ns = "niri msg action spawn --";
 
