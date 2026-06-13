@@ -37,7 +37,7 @@
     openrgb-with-all-plugins
     # why cude take so long to build
     (llama-cpp.override {
-      cudaSupport = false;
+      cudaSupport = true;
     })
     wootility
     xppen_4

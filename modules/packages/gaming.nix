@@ -16,11 +16,12 @@
         }
       )
     */
-    (pkgs-stable.lutris.override {
-      extraPkgs = pkgs: [
-        gamemode
-      ];
-    })
+    # (pkgs-stable.lutris.override {
+    #   extraPkgs = pkgs: [
+    #     gamemode
+    #   ];
+    # })
+    lutris
     xdotool
     xwininfo
     mangohud
@@ -36,6 +37,6 @@
     kdePackages.kmines
     kdePackages.kpat
     pcsx2
-    retroarch-full
+    #retroarch-full
   ];
 }

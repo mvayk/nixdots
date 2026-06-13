@@ -61,11 +61,11 @@
       outputs =
         if machine == "flandre" then
           {
-            "HDMI-A-1" = {
+            "DP-2" = {
               mode = {
-                width = 1920;
-                height = 1080;
-                refresh = 60.0;
+                width = 2560;
+                height = 1440;
+                refresh = 240.001;
               };
               position = {
                 x = 0;
@@ -79,7 +79,7 @@
                 refresh = 240.001;
               };
               position = {
-                x = 1920;
+                x = 2560;
                 y = 0;
               };
             };
@@ -90,7 +90,7 @@
                 refresh = 240.001;
               };
               position = {
-                x = 4480;
+                x = 5120;
                 y = 0;
               };
             };
