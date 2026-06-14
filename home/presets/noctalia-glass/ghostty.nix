@@ -13,7 +13,7 @@
       window-padding-balance = true;
       confirm-close-surface = false;
       custom-shader-animation = "always";
-      theme = "dankcolors";
+      theme = "noctalia";
       custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
       background-opacity = 0.8;

@@ -16,7 +16,7 @@
         barType = "floating";
         position = "top";
         monitors = [ ];
-        density = "default";
+        density = "comfortable";
         showOutline = false;
         showCapsule = false;
         capsuleOpacity = 1;
@@ -25,10 +25,10 @@
         contentPadding = 10;
         fontScale = 1;
         enableExclusionZoneInset = true;
-        backgroundOpacity = 1;
-        useSeparateOpacity = false;
+        backgroundOpacity = 0;
+        useSeparateOpacity = true;
         marginVertical = 8;
-        marginHorizontal = 180;
+        marginHorizontal = 8;
         frameThickness = 8;
         frameRadius = 12;
         outerCorners = false;
@@ -43,6 +43,7 @@
             {
               colorizeDistroLogo = false;
               colorizeSystemIcon = "Primary";
+              colorizeSystemText = "none";
               customIconPath = "";
               enableColorization = true;
               icon = "noctalia";
@@ -94,31 +95,13 @@
             }
             {
               colorizeSystemIcon = "none";
+              colorizeSystemText = "none";
               customIconPath = "";
               enableColorization = false;
               icon = "rocket";
               iconColor = "none";
               id = "Launcher";
               useDistroLogo = false;
-            }
-            {
-              defaultSettings = {
-                autoStartBreaks = false;
-                autoStartWork = false;
-                longBreakDuration = 15;
-                sessionsBeforeLongBreak = 4;
-                shortBreakDuration = 5;
-                workDuration = 25;
-              };
-              id = "plugin:pomodoro";
-            }
-            {
-              defaultSettings = {
-                compactMode = false;
-                defaultDuration = 0;
-                iconColor = "none";
-              };
-              id = "plugin:timer";
             }
           ];
 
@@ -250,8 +233,8 @@
         showScreenCorners = false;
         forceBlackScreenCorners = false;
         scaleRatio = 0.95;
-        radiusRatio = 1.0;
-        iRadiusRatio = 1.0;
+        radiusRatio = 1;
+        iRadiusRatio = 1;
         boxRadiusRatio = 0;
         screenRadiusRatio = 1;
         animationSpeed = 1;
@@ -296,6 +279,7 @@
         };
 
         reverseScroll = false;
+        smoothScrollEnabled = true;
       };
 
       ui = {
@@ -306,7 +290,7 @@
         tooltipsEnabled = true;
         scrollbarAlwaysVisible = false;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 0.2;
+        panelBackgroundOpacity = 0;
         translucentWidgets = true;
         panelsAttachedToBar = false;
         settingsPanelMode = "centered";
@@ -317,6 +301,7 @@
         name = "Sydney";
         weatherEnabled = true;
         weatherShowEffects = true;
+        weatherTaliaMascotAlways = false;
         useFahrenheit = false;
         use12hourFormat = false;
         showWeekNumberInCalendar = true;
@@ -326,6 +311,7 @@
         firstDayOfWeek = -1;
         hideWeatherTimezone = false;
         hideWeatherCityName = false;
+        autoLocate = false;
       };
 
       calendar = {
@@ -354,6 +340,7 @@
         showHiddenFiles = false;
         viewMode = "recursive";
         setWallpaperOnAllMonitors = true;
+        linkLightAndDarkWallpapers = true;
         fillMode = "crop";
         fillColor = "#000000";
         useSolidColor = false;
@@ -401,7 +388,7 @@
         enableClipboardChips = true;
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
-        position = "center";
+        position = "top_center";
         pinnedApps = [ ];
         sortByMostUsed = true;
         terminalCommand = "xterm -e";
@@ -497,20 +484,20 @@
       };
 
       dock = {
-        enabled = true;
+        enabled = false;
         position = "bottom";
-        displayMode = "auto_hide";
+        displayMode = "exclusive";
         dockType = "floating";
         backgroundOpacity = 0;
         floatingRatio = 1;
-        size = 1.7;
+        size = 1.0;
         onlySameOutput = false;
         monitors = [ ];
         pinnedApps = [ ];
         colorizeIcons = false;
         showLauncherIcon = true;
         launcherPosition = "end";
-        launcherUseDistroLogo = false;
+        launcherUseDistroLogo = true;
         launcherIcon = "";
         launcherIconColor = "none";
         pinnedStatic = false;
@@ -522,14 +509,13 @@
         deadOpacity = 0.6;
         animationSpeed = 1.6;
         sitOnFrame = false;
-        showDockIndicator = false;
+        showDockIndicator = true;
         indicatorThickness = 3;
         indicatorColor = "primary";
         indicatorOpacity = 0.6;
       };
 
       network = {
-        airplaneModeEnabled = false;
         bluetoothRssiPollingEnabled = false;
         bluetoothRssiPollIntervalMs = 10000;
         networkPanelView = "wifi";
@@ -616,7 +602,7 @@
         monitors = [ ];
         location = "top_right";
         overlayLayer = true;
-        backgroundOpacity = 0.5;
+        backgroundOpacity = 1;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
@@ -646,10 +632,10 @@
 
       osd = {
         enabled = true;
-        location = "top";
+        location = "left";
         autoHideMs = 2000;
         overlayLayer = true;
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0;
         enabledTypes = [
           0
           1
@@ -680,6 +666,7 @@
 
       colorSchemes = {
         useWallpaperColors = true;
+        amoledOverride = true;
         predefinedScheme = "Ayu";
         darkMode = true;
         schedulingMode = "off";
