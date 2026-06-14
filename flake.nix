@@ -142,7 +142,7 @@
             { nixpkgs.hostPlatform = hostSystem; }
             ./hosts/${machine}/default.nix
             ./hosts/${machine}/hardware.nix
-            ./modules/de/${de}.nix
+            ./modules/features/${de}.nix
             sops-nix.nixosModules.sops
             spicetify-nix.nixosModules.default
             home-manager.nixosModules.home-manager
@@ -309,7 +309,6 @@
           de = "kde";
           theme = "default";
         };
-
         coerxion-niri-noctalia = mkHost {
           machine = "coerxion";
           de = "niri";

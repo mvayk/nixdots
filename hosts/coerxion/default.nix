@@ -8,6 +8,16 @@
     ../../modules/core.nix
   ];
 
+  profiles = {
+    cli = true;
+    desktop = true;
+    dev = true;
+    gaming = true;
+    media = true;
+    misc = true;
+    security = true;
+  };
+
   networking.hostName = "coerxion";
 
   boot.initrd.availableKernelModules = [ "i915" ];
@@ -57,7 +67,6 @@
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
-    # why cude take so long to build
     (llama-cpp.override {
       cudaSupport = false;
     })

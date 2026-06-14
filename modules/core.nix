@@ -7,8 +7,7 @@
   imports = [
     ../modules/features/ly.nix
     ../modules/features/dank.nix
-    ./programs.nix
-    ./packages.nix
+    ../modules/profiles/default.nix
     #../modules/sops.nix
   ];
 

@@ -8,6 +8,16 @@
     ../../modules/core.nix
   ];
 
+  profiles = {
+    cli = true;
+    desktop = true;
+    dev = true;
+    gaming = true;
+    media = true;
+    misc = true;
+    security = true;
+  };
+
   networking.hostName = "flandre";
 
   services.xserver.videoDrivers = [
