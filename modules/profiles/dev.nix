@@ -8,6 +8,14 @@
   options.profiles.dev = lib.mkEnableOption "dev packages";
 
   config = lib.mkIf config.profiles.dev {
+    services = {
+      ollama.enable = true;
+
+      emacs = {
+        enable = true;
+        package = pkgs.emacs;
+      };
+    };
     programs = {
       ccache.enable = true;
       direnv = {

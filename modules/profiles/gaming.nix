@@ -6,7 +6,7 @@
   ...
 }:
 {
-  options.profiles.gaming = lib.mkEnableOption "gaming packages";
+  options.profiles.dev = lib.mkEnableOption "gaming packages";
 
   config = lib.mkIf config.profiles.gaming {
     programs = {

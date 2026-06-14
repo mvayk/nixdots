@@ -154,21 +154,6 @@
     };
 
     power-profiles-daemon.enable = true;
-    ollama.enable = true;
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
-  };
-
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-    };
   };
 
   nixpkgs.config.allowUnfree = true;
