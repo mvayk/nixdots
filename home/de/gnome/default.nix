@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../features/ghostty.nix
     ../../features/fastfetch.nix
   ];
   programs.zsh.initContent = ''
