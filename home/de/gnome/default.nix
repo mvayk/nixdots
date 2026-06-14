@@ -3,10 +3,6 @@
   imports = [
     ../../features/fastfetch.nix
   ];
-  programs.zsh.initContent = ''
-    eval "$(starship init zsh)"
-    export NIXOS_DE="gnome"
-  '';
   gtk = {
     enable = true;
     theme = {
@@ -50,6 +46,7 @@
     gnomeExtensions.rounded-window-corners-reborn
     marble-shell-theme
     gnomeExtensions.user-themes
+    gnomeExtensions.multi-monitor-bar
   ];
   home.sessionVariables = { };
 
@@ -80,6 +77,7 @@
         just-perfection.extensionUuid
         rounded-window-corners-reborn.extensionUuid
         user-themes.extensionUuid
+        multi-monitor-bar.extensionUuid
       ];
     };
     "org/gnome/shell/extensions/user-theme" = {
@@ -88,7 +86,7 @@
 
     "org/gnome/shell/extensions/blur-my-shell/panel" = {
       blur = true;
-      static-blur = true;
+      static-blur = false;
       override-background = true;
       style-panel = 0;
     };
@@ -139,8 +137,9 @@
       window-demands-attention-focus = true;
       window-maximized-titlebar = false;
     };
-    "org/gnome/shell/extensions/rounded-window-corners" = {
-      global-rounded-corner-settings = "{'padding': <{'left': <uint32 1>, 'right': <uint32 1>, 'top': <uint32 1>, 'bottom': <uint32 1>}>, 'keep_rounded_corners': <{'maximized': <false>, 'fullscreen': <false>}>, 'border_radius': <uint32 12>, 'smoothing': <uint32 0>}";
+    "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
+      global-rounded-corner-settings = "{'padding': <{'left': uint32 1, 'right': 1, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 15>, 'smoothing': <0.0>, 'borderColor': <(0.5, 0.5, 0.5, 1.0)>, 'enabled': <true>}";
+      settings-version = 9;
     };
   };
 }
