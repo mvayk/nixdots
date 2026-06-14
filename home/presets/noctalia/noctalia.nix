@@ -246,7 +246,7 @@
         showHibernateOnLockScreen = false;
         enableLockScreenMediaControls = false;
         enableShadows = true;
-        enableBlurBehind = true;
+        enableBlurBehind = false;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
         shadowOffsetY = 3;
@@ -486,7 +486,7 @@
       dock = {
         enabled = true;
         position = "bottom";
-        displayMode = "exclusive";
+        displayMode = "auto_hide";
         dockType = "floating";
         backgroundOpacity = 0;
         floatingRatio = 1;
@@ -665,16 +665,17 @@
       };
 
       colorSchemes = {
-        useWallpaperColors = true;
+        # why is declarativeness causing bugs!?
+        #useWallpaperColors = false;
         amoledOverride = false;
-        predefinedScheme = "Ayu";
+        #predefinedScheme = "Ayu";
         darkMode = true;
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
         generationMethod = "rainbow";
         monitorForColors = "";
-        syncGsettings = true;
+        syncGsettings = false;
       };
 
       templates = {

@@ -21,14 +21,14 @@
         showCapsule = false;
         capsuleOpacity = 1;
         capsuleColorKey = "none";
-        widgetSpacing = 6;
-        contentPadding = 10;
+        widgetSpacing = 4;
+        contentPadding = 0;
         fontScale = 1;
         enableExclusionZoneInset = true;
         backgroundOpacity = 0;
         useSeparateOpacity = true;
         marginVertical = 8;
-        marginHorizontal = 8;
+        marginHorizontal = 92;
         frameThickness = 8;
         frameRadius = 12;
         outerCorners = false;
@@ -58,8 +58,8 @@
               focusedColor = "primary";
               followFocusedScreen = false;
               fontWeight = "bold";
-              groupedBorderOpacity = 0.3;
-              hideUnoccupied = false;
+              groupedBorderOpacity = 0;
+              hideUnoccupied = true;
               iconScale = 0.7;
               id = "Workspace";
               labelMode = "index";
@@ -70,38 +70,6 @@
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;
               unfocusedIconsOpacity = 1;
-            }
-            {
-              compactMode = true;
-              diskPath = "/";
-              iconColor = "none";
-              id = "SystemMonitor";
-              showCpuCores = false;
-              showCpuFreq = false;
-              showCpuTemp = true;
-              showCpuUsage = true;
-              showDiskAvailable = false;
-              showDiskUsage = false;
-              showDiskUsageAsPercent = false;
-              showGpuTemp = false;
-              showLoadAverage = true;
-              showMemoryAsPercent = false;
-              showMemoryUsage = true;
-              showNetworkStats = false;
-              showSwapUsage = true;
-              textColor = "none";
-              useMonospaceFont = true;
-              usePadding = false;
-            }
-            {
-              colorizeSystemIcon = "none";
-              colorizeSystemText = "none";
-              customIconPath = "";
-              enableColorization = false;
-              icon = "rocket";
-              iconColor = "none";
-              id = "Launcher";
-              useDistroLogo = false;
             }
           ];
 
@@ -208,10 +176,6 @@
               tooltipFormat = "HH:mm ddd, MMM dd";
               useCustomFont = false;
             }
-            {
-              iconColor = "error";
-              id = "SessionMenu";
-            }
           ];
         };
 
@@ -246,7 +210,7 @@
         showHibernateOnLockScreen = false;
         enableLockScreenMediaControls = false;
         enableShadows = true;
-        enableBlurBehind = true;
+        enableBlurBehind = false;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
         shadowOffsetY = 3;
@@ -490,7 +454,7 @@
         dockType = "floating";
         backgroundOpacity = 0;
         floatingRatio = 1;
-        size = 1.0;
+        size = 1;
         onlySameOutput = false;
         monitors = [ ];
         pinnedApps = [ ];
