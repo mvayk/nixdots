@@ -18,7 +18,7 @@
       gef
       strace
       ltrace
-      binwalk
+      #binwalk
       imhex
       scanmem
       pince
