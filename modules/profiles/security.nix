@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options.profiles.dev = lib.mkEnableOption "security packages";
+  options.profiles.security = lib.mkEnableOption "security packages";
 
   config = lib.mkIf config.profiles.security {
     environment.systemPackages = with pkgs; [

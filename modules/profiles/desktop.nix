@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   config,
   zen-browser,
@@ -9,7 +10,7 @@
 }:
 
 {
-  options.profiles.dev = lib.mkEnableOption "desktop packages";
+  options.profiles.desktop = lib.mkEnableOption "desktop packages";
 
   config = lib.mkIf config.profiles.desktop {
     programs = {

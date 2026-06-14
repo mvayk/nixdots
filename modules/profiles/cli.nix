@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options.profiles.dev = lib.mkEnableOption "cli packages";
+  options.profiles.cli = lib.mkEnableOption "cli packages";
   config = lib.mkIf config.profiles.cli {
     environment.systemPackages = with pkgs; [
       git

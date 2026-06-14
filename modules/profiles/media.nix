@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options.profiles.dev = lib.mkEnableOption "media packages";
+  options.profiles.media = lib.mkEnableOption "media packages";
 
   config = lib.mkIf config.profiles.media {
     environment.systemPackages = with pkgs; [
@@ -23,7 +23,7 @@
       zathura
       foliate
       calibre
-      kdePackage.okular
+      kdePackages.okular
       #texlive.combined.scheme-medium
       ffmpegthumbnailer
       poppler-utils

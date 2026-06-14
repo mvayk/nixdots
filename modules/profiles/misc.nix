@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options.profiles.dev = lib.mkEnableOption "misc packages";
+  options.profiles.misc = lib.mkEnableOption "misc packages";
 
   config = lib.mkIf config.profiles.misc {
     environment.systemPackages = with pkgs; [
