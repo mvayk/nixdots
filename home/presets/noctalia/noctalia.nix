@@ -58,8 +58,8 @@
               focusedColor = "primary";
               followFocusedScreen = false;
               fontWeight = "bold";
-              groupedBorderOpacity = 0.3;
-              hideUnoccupied = false;
+              groupedBorderOpacity = 0;
+              hideUnoccupied = true;
               iconScale = 0.7;
               id = "Workspace";
               labelMode = "index";
@@ -632,7 +632,7 @@
 
       osd = {
         enabled = true;
-        location = "top";
+        location = "right";
         autoHideMs = 2000;
         overlayLayer = true;
         backgroundOpacity = 1;

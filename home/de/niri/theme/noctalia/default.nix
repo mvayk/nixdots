@@ -11,7 +11,7 @@ let
   nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
 in
 {
-  imports = map (n: dir + "/${n}") nixFiles ++ [ ];
+  imports = map (n: dir + "/${n}") nixFiles ++ [ ../../../../features/fastfetch.nix ];
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
@@ -31,7 +31,7 @@ in
         size = 24;
       };
       layout = {
-        gaps = 8;
+        gaps = 18;
         center-focused-column = "never";
         background-color = "transparent";
 

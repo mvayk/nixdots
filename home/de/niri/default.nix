@@ -119,6 +119,9 @@
         "Mod+W".action.spawn = [
           "helium"
         ];
+        "Mod+D".action.spawn = [
+          "neovide"
+        ];
         "Mod+E".action.spawn = [
           "dolphin"
         ];

@@ -14,8 +14,8 @@
     dev = true;
     gaming = true;
     media = true;
-    misc = true;
-    security = true;
+    misc = false;
+    security = false;
   };
 
   networking.hostName = "coerxion";

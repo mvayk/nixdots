@@ -6,15 +6,23 @@
     enable = true;
     settings = {
       format = ''
-        $all$username$hostname$character
+        ┌$username$all└─$character
       '';
       right_format = "";
+      # custard = {
+      #   symbol = "in";
+      #   style_user = "italic white";
+      #   style_root = "italic white";
+      #   format = "[$custard]($style)";
+      # };
       username = {
-        disabled = true;
+        disabled = false;
         show_always = true;
-        style_user = "bold italic cyan";
-        style_root = "bold italic red";
-        format = "[$user]($style)";
+        style_user = "bold red";
+        style_root = "bold red";
+        #format = "[└\\[$user\\] ]($style)";
+        #format = "[┌\\[$user\\] ]($style)";
+        format = "[\\[$user\\]]($style)[ in ](italic white)";
       };
       hostname = {
         disabled = true;
@@ -27,10 +35,15 @@
         disabled = true;
         format = "[$symbol]($style) ";
       };
+      # character = {
+      #   disabled = false;
+      #   success_symbol = "[](bold white)";
+      #   error_symbol = "[](bold red)";
+      # };
       character = {
         disabled = false;
-        success_symbol = "[](bold white)";
-        error_symbol = "[](bold red)";
+        success_symbol = "[󰘧](bold green)";
+        error_symbol = "[󰘧](bold red)";
       };
       cmd_duration = {
         disabled = false;

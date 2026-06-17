@@ -36,11 +36,7 @@
           }
         )
       */
-      (pkgs-stable.lutris.override {
-        extraPkgs = pkgs: [
-          gamemode
-        ];
-      })
+      lutris
       xdotool
       xwininfo
       mangohud
