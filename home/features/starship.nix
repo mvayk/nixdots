@@ -20,7 +20,6 @@
         show_always = true;
         style_user = "bold red";
         style_root = "bold red";
-        #format = "[\\[]()[$user]($style)[\\]]()[ in ]()";
         format = "[\\[]()[$user]($style)[\\]]()[ in ]()";
       };
       hostname = {
@@ -57,6 +56,9 @@
         format = "[+$added]($added_style)/[-$deleted]($deleted_style) ";
       };
       battery = {
+        disabled = true;
+      };
+      jobs = {
         disabled = true;
       };
       aws = {

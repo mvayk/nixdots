@@ -87,10 +87,9 @@
       eval "$(zoxide init zsh)"
       eval "$(direnv hook zsh)"
 
-      [[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
-
       edit() { neovide "$@" & }
     '';
+    #[[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
     #eval "$(starship init zsh)"
     #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
   };
