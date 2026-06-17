@@ -22,7 +22,7 @@
         capsuleOpacity = 1;
         capsuleColorKey = "none";
         widgetSpacing = 6;
-        contentPadding = 10;
+        contentPadding = 2;
         fontScale = 1;
         enableExclusionZoneInset = true;
         backgroundOpacity = 1;
@@ -60,9 +60,9 @@
               fontWeight = "bold";
               groupedBorderOpacity = 0;
               hideUnoccupied = true;
-              iconScale = 0.7;
+              iconScale = 0.8;
               id = "Workspace";
-              labelMode = "index";
+              labelMode = "none";
               occupiedColor = "secondary";
               pillSize = 0.6;
               showApplications = true;
@@ -70,38 +70,6 @@
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;
               unfocusedIconsOpacity = 1;
-            }
-            {
-              compactMode = true;
-              diskPath = "/";
-              iconColor = "none";
-              id = "SystemMonitor";
-              showCpuCores = false;
-              showCpuFreq = false;
-              showCpuTemp = true;
-              showCpuUsage = true;
-              showDiskAvailable = false;
-              showDiskUsage = false;
-              showDiskUsageAsPercent = false;
-              showGpuTemp = false;
-              showLoadAverage = true;
-              showMemoryAsPercent = false;
-              showMemoryUsage = true;
-              showNetworkStats = false;
-              showSwapUsage = true;
-              textColor = "none";
-              useMonospaceFont = true;
-              usePadding = false;
-            }
-            {
-              colorizeSystemIcon = "none";
-              colorizeSystemText = "none";
-              customIconPath = "";
-              enableColorization = false;
-              icon = "rocket";
-              iconColor = "none";
-              id = "Launcher";
-              useDistroLogo = false;
             }
           ];
 
@@ -207,10 +175,6 @@
               id = "Clock";
               tooltipFormat = "HH:mm ddd, MMM dd";
               useCustomFont = false;
-            }
-            {
-              iconColor = "error";
-              id = "SessionMenu";
             }
           ];
         };
@@ -532,7 +496,7 @@
         position = "center";
         showHeader = true;
         showKeybinds = true;
-        largeButtonsStyle = false;
+        largeButtonsStyle = true;
         largeButtonsLayout = "grid";
 
         powerOptions = [
