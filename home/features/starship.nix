@@ -20,9 +20,8 @@
         show_always = true;
         style_user = "bold red";
         style_root = "bold red";
-        #format = "[└\\[$user\\] ]($style)";
-        #format = "[┌\\[$user\\] ]($style)";
-        format = "[\\[$user\\]]($style)[ in ](italic white)";
+        #format = "[\\[]()[$user]($style)[\\]]()[ in ]()";
+        format = "[\\[]()[$user]($style)[\\]]()[ in ]()";
       };
       hostname = {
         disabled = true;
