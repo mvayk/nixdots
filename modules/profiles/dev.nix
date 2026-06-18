@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options.profiles.dev = lib.mkEnableOption "dev packages";
 
   config = lib.mkIf config.profiles.dev {
@@ -105,6 +104,7 @@
       go
       nil
       nixfmt
+      alejandra
       flex
       bison
       aider-chat
