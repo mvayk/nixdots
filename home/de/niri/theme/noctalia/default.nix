@@ -3,6 +3,7 @@
   lib,
   quickshell,
   noctalia,
+  config,
   ...
 }:
 let
@@ -64,10 +65,10 @@ in
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 0.0;
-            top-right = 0.0;
-            bottom-left = 0.0;
-            bottom-right = 0.0;
+            top-left = 10.0;
+            top-right = 10.0;
+            bottom-left = 10.0;
+            bottom-right = 10.0;
           };
           clip-to-geometry = true;
         }
@@ -164,6 +165,11 @@ in
       ];
     };
   };
+
+  xdg.configFile.niri-config.enable = lib.mkForce false;
+
+  xdg.configFile."niri/config.kdl".text =
+    config.programs.niri.finalConfig + "\n" + ''include "~/.config/niri/noctalia.kdl"'';
 
   home.packages = [
     quickshell.packages.${pkgs.system}.default
