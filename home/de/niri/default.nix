@@ -117,7 +117,7 @@
           "ghostty"
         ];
         "Mod+W".action.spawn = [
-          "helium"
+          "zen-beta"
         ];
         "Mod+D".action.spawn = [
           "neovide"

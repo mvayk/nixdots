@@ -53,10 +53,12 @@ in
         shadow = {
           enable = true;
           offset = {
-            x = 0;
-            y = 0;
+            x = 4;
+            y = 8;
           };
-          softness = 18;
+          softness = 8;
+          spread = 2;
+          draw-behind-window = true;
           color = "#00000080";
         };
       };
