@@ -20,7 +20,7 @@
       adjust-cell-height = "+0%";
       window-padding-x = 15;
       window-padding-y = 15;
-      cursor-style = "bar";
+      cursor-style = "underline";
     };
   };
 

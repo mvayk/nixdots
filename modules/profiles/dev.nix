@@ -104,6 +104,7 @@
       openssl
       go
       nil
+      nixfmt
       flex
       bison
       aider-chat

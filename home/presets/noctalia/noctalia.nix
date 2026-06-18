@@ -51,7 +51,7 @@
               useDistroLogo = true;
             }
             {
-              characterCount = 7;
+              characterCount = 6;
               colorizeIcons = false;
               emptyColor = "secondary";
               enableScrollWheel = true;
@@ -62,10 +62,10 @@
               hideUnoccupied = true;
               iconScale = 0.8;
               id = "Workspace";
-              labelMode = "none";
+              labelMode = "name";
               occupiedColor = "secondary";
               pillSize = 0.6;
-              showApplications = true;
+              showApplications = false;
               showApplicationsHover = false;
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;
@@ -196,7 +196,7 @@
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
-        scaleRatio = 0.95;
+        scaleRatio = 0.90;
         radiusRatio = 1;
         iRadiusRatio = 1;
         boxRadiusRatio = 0;
@@ -637,7 +637,7 @@
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "rainbow";
+        #generationMethod = "rainbow";
         monitorForColors = "";
         syncGsettings = false;
       };
@@ -739,5 +739,11 @@
         monitorWidgets = [ ];
       };
     };
+    user-templates = ''
+      [templates.nvim-base16]
+      input_path = "~/.config/nvim/lua/matugen-template.lua"
+      output_path = "~/.config/nvim/lua/matugen.lua"
+      post_hook = 'pkill -SIGUSR1 nvim'
+    '';
   };
 }
