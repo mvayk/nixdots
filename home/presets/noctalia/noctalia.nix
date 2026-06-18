@@ -684,6 +684,10 @@
             enabled = true;
             id = "hyprland";
           }
+          {
+            enabled = true;
+            id = "zenBrowser";
+          }
         ];
         enableUserTheming = true;
       };

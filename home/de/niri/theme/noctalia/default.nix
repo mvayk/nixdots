@@ -47,7 +47,7 @@ in
           enable = true;
           active.color = "#FFFFFFFF";
           inactive.color = "#000000FF";
-          width = 1;
+          width = 2;
         };
 
         shadow = {
