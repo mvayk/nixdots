@@ -54,8 +54,8 @@ in {
       };
 
       decoration = {
-        rounding = 4;
-        rounding_power = 2;
+        rounding = 1;
+        rounding_power = 1;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         shadow = {

@@ -1,8 +1,4 @@
-{
-  noctalia,
-  ...
-}:
-{
+{noctalia, ...}: {
   imports = [
     noctalia.homeModules.default
   ];
@@ -15,8 +11,8 @@
       bar = {
         barType = "simple";
         position = "top";
-        monitors = [ ];
-        density = "default";
+        monitors = [];
+        density = "compact";
         showOutline = false;
         showCapsule = false;
         capsuleOpacity = 1;
@@ -98,13 +94,13 @@
               width = 20;
             }
             {
-              blacklist = [ ];
+              blacklist = [];
               chevronColor = "none";
               colorizeIcons = true;
               drawerEnabled = true;
               hidePassive = false;
               id = "Tray";
-              pinned = [ ];
+              pinned = [];
             }
             {
               id = "Spacer";
@@ -188,7 +184,7 @@
         rightClickAction = "controlCenter";
         rightClickFollowMouse = true;
         rightClickCommand = "";
-        screenOverrides = [ ];
+        screenOverrides = [];
       };
 
       general = {
@@ -225,21 +221,21 @@
         clockStyle = "digital";
         clockFormat = "hh\\nmm";
         passwordChars = true;
-        lockScreenMonitors = [ ];
+        lockScreenMonitors = [];
         lockScreenBlur = 0;
         lockScreenTint = 0;
 
         keybinds = {
-          keyUp = [ "Up" ];
-          keyDown = [ "Down" ];
-          keyLeft = [ "Left" ];
-          keyRight = [ "Right" ];
+          keyUp = ["Up"];
+          keyDown = ["Down"];
+          keyLeft = ["Left"];
+          keyRight = ["Right"];
           keyEnter = [
             "Return"
             "Enter"
           ];
-          keyEscape = [ "Esc" ];
-          keyRemove = [ "Del" ];
+          keyEscape = ["Esc"];
+          keyRemove = ["Del"];
         };
 
         reverseScroll = false;
@@ -254,7 +250,7 @@
         tooltipsEnabled = true;
         scrollbarAlwaysVisible = false;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 0.93;
+        panelBackgroundOpacity = 1.0;
         translucentWidgets = false;
         panelsAttachedToBar = false;
         settingsPanelMode = "centered";
@@ -299,7 +295,7 @@
         enabled = true;
         overviewEnabled = true;
         directory = "/home/mvayk/Pictures/wallpapers/";
-        monitorDirectories = [ ];
+        monitorDirectories = [];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;
         viewMode = "recursive";
@@ -340,7 +336,7 @@
         wallhavenResolutionWidth = "";
         wallhavenResolutionHeight = "";
         sortOrder = "name";
-        favorites = [ ];
+        favorites = [];
       };
 
       appLauncher = {
@@ -353,7 +349,7 @@
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
         position = "top_center";
-        pinnedApps = [ ];
+        pinnedApps = [];
         sortByMostUsed = true;
         terminalCommand = "xterm -e";
         customLaunchPrefixEnabled = false;
@@ -377,16 +373,16 @@
 
         shortcuts = {
           left = [
-            { id = "Network"; }
-            { id = "Bluetooth"; }
-            { id = "WallpaperSelector"; }
-            { id = "DarkMode"; }
+            {id = "Network";}
+            {id = "Bluetooth";}
+            {id = "WallpaperSelector";}
+            {id = "DarkMode";}
           ];
           right = [
-            { id = "Notifications"; }
-            { id = "PowerProfile"; }
-            { id = "KeepAwake"; }
-            { id = "NightLight"; }
+            {id = "Notifications";}
+            {id = "PowerProfile";}
+            {id = "KeepAwake";}
+            {id = "NightLight";}
           ];
         };
 
@@ -448,7 +444,7 @@
       };
 
       dock = {
-        enabled = true;
+        enabled = false;
         position = "bottom";
         displayMode = "auto_hide";
         dockType = "floating";
@@ -456,8 +452,8 @@
         floatingRatio = 1;
         size = 1.0;
         onlySameOutput = false;
-        monitors = [ ];
-        pinnedApps = [ ];
+        monitors = [];
+        pinnedApps = [];
         colorizeIcons = false;
         showLauncherIcon = true;
         launcherPosition = "end";
@@ -563,7 +559,7 @@
         enabled = true;
         enableMarkdown = false;
         density = "default";
-        monitors = [ ];
+        monitors = [];
         location = "top_right";
         overlayLayer = true;
         backgroundOpacity = 1;
@@ -606,7 +602,7 @@
           2
           4
         ];
-        monitors = [ ];
+        monitors = [];
       };
 
       audio = {
@@ -615,7 +611,7 @@
         spectrumFrameRate = 30;
         visualizerType = "linear";
         spectrumMirrored = true;
-        mprisBlacklist = [ ];
+        mprisBlacklist = [];
         preferredPlayer = "";
         volumeFeedback = false;
         volumeFeedbackSoundFile = "";
@@ -625,7 +621,7 @@
         brightnessStep = 10;
         enforceMinimum = true;
         enableDdcSupport = false;
-        backlightDeviceMappings = [ ];
+        backlightDeviceMappings = [];
       };
 
       colorSchemes = {
@@ -740,7 +736,7 @@
         overviewEnabled = true;
         gridSnap = false;
         gridSnapScale = false;
-        monitorWidgets = [ ];
+        monitorWidgets = [];
       };
     };
     user-templates = ''
