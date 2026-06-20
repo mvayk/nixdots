@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   programs.ghostty = {
     enable = true;
     settings = {
@@ -16,7 +15,7 @@
       theme = "noctalia";
       #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
-      background-opacity = 1;
+      background-opacity = 0.6;
       adjust-cell-height = "+0%";
       window-padding-x = 15;
       window-padding-y = 15;

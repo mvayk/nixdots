@@ -7,9 +7,7 @@
   helium,
   spicetify-nix,
   ...
-}:
-
-{
+}: {
   options.profiles.desktop = lib.mkEnableOption "desktop packages";
 
   config = lib.mkIf config.profiles.desktop {
@@ -41,26 +39,24 @@
           obs-vkcapture
         ];
       };
-      spicetify =
-        let
-          spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-        in
-        {
-          enable = true;
-          enabledExtensions = with spicePkgs.extensions; [
-            adblock
-            hidePodcasts
-            shuffle
-          ];
-          enabledCustomApps = with spicePkgs.apps; [
-            newReleases
-            ncsVisualizer
-          ];
-          enabledSnippets = with spicePkgs.snippets; [
-            rotatingCoverart
-            pointer
-          ];
-        };
+      spicetify = let
+        spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+      in {
+        enable = true;
+        enabledExtensions = with spicePkgs.extensions; [
+          adblock
+          hidePodcasts
+          shuffle
+        ];
+        enabledCustomApps = with spicePkgs.apps; [
+          newReleases
+          ncsVisualizer
+        ];
+        enabledSnippets = with spicePkgs.snippets; [
+          rotatingCoverart
+          pointer
+        ];
+      };
     };
 
     environment.systemPackages = with pkgs; [
@@ -79,6 +75,7 @@
       gnome-keyring
       seahorse
       qalculate-qt
+      obsidian
       #alarm-clock-applet
       qbittorrent
       mission-center

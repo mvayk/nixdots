@@ -190,10 +190,10 @@
         de = "niri";
         theme = "default";
       };
-      coerxion-hyprland = {
+      coerxion-hyprland-noctalia = {
         machine = "coerxion";
         de = "hyprland";
-        theme = "custom";
+        theme = "noctalia";
       };
       coerxion-kde = {
         machine = "coerxion";
