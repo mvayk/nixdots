@@ -25,10 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # mshell = {
-    #   url = "path:/home/mvayk/dev/mshell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    mshell = {
+      url = "path:/home/mvayk/dev/mshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
@@ -154,14 +154,19 @@
       };
 
     hosts = {
-      flandre-hyprland = {
-        machine = "flandre";
-        de = "hyprland";
+      coerxion-xfce = {
+        machine = "coerxion";
+        de = "xfce";
         theme = "default";
       };
-      flandre-niri = {
-        machine = "flandre";
-        de = "niri";
+      coerxion-gnome = {
+        machine = "coerxion";
+        de = "gnome";
+        theme = "default";
+      };
+      coerxion-kde = {
+        machine = "coerxion";
+        de = "kde";
         theme = "default";
       };
       flandre-kde = {
@@ -180,6 +185,17 @@
         theme = "default";
       };
 
+      flandre-hyprland = {
+        machine = "flandre";
+        de = "hyprland";
+        theme = "default";
+      };
+      flandre-niri = {
+        machine = "flandre";
+        de = "niri";
+        theme = "default";
+      };
+
       coerxion-niri-dank = {
         machine = "coerxion";
         de = "niri";
@@ -195,19 +211,9 @@
         de = "hyprland";
         theme = "noctalia";
       };
-      coerxion-kde = {
+      coerxion = {
         machine = "coerxion";
-        de = "kde";
-        theme = "default";
-      };
-      coerxion-xfce = {
-        machine = "coerxion";
-        de = "xfce";
-        theme = "default";
-      };
-      coerxion-gnome = {
-        machine = "coerxion";
-        de = "gnome";
+        de = "hyprland";
         theme = "default";
       };
     };

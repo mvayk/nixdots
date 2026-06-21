@@ -3,6 +3,7 @@
   lib,
   machine,
   theme,
+  quickshell,
   ...
 }: {
   imports = [

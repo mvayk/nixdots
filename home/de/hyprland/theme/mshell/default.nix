@@ -1,12 +1,10 @@
 {
   pkgs,
   lib,
-  noctalia,
   quickshell,
-  future-hyprcursor,
   ...
 }: let
-  dir = ../../../../presets/noctalia;
+  dir = ../../../../presets/mshell;
   fileNames = builtins.attrNames (builtins.readDir dir);
   nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
 in {
@@ -22,8 +20,6 @@ in {
     size = 24;
   };
 
-  xdg.configFile."hyprland/layerrules.conf".source = ../../../../features/hyprland/layerrules.conf;
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -34,20 +30,17 @@ in {
       ];
 
       exec-once = [
-        "noctalia-shell"
         "nm-applet"
+        "awww-daemon"
         "hyprctl setcursor Bibata-Modern-Ice 24"
       ];
-
-      source = "noctalia/noctalia-colors.conf";
-      layerrules = "layerrules.conf";
 
       general = {
         gaps_in = 4;
         gaps_out = 12;
         border_size = 1;
-        "col.active_border" = "$primary $secondary $tertiary 45deg";
-        "col.inactive_border" = "$surface";
+        # "col.active_border" = "$primary $secondary $tertiary 45deg";
+        # "col.inactive_border" = "$surface";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -108,42 +101,11 @@ in {
           "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
-
-      # layerrule = [
-      #   "ignorealpha 0.5,noctalia-background-.*"
-      #   "blur,noctalia-background-.*"
-      #   "blurpopups,noctalia-background-.*"
-      # ];
-
-      bind = [
-        "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
-        ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
-        "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
-        "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
-        "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
-        "$mainMod, page_up,   exec, noctalia-shell ipc call volume increase"
-        "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
-      ];
     };
-    # extraConfig = ''
-    #   layerrule {
-    #     name = noctalia
-    #     match:namespace = noctalia-background-.*$
-    #     ignore_alpha = 0.5
-    #     blur = true
-    #     blur_popups = true
-    #   }
-    # '';
   };
 
-  programs.zsh.initContent = ''
-    eval "$(starship init zsh)"
-    export NIXOS_DE="hyprland"
-  '';
-
   home.packages = [
+    pkgs.awww
     quickshell.packages.${pkgs.system}.default
-    noctalia.packages.${pkgs.system}.default
-    future-hyprcursor.packages.${pkgs.system}.default
   ];
 }
