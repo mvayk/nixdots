@@ -43,7 +43,7 @@ in {
       layerrules = "layerrules.conf";
 
       general = {
-        gaps_in = 4;
+        gaps_in = 8;
         gaps_out = 12;
         border_size = 1;
         "col.active_border" = "$primary $secondary $tertiary 45deg";
