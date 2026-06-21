@@ -13,7 +13,7 @@
       confirm-close-surface = false;
       custom-shader-animation = "always";
       theme = "noctalia";
-      #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
+      custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
       #background-opacity = 0.6;
       adjust-cell-height = "+0%";

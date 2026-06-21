@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
@@ -29,7 +28,7 @@
       toggle-pane = toggle-pane;
       bypass = bypass;
       jump-to-char = jump-to-char;
-      relative-motions = relative-motions;
+      #relative-motions = relative-motions;
       bookmarks = bookmarks;
 
       git = git;
@@ -55,13 +54,6 @@
 
     initLua = ''
       require("git"):setup()
-      require("relative-motions"):setup({ show_numbers = "relative_absolute", show_motion = true })
-      require("full-border").setup({
-          type = ui.Border.PLAIN,
-      })
-      require("mime-ext.local"):setup({
-        with_files = { "Makefile", "Dockerfile", ".gitignore", ".env" },
-      })
     '';
 
     keymap = {

@@ -180,17 +180,17 @@
         theme = "default";
       };
 
-      coerxion-niri-noctalia = {
+      coerxion-niri-dank = {
         machine = "coerxion";
         de = "niri";
-        theme = "noctalia";
+        theme = "dank";
       };
       coerxion-niri = {
         machine = "coerxion";
         de = "niri";
         theme = "default";
       };
-      coerxion-hyprland-noctalia = {
+      coerxion-hyprland = {
         machine = "coerxion";
         de = "hyprland";
         theme = "noctalia";
