@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   # [[ -f /etc/nixos/home/features/zsh/.p10k.zsh && ! -f ~/.p10k.zsh ]] && ln -s /etc/nixos/home/features/zsh/.p10k.zsh ~/.p10k.zsh
   ### home.file.".p10k.zsh".source = ./zsh/.p10k.zsh;
 
@@ -78,17 +74,27 @@
     #   tmux attach 2>/dev/null || tmux new-session
     # fi
     initContent = ''
-      if [[ -n "$TMUX" ]]; then
-        export TERM="tmux-256color"
-      fi
+                if [[ -n "$TMUX" ]]; then
+                  export TERM="tmux-256color"
+                fi
 
-      bindkey '^[[13;2u' autosuggest-accept
 
-      eval "$(zoxide init zsh)"
-      eval "$(direnv hook zsh)"
+                eval "$(zoxide init zsh)"
+                eval "$(direnv hook zsh)"
 
-      edit() { neovide "$@" & }
+                edit() { neovide "$@" & }
+
+      _accept_suggestion_or_complete() {
+        if [[ -n $POSTDISPLAY ]]; then
+          zle forward-char
+        else
+          zle expand-or-complete
+        fi
+      }
+      zle -N _accept_suggestion_or_complete
+      bindkey '^I' _accept_suggestion_or_complete
     '';
+    #bindkey '^[[13;2u' autosuggest-accept
     #[[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
     #eval "$(starship init zsh)"
     #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
