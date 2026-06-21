@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.profiles.media = lib.mkEnableOption "media packages";
 
   config = lib.mkIf config.profiles.media {
