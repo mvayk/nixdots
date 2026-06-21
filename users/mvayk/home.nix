@@ -1,5 +1,4 @@
-{ de, ... }:
-{
+{de, ...}: {
   imports = [
     #../../home/base.nix
     (../../home/de + "/${de}/default.nix")
@@ -25,7 +24,7 @@
     CARGO_HOME = "$HOME/.cargo";
   };
 
-  home.sessionPath = [ "$HOME/.cargo/bin" ];
+  home.sessionPath = ["$HOME/.cargo/bin"];
 
   programs.home-manager.enable = true;
 

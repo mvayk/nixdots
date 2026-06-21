@@ -9,10 +9,10 @@
       settingsVersion = 59;
 
       bar = {
-        barType = "simple";
+        barType = "floating";
         position = "top";
         monitors = [];
-        density = "compact";
+        density = "default";
         showOutline = false;
         showCapsule = false;
         capsuleOpacity = 1;
@@ -24,7 +24,7 @@
         backgroundOpacity = 1;
         useSeparateOpacity = true;
         marginVertical = 8;
-        marginHorizontal = 8;
+        marginHorizontal = 330;
         frameThickness = 8;
         frameRadius = 12;
         outerCorners = false;
@@ -128,25 +128,6 @@
               textColor = "none";
             }
             {
-              displayMode = "onhover";
-              iconColor = "none";
-              id = "Bluetooth";
-              textColor = "none";
-            }
-            {
-              displayMode = "onhover";
-              iconColor = "none";
-              id = "Network";
-              textColor = "none";
-            }
-            {
-              applyToAllMonitors = false;
-              displayMode = "onhover";
-              iconColor = "none";
-              id = "Brightness";
-              textColor = "none";
-            }
-            {
               deviceNativePath = "";
               displayMode = "onhover";
               hideIfIdle = false;
@@ -192,7 +173,7 @@
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
-        scaleRatio = 0.90;
+        scaleRatio = 0.9;
         radiusRatio = 1;
         iRadiusRatio = 1;
         boxRadiusRatio = 0;
@@ -230,10 +211,7 @@
           keyDown = ["Down"];
           keyLeft = ["Left"];
           keyRight = ["Right"];
-          keyEnter = [
-            "Return"
-            "Enter"
-          ];
+          keyEnter = ["Return" "Enter"];
           keyEscape = ["Esc"];
           keyRemove = ["Del"];
         };
@@ -250,7 +228,7 @@
         tooltipsEnabled = true;
         scrollbarAlwaysVisible = false;
         boxBorderEnabled = true;
-        panelBackgroundOpacity = 1.0;
+        panelBackgroundOpacity = 1;
         translucentWidgets = false;
         panelsAttachedToBar = false;
         settingsPanelMode = "centered";
@@ -309,14 +287,7 @@
         wallpaperChangeMode = "random";
         randomIntervalSec = 300;
         transitionDuration = 1500;
-        transitionType = [
-          "fade"
-          "disc"
-          "stripes"
-          "wipe"
-          "pixelate"
-          "honeycomb"
-        ];
+        transitionType = ["fade" "disc" "stripes" "wipe" "pixelate" "honeycomb"];
         skipStartupTransition = false;
         transitionEdgeSmoothness = 0.05;
         panelPosition = "follow_bar";
@@ -377,12 +348,14 @@
             {id = "Bluetooth";}
             {id = "WallpaperSelector";}
             {id = "DarkMode";}
+            {id = "AirplaneMode";}
           ];
           right = [
             {id = "Notifications";}
             {id = "PowerProfile";}
             {id = "KeepAwake";}
             {id = "NightLight";}
+            {id = "NoctaliaPerformance";}
           ];
         };
 
@@ -450,7 +423,7 @@
         dockType = "floating";
         backgroundOpacity = 0;
         floatingRatio = 1;
-        size = 1.0;
+        size = 1;
         onlySameOutput = false;
         monitors = [];
         pinnedApps = [];
@@ -596,12 +569,7 @@
         autoHideMs = 2000;
         overlayLayer = true;
         backgroundOpacity = 1;
-        enabledTypes = [
-          0
-          1
-          2
-          4
-        ];
+        enabledTypes = [0 1 2 4];
         monitors = [];
       };
 
@@ -625,15 +593,14 @@
       };
 
       colorSchemes = {
-        # why is declarativeness causing bugs!?
-        #useWallpaperColors = false;
+        useWallpaperColors = true;
         amoledOverride = false;
-        #predefinedScheme = "Ayu";
+        predefinedScheme = "Noctalia (default)";
         darkMode = true;
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        #generationMethod = "rainbow";
+        generationMethod = "fruit-salad";
         monitorForColors = "";
         syncGsettings = false;
       };
@@ -689,7 +656,7 @@
       };
 
       nightLight = {
-        enabled = false;
+        enabled = true;
         forced = false;
         autoSchedule = false;
         nightTemp = "1090";
