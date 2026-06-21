@@ -61,7 +61,7 @@
               labelMode = "name";
               occupiedColor = "secondary";
               pillSize = 0.6;
-              showApplications = false;
+              showApplications = true;
               showApplicationsHover = false;
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;

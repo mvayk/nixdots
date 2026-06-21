@@ -22,8 +22,6 @@ in {
     size = 24;
   };
 
-  xdg.configFile."hyprland/layerrules.conf".source = ../../../../features/hyprland/layerrules.conf;
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -109,12 +107,6 @@ in {
         ];
       };
 
-      # layerrule = [
-      #   "ignorealpha 0.5,noctalia-background-.*"
-      #   "blur,noctalia-background-.*"
-      #   "blurpopups,noctalia-background-.*"
-      # ];
-
       bind = [
         "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
         ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
@@ -125,16 +117,8 @@ in {
         "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
       ];
     };
-    # extraConfig = ''
-    #   layerrule {
-    #     name = noctalia
-    #     match:namespace = noctalia-background-.*$
-    #     ignore_alpha = 0.5
-    #     blur = true
-    #     blur_popups = true
-    #   }
-    # '';
   };
+  xdg.configFile."hypr/layerrules.conf".source = ../../../../features/hyprland/layerrules.conf;
 
   home.packages = [
     quickshell.packages.${pkgs.system}.default
