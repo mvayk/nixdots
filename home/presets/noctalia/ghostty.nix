@@ -4,7 +4,7 @@
     settings = {
       #font-family = "VictorMono Nerd Font Mono";
       font-family = "JetBrainsMono Nerd Font Mono";
-      font-size = 16;
+      font-size = 14;
       cursor-style-blink = true;
       shell-integration = "zsh";
       shell-integration-features = "no-cursor";
@@ -15,8 +15,8 @@
       theme = "noctalia";
       custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
-      background-opacity = 0.6;
-      adjust-cell-height = "+0%";
+      background-opacity = 1;
+      adjust-cell-height = "+4%";
       window-padding-x = 15;
       window-padding-y = 15;
       cursor-style = "underline";

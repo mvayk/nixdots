@@ -20,7 +20,7 @@
         "colored-man-pages"
         "command-not-found"
       ];
-      theme = "";
+      theme = "mh";
     };
 
     plugins = [

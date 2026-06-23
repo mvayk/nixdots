@@ -533,7 +533,7 @@
         enableMarkdown = false;
         density = "default";
         monitors = [];
-        location = "top_right";
+        location = "top_center";
         overlayLayer = true;
         backgroundOpacity = 1;
         respectExpireTimeout = false;

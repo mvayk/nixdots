@@ -58,7 +58,7 @@
           "$mainMod, W, exec, zen-beta"
           "$mainMod, V, togglefloating,"
           "$mainMod, P, pseudo,"
-          #"$mainMod, N, togglesplit,"
+          "$mainMod, N, layoutmsg, swapsplit,"
           "$mainMod, F, fullscreen"
           "$mainMod, Q, killactive,"
           ", End, exec, grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"

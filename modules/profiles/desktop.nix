@@ -64,6 +64,7 @@
       zen-browser.packages.${pkgs.system}.beta
       helium.packages.${pkgs.system}.default
       chromium
+      qutebrowser
       vesktop
       kdePackages.dolphin
       kdePackages.kio

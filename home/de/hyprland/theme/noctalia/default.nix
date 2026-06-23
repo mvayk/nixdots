@@ -19,22 +19,22 @@ in {
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
-    size = 24;
+    size = 12;
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       env = [
-        "XCURSOR_SIZE,24"
+        "XCURSOR_SIZE,12"
         "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-        "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,12"
       ];
 
       exec-once = [
         "noctalia-shell"
         "nm-applet"
-        "hyprctl setcursor Bibata-Modern-Ice 24"
+        "hyprctl setcursor Bibata-Modern-Ice 12"
       ];
 
       source = "noctalia/noctalia-colors.conf";
@@ -52,7 +52,7 @@ in {
       };
 
       decoration = {
-        rounding = 20;
+        rounding = 10;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
