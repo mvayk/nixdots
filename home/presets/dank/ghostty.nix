@@ -3,17 +3,14 @@
   config,
   ...
 }: {
+  imports = [../../features/ghostty.nix];
+
   programs.ghostty = {
     enable = true;
 
     settings = {
       font-family = "VictorMono Nerd Font Mono";
       font-size = 16;
-      cursor-style-blink = true;
-      shell-integration = "zsh";
-      keybind = "ctrl+backspace=text:\\x1b\\x7f";
-      window-padding-balance = true;
-      confirm-close-surface = false;
       window-decoration = false;
       background-opacity = 1.0;
       cursor-style = "block";

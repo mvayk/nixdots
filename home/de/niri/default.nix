@@ -34,7 +34,7 @@
         ];
 
         default-column-width = {
-          proportion = 0.5;
+          proportion = 1.0; # 0.5
         };
       };
 

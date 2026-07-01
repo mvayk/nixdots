@@ -185,11 +185,17 @@
         theme = "default";
       };
 
-      flandre-hyprland = {
+      flandre-hyprland-noctalia = {
         machine = "flandre";
         de = "hyprland";
         theme = "noctalia";
       };
+      flandre-niri-noctalia = {
+        machine = "flandre";
+        de = "niri";
+        theme = "noctalia";
+      };
+
       flandre-niri = {
         machine = "flandre";
         de = "niri";

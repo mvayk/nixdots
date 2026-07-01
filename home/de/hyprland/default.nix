@@ -13,7 +13,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    #configType = "hyprlang";
+    configType = "lua";
     settings = {
       "$mainMod" = "SUPER";
 
