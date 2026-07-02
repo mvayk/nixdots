@@ -15,6 +15,11 @@
         package = pkgs.emacs;
       };
     };
+
+    nixpkgs.config.permittedInsecurePackages = [
+      "pnpm-10.29.2"
+    ];
+
     programs = {
       ccache.enable = true;
       direnv = {

@@ -4,16 +4,16 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   dir = ../../../../presets/dank;
   fileNames = builtins.attrNames (builtins.readDir dir);
   nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
-in
-{
-  imports = map (n: dir + "/${n}") nixFiles ++ [
-    ../../../../features/fastfetch.nix
-  ];
+in {
+  imports =
+    map (n: dir + "/${n}") nixFiles
+    ++ [
+      ../../../../features/fastfetch.nix
+    ];
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
@@ -37,22 +37,6 @@ in
         gaps = 8;
         center-focused-column = "never";
         background-color = "transparent";
-
-        preset-column-widths = [
-          {
-            proportion = 0.333333;
-          }
-          {
-            proportion = 0.5;
-          }
-          {
-            proportion = 0.666667;
-          }
-        ];
-
-        default-column-width = {
-          proportion = 0.5;
-        };
 
         focus-ring = {
           enable = false;

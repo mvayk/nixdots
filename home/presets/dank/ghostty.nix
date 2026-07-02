@@ -12,10 +12,10 @@
       font-family = "VictorMono Nerd Font Mono";
       font-size = 16;
       window-decoration = false;
-      background-opacity = 1.0;
+      background-opacity = 0.6;
       cursor-style = "block";
       theme = "dankcolors";
-      adjust-cell-height = "0%";
+      adjust-cell-height = "5%";
       window-padding-x = 10;
       window-padding-y = 10;
       custom-shader-animation = "always";

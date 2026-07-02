@@ -196,6 +196,12 @@
         theme = "noctalia";
       };
 
+      flandre-niri-dank = {
+        machine = "flandre";
+        de = "niri";
+        theme = "dank";
+      };
+
       flandre-niri = {
         machine = "flandre";
         de = "niri";
