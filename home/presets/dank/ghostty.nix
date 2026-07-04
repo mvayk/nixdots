@@ -13,7 +13,7 @@
       font-size = 16;
       window-decoration = false;
       background-opacity = 0.6;
-      cursor-style = "block";
+      cursor-style = "underline";
       theme = "dankcolors";
       adjust-cell-height = "5%";
       window-padding-x = 10;

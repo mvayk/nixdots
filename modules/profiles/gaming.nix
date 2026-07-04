@@ -4,8 +4,7 @@
   config,
   pkgs-stable,
   ...
-}:
-{
+}: {
   options.profiles.gaming = lib.mkEnableOption "gaming packages";
 
   config = lib.mkIf config.profiles.gaming {
@@ -24,17 +23,17 @@
       osu-lazer-bin
       prismlauncher
       /*
-        (
-          heroic.override
-          {
-            extraPkgs =
-              ps:
-              with ps; [
-                gamescope
-                gamemode
-              ];
-          }
-        )
+      (
+        heroic.override
+        {
+          extraPkgs =
+            ps:
+            with ps; [
+              gamescope
+              gamemode
+            ];
+        }
+      )
       */
       lutris
       xdotool
@@ -44,7 +43,8 @@
       protonup-qt
       protontricks
       qemu
-      pkgs-stable.wineWowPackages.stable
+      #pkgs-stable.wineWowPackages.stable
+      wineWow64Packages.staging
       winetricks
       steamtinkerlaunch
       vinegar
