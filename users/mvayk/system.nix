@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   users.users.mvayk = {
     uid = 1000;
     isNormalUser = true;
@@ -12,6 +11,7 @@
       "audio"
       "plugdev"
       "input"
+      "render"
     ];
     #hashedPasswordFile = "/run/secrets/mvayk-password";
   };

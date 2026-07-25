@@ -3,13 +3,12 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.profiles.misc = lib.mkEnableOption "misc packages";
 
   config = lib.mkIf config.profiles.misc {
     virtualisation.libvirtd = {
-      enable = true;
+      enable = false;
       qemu = {
         package = pkgs.qemu_kvm;
         runAsRoot = true;
@@ -41,6 +40,7 @@
       pinentry-gnome3
       samba
       cifs-utils
+      ntfs3g
       jq
     ];
   };

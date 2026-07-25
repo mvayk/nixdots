@@ -102,6 +102,7 @@
       clang
       clang-tools
       rustfmt
+      rust-analyzer
       rustc
       cargo
       pkg-config

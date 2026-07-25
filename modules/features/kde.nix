@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services.displayManager.defaultSession = "plasma";
   services.desktopManager.plasma6.enable = true;
 
@@ -14,5 +13,7 @@
   environment.systemPackages = with pkgs; [
     darkly
     kde-rounded-corners
+    kdePackages.qtstyleplugin-kvantum
+    nwg-look
   ];
 }

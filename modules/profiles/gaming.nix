@@ -53,6 +53,7 @@
       kdePackages.kpat
       pcsx2
       retroarch
+      assaultcube
     ];
   };
 }
