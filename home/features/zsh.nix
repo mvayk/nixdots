@@ -47,7 +47,9 @@
       vim = "nvim";
       sue = "sudo -E nvim";
       ghidra = "_JAVA_AWT_WM_NONREPARENTING=1 ghidra";
-      osu = "env SDL_VIDEODRIVER=wayland osu!";
+      #osu = "env SDL_VIDEODRIVER=wayland osu!";
+      osu = "OSU_SDL3=1 osu!";
+
       #emacs = "emacsclient -c -a 'emacs'";
 
       #nix-rebuild = ''pushd /etc/nixos >/dev/null && sudo nixos-rebuild switch --flake ".#$(hostname)-$NIXOS_DE" && popd >/dev/null'';

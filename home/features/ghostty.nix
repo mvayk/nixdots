@@ -2,7 +2,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "Srcery";
+      theme = "Blue Matrix";
       cursor-style-blink = true;
       shell-integration = "detect";
       shell-integration-features = "no-cursor";
