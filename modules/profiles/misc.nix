@@ -16,6 +16,8 @@
       };
     };
 
+    programs.ydotool.enable = true;
+
     environment.systemPackages = with pkgs; [
       qmk
       via
@@ -42,6 +44,7 @@
       cifs-utils
       ntfs3g
       jq
+      ydotool
     ];
   };
 }

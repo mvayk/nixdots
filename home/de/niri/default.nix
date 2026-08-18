@@ -116,7 +116,7 @@
             "ghostty"
           ];
           "Mod+W".action.spawn = [
-            "zen-beta"
+            "firefox-nightly"
           ];
           "Mod+D".action.spawn = [
             "neovide"

@@ -12,6 +12,7 @@
       "plugdev"
       "input"
       "render"
+      "ydotool"
     ];
     #hashedPasswordFile = "/run/secrets/mvayk-password";
   };

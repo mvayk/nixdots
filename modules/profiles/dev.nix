@@ -18,6 +18,7 @@
 
     nixpkgs.config.permittedInsecurePackages = [
       "pnpm-10.29.2"
+      "idea-oss-2025.3.4"
     ];
 
     programs = {

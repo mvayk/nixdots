@@ -30,7 +30,7 @@ in {
         size = 24;
       };
       layout = {
-        gaps = 18;
+        gaps = 24;
         center-focused-column = "never";
         background-color = "transparent";
 
@@ -65,10 +65,10 @@ in {
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 0.0;
-            top-right = 0.0;
-            bottom-left = 0.0;
-            bottom-right = 0.0;
+            top-left = 10.0;
+            top-right = 10.0;
+            bottom-left = 10.0;
+            bottom-right = 10.0;
           };
           clip-to-geometry = true;
         }
@@ -90,53 +90,45 @@ in {
 
       binds = {
         "Mod+O".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
-          "lockScreen"
+          "noctalia"
+          "msg"
+          "session"
           "lock"
         ];
         "Pause".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
-          "volume"
-          "muteInput"
+          "noctalia"
+          "msg"
+          "mic-mute"
         ];
         "Mod+Semicolon".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
+          "noctalia"
+          "msg"
+          "panel-toggle"
           "launcher"
-          "emoji"
+          "/emo "
         ];
         "Mod+I".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
+          "noctalia"
+          "msg"
+          "panel-toggle"
           "launcher"
-          "calculator"
+          "/calc "
         ];
         "Mod+A".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
+          "noctalia"
+          "msg"
+          "panel-toggle"
           "launcher"
-          "toggle"
         ];
         "Mod+Page_Up".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
-          "volume"
-          "increase"
+          "noctalia"
+          "msg"
+          "volume-up"
         ];
         "Mod+Page_Down".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
-          "volume"
-          "decrease"
+          "noctalia"
+          "msg"
+          "volume-down"
         ];
       };
 
@@ -144,12 +136,7 @@ in {
       spawn-at-startup = [
         {
           command = [
-            "noctalia-shell"
-          ];
-        }
-        {
-          command = [
-            "qs"
+            "noctalia"
           ];
         }
         {
@@ -172,7 +159,6 @@ in {
     config.programs.niri.finalConfig + "\n" + ''include "~/.config/niri/noctalia.kdl"'';
 
   home.packages = [
-    quickshell.packages.${pkgs.system}.default
     noctalia.packages.${pkgs.system}.default
   ];
 }

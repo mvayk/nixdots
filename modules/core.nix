@@ -19,21 +19,21 @@
       useOSProber = true;
     };
 
-    #    kernel.sysctl = {
-    #     "kernel.yama.ptrace_scope" = 0;
-    #  };
+    kernel.sysctl = {
+      "kernel.yama.ptrace_scope" = 0;
+    };
 
-    #kernelModules = [
-    #  "uinput"
-    #  "v4l2loopback"
-    #];
-    #extraModulePackages = with config.boot.kernelPackages; [
+    kernelModules = [
+      "uinput"
+      "v4l2loopback"
+    ];
+    # extraModulePackages = with config.boot.kernelPackages; [
     #   v4l2loopback
-    #];
-    # extraModprobeConfig = ''
-    #    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-    #   '';
-    #
+    # ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+
     supportedFilesystems = [
       "ntfs"
     ];

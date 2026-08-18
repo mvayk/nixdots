@@ -6,6 +6,7 @@
   zen-browser,
   helium,
   spicetify-nix,
+  firefox-nightly,
   ...
 }: {
   options.profiles.desktop = lib.mkEnableOption "desktop packages";
@@ -62,6 +63,7 @@
     environment.systemPackages = with pkgs; [
       ghostty
       zen-browser.packages.${pkgs.system}.beta
+      firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin
       helium.packages.${pkgs.system}.default
       chromium
       qutebrowser

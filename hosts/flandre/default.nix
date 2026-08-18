@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     ../../modules/core.nix
   ];
@@ -30,12 +29,14 @@
     open = false;
     nvidiaSettings = true;
   };
+  boot.kernelParams = ["usbhid.mousepoll=8"];
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
+  services.ratbagd.enable = true;
   services.hardware.openrgb.enable = true;
 
   services.udev.extraRules = ''
@@ -51,5 +52,6 @@
     })
     wootility
     xppen_4
+    piper
   ];
 }

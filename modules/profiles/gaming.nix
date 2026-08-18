@@ -54,6 +54,7 @@
       pcsx2
       retroarch
       assaultcube
+      lunar-client
     ];
   };
 }

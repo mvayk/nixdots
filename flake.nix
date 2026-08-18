@@ -16,12 +16,7 @@
     };
 
     noctalia = {
-      url = "github:mvayk/noctalia-shell-amoled";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.noctalia-qs.follows = "noctalia-qs";
-    };
-    noctalia-qs = {
-      url = "github:noctalia-dev/noctalia-qs";
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -54,6 +49,10 @@
       url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-nightly = {
+      url = "github:nix-community/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -76,6 +75,7 @@
     future-hyprcursor,
     quickshell,
     zen-browser,
+    firefox-nightly,
     helium,
     spicetify-nix,
     niri,
@@ -96,6 +96,7 @@
         quickshell
         future-hyprcursor
         zen-browser
+        firefox-nightly
         helium
         spicetify-nix
         ;

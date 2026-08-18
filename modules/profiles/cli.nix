@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.profiles.cli = lib.mkEnableOption "cli packages";
   config = lib.mkIf config.profiles.cli {
     environment.systemPackages = with pkgs; [
@@ -31,6 +30,7 @@
       tldr
       bottom
       dust
+      zip
       procs
       nnn
       feh
