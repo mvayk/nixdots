@@ -60,7 +60,7 @@
       outputs =
         if machine == "flandre"
         then {
-          "DP-2" = {
+          "DP-3" = {
             mode = {
               width = 2560;
               height = 1440;
@@ -71,17 +71,6 @@
               y = 0;
             };
           };
-          "DP-3" = {
-            mode = {
-              width = 2560;
-              height = 1440;
-              refresh = 240.001;
-            };
-            position = {
-              x = 2560;
-              y = 0;
-            };
-          };
           "DP-1" = {
             mode = {
               width = 2560;
@@ -89,8 +78,8 @@
               refresh = 240.001;
             };
             position = {
-              x = 5120;
-              y = 0;
+              x = 2560;
+              y = -720;
             };
             transform = {
               rotation = 90;
