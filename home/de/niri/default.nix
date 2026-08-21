@@ -226,8 +226,4 @@
         };
     };
   };
-
-  home.sessionVariables = {
-    TERMINAL = "ghostty";
-  };
 }

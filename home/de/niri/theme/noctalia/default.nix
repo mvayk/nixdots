@@ -12,25 +12,10 @@
 in {
   imports = map (n: dir + "/${n}") nixFiles ++ [../../../../features/fastfetch.nix];
 
-  home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
-  };
-
   programs.niri = {
     settings = {
-      environment = {
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
-      };
-
-      cursor = {
-        theme = "Bibata-Modern-Ice";
-        size = 24;
-      };
       layout = {
-        gaps = 24;
+        gaps = 32;
         center-focused-column = "never";
         background-color = "transparent";
 

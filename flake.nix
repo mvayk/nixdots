@@ -60,7 +60,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -135,6 +135,7 @@
           ./hosts/${machine}/default.nix
           ./hosts/${machine}/hardware.nix
           ./modules/features/${de}.nix
+          ./modules/overlays.nix
           sops-nix.nixosModules.sops
           spicetify-nix.nixosModules.default
           home-manager.nixosModules.home-manager
