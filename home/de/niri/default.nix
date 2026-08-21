@@ -92,6 +92,9 @@
               x = 5120;
               y = 0;
             };
+            transform = {
+              rotation = 90;
+            };
           };
         }
         else {
