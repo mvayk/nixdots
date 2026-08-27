@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  kwin-effects-glass,
+  ...
+}: {
   imports = [
     ../../features/fastfetch.nix
     ../../features/ghostty.nix
@@ -23,4 +28,9 @@
     apiEnabled=false
   '';
   */
+
+  home.packages = with pkgs; [
+    plasma-panel-colorizer
+    kwin-effects-glass.packages.${pkgs.system}.default
+  ];
 }

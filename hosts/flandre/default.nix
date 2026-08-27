@@ -30,6 +30,7 @@
     nvidiaSettings = true;
   };
   boot.kernelParams = ["usbhid.mousepoll=8"];
+  virtualisation.vmware.host.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -53,5 +54,6 @@
     wootility
     xppen_4
     piper
+    vmware-workstation
   ];
 }

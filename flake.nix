@@ -63,6 +63,10 @@
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kwin-effects-glass = {
+      url = "github:4v3ngR/kwin-effects-glass";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -79,6 +83,7 @@
     helium,
     spicetify-nix,
     niri,
+    kwin-effects-glass,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -96,6 +101,7 @@
         quickshell
         future-hyprcursor
         zen-browser
+        kwin-effects-glass
         firefox-nightly
         helium
         spicetify-nix

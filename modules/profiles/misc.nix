@@ -8,7 +8,7 @@
 
   config = lib.mkIf config.profiles.misc {
     virtualisation.libvirtd = {
-      enable = false;
+      enable = true;
       qemu = {
         package = pkgs.qemu_kvm;
         runAsRoot = true;
