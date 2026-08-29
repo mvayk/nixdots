@@ -45,6 +45,7 @@
       ntfs3g
       jq
       ydotool
+      libinput
     ];
   };
 }

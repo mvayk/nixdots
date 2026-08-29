@@ -40,6 +40,11 @@
   services.ratbagd.enable = true;
   services.hardware.openrgb.enable = true;
 
+  programs.xppen = {
+    enable = true;
+    package = pkgs.xppen_3;
+  };
+
   services.udev.extraRules = ''
     SUBSYSTEM=="usb",   ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
@@ -52,7 +57,7 @@
       cudaSupport = false;
     })
     wootility
-    xppen_4
+    #xppen_4
     piper
     vmware-workstation
   ];
