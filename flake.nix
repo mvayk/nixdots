@@ -20,10 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mshell = {
-      url = "path:/home/mvayk/dev/mshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # mshell = {
+    #   url = "path:/home/mvayk/dev/mshell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";

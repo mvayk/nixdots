@@ -46,6 +46,8 @@
       jq
       ydotool
       libinput
+      OVMF
+      kdotool
     ];
   };
 }
