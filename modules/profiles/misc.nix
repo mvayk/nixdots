@@ -19,7 +19,7 @@
     programs.ydotool.enable = true;
 
     environment.systemPackages = with pkgs; [
-      qmk
+      #qmk
       via
       networkmanagerapplet
       inetutils
@@ -48,6 +48,7 @@
       libinput
       OVMF
       kdotool
+      kdePackages.filelight
     ];
   };
 }

@@ -29,13 +29,13 @@
       obs-studio = {
         enable = true;
         package = pkgs.obs-studio.override {
-          cudaSupport = false;
+          cudaSupport = true;
         };
         plugins = with pkgs.obs-studio-plugins; [
           wlrobs
           obs-backgroundremoval
           obs-pipewire-audio-capture
-          obs-vaapi
+          # obs-vaapi
           obs-gstreamer
           obs-vkcapture
         ];
@@ -88,6 +88,7 @@
       kdePackages.kleopatra
       gparted
       pkgs-stable.wineWowPackages.stable
+      vlc
     ];
   };
 }

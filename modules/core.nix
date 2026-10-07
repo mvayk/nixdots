@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../modules/profiles/default.nix
-    ../modules/features/ly.nix
+    ../modules/features/sddm.nix
     ../modules/features/dank.nix
     #../modules/sops.nix
   ];
@@ -100,7 +100,7 @@
     bluetooth.enable = true;
     opentabletdriver.enable = true;
     uinput.enable = true;
-    keyboard.qmk.enable = true;
+    #keyboard.qmk.enable = true;
   };
 
   xdg = {

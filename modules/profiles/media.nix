@@ -38,6 +38,7 @@
       nerd-fonts._3270
       nerd-fonts.terminess-ttf
       nerd-fonts.bigblue-terminal
+      nerd-fonts.comic-shanns-mono
     ];
   };
 }

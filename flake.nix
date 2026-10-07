@@ -182,6 +182,11 @@
         de = "kde";
         theme = "default";
       };
+      flandre-cinnamon = {
+        machine = "flandre";
+        de = "cinnamon";
+        theme = "default";
+      };
       flandre-gnome = {
         machine = "flandre";
         de = "gnome";
