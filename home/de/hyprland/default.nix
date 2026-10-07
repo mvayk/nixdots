@@ -13,7 +13,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "lua";
     settings = {
       "$mainMod" = "SUPER";
 
@@ -55,7 +54,7 @@
           "$mainMod, E, exec, dolphin"
           "$mainMod, T, exec, ghostty"
           #"$mainMod, W, exec, ${if machine == "coerxion" then "nvidia-offload firefox" else "firefox"}"
-          "$mainMod, W, exec, zen-beta"
+          "$mainMod, W, exec, firefox"
           "$mainMod, V, togglefloating,"
           "$mainMod, P, pseudo,"
           "$mainMod, N, layoutmsg, swapsplit,"
@@ -125,9 +124,9 @@
       monitor =
         if machine == "flandre"
         then [
-          "DP-2,     2560x1440@240, 0x0,    1"
-          "DP-3,     2560x1440@240, 2560x0, 1"
-          "DP-1,     2560x1440@240, 5120x0, 1"
+          "DP-2, 2560x1440@240, 0x720,    1"
+          "DP-1, 2560x1440@240, 2560x720, 1"
+          "DP-3, 2560x1440@240, 5120x0,   1, transform, 3"
         ]
         else [
           "eDP-1, 1920x1080@144.00, 0x0, 1"

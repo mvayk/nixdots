@@ -20,10 +20,6 @@ in {
       # hyprland: source the noctalia-generated colors (path relative to ~/.config/hypr)
       # NOTE: your old config also had `layerrules = "layerrules.conf"`, which isn't a real
       # hyprland key. Sourcing it here instead (see xdg.configFile below).
-      source = [
-        "noctalia/noctalia-colors.conf"
-        "layerrules.conf"
-      ];
 
       exec-once = [
         "noctalia"
@@ -48,7 +44,7 @@ in {
         # layout (Hyprland >= 0.48). It has no direct center-focused-column "never"
         # option, so check the `scrolling { ... }` section (focus_fit_method,
         # follow_focus) if columns don't behave how you want. Use "dwindle" for the old behavior.
-        layout = "scrolling";
+        layout = "dwindle";
       };
 
       # niri: layout.focus-ring (enable = false)
@@ -80,7 +76,7 @@ in {
           # offset x = 4, y = 8
           offset = "4 8";
           # draw-behind-window = true: hyprland shadows always render behind the window.
-          color = "rgba(00000080)";
+          color = "rgba(00000045)";
         };
       };
 
@@ -98,6 +94,11 @@ in {
       # No global slowdown in hyprland. Speeds are set per animation, and
       # defaults are left untouched here.
       animations.enabled = true;
+
+      source = [
+        "noctalia.conf"
+        "layerrules.conf"
+      ];
 
       bind = [
         "$mainMod, O, exec, noctalia msg session lock"
