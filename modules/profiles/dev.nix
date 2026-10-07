@@ -161,7 +161,7 @@
       qt6.qtdeclarative
       qt6.qttools
       kdePackages.qtdeclarative
-      jetbrains.idea-oss
+      jetbrains.idea
       recaf-launcher
       jasmin
     ];
