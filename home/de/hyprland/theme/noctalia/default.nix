@@ -10,12 +10,23 @@
 in {
   imports = map (n: dir + "/${n}") nixFiles ++ [../../../../features/fastfetch.nix];
 
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  };
+
   # vibed from niri to hyprland
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mainMod" = "SUPER";
 
+      env = [
+        "XCURSOR_THEME,Bibata-Modern-Classic"
+        "XCURSOR_SIZE,24"
+      ];
       # niri: include "~/.config/niri/noctalia.kdl"
       # hyprland: source the noctalia-generated colors (path relative to ~/.config/hypr)
       # NOTE: your old config also had `layerrules = "layerrules.conf"`, which isn't a real
@@ -23,7 +34,7 @@ in {
 
       exec-once = [
         "noctalia"
-        "nm-applet"
+        #"nm-applet"
         # xwayland-satellite: not needed, Hyprland has built-in XWayland.
       ];
 
@@ -36,8 +47,8 @@ in {
 
         # niri: border { enable = true; width = 2; }
         border_size = 2;
-        "col.active_border" = "rgba(ffffffff)";
-        "col.inactive_border" = "rgba(000000ff)";
+        #"col.active_border" = "rgba(ffffffff)";
+        #"col.inactive_border" = "rgba(000000ff)";
 
         # niri: layout.center-focused-column = "never"
         # Closest hyprland equivalent to niri's scrolling columns is the "scrolling"
