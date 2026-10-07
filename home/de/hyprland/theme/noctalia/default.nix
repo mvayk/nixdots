@@ -2,127 +2,118 @@
   pkgs,
   lib,
   noctalia,
-  quickshell,
-  future-hyprcursor,
   ...
 }: let
   dir = ../../../../presets/noctalia;
   fileNames = builtins.attrNames (builtins.readDir dir);
   nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
 in {
-  imports =
-    map (n: dir + "/${n}") nixFiles
-    ++ [
-      ../../../../features/fastfetch.nix
-    ];
+  imports = map (n: dir + "/${n}") nixFiles ++ [../../../../features/fastfetch.nix];
 
-  home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 12;
-  };
-
+  # vibed from niri to hyprland
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      env = [
-        "XCURSOR_SIZE,12"
-        "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-        "HYPRCURSOR_SIZE,12"
+      "$mainMod" = "SUPER";
+
+      # niri: include "~/.config/niri/noctalia.kdl"
+      # hyprland: source the noctalia-generated colors (path relative to ~/.config/hypr)
+      # NOTE: your old config also had `layerrules = "layerrules.conf"`, which isn't a real
+      # hyprland key. Sourcing it here instead (see xdg.configFile below).
+      source = [
+        "noctalia/noctalia-colors.conf"
+        "layerrules.conf"
       ];
 
       exec-once = [
-        "noctalia-shell"
+        "noctalia"
         "nm-applet"
-        "hyprctl setcursor Bibata-Modern-Ice 12"
+        # xwayland-satellite: not needed, Hyprland has built-in XWayland.
       ];
 
-      source = "noctalia/noctalia-colors.conf";
-      layerrules = "layerrules.conf";
-
       general = {
-        gaps_in = 8;
-        gaps_out = 16;
-        border_size = 1;
-        "col.active_border" = "$primary $secondary $tertiary 45deg";
-        "col.inactive_border" = "$surface";
-        resize_on_border = false;
-        allow_tearing = false;
-        layout = "dwindle";
+        # niri: gaps = 32
+        # niri's gap is the space *between* windows, while hyprland's gaps_in is per-window
+        # (so between windows = 2 * gaps_in). gaps_out is the distance from the screen edge.
+        gaps_in = 16;
+        gaps_out = 32;
+
+        # niri: border { enable = true; width = 2; }
+        border_size = 2;
+        "col.active_border" = "rgba(ffffffff)";
+        "col.inactive_border" = "rgba(000000ff)";
+
+        # niri: layout.center-focused-column = "never"
+        # Closest hyprland equivalent to niri's scrolling columns is the "scrolling"
+        # layout (Hyprland >= 0.48). It has no direct center-focused-column "never"
+        # option, so check the `scrolling { ... }` section (focus_fit_method,
+        # follow_focus) if columns don't behave how you want. Use "dwindle" for the old behavior.
+        layout = "scrolling";
       };
+
+      # niri: layout.focus-ring (enable = false)
+      # Hyprland has no separate focus ring, only the border above, so nothing to set.
+
+      # niri: layout.background-color = "transparent"
+      # Not directly replicable. Hyprland draws the wallpaper/background via
+      # layer-shell (noctalia handles that), and there's no per-layout background color.
+
+      # niri: prefer-no-csd = true
+      # Hyprland has no server-side-decoration toggle. It never draws titlebars, and
+      # whether a client draws CSD is up to the client itself.
 
       decoration = {
+        # niri window-rule: geometry-corner-radius = 10, clip-to-geometry = true
+        # Hyprland rounding clips window content to the rounded corners by default.
         rounding = 10;
-        rounding_power = 2;
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
+
+        # niri window-rule: draw-border-with-background = false
+        # No equivalent in hyprland.
+
+        # niri: layout.shadow
         shadow = {
           enabled = true;
-          range = 24;
-          render_power = 4;
+          # niri softness = 8, spread = 2 -> hyprland only has `range` (roughly
+          # softness + spread). Tweak by eye.
+          range = 10;
+          render_power = 3;
+          # offset x = 4, y = 8
+          offset = "4 8";
+          # draw-behind-window = true: hyprland shadows always render behind the window.
           color = "rgba(00000080)";
         };
-        blur = {
-          enabled = true;
-          size = 15;
-          passes = 4;
-          vibrancy = 0.1696;
-        };
-      };
-      animations = {
-        enabled = true;
-        bezier = [
-          "wind, 0.05, 0.9, 0.1, 1"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "liner, 1, 1, 1, 1"
-          "md3_standard, 0.2, 0, 0, 1"
-          "md3_decel, 0.05, 0.7, 0.1, 1"
-          "md3_accel, 0.3, 0, 0.8, 0.15"
-          "overshot, 0.05, 0.9, 0.1, 1.1"
-          "crazyshot, 0.1, 1.5, 0.76, 0.92"
-          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
-          "menu_decel, 0.1, 1, 0, 1"
-          "menu_accel, 0.38, 0.04, 1, 0.07"
-          "easeInOutCirc, 0.85, 0, 0.15, 1"
-          "easeOutCirc, 0, 0.55, 0.45, 1"
-          "easeOutExpo, 0.16, 1, 0.3, 1"
-          "softAcDecel, 0.26, 0.26, 0.15, 1"
-          "md2, 0.4, 0, 0.2, 1"
-        ];
-        animation = [
-          "border, 1, 1, liner"
-          "borderangle, 1, 30, liner, loop"
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "fade, 1, 3, md3_decel"
-          "layersIn, 1, 3, menu_decel, slide"
-          "layersOut, 1, 1.6, menu_accel"
-          "fadeLayersIn, 1, 2, menu_decel"
-          "fadeLayersOut, 1, 4.5, menu_accel"
-          "workspaces, 1, 5, wind, slidevert"
-          "specialWorkspace, 1, 3, md3_decel, slidevert"
-        ];
       };
 
+      # niri window-rule matching ^com\.mitchellh\.ghostty$ (empty rule, no properties set)
+      # Nothing to port. If you add properties later, hyprland syntax depends on your
+      # version (0.53+ uses `windowrule = <effect>, match:class ^com\.mitchellh\.ghostty$`,
+      # older uses `windowrulev2 = <effect>, class:^(com\.mitchellh\.ghostty)$`).
+
+      # niri layer-rule: place-within-backdrop = true
+      # No equivalent. Hyprland doesn't have a separate backdrop layer, and
+      # wallpaper layers already render below windows. Any layer-specific tweaks
+      # (blur, ignorezero, etc.) belong in layerrules.conf, sourced above.
+
+      # niri: animations.slowdown = 1.0
+      # No global slowdown in hyprland. Speeds are set per animation, and
+      # defaults are left untouched here.
+      animations.enabled = true;
+
       bind = [
-        "$mainMod, O, exec, noctalia-shell ipc call lockScreen lock"
-        ", PAUSE, exec, noctalia-shell ipc call volume muteInput"
-        "$mainMod, semicolon, exec, noctalia-shell ipc call launcher emoji"
-        "$mainMod, I, exec, noctalia-shell ipc call launcher calculator"
-        "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
-        "$mainMod, page_up,   exec, noctalia-shell ipc call volume increase"
-        "$mainMod, page_down, exec, noctalia-shell ipc call volume decrease"
+        "$mainMod, O, exec, noctalia msg session lock"
+        ", Pause, exec, noctalia msg mic-mute"
+        "$mainMod, Semicolon, exec, noctalia msg panel-toggle launcher '/emo '"
+        "$mainMod, I, exec, noctalia msg panel-toggle launcher '/calc '"
+        "$mainMod, A, exec, noctalia msg panel-toggle launcher"
+        "$mainMod, Page_Up, exec, noctalia msg volume-up"
+        "$mainMod, Page_Down, exec, noctalia msg volume-down"
       ];
     };
   };
+
   xdg.configFile."hypr/layerrules.conf".source = ../../../../features/hyprland/layerrules.conf;
 
   home.packages = [
-    quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
     noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    future-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

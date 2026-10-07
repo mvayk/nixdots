@@ -4,13 +4,13 @@
     enable = true;
     settings = {
       #font-family = "VictorMono Nerd Font Mono";
-      font-family = "SpaceMono Nerd Font Mono";
-      font-size = 14;
+      #font-family = "SpaceMono Nerd Font Mono";
+      font-size = 16;
       custom-shader-animation = "always";
       theme = "noctalia";
       custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
-      background-opacity = 0.8;
+      background-opacity = 0.75;
       adjust-cell-height = "+4%";
       window-padding-x = 15;
       window-padding-y = 15;

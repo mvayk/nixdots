@@ -10,7 +10,7 @@
       keybind = "ctrl+backspace=text:\\x1b\\x7f";
       window-padding-balance = true;
       confirm-close-surface = false;
-      font-family = "SpaceMono Nerd Font";
+      font-family = "ComicShannsMono Nerd Font";
       adjust-cell-height = "+10%";
     };
   };

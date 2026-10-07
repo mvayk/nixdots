@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  quickshell,
   noctalia,
   config,
   ...
@@ -56,6 +55,7 @@ in {
             bottom-right = 10.0;
           };
           clip-to-geometry = true;
+          draw-border-with-background = false;
         }
         {
           matches = [
@@ -63,7 +63,6 @@ in {
               app-id = "^com\\.mitchellh\\.ghostty$";
             }
           ];
-          draw-border-with-background = false;
         }
       ];
 

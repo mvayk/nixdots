@@ -71,29 +71,29 @@
         'let pkgs = import <nixpkgs> {}; in pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"' \
         2>/dev/null)
     '';
+    # if [[ -z "$TMUX" ]]; then
+    #   tmux attach 2>/dev/null || tmux new-session
+    # fi
     initContent = ''
-      if [[ -z "$TMUX" ]]; then
-        tmux attach 2>/dev/null || tmux new-session
-      fi
-                  if [[ -n "$TMUX" ]]; then
-                    export TERM="tmux-256color"
-                  fi
+                if [[ -n "$TMUX" ]]; then
+                  export TERM="tmux-256color"
+                fi
 
 
-                  eval "$(zoxide init zsh)"
-                  eval "$(direnv hook zsh)"
+                eval "$(zoxide init zsh)"
+                eval "$(direnv hook zsh)"
 
-                  edit() { neovide "$@" & }
+                edit() { neovide "$@" & }
 
-        _accept_suggestion_or_complete() {
-          if [[ -n $POSTDISPLAY ]]; then
-            zle forward-char
-          else
-            zle expand-or-complete
-          fi
-        }
-        zle -N _accept_suggestion_or_complete
-        bindkey '^I' _accept_suggestion_or_complete
+      _accept_suggestion_or_complete() {
+        if [[ -n $POSTDISPLAY ]]; then
+          zle forward-char
+        else
+          zle expand-or-complete
+        fi
+      }
+      zle -N _accept_suggestion_or_complete
+      bindkey '^I' _accept_suggestion_or_complete
     '';
     #bindkey '^[[13;2u' autosuggest-accept
     #[[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch

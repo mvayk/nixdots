@@ -9,7 +9,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,12 +18,6 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # mshell = {
-    #   url = "path:/home/mvayk/dev/mshell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,13 +26,19 @@
       url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    future-hyprcursor.url = "github:mvayk/nix-future-hyprcursor";
-
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:epireyn/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    kwin-effects-glass = {
+      url = "github:4v3ngR/kwin-effects-glass";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    future-hyprcursor.url = "github:mvayk/nix-future-hyprcursor";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake/beta";
@@ -53,94 +52,60 @@
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri = {
-      url = "github:epireyn/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    kwin-effects-glass = {
-      url = "github:4v3ngR/kwin-effects-glass";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
-    self,
     nixpkgs,
     nixpkgs-stable,
     home-manager,
     sops-nix,
-    noctalia,
-    future-hyprcursor,
-    quickshell,
-    zen-browser,
-    firefox-nightly,
-    helium,
     spicetify-nix,
     niri,
-    kwin-effects-glass,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
 
-    pkgs-stable = import nixpkgs-stable {
-      localSystem = system;
-    };
-
-    sharedArgs = {
-      inherit
-        inputs
-        pkgs-stable
-        noctalia
-        quickshell
-        future-hyprcursor
-        zen-browser
-        kwin-effects-glass
-        firefox-nightly
-        helium
-        spicetify-nix
-        ;
-    };
+    pkgs-stable = import nixpkgs-stable {localSystem = system;};
+    sharedArgs = inputs // {inherit inputs pkgs-stable;};
 
     valid = {
       machines = ["flandre" "coerxion"];
-      des = ["hyprland" "niri" "kde" "gnome" "xfce"];
-      themes = ["default" "noctalia" "custom"];
+      des = ["hyprland" "niri" "kde" "gnome" "xfce" "cinnamon"];
+      themes = ["default" "noctalia" "dank" "custom"];
     };
 
     niriModuleThemes = ["noctalia" "default"];
 
-    check = value: allowed: label:
-      assert lib.assertMsg
-      (builtins.elem value allowed)
-      "${label}: '${value}' must be one of [ ${lib.concatStringsSep " " allowed} ]"; value;
+    check = label: allowed: value:
+      lib.throwIfNot (builtins.elem value allowed)
+      "${label}: '${value}' must be one of [ ${lib.concatStringsSep " " allowed} ]"
+      value;
 
     mkHost = {
       machine,
       de,
       theme,
     }: let
-      _m = check machine valid.machines "machine";
-      _d = check de valid.des "de";
-      _t = check theme valid.themes "theme";
+      c = {
+        machine = check "machine" valid.machines machine;
+        de = check "de" valid.des de;
+        theme = check "theme" valid.themes theme;
+      };
 
-      hostArgs = sharedArgs // {inherit machine de theme;};
-
-      useNiriModule = de == "niri" || builtins.elem theme niriModuleThemes;
+      useNiriModule = c.de == "niri" || builtins.elem c.theme niriModuleThemes;
     in
       lib.nixosSystem {
-        specialArgs = hostArgs;
+        specialArgs = sharedArgs // c;
         modules = [
           {nixpkgs.hostPlatform = system;}
-          ./hosts/${machine}/default.nix
-          ./hosts/${machine}/hardware.nix
-          ./modules/features/${de}.nix
+          ./hosts/${c.machine}/default.nix
+          ./hosts/${c.machine}/hardware.nix
+          ./modules/features/${c.de}.nix
           ./modules/overlays.nix
           sops-nix.nixosModules.sops
           spicetify-nix.nixosModules.default
@@ -149,11 +114,9 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = hostArgs;
+              extraSpecialArgs = sharedArgs // c;
               backupFileExtension = "backup";
-              sharedModules = lib.optionals useNiriModule [
-                niri.homeModules.niri
-              ];
+              sharedModules = lib.optional useNiriModule niri.homeModules.niri;
               users.mvayk = import ./users/mvayk/home.nix;
             };
           }
@@ -161,94 +124,36 @@
         ];
       };
 
-    hosts = {
-      coerxion-xfce = {
-        machine = "coerxion";
-        de = "xfce";
-        theme = "default";
-      };
-      coerxion-gnome = {
-        machine = "coerxion";
-        de = "gnome";
-        theme = "default";
-      };
-      coerxion-kde = {
-        machine = "coerxion";
-        de = "kde";
-        theme = "default";
-      };
-      flandre-kde = {
-        machine = "flandre";
-        de = "kde";
-        theme = "default";
-      };
-      flandre-cinnamon = {
-        machine = "flandre";
-        de = "cinnamon";
-        theme = "default";
-      };
-      flandre-gnome = {
-        machine = "flandre";
-        de = "gnome";
-        theme = "default";
-      };
-      flandre-xfce = {
-        machine = "flandre";
-        de = "xfce";
-        theme = "default";
-      };
+    host = machine: de: theme: {inherit machine de theme;};
 
-      flandre-hyprland-noctalia = {
-        machine = "flandre";
-        de = "hyprland";
-        theme = "noctalia";
-      };
+    hostName = {
+      machine,
+      de,
+      theme,
+    }:
+      lib.concatStringsSep "-" ([machine de] ++ lib.optional (theme != "default") theme);
 
-      flandre-hyprland-dank = {
-        machine = "flandre";
-        de = "hyprland";
-        theme = "dank";
-      };
+    hostSpecs = [
+      (host "coerxion" "xfce" "default")
+      (host "coerxion" "gnome" "default")
+      (host "coerxion" "kde" "default")
+      (host "coerxion" "niri" "default")
+      (host "coerxion" "niri" "dank")
+      (host "coerxion" "hyprland" "default")
+      (host "coerxion" "hyprland" "noctalia")
 
-      flandre-niri-noctalia = {
-        machine = "flandre";
-        de = "niri";
-        theme = "noctalia";
-      };
+      (host "flandre" "xfce" "default")
+      (host "flandre" "gnome" "default")
+      (host "flandre" "kde" "default")
+      (host "flandre" "cinnamon" "default")
+      (host "flandre" "niri" "default")
+      (host "flandre" "niri" "noctalia")
+      (host "flandre" "niri" "dank")
+      (host "flandre" "hyprland" "noctalia")
+      (host "flandre" "hyprland" "dank")
+    ];
 
-      flandre-niri-dank = {
-        machine = "flandre";
-        de = "niri";
-        theme = "dank";
-      };
-
-      flandre-niri = {
-        machine = "flandre";
-        de = "niri";
-        theme = "default";
-      };
-
-      coerxion-niri-dank = {
-        machine = "coerxion";
-        de = "niri";
-        theme = "dank";
-      };
-      coerxion-niri = {
-        machine = "coerxion";
-        de = "niri";
-        theme = "default";
-      };
-      coerxion-hyprland = {
-        machine = "coerxion";
-        de = "hyprland";
-        theme = "noctalia";
-      };
-      coerxion = {
-        machine = "coerxion";
-        de = "hyprland";
-        theme = "default";
-      };
-    };
+    hosts = lib.listToAttrs (map (h: lib.nameValuePair (hostName h) h) hostSpecs);
   in {
     nixosConfigurations = lib.mapAttrs (_: mkHost) hosts;
   };
