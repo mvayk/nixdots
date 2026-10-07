@@ -126,6 +126,6 @@ in
 
   home.packages = [
     pkgs.awww
-    mshell.packages.${pkgs.system}.default
+    mshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

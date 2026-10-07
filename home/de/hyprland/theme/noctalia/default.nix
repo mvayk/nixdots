@@ -121,8 +121,8 @@ in {
   xdg.configFile."hypr/layerrules.conf".source = ../../../../features/hyprland/layerrules.conf;
 
   home.packages = [
-    quickshell.packages.${pkgs.system}.default
-    noctalia.packages.${pkgs.system}.default
-    future-hyprcursor.packages.${pkgs.system}.default
+    quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    future-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

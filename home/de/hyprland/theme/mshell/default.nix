@@ -106,6 +106,6 @@ in {
 
   home.packages = [
     pkgs.awww
-    quickshell.packages.${pkgs.system}.default
+    quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

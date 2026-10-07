@@ -62,9 +62,9 @@
 
     environment.systemPackages = with pkgs; [
       ghostty
-      zen-browser.packages.${pkgs.system}.beta
-      firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin
-      helium.packages.${pkgs.system}.default
+      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta
+      firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin
+      helium.packages.${pkgs.stdenv.hostPlatform.system}.default
       chromium
       qutebrowser
       vesktop

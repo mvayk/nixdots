@@ -166,6 +166,6 @@ in {
 
   home.packages = [
     pkgs.bibata-cursors
-    quickshell.packages.${pkgs.system}.default
+    quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

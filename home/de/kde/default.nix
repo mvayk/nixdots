@@ -31,6 +31,6 @@
 
   home.packages = with pkgs; [
     plasma-panel-colorizer
-    kwin-effects-glass.packages.${pkgs.system}.default
+    kwin-effects-glass.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

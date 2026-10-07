@@ -18,7 +18,7 @@
       audacity
       cmus
       ani-cli
-      libreoffice-qt-fresh
+      libreoffice-qt
       zathura
       foliate
       calibre

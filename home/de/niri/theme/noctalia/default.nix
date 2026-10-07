@@ -144,6 +144,6 @@ in {
     config.programs.niri.finalConfig + "\n" + ''include "~/.config/niri/noctalia.kdl"'';
 
   home.packages = [
-    noctalia.packages.${pkgs.system}.default
+    noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
