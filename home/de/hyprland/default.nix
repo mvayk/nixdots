@@ -132,9 +132,9 @@
           "eDP-1, 1920x1080@144.00, 0x0, 1"
         ];
 
-      workspace = lib.optionals (machine == "flandre") [
-        "1, monitor:HDMI-A-1, gapsin:0, gapsout:0, bordersize:0, rounding:false, decorate:false"
-      ];
+      # workspace = lib.optionals (machine == "flandre") [
+      #   "1, monitor:HDMI-A-1, gapsin:0, gapsout:0, bordersize:0, rounding:false, decorate:false"
+      # ];
     };
   };
 }
