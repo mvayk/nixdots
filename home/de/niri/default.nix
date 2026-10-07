@@ -111,15 +111,13 @@
           };
         };
 
-      screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
-
       binds =
         {
           "Mod+T".action.spawn = [
             "ghostty"
           ];
           "Mod+W".action.spawn = [
-            "firefox-nightly"
+            "firefox"
           ];
           "Mod+D".action.spawn = [
             "neovide"

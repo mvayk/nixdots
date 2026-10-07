@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ../modules/profiles/default.nix
-    ../modules/features/sddm.nix
-    ../modules/features/dank.nix
+    ../modules/features/noctalia-greeter.nix
+    #../modules/features/dank.nix
     #../modules/sops.nix
   ];
 
