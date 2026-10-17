@@ -18,6 +18,7 @@
       cursor-style = "underline";
       font-family = "VictorMono Nerd Font Mono";
       font-style = "Medium";
+      window-padding-color = "extend";
     };
   };
 
