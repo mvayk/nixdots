@@ -1,20 +1,23 @@
 {config, ...}: {
-  imports = [../../features/ghostty.nix];
+  # imports = [../../features/ghostty.nix];
+
   programs.ghostty = {
     enable = true;
     settings = {
-      #font-family = "VictorMono Nerd Font Mono";
       #font-family = "SpaceMono Nerd Font Mono";
       font-size = 16;
       custom-shader-animation = "always";
       theme = "noctalia";
       custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
-      background-opacity = 0.75;
-      adjust-cell-height = "+4%";
+      background-opacity = 0.85;
+      keybind = "ctrl+backspace=text:\\x1b\\x7f";
+      adjust-cell-height = "+25%";
       window-padding-x = 15;
       window-padding-y = 15;
       cursor-style = "underline";
+      font-family = "VictorMono Nerd Font Mono";
+      font-style = "Medium";
     };
   };
 

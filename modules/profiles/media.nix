@@ -39,6 +39,16 @@
       nerd-fonts.terminess-ttf
       nerd-fonts.bigblue-terminal
       nerd-fonts.comic-shanns-mono
+      nerd-fonts.symbols-only
+
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      noto-fonts-monochrome-emoji
+      liberation_ttf
+      dejavu_fonts
+      font-awesome
+      unifont
     ];
   };
 }

@@ -118,6 +118,7 @@
       ollama
       koboldcpp
       lua-language-server
+      stylua
       python3Packages.python-lsp-server
       python3
       python3Packages.pynvim
@@ -164,6 +165,7 @@
       jetbrains.idea
       recaf-launcher
       jasmin
+      tree-sitter
     ];
   };
 }
