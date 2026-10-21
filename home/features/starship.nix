@@ -3,7 +3,8 @@
     enable = true;
     settings = {
       format = ''
-        $username$all $character
+        $username
+        $all
       '';
       right_format = "";
       # custard = {
@@ -15,9 +16,9 @@
       username = {
         disabled = false;
         show_always = true;
-        style_user = "brown";
+        style_user = "green";
         style_root = "bold red";
-        format = ">> 󱗀[Jack Black]($style) of [󰃕󰗳](bold red)  [8===](yellow)[D](bold pink)[  ](white)";
+        format = "󱗀[Jack Black]($style) of [󱦗󰗳](bold red)'s 🍬🎀 ＤＡＩＲＹ 🎀🍬 ";
       };
       hostname = {
         disabled = true;
@@ -45,7 +46,7 @@
         style = "bold cyan";
         truncation_length = 4;
         truncation_symbol = "";
-        format = "[ $path]($style)[$read_only]($read_only_style) ";
+        format = "   [8===](yellow)[D](bold pink)[  ](white)[ $path]($style)[$read_only]($read_only_style) ";
       };
 
       git_branch = {
@@ -78,7 +79,7 @@
       cmd_duration = {
         disabled = false;
         min_time = 2000;
-        format = "󰅑 [$duration]($style)";
+        format = "#MH 𝗗𝗔𝗬 [$duration]($style)";
         style = "italic yellow";
       };
       battery = {
