@@ -50,6 +50,7 @@
       OVMF
       kdotool
       kdePackages.filelight
+      rustdesk
     ];
   };
 }

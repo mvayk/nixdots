@@ -22,6 +22,7 @@
       zathura
       foliate
       calibre
+      onlyoffice-desktopeditors
       kdePackages.okular
       #texlive.combined.scheme-medium
       ffmpegthumbnailer

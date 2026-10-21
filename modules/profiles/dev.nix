@@ -22,7 +22,7 @@
     ];
 
     programs = {
-      ccache.enable = true;
+      #ccache.enable = true;
       direnv = {
         enable = true;
         nix-direnv.enable = true;
@@ -103,6 +103,7 @@
       clang
       clang-tools
       rustfmt
+      clippy
       rust-analyzer
       rustc
       cargo

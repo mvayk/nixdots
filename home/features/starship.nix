@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       format = ''
-        ┌$username$all└─$character
+        $username$all $character
       '';
       right_format = "";
       # custard = {
@@ -15,14 +15,14 @@
       username = {
         disabled = false;
         show_always = true;
-        style_user = "bold red";
+        style_user = "brown";
         style_root = "bold red";
-        format = "[\\[]()[$user]($style)[\\]]()[ in ]()";
+        format = ">> 󱗀[Jack Black]($style) of [󰃕󰗳](bold red)  [8===](yellow)[D](bold pink)[  ](white)";
       };
       hostname = {
         disabled = true;
         ssh_only = false;
-        format = "[@](white)[$hostname]($style) ";
+        format = "[󰪫](white)[$hostname]($style) ";
         style = "bold italic purple";
         ssh_symbol = " ";
       };
@@ -37,20 +37,49 @@
       # };
       character = {
         disabled = false;
-        success_symbol = "[󰫍](bold green)";
-        error_symbol = "[󰫍](bold red)";
+        success_symbol = "[󱎟](bold green)";
+        error_symbol = "[](bold red)";
+        vimcmd_symbol = "[](bold green)";
       };
-      cmd_duration = {
-        disabled = false;
-        min_time = 2000;
-        format = "[$duration]($style)";
-        style = "bold yellow";
+      directory = {
+        style = "bold cyan";
+        truncation_length = 4;
+        truncation_symbol = "";
+        format = "[ $path]($style)[$read_only]($read_only_style) ";
+      };
+
+      git_branch = {
+        style = "bold purple";
+        format = "[$symbol$branch]($style)";
+      };
+
+      git_status = {
+        disabled = true;
+        style = "bold white";
+        format = "([$all_status$ahead_behind]($style) )";
+        conflicted = "󰞇 ";
+        ahead = "⇡$\{count\} ";
+        behind = "⇣$\{count\} ";
+        diverged = "⇕⇡$\{ahead_count\}⇣$\{behind_count\} ";
+        up_to_date = "";
+        untracked = "󰊢 $\{count\} ";
+        stashed = "󰏗 ";
+        modified = "󰏫 $\{count\} ";
+        staged = "󰐗 $\{count\} ";
+        renamed = "󰑕 ";
+        deleted = "󰍵 $\{count\} ";
       };
       git_metrics = {
         disabled = false;
         added_style = "bold green";
         deleted_style = "bold red";
-        format = "[+$added]($added_style)/[-$deleted]($deleted_style) ";
+        format = " |[+$added]($added_style)[-$deleted]($deleted_style)| ";
+      };
+      cmd_duration = {
+        disabled = false;
+        min_time = 2000;
+        format = "󰅑 [$duration]($style)";
+        style = "italic yellow";
       };
       battery = {
         disabled = true;
