@@ -125,11 +125,11 @@
           "Mod+E".action.spawn = [
             "dolphin"
           ];
-          "End".action.spawn = [
-            "sh"
-            "-c"
-            "grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
-          ];
+          # "End".action.spawn = [
+          #   "sh"
+          #   "-c"
+          #   "grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
+          # ];
           "Mod+Shift+S".action.screenshot = {};
           "Ctrl+Print".action.screenshot-screen = {};
           "Alt+Print".action.screenshot-window = {};

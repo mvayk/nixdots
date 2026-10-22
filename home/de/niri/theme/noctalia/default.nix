@@ -130,7 +130,15 @@ in {
           "msg"
           "volume-down"
         ];
+        "End".action.spawn = [
+          "noctalia"
+          "msg"
+          "screenshot-region"
+        ];
       };
+      # "sh"
+      # "-c"
+      # "grim -g \"$(slurp)\" - | tee ~/Documents/sync/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
 
       animations.slowdown = 1.0;
       spawn-at-startup = [
