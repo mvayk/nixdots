@@ -13,20 +13,22 @@ in {
 
   home.pointerCursor = {
     enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    package = pkgs.apple-cursor;
+    name = "macOS";
+    # package = pkgs.bibata-cursors;
+    # name = "Bibata-Modern-Classic";
     size = 24;
   };
 
   programs.niri = {
     settings = {
       environment = {
-        XCURSOR_THEME = "Bibata-Modern-Classic";
+        XCURSOR_THEME = "macOS";
         XCURSOR_SIZE = "24";
         QT_QPA_PLATFORMTHEME = "qt6ct";
       };
       cursor = {
-        theme = "Bibata-Modern-Classic";
+        theme = "macOS";
         size = 24;
       };
       layout = {
