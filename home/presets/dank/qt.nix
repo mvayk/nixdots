@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   qt = {
     enable = true;
     platformTheme.name = "qtct";

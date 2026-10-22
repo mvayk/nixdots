@@ -23,6 +23,7 @@ in {
       environment = {
         XCURSOR_THEME = "Bibata-Modern-Classic";
         XCURSOR_SIZE = "24";
+        QT_QPA_PLATFORMTHEME = "qt6ct";
       };
       cursor = {
         theme = "Bibata-Modern-Classic";
