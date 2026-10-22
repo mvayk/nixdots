@@ -46,7 +46,7 @@
         style = "bold cyan";
         truncation_length = 4;
         truncation_symbol = "";
-        format = "   [8===](yellow)[D](bold pink)[  ](white)[ $path]($style)[$read_only]($read_only_style) ";
+        format = "   [8===](yellow)[D](bold pink)[  ](white)[ $path]($style)[$read_only]($read_only_style) ";
       };
 
       git_branch = {
