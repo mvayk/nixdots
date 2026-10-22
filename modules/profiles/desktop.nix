@@ -40,6 +40,7 @@
           obs-vkcapture
         ];
       };
+
       spicetify = let
         spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
       in {
