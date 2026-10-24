@@ -51,6 +51,7 @@ in {
       ];
 
       circle_layout = "scroller,tile,grid,dwindle,center_tile,monocle,deck";
+      monocle_tab_mode = 0;
 
       monitor_rule =
         if machine == "flandre"
@@ -80,12 +81,14 @@ in {
           "SUPER,v,togglefloating"
           "SUPER,r,switch_proportion_preset"
           "SUPER,m,quit"
-          "SUPER,s,toggleoverview"
 
+          # ---- focus ----
           "SUPER,h,focusdir,left"
           "SUPER,l,focusdir,right"
-          "SUPER,k,focusdir,up"
-          "SUPER,j,focusdir,down"
+          # up/down fall through to the next/previous tag (niri-style vertical workspaces)
+          "SUPER,k,focus_window_or_workspace,up"
+          "SUPER,j,focus_window_or_workspace,down"
+          "SUPER,grave,focuslast"
 
           "SUPER+SHIFT,h,exchange_client,left"
           "SUPER+SHIFT,l,exchange_client,right"
@@ -104,6 +107,7 @@ in {
           "SUPER+ALT,k,resizewin,+0,-50"
           "SUPER+ALT,j,resizewin,+0,+50"
 
+          # ---- layouts ----
           "SUPER,n,switch_layout"
           "SUPER+CTRL,t,setlayout,tile"
           "SUPER+CTRL,s,setlayout,scroller"
@@ -111,6 +115,38 @@ in {
           "SUPER+CTRL,d,setlayout,dwindle"
           "SUPER+CTRL,m,setlayout,monocle"
           "SUPER+CTRL,c,setlayout,center_tile"
+
+          # ---- overview / switcher ----
+          "SUPER,s,toggleoverview"
+          "SUPER+SHIFT,o,toggleoverview,1" # current tag only
+          "SUPER,g,togglejump"
+          "ALT,Tab,switcher,next"
+          "ALT+SHIFT,Tab,switcher,prev"
+          "SUPER,Tab,switcher,all_tag_next"
+          "SUPER+SHIFT,Tab,switcher,all_next"
+
+          # ---- dynamic tags (niri-style) ----
+          "SUPER,bracketleft,view_insert,prev"
+          "SUPER,bracketright,view_insert,next"
+
+          # ---- special tag (summonable floating workspace) ----
+          "SUPER,z,toggle_special_tag"
+          "SUPER+SHIFT,z,tag_special_tag"
+
+          # ---- scratchpad / minimize ----
+          "SUPER,x,toggle_scratchpad"
+          "SUPER+SHIFT,x,minimized"
+          "SUPER,c,restore_minimized"
+
+          # ---- window groups (tabs) ----
+          "SUPER,b,togglegroupbar"
+          "SUPER+CTRL+ALT,h,groupjoin,left"
+          "SUPER+CTRL+ALT,l,groupjoin,right"
+          "SUPER+CTRL+ALT,k,groupjoin,up"
+          "SUPER+CTRL+ALT,j,groupjoin,down"
+          "SUPER,period,groupfocus,next"
+          "SUPER,comma,groupfocus,prev"
+          "SUPER,p,groupleave"
         ]
         ++ tagBinds
         ++ lib.optionals (machine == "coerxion") [
@@ -126,6 +162,7 @@ in {
         "SUPER+SHIFT,UP,viewtoleft"
         "SUPER+SHIFT,DOWN,viewtoright"
       ];
+
       mousebind = [
         "SUPER,btn_left,moveresize,curmove"
         "SUPER,btn_right,moveresize,curresize"
