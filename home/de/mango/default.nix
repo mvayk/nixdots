@@ -36,6 +36,8 @@ in {
       trackpad_scroll_factor = 0.25;
       tag_animation_direction = 0;
 
+      allow_tearing = 2;
+
       scroller_default_proportion = 1.0;
       scroller_proportion_preset = "0.5,0.333333,0.666667";
       tag_rule = [
@@ -52,6 +54,7 @@ in {
 
       circle_layout = "scroller,tile,grid,dwindle,center_tile,monocle,deck";
       monocle_tab_mode = 0;
+      deck_tab_mode = 0;
 
       monitor_rule =
         if machine == "flandre"
@@ -85,10 +88,15 @@ in {
           # ---- focus ----
           "SUPER,h,focusdir,left"
           "SUPER,l,focusdir,right"
+          "SUPER,k,focusdir,up"
+          "SUPER,j,focusdir,down"
           # up/down fall through to the next/previous tag (niri-style vertical workspaces)
-          "SUPER,k,focus_window_or_workspace,up"
-          "SUPER,j,focus_window_or_workspace,down"
+          # "SUPER,k,focus_window_or_workspace,up"
+          # "SUPER,j,focus_window_or_workspace,down"
           "SUPER,grave,focuslast"
+          "SUPER,period,focusstack,next"
+          "SUPER,comma,focusstack,prev"
+          "SUPER,Return,zoom"
 
           "SUPER+SHIFT,h,exchange_client,left"
           "SUPER+SHIFT,l,exchange_client,right"
@@ -144,8 +152,8 @@ in {
           "SUPER+CTRL+ALT,l,groupjoin,right"
           "SUPER+CTRL+ALT,k,groupjoin,up"
           "SUPER+CTRL+ALT,j,groupjoin,down"
-          "SUPER,period,groupfocus,next"
-          "SUPER,comma,groupfocus,prev"
+          "SUPER+SHIFT,period,groupfocus,next"
+          "SUPER+SHIFT,comma,groupfocus,prev"
           "SUPER,p,groupleave"
         ]
         ++ tagBinds

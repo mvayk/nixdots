@@ -29,8 +29,8 @@ in {
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
 
-      gap_inner_horizontal = 28;
-      gap_inner_vertical = 28;
+      gap_inner_horizontal = 14;
+      gap_inner_vertical = 14;
       gap_outer_horizontal = 28;
       gap_outer_vertical = 28;
 
@@ -43,15 +43,28 @@ in {
 
       shadows = 1;
       shadow_only_floating = 0;
-      shadows_size = 5;
-      shadows_blur = 4;
-      shadows_position_x = 3;
-      shadows_position_y = 6;
+      shadows_size = 4;
+      shadows_blur = 5;
+      shadows_position_x = 0;
+      shadows_position_y = 0;
       shadows_color = "0x00000060";
       group_bar_decorate_border_width = 2;
       group_bar_height = 16;
       group_bar_decorate_corner_radius = 0;
       group_bar_decorate_font_desc = "JetBrainsMono Bold 8";
+
+      tab_bar_height = 16;
+      tab_bar_decorate_font_desc = "JetBrainsMono Bold 8";
+
+      tab_bar_decorate_border_width = 0;
+      tab_bar_decorate_corner_radius = 0;
+
+      # monocle_no_gap = 1;
+      # monocle_no_border = 1;
+
+      tab_bar_decorate_fg_color = "0xFFFFFFFF";
+      tab_bar_decorate_bg_color = "0x000000FF";
+      tab_bar_decorate_border_color = "0x000000FF";
 
       bind = [
         "SUPER,o,spawn,noctalia msg session lock"
@@ -62,6 +75,7 @@ in {
         "SUPER,Page_Up,spawn,noctalia msg volume-up"
         "SUPER,Page_Down,spawn,noctalia msg volume-down"
         "NONE,End,spawn,noctalia msg screenshot-region"
+        "SUPER,Insert,spawn,noctalia msg panel-toggle ezequiel/mango_layouts:panel"
       ];
 
       exec_once = [
