@@ -55,6 +55,7 @@ in {
       circle_layout = "scroller,tile,grid,dwindle,center_tile,monocle,deck";
       monocle_tab_mode = 0;
       deck_tab_mode = 0;
+      edge_scroller_pointer_focus = 0;
 
       monitor_rule =
         if machine == "flandre"
@@ -85,7 +86,6 @@ in {
           "SUPER,r,switch_proportion_preset"
           "SUPER,m,quit"
 
-          # ---- focus ----
           "SUPER,h,focusdir,left"
           "SUPER,l,focusdir,right"
           "SUPER,k,focusdir,up"
@@ -115,7 +115,6 @@ in {
           "SUPER+ALT,k,resizewin,+0,-50"
           "SUPER+ALT,j,resizewin,+0,+50"
 
-          # ---- layouts ----
           "SUPER,n,switch_layout"
           "SUPER+CTRL,t,setlayout,tile"
           "SUPER+CTRL,s,setlayout,scroller"
@@ -124,29 +123,29 @@ in {
           "SUPER+CTRL,m,setlayout,monocle"
           "SUPER+CTRL,c,setlayout,center_tile"
 
-          # ---- overview / switcher ----
           "SUPER,s,toggleoverview"
-          "SUPER+SHIFT,o,toggleoverview,1" # current tag only
           "SUPER,g,togglejump"
+
+          "SUPER,Tab,overcircle,current_next"
+          "SUPER+SHIFT,Tab,overcircle,current_prev"
+          "SUPER+ALT,Tab,overcircle,next"
+          "SUPER+ALT+SHIFT,Tab,overcircle,prev"
+
           "ALT,Tab,switcher,next"
           "ALT+SHIFT,Tab,switcher,prev"
-          "SUPER,Tab,switcher,all_tag_next"
-          "SUPER+SHIFT,Tab,switcher,all_next"
+          "CTRL,Tab,switcher,all_tag_next"
+          "CTRL+SHIFT,Tab,switcher,all_next"
 
-          # ---- dynamic tags (niri-style) ----
           "SUPER,bracketleft,view_insert,prev"
           "SUPER,bracketright,view_insert,next"
 
-          # ---- special tag (summonable floating workspace) ----
           "SUPER,z,toggle_special_tag"
           "SUPER+SHIFT,z,tag_special_tag"
 
-          # ---- scratchpad / minimize ----
           "SUPER,x,toggle_scratchpad"
           "SUPER+SHIFT,x,minimized"
           "SUPER,c,restore_minimized"
 
-          # ---- window groups (tabs) ----
           "SUPER,b,togglegroupbar"
           "SUPER+CTRL+ALT,h,groupjoin,left"
           "SUPER+CTRL+ALT,l,groupjoin,right"

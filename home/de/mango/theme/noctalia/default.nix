@@ -55,6 +55,7 @@ in {
 
       tab_bar_height = 16;
       tab_bar_decorate_font_desc = "JetBrainsMono Bold 8";
+      title_message_bar_height = 0;
 
       tab_bar_decorate_border_width = 0;
       tab_bar_decorate_corner_radius = 0;
