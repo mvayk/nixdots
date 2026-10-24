@@ -9,7 +9,7 @@
   ...
 }: {
   services.displayManager.noctalia-greeter = {
-    enable = true;
+    enable = false;
     settings = {
       cursor.size = 24;
       keyboard.layout = "us";

@@ -1,5 +1,5 @@
 {...}: {
   services.displayManager.ly = {
-    enable = false;
+    enable = true;
   };
 }

@@ -12,11 +12,11 @@
       window-decoration = false;
       background-opacity = 0.85;
       keybind = "ctrl+backspace=text:\\x1b\\x7f";
-      adjust-cell-height = "+25%";
+      #adjust-cell-height = "+25%";
       window-padding-x = 15;
       window-padding-y = 15;
       cursor-style = "underline";
-      font-family = "VictorMono Nerd Font Mono";
+      font-family = "Iosevka Nerd Font Mono";
       font-style = "Medium";
       window-padding-color = "extend";
     };

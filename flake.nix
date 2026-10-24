@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,6 +70,7 @@
     sops-nix,
     spicetify-nix,
     niri,
+    mango,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -75,7 +81,7 @@
 
     valid = {
       machines = ["flandre" "coerxion"];
-      des = ["hyprland" "niri" "kde" "gnome" "xfce" "cinnamon"];
+      des = ["hyprland" "niri" "kde" "gnome" "xfce" "cinnamon" "mango"];
       themes = ["default" "noctalia" "dank" "custom"];
     };
 
@@ -151,6 +157,7 @@
       (host "flandre" "niri" "dank")
       (host "flandre" "hyprland" "noctalia")
       (host "flandre" "hyprland" "dank")
+      (host "flandre" "mango" "noctalia")
     ];
 
     hosts = lib.listToAttrs (map (h: lib.nameValuePair (hostName h) h) hostSpecs);

@@ -1,10 +1,7 @@
-{
-  ...
-}:
-{
+{...}: {
   programs.mango = {
     enable = true;
   };
 
-  services.displayManager.defaultSession = "mangowc";
+  services.displayManager.defaultSession = "mango";
 }
