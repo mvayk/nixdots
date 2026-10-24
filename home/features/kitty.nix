@@ -1,6 +1,6 @@
 {config, ...}: {
   programs.kitty = {
-    enable = true;
+    enable = false;
     font.name = "ComicShannsMono Nerd Font";
     font.size = 16;
     shellIntegration.mode = "no-cursor";

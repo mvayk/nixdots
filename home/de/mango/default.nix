@@ -126,10 +126,10 @@ in {
           "SUPER,s,toggleoverview"
           "SUPER,g,togglejump"
 
-          "SUPER,Tab,overcircle,current_next"
-          "SUPER+SHIFT,Tab,overcircle,current_prev"
-          "SUPER+ALT,Tab,overcircle,next"
-          "SUPER+ALT+SHIFT,Tab,overcircle,prev"
+          "SUPER+ALT,Tab,overcircle,current_next"
+          "SUPER+ALT+SHIFT,Tab,overcircle,current_prev"
+          "SUPER,Tab,overcircle,next"
+          "SUPER+SHIFT,Tab,overcircle,prev"
 
           "ALT,Tab,switcher,next"
           "ALT+SHIFT,Tab,switcher,prev"

@@ -115,7 +115,6 @@
       alejandra
       flex
       bison
-      aider-chat
       ollama
       koboldcpp
       lua-language-server
@@ -167,6 +166,9 @@
       recaf-launcher
       jasmin
       tree-sitter
+      aichat
+      opencode
+      opencode-desktop
     ];
   };
 }

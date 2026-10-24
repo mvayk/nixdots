@@ -105,13 +105,18 @@
 
   xdg = {
     menus.enable = true;
-    mime.enable = true;
+    mime = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = "org.kde.dolphin.desktop";
+      };
+    };
     portal = {
       enable = true;
       extraPortals = [
         pkgs.kdePackages.xdg-desktop-portal-kde
       ];
-      config.niri = {
+      config.common = {
         "org.freedesktop.impl.portal.FileChooser" = "kde";
       };
     };

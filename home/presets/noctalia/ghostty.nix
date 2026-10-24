@@ -19,6 +19,7 @@
       font-family = "Iosevka Nerd Font Mono";
       font-style = "Medium";
       window-padding-color = "extend";
+      confirm-close-surface = false;
     };
   };
 

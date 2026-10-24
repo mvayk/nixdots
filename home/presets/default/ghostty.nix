@@ -15,6 +15,7 @@
       window-padding-x = 15;
       window-padding-y = 15;
       cursor-style = "underline";
+      confirm-close-surface = false;
     };
   };
 
