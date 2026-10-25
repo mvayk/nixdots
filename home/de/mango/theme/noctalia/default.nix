@@ -53,6 +53,16 @@ in {
       group_bar_decorate_corner_radius = 0;
       group_bar_decorate_font_desc = "JetBrainsMono Bold 8";
 
+      blur = 1;
+      blur_layer = 1;
+      blur_optimized = 0;
+      blur_params_radius = 2;
+      blur_params_num_passes = 1;
+      blur_params_noise = 0.02;
+      blur_params_brightness = 1;
+      blur_params_contrast = 1;
+      blur_params_saturation = 5; #1.2
+
       tab_bar_height = 16;
       tab_bar_decorate_font_desc = "JetBrainsMono Bold 8";
       title_message_bar_height = 0;
@@ -77,7 +87,8 @@ in {
         "SUPER,Page_Down,spawn,noctalia msg volume-down"
         "NONE,End,spawn,noctalia msg screenshot-region"
         "SUPER,Insert,spawn,noctalia msg panel-toggle ezequiel/mango_layouts:panel"
-        "SUPER+CTRL,w,spawn,noctalia msg panel-toggle nomadcxx/gslapper:picker"
+        #"SUPER+CTRL,w,spawn,noctalia msg panel-toggle nomadcxx/gslapper:picker"
+        "SUPER+CTRL,w,spawn,noctalia msg panel-toggle noctalia/mpvpaper:picker"
       ];
 
       exec_once = [

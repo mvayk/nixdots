@@ -10,7 +10,7 @@
       theme = "noctalia";
       custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       window-decoration = false;
-      background-opacity = 0.7;
+      background-opacity = 0.5;
       keybind = "ctrl+backspace=text:\\x1b\\x7f";
       #adjust-cell-height = "+25%";
       window-padding-x = 15;
