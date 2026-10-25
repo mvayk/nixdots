@@ -13,6 +13,7 @@
       binaryninja-free
       #cutter
       rizin
+      qemu
       gdb
       gef
       strace

@@ -42,7 +42,6 @@
       protonup-rs
       protonup-qt
       protontricks
-      qemu
       #pkgs-stable.wineWowPackages.stable
       wineWow64Packages.staging
       winetricks

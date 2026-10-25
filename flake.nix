@@ -23,6 +23,12 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    gslapper = {
+      url = "github:Nomadcxx/gSlapper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,6 +77,7 @@
     spicetify-nix,
     niri,
     mango,
+    gslapper,
     ...
   } @ inputs: let
     system = "x86_64-linux";

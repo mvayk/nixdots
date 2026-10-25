@@ -51,6 +51,7 @@
       kdotool
       kdePackages.filelight
       rustdesk
+      socat
     ];
   };
 }

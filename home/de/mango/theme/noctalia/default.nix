@@ -77,6 +77,7 @@ in {
         "SUPER,Page_Down,spawn,noctalia msg volume-down"
         "NONE,End,spawn,noctalia msg screenshot-region"
         "SUPER,Insert,spawn,noctalia msg panel-toggle ezequiel/mango_layouts:panel"
+        "SUPER+CTRL,w,spawn,noctalia msg panel-toggle nomadcxx/gslapper:picker"
       ];
 
       exec_once = [

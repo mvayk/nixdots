@@ -39,6 +39,7 @@ in {
     };
   };
 
+  gtk.gtk4.theme = null;
   gtk = {
     enable = true;
     font = {
