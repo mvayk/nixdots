@@ -18,7 +18,7 @@
         show_always = true;
         style_user = "green";
         style_root = "bold red";
-        format = "󱗀[Jack Black]($style) of [󱦗󰗳](bold red)'s 🍬🎀 ＤＡＩＲＹ 🎀🍬 ";
+        format = "󱗀[Jack Black]($style) of [󱦗󰗳](bold red)'s 🍬🎀 ＤＩＡＲＹ 🎀🍬 ";
       };
       hostname = {
         disabled = true;

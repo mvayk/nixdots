@@ -21,6 +21,8 @@ in {
   wayland.windowManager.mango = {
     extraConfig = ''
       source=./noctalia.conf
+      window_rule=no_blur:1,app_id:com.mitchellh.ghostty
+      layer_rule=layer_name:^noctalia-desktop-widget,no_blur:1
     '';
     settings = {
       env = [
@@ -53,9 +55,9 @@ in {
       group_bar_decorate_corner_radius = 0;
       group_bar_decorate_font_desc = "JetBrainsMono Bold 8";
 
-      blur = 1;
+      blur = 0;
       blur_layer = 1;
-      blur_optimized = 0;
+      blur_optimized = 1;
       blur_params_radius = 2;
       blur_params_num_passes = 1;
       blur_params_noise = 0.02;
