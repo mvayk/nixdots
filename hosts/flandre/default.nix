@@ -18,8 +18,26 @@
     security = true;
   };
 
-  boot.kernelParams = ["usbhid.mousepoll=8"];
-  virtualisation.vmware.host.enable = false;
+  boot = {
+    kernel.sysctl = {
+      "kernel.yama.ptrace_scope" = 0;
+    };
+
+    kernelParams = ["usbhid.mousepoll=8"];
+
+    kernelModules = [
+      "uinput"
+      "v4l2loopback"
+    ];
+
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+
+    supportedFilesystems = [
+      "ntfs"
+    ];
+  };
 
   networking.hostName = "flandre";
 
@@ -60,6 +78,8 @@
     };
   };
 
+  fonts.fontconfig.enable = true;
+
   programs.xppen = {
     enable = true;
     package = pkgs.xppen_3;
@@ -67,7 +87,6 @@
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
-    # why cude take so long to build
     (llama-cpp.override {
       cudaSupport = false;
     })

@@ -15,30 +15,10 @@
       efiSupport = true;
       useOSProber = true;
     };
-
-    kernel.sysctl = {
-      "kernel.yama.ptrace_scope" = 0;
-    };
-
-    kernelModules = [
-      "uinput"
-      "v4l2loopback"
-    ];
-
-    extraModprobeConfig = ''
-      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-    '';
-
-    supportedFilesystems = [
-      "ntfs"
-    ];
   };
 
   networking.networkmanager.enable = true;
-
   time.timeZone = "Australia/Sydney";
-
-  fonts.fontconfig.enable = true;
 
   i18n = {
     defaultLocale = "en_AU.UTF-8";
@@ -55,39 +35,52 @@
     };
   };
 
-  services.udisks2.enable = true;
+  services = {
+    udisks2.enable = true;
+    flatpak.enable = true;
+    fwupd.enable = false;
+    gvfs.enable = true;
+    upower.enable = true;
+    printing.enable = true;
 
-  services.xserver = {
-    enable = true;
-    desktopManager.xterm.enable = false;
-    xkb = {
-      layout = "au";
-      variant = "";
-      options = "caps:escape_shifted_capslock";
-    };
-  };
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    extraConfig.pipewire."10-rt-prio" = {
-      "context.modules" = [
-        {
-          name = "libpipewire-module-rt";
-          args = {
-            "nice.level" = -11;
-            "rt.prio" = 88;
-          };
-          flags = [
-            "ifexists"
-            "nofail"
-          ];
-        }
+    dbus = {
+      enable = true;
+      packages = [
+        pkgs.seahorse
       ];
+    };
+
+    power-profiles-daemon.enable = true;
+    xserver = {
+      enable = true;
+      desktopManager.xterm.enable = false;
+      xkb = {
+        layout = "au";
+        variant = "";
+        options = "caps:escape_shifted_capslock";
+      };
+    };
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      extraConfig.pipewire."10-rt-prio" = {
+        "context.modules" = [
+          {
+            name = "libpipewire-module-rt";
+            args = {
+              "nice.level" = -11;
+              "rt.prio" = 88;
+            };
+            flags = [
+              "ifexists"
+              "nofail"
+            ];
+          }
+        ];
+      };
     };
   };
 
@@ -99,41 +92,17 @@
         "inode/directory" = "org.kde.dolphin.desktop";
       };
     };
-    portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.kdePackages.xdg-desktop-portal-kde
-      ];
-      config.common = {
-        "org.freedesktop.impl.portal.FileChooser" = "kde";
-      };
-    };
+    portal.enable = true;
   };
 
-  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  gnome.gnome-keyring.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
-  security.polkit.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
-  security.pam.services.sddm.enableGnomeKeyring = true;
-  # security.pam.services.login.kwallet.enable = pkgs.lib.mkForce false;
-  # security.pam.services.sddm.kwallet.enable = pkgs.lib.mkForce false;
-
-  services = {
-    flatpak.enable = true;
-    fwupd.enable = false;
-    gvfs.enable = true;
-    upower.enable = true;
-    printing.enable = true;
-    dbus = {
-      enable = true;
-      packages = [
-        pkgs.seahorse
-      ];
-    };
-
-    power-profiles-daemon.enable = true;
+  security = {
+    polkit.enable = true;
+    rtkit.enable = true;
+    pam.services.login.enableGnomeKeyring = true;
+    pam.services.hyprland.enableGnomeKeyring = true;
+    pam.services.sddm.enableGnomeKeyring = true;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -144,13 +113,6 @@
       "flakes"
     ];
     auto-optimise-store = true;
-  };
-
-  documentation = {
-    enable = true;
-    man.man-db.enable = true;
-    man.mandoc.enable = false;
-    dev.enable = true;
   };
 
   # hey dont touch remember

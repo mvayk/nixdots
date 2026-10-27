@@ -7,6 +7,8 @@
   options.profiles.misc = lib.mkEnableOption "misc packages";
 
   config = lib.mkIf config.profiles.misc {
+    virtualisation.vmware.host.enable = false;
+
     virtualisation.libvirtd = {
       enable = true;
       qemu = {

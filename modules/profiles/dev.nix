@@ -15,6 +15,13 @@
       RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
     };
 
+    documentation = {
+      enable = true;
+      man.man-db.enable = true;
+      man.mandoc.enable = false;
+      dev.enable = true;
+    };
+
     services = {
       ollama.enable = true;
 
