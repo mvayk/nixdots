@@ -6,17 +6,10 @@
   imports = [
     ./hardware.nix
     ../../modules/core.nix
+    ../modules/profiles/default.nix
   ];
 
-  profiles = {
-    cli = true;
-    desktop = true;
-    dev = true;
-    gaming = true;
-    media = true;
-    misc = true;
-    security = true;
-  };
+  my.bundles.workstation.enable = true;
 
   boot = {
     kernel.sysctl = {

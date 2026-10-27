@@ -1,96 +1,129 @@
 {
   pkgs,
-  pkgs-stable,
   lib,
   config,
+  mkSub,
   zen-browser,
   helium,
   spicetify-nix,
   firefox-nightly,
   ...
-}: {
-  options.profiles.desktop = lib.mkEnableOption "desktop packages";
+}: let
+  cfg = config.my.desktop;
+  system = pkgs.stdenv.hostPlatform.system;
+in {
+  options.my.desktop = {
+    enable = lib.mkEnableOption "desktop apps";
 
-  config = lib.mkIf config.profiles.desktop {
-    programs = {
-      seahorse.enable = true;
-      ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
-      zsh.enable = true;
-      dconf.enable = true;
-      firefox.enable = true;
-      virt-manager.enable = true;
-      neovim.defaultEditor = true;
+    browsers.enable = mkSub cfg.enable "web browsers";
+    kde.enable = mkSub cfg.enable "KDE apps (dolphin, ark, ...)";
+    privacy.enable = mkSub cfg.enable "keyrings, gpg agent, keepassxc, tor";
+    utils.enable = mkSub cfg.enable "terminal, X11 helpers, audio/network applets";
+    apps.enable = mkSub cfg.enable "general GUI apps";
+    obs.enable = mkSub cfg.enable "OBS Studio";
+    obs.cuda = lib.mkEnableOption "CUDA-enabled OBS";
+    spotify.enable = mkSub cfg.enable "Spotify + spicetify";
+  };
 
-      gnupg.agent = {
-        enable = true;
-        pinentryPackage = pkgs.pinentry-qt;
-      };
+  config = lib.mkMerge [
+    (lib.mkIf cfg.enable {
+      my.fonts.enable = lib.mkDefault true;
+    })
 
-      obs-studio = {
-        enable = true;
-        package = pkgs.obs-studio.override {
-          cudaSupport = true;
+    (lib.mkIf cfg.browsers.enable {
+      programs.firefox.enable = true;
+      environment.systemPackages = [
+        zen-browser.packages.${system}.beta
+        firefox-nightly.packages.${system}.firefox-nightly-bin
+        helium.packages.${system}.default
+        pkgs.chromium
+      ];
+    })
+
+    (lib.mkIf cfg.kde.enable {
+      environment.systemPackages = with pkgs.kdePackages; [
+        dolphin
+        kio
+        kio-extras
+        ark
+        kolourpaint
+        kdenetwork-filesharing
+        discover
+        filelight
+      ];
+    })
+
+    (lib.mkIf cfg.privacy.enable {
+      programs = {
+        seahorse.enable = true;
+        ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
+        gnupg.agent = {
+          enable = true;
+          pinentryPackage = pkgs.pinentry-qt;
         };
+      };
+      environment.systemPackages = with pkgs; [
+        gnome-keyring
+        libsecret
+        keepassxc
+        kdePackages.kleopatra
+        tor
+        tor-browser
+      ];
+    })
+
+    (lib.mkIf cfg.utils.enable {
+      programs.dconf.enable = true;
+      environment.systemPackages = with pkgs; [
+        ghostty
+        feh
+        dmenu
+        yad
+        zenity
+        xclip
+        xinput
+        libnotify
+        pavucontrol
+        pamixer
+        pulseaudio
+      ];
+    })
+
+    (lib.mkIf cfg.apps.enable {
+      environment.systemPackages = with pkgs; [
+        vesktop
+        obsidian
+        qalculate-qt
+        qbittorrent
+        mission-center
+        gparted
+        rustdesk
+      ];
+    })
+
+    (lib.mkIf cfg.obs.enable {
+      programs.obs-studio = {
+        enable = true;
+        package = pkgs.obs-studio.override {cudaSupport = cfg.obs.cuda;};
         plugins = with pkgs.obs-studio-plugins; [
           wlrobs
           obs-backgroundremoval
           obs-pipewire-audio-capture
-          # obs-vaapi
           obs-gstreamer
           obs-vkcapture
         ];
       };
+    })
 
-      spicetify = let
-        spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-      in {
+    (lib.mkIf cfg.spotify.enable (let
+      spicePkgs = spicetify-nix.legacyPackages.${system};
+    in {
+      programs.spicetify = {
         enable = true;
-        enabledExtensions = with spicePkgs.extensions; [
-          adblock
-          hidePodcasts
-          shuffle
-        ];
-        enabledCustomApps = with spicePkgs.apps; [
-          newReleases
-          ncsVisualizer
-        ];
-        enabledSnippets = with spicePkgs.snippets; [
-          rotatingCoverart
-          pointer
-        ];
+        enabledExtensions = with spicePkgs.extensions; [adblock hidePodcasts shuffle];
+        enabledCustomApps = with spicePkgs.apps; [newReleases ncsVisualizer];
+        enabledSnippets = with spicePkgs.snippets; [rotatingCoverart pointer];
       };
-    };
-
-    environment.systemPackages = with pkgs; [
-      ghostty
-      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta
-      firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin
-      helium.packages.${pkgs.stdenv.hostPlatform.system}.default
-      chromium
-      qutebrowser
-      vesktop
-      kdePackages.dolphin
-      kdePackages.kio
-      kdePackages.kio-extras
-      kdePackages.ark
-      kdePackages.kolourpaint
-      kdePackages.kdenetwork-filesharing
-      kdePackages.discover
-      gnome-keyring
-      seahorse
-      qalculate-qt
-      obsidian
-      #alarm-clock-applet
-      qbittorrent
-      mission-center
-      tor
-      tor-browser
-      keepassxc
-      kdePackages.kleopatra
-      gparted
-      pkgs-stable.wineWowPackages.stable
-      vlc
-      kdePackages.filelight
-    ];
-  };
+    }))
+  ];
 }

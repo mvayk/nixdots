@@ -3,17 +3,25 @@
   lib,
   config,
   ...
-}: {
-  options.profiles.cli = lib.mkEnableOption "cli packages";
-  config = lib.mkIf config.profiles.cli {
+}: let
+  cfg = config.my.cli;
+in {
+  options.my.cli.enable = lib.mkEnableOption "cli tools";
+
+  config = lib.mkIf cfg.enable {
+    programs = {
+      zsh.enable = true;
+      git.enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
-      git
       curl
       wget
       vim
       file
       tree
       sops
+      age
       zsh
       oh-my-zsh
       tmux
@@ -30,25 +38,18 @@
       tldr
       bottom
       dust
-      zip
       procs
       nnn
-      feh
-      dmenu
       lazygit
       starship
       more
       most
-      yad
-      zenity
       man-pages
       man-pages-posix
-      xclip
-      xinput
-      libnotify
       termdown
-      unar
+      zip
       unzip
+      unar
       p7zip
       rar
       gnupg

@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  imports = [
-    ../modules/profiles/default.nix
-  ];
-
   boot = {
     loader.systemd-boot.enable = false;
     loader.efi.canTouchEfiVariables = true;
@@ -88,9 +84,6 @@
     menus.enable = true;
     mime = {
       enable = true;
-      defaultApplications = {
-        "inode/directory" = "org.kde.dolphin.desktop";
-      };
     };
     portal.enable = true;
   };
