@@ -1,14 +1,11 @@
 {
-  pkgs,
   lib,
   machine,
   theme,
-  quickshell,
   ...
 }: {
   imports = [
-    ./theme/${theme}/default.nix
-    ../../presets/wayland.nix
+    ./${theme}.nix
   ];
 
   wayland.windowManager.hyprland = {

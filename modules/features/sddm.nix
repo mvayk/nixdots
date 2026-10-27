@@ -1,6 +1,4 @@
 {
-  pkgs,
-  inputs,
   ...
 }: {
   services.displayManager.sddm = {
@@ -8,9 +6,6 @@
 
     wayland = {
       enable = true;
-
-      # default compositor is "weston", you can optionally change it to kwin
-      #compositor = "kwin";
     };
   };
 }

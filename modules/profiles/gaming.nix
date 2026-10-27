@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  pkgs-stable,
   ...
 }: {
   options.profiles.gaming = lib.mkEnableOption "gaming packages";
@@ -47,7 +46,6 @@
       winetricks
       steamtinkerlaunch
       vinegar
-      linux-wallpaperengine
       kdePackages.kmines
       kdePackages.kpat
       pcsx2

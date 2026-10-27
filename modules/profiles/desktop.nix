@@ -90,6 +90,7 @@
       gparted
       pkgs-stable.wineWowPackages.stable
       vlc
+      kdePackages.filelight
     ];
   };
 }

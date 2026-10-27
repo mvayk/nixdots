@@ -1,32 +1,11 @@
-{
-  pkgs,
-  lib,
-  noctalia,
-  ...
-}: let
-  dir = ../../../../presets/noctalia;
-  fileNames = builtins.attrNames (builtins.readDir dir);
-  nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
-in {
-  imports = map (n: dir + "/${n}") nixFiles ++ [../../../../features/fastfetch.nix];
-
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 24;
-  };
-
+{pkgs, ...}: {
+  imports = [../../themes/noctalia/default.nix];
   # vibed from niri to hyprland
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mainMod" = "SUPER";
 
-      env = [
-        "XCURSOR_THEME,Bibata-Modern-Classic"
-        "XCURSOR_SIZE,24"
-      ];
       # niri: include "~/.config/niri/noctalia.kdl"
       # hyprland: source the noctalia-generated colors (path relative to ~/.config/hypr)
       # NOTE: your old config also had `layerrules = "layerrules.conf"`, which isn't a real
@@ -34,8 +13,6 @@ in {
 
       exec-once = [
         "noctalia"
-        #"nm-applet"
-        # xwayland-satellite: not needed, Hyprland has built-in XWayland.
       ];
 
       general = {
@@ -124,8 +101,4 @@ in {
   };
 
   xdg.configFile."hypr/layerrules.conf".source = ../../../../features/hyprland/layerrules.conf;
-
-  home.packages = [
-    noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
 }

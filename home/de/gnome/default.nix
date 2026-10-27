@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [
-    ../../features/fastfetch.nix
-  ];
   gtk = {
     enable = true;
     theme = {

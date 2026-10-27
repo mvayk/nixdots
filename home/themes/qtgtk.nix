@@ -1,11 +1,16 @@
 {
   pkgs,
-  lib,
   config,
+  theme,
   ...
-}: let
-  qtEnv = lib.filterAttrs (n: _: lib.hasPrefix "QT_" n) config.home.sessionVariables;
-in {
+}: {
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.apple-cursor;
+    name = "macOS";
+    size = 24;
+  };
+
   qt = {
     enable = true;
     platformTheme.name = "qtct";
@@ -19,7 +24,11 @@ in {
         icon_theme = "WhiteSur-dark";
         standard_dialogs = "xdgdesktopportal";
         custom_palette = true;
-        color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf";
+        color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/${
+          if theme == "dank"
+          then "matugen"
+          else "noctalia"
+        }.conf";
       };
       Fonts = {
         general = "\"JetBrainsMono,11\"";
@@ -31,7 +40,11 @@ in {
         icon_theme = "WhiteSur-dark";
         standard_dialogs = "xdgdesktopportal";
         custom_palette = true;
-        color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf";
+        color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/${
+          if theme == "dank"
+          then "matugen"
+          else "noctalia"
+        }.conf";
       };
       Fonts = {
         general = "\"JetBrainsMono,11\"";
@@ -70,4 +83,8 @@ in {
   # };
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
 }

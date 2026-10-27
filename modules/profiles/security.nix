@@ -20,8 +20,8 @@
       ltrace
       #binwalk
       imhex
-      scanmem
-      pince
+      #scanmem
+      #pince
       volatility3
       age
       frida-tools

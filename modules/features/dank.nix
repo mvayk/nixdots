@@ -1,7 +1,5 @@
 {
-  pkgs,
   lib,
-  quickshell ? null,
   theme,
   ...
 }:
@@ -14,7 +12,6 @@
       enable = true;
       restartIfChanged = true;
     };
-    quickshell.package = quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell;
     enableSystemMonitoring = true;
     enableVPN = true;
     enableDynamicTheming = true;

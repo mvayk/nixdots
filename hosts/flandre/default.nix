@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./hardware.nix
     ../../modules/core.nix
   ];
 
@@ -17,39 +18,52 @@
     security = true;
   };
 
+  boot.kernelParams = ["usbhid.mousepoll=8"];
+  virtualisation.vmware.host.enable = false;
+
   networking.hostName = "flandre";
 
-  services.xserver.videoDrivers = [
-    "nvidia"
-  ];
+  services = {
+    xserver.videoDrivers = [
+      "nvidia"
+    ];
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    #package = config.boot.kernelPackages.nvidiaPackages.latest;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    open = false;
-    nvidiaSettings = true;
+    ratbagd.enable = true;
+    hardware.openrgb.enable = true;
+
+    udev.extraRules = ''
+      SUBSYSTEM=="usb",   ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
+      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
+    '';
+
+    udev.packages = [
+      pkgs.via
+    ];
   };
-  boot.kernelParams = ["usbhid.mousepoll=8"];
-  virtualisation.vmware.host.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  hardware = {
+    opentabletdriver.enable = true;
+    bluetooth.enable = true;
+    uinput.enable = true;
+
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    nvidia = {
+      modesetting.enable = true;
+      #package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      open = false;
+      nvidiaSettings = true;
+    };
   };
-
-  services.ratbagd.enable = true;
-  services.hardware.openrgb.enable = true;
 
   programs.xppen = {
     enable = true;
     package = pkgs.xppen_3;
   };
-
-  services.udev.extraRules = ''
-    SUBSYSTEM=="usb",   ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
-  '';
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
@@ -60,6 +74,6 @@
     wootility
     #xppen_4
     piper
-    vmware-workstation
+    #vmware-workstation
   ];
 }

@@ -1,24 +1,5 @@
-{
-  pkgs,
-  lib,
-  noctalia,
-  config,
-  ...
-}: let
-  dir = ../../../../presets/noctalia;
-  fileNames = builtins.attrNames (builtins.readDir dir);
-  nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
-in {
-  imports = map (n: dir + "/${n}") nixFiles ++ [../../../../features/fastfetch.nix];
-
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.apple-cursor;
-    name = "macOS";
-    # package = pkgs.bibata-cursors;
-    # name = "Bibata-Modern-Classic";
-    size = 24;
-  };
+{...}: {
+  imports = [../../themes/noctalia/default.nix];
 
   programs.niri = {
     settings = {
@@ -151,24 +132,10 @@ in {
         }
         {
           command = [
-            "nm-applet"
-          ];
-        }
-        {
-          command = [
             "xwayland-satellite"
           ];
         }
       ];
     };
   };
-
-  xdg.configFile.niri-config.enable = lib.mkForce false;
-
-  xdg.configFile."niri/config.kdl".text =
-    config.programs.niri.finalConfig + "\n" + ''include "~/.config/niri/noctalia.kdl"'';
-
-  home.packages = [
-    noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
 }

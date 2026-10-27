@@ -1,16 +1,11 @@
 {
-  config,
-  pkgs,
   lib,
   machine,
-  de,
   theme,
-  inputs,
   ...
 }: {
   imports = [
-    ./theme/${theme}/default.nix
-    ../../presets/wayland.nix
+    ./${theme}.nix
   ];
 
   programs.niri = {

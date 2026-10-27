@@ -59,7 +59,6 @@
       ns = "niri msg action spawn --";
 
       cat = "bat --style=full";
-      grep = "rg";
       top = "btm";
       du = "dust";
     };

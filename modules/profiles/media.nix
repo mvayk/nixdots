@@ -16,8 +16,6 @@
       kdePackages.kdenlive
       krita
       audacity
-      cmus
-      ani-cli
       libreoffice-qt
       zathura
       foliate
@@ -43,7 +41,6 @@
       nerd-fonts.symbols-only
 
       noto-fonts
-      noto-fonts-cjk-sans
       noto-fonts-color-emoji
       noto-fonts-monochrome-emoji
       liberation_ttf

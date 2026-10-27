@@ -1,38 +1,8 @@
-{
-  pkgs,
-  quickshell,
-  lib,
-  config,
-  ...
-}: let
-  dir = ../../../../presets/dank;
-  fileNames = builtins.attrNames (builtins.readDir dir);
-  nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
-in {
-  imports =
-    map (n: dir + "/${n}") nixFiles
-    ++ [
-      ../../../../features/fastfetch.nix
-    ];
-
-  home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 24;
-  };
+{pkgs, ...}: {
+  imports = [../../themes/dank/default.nix];
 
   programs.niri = {
     settings = {
-      environment = {
-        XCURSOR_THEME = "Bibata-Modern-Classic";
-        XCURSOR_SIZE = "24";
-      };
-
-      cursor = {
-        theme = "Bibata-Modern-Classic";
-        size = 24;
-      };
-
       layout = {
         gaps = 8;
         center-focused-column = "never";
@@ -73,17 +43,13 @@ in {
         }
         {
           command = [
-            "nm-applet"
-          ];
-        }
-        {
-          command = [
             "xwayland-satellite"
           ];
         }
       ];
 
       prefer-no-csd = true;
+
       window-rules = [
         {
           geometry-corner-radius = {
@@ -159,13 +125,4 @@ in {
       };
     };
   };
-
-  home.sessionVariables = {
-    TERMINAL = "ghostty";
-  };
-
-  home.packages = [
-    pkgs.bibata-cursors
-    quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
 }

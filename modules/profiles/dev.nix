@@ -7,6 +7,14 @@
   options.profiles.dev = lib.mkEnableOption "dev packages";
 
   config = lib.mkIf config.profiles.dev {
+    environment.sessionVariables = {
+      CPATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
+      CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
+      LIBRARY_PATH = "${pkgs.gcc.cc.lib}/lib:${pkgs.glibc}/lib";
+      LD_LIBRARY_PATH = "${pkgs.gcc.cc.lib}/lib:${pkgs.glibc}/lib";
+      RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+    };
+
     services = {
       ollama.enable = true;
 
@@ -15,11 +23,6 @@
         package = pkgs.emacs;
       };
     };
-
-    nixpkgs.config.permittedInsecurePackages = [
-      "pnpm-10.29.2"
-      "idea-oss-2025.3.4"
-    ];
 
     programs = {
       #ccache.enable = true;
@@ -79,10 +82,6 @@
           alsa-lib
           brotli
           unixodbc
-          qt6.qtbase
-          qt6.qtdeclarative
-          qt6.qttools
-          kdePackages.qtdeclarative
         ];
       };
     };
@@ -158,10 +157,6 @@
       alsa-lib
       brotli
       unixodbc
-      qt6.qtbase
-      qt6.qtdeclarative
-      qt6.qttools
-      kdePackages.qtdeclarative
       jetbrains.idea
       recaf-launcher
       jasmin

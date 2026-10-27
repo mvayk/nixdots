@@ -43,7 +43,6 @@
       zenity
       man-pages
       man-pages-posix
-      wl-clipboard
       xclip
       xinput
       libnotify
@@ -53,6 +52,7 @@
       p7zip
       rar
       gnupg
+      socat
     ];
   };
 }

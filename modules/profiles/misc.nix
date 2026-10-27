@@ -26,7 +26,6 @@
       inetutils
       dnsmasq
       qbittorrent
-      catgirl
       scrcpy
       android-tools
       usbutils
@@ -49,9 +48,7 @@
       libinput
       OVMF
       kdotool
-      kdePackages.filelight
       rustdesk
-      socat
     ];
   };
 }

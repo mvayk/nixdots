@@ -1,61 +1,39 @@
-{
-  pkgs,
-  lib,
-  quickshell,
-  ...
-}: let
-  dir = ../../../../presets/mshell;
-  fileNames = builtins.attrNames (builtins.readDir dir);
-  nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
-in {
-  imports =
-    map (n: dir + "/${n}") nixFiles
-    ++ [
-      ../../../../features/fastfetch.nix
-    ];
+{pkgs, ...}: {
+  imports = [../../themes/dank/default.nix];
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
+    name = "Bibata-Modern-Classic";
     size = 24;
   };
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      env = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-        "HYPRCURSOR_SIZE,24"
-      ];
-
       exec-once = [
-        "nm-applet"
-        "awww-daemon"
-        "hyprctl setcursor Bibata-Modern-Ice 24"
+        "dms"
       ];
 
       general = {
-        gaps_in = 4;
-        gaps_out = 12;
+        gaps_in = 8;
+        gaps_out = 8;
         border_size = 1;
-        # "col.active_border" = "$primary $secondary $tertiary 45deg";
-        # "col.inactive_border" = "$surface";
+        "col.active_border" = "rgba(FFFFFFFF)";
+        "col.inactive_border" = "rgba(000000FF)";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
       };
-
       decoration = {
-        rounding = 1;
-        rounding_power = 1;
+        rounding = 20;
+        rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         shadow = {
           enabled = true;
+          offset = "2 3";
           range = 24;
-          render_power = 4;
-          color = "rgba(00000080)";
+          render_power = 3;
+          color = "rgba(00000055)";
         };
         blur = {
           enabled = true;
@@ -101,11 +79,17 @@ in {
           "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
+      windowrulev2 = [
+        "noborder, class:^(com\\.mitchellh\\.ghostty)$"
+      ];
+      bind = [
+        "$mainMod, O, exec, dms ipc call lock lock"
+        ", PAUSE, exec, dms ipc call audio micmute"
+        "$mainMod, semicolon, exec, dms ipc call spotlight toggleQuery !"
+        "$mainMod, A, exec, dms ipc call spotlight toggle"
+        "$mainMod, page_up, exec, dms ipc call audio increment 5"
+        "$mainMod, page_down, exec, dms ipc call audio decrement 5"
+      ];
     };
   };
-
-  home.packages = [
-    pkgs.awww
-    quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
 }

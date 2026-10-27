@@ -1,11 +1,9 @@
 {
   pkgs,
-  inputs,
   kwin-effects-glass,
   ...
 }: {
   imports = [
-    ../../features/fastfetch.nix
     ../../features/ghostty.nix
   ];
 

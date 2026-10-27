@@ -1,6 +1,5 @@
 {de, ...}: {
   imports = [
-    #../../home/base.nix
     (../../home/de + "/${de}/default.nix")
 
     ../../home/features/zsh.nix
@@ -28,9 +27,7 @@
   home.sessionPath = ["$HOME/.cargo/bin"];
 
   programs.home-manager.enable = true;
-
-  services.syncthing.enable = true;
-
+  programs.lazygit.enable = true;
   programs.git = {
     enable = true;
     settings = {
@@ -56,5 +53,6 @@
     };
   };
 
-  programs.lazygit.enable = true;
+  services.syncthing.enable = true;
+
 }

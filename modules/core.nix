@@ -1,9 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ../modules/profiles/default.nix
-    ../modules/features/noctalia-greeter.nix
-    #../modules/features/dank.nix
-    #../modules/sops.nix
   ];
 
   boot = {
@@ -27,9 +24,7 @@
       "uinput"
       "v4l2loopback"
     ];
-    # extraModulePackages = with config.boot.kernelPackages; [
-    #   v4l2loopback
-    # ];
+
     extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
     '';
@@ -96,13 +91,6 @@
     };
   };
 
-  hardware = {
-    bluetooth.enable = true;
-    opentabletdriver.enable = true;
-    uinput.enable = true;
-    #keyboard.qmk.enable = true;
-  };
-
   xdg = {
     menus.enable = true;
     mime = {
@@ -123,18 +111,6 @@
   };
 
   environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
-
-  environment.sessionVariables = {
-    CPATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
-    CPLUS_INCLUDE_PATH = "${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}:${pkgs.gcc.cc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu:${pkgs.glibc.dev}/include";
-    LIBRARY_PATH = "${pkgs.gcc.cc.lib}/lib:${pkgs.glibc}/lib";
-    LD_LIBRARY_PATH = "${pkgs.gcc.cc.lib}/lib:${pkgs.glibc}/lib";
-    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-  };
-
-  services.udev.packages = [
-    pkgs.via
-  ];
 
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;

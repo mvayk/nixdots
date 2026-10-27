@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   lib,
   inputs,
   theme,
@@ -18,8 +16,7 @@
     tags;
 in {
   imports = [
-    ./theme/${theme}/default.nix
-    ../../presets/wayland.nix
+    ./${theme}.nix
     inputs.mango.hmModules.mango
   ];
 

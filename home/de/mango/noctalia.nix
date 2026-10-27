@@ -1,22 +1,5 @@
-{
-  pkgs,
-  lib,
-  noctalia,
-  config,
-  ...
-}: let
-  dir = ../../../../presets/noctalia;
-  fileNames = builtins.attrNames (builtins.readDir dir);
-  nixFiles = builtins.filter (n: lib.hasSuffix ".nix" n && n != "default.nix") fileNames;
-in {
-  imports = map (n: dir + "/${n}") nixFiles ++ [../../../../features/fastfetch.nix];
-
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.apple-cursor;
-    name = "macOS";
-    size = 24;
-  };
+{pkgs, ...}: {
+  imports = [../../themes/noctalia/default.nix];
 
   wayland.windowManager.mango = {
     extraConfig = ''
@@ -26,8 +9,6 @@ in {
     '';
     settings = {
       env = [
-        "XCURSOR_THEME,macOS"
-        "XCURSOR_SIZE,24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
 
@@ -95,12 +76,7 @@ in {
 
       exec_once = [
         "noctalia"
-        "nm-applet"
       ];
     };
   };
-
-  home.packages = [
-    noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
 }
