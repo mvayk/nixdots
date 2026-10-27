@@ -39,6 +39,9 @@
     upower.enable = true;
     printing.enable = true;
 
+    gnome.gnome-keyring.enable = true;
+    passSecretService.enable = true;
+
     dbus = {
       enable = true;
       packages = [
@@ -87,8 +90,6 @@
     };
     portal.enable = true;
   };
-
-  gnome.gnome-keyring.enable = true;
 
   security = {
     polkit.enable = true;

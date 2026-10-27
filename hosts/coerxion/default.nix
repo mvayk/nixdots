@@ -6,17 +6,10 @@
   imports = [
     ./hardware.nix
     ../../modules/core.nix
+    ../../modules/profiles/default.nix
   ];
 
-  profiles = {
-    cli = true;
-    desktop = true;
-    dev = true;
-    gaming = true;
-    media = true;
-    misc = false;
-    security = false;
-  };
+  my.bundles.workstation.enable = true;
 
   networking.hostName = "coerxion";
 

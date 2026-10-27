@@ -6,10 +6,12 @@
   imports = [
     ./hardware.nix
     ../../modules/core.nix
-    ../modules/profiles/default.nix
+    ../../modules/profiles/default.nix
   ];
 
   my.bundles.workstation.enable = true;
+  my.hardware.info.enable = false;
+  my.ai.enable = false;
 
   boot = {
     kernel.sysctl = {
