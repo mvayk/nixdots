@@ -12,6 +12,9 @@
   my.bundles.workstation.enable = true;
   my.hardware.info.enable = false;
   my.ai.enable = false;
+  my.gaming.enable = true;
+  my.gaming.games.enable = false;
+  my.gaming.other.enable = false;
 
   boot = {
     kernel.sysctl = {
@@ -76,7 +79,7 @@
   fonts.fontconfig.enable = true;
 
   programs.xppen = {
-    enable = true;
+    enable = false;
     package = pkgs.xppen_3;
   };
 

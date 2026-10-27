@@ -11,8 +11,9 @@ in {
     enable = lib.mkEnableOption "everything";
     steam.enable = mkSub cfg.enable "steam, proton, gamescope, gamemode, mangohud";
     wine.enable = mkSub cfg.enable "wine (staging) + winetricks";
-    launchers.enable = mkSub cfg.enable "lutris, prism, osu, lunar, vinegar, misc games";
-    emulation.enable = mkSub cfg.enable "pcsx2, retroarch";
+    launchers.enable = mkSub cfg.enable "prism, osu, lunar, vinegar";
+    games.enable = mkSub cfg.enable "assaultcube kde games";
+    other.enable = mkSub cfg.enable "lutris, pcsx2, retroarch";
   };
 
   config = lib.mkMerge [
@@ -27,12 +28,13 @@ in {
       };
       environment.systemPackages = with pkgs; [
         mangohud
-        protonup-rs
-        protonup-qt
-        protontricks
-        steamtinkerlaunch
-        xdotool
-        xwininfo
+
+        # protonup-rs
+        # protonup-qt
+        # protontricks
+        # steamtinkerlaunch
+        # xdotool
+        # xwininfo
       ];
     })
 
@@ -42,20 +44,20 @@ in {
 
     (lib.mkIf cfg.launchers.enable {
       environment.systemPackages = with pkgs; [
-        lutris
         osu-lazer-bin
         prismlauncher
         lunar-client
         vinegar
-        assaultcube
-        kdePackages.kmines
-        kdePackages.kpat
         # (heroic.override { extraPkgs = ps: with ps; [gamescope gamemode]; })
       ];
     })
 
-    (lib.mkIf cfg.emulation.enable {
-      environment.systemPackages = with pkgs; [pcsx2 retroarch];
+    (lib.mkIf cfg.games.enable {
+      environment.systemPackages = with pkgs; [kdePackages.kmines kdePackages.kpat assaultcube];
+    })
+
+    (lib.mkIf cfg.other.enable {
+      environment.systemPackages = with pkgs; [pcsx2 retroarch lutris];
     })
   ];
 }
