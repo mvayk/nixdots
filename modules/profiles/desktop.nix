@@ -77,6 +77,7 @@ in {
       environment.systemPackages = with pkgs; [
         ghostty
         feh
+        swayimg
         dmenu
         yad
         zenity

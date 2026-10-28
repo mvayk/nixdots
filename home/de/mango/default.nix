@@ -22,6 +22,10 @@ in {
 
   wayland.windowManager.mango = {
     enable = true;
+    extraConfig = ''
+      window_rule=no_border:1,app_id:swayimg
+      window_rule=no_shadow:1,app_id:swayimg
+    '';
     settings = {
       sloppy_focus = 1;
       xkb_rules_layout = "us";
