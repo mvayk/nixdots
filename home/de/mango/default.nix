@@ -69,7 +69,7 @@ in {
         [
           "SUPER,u,reload_config"
           "SUPER,t,spawn,ghostty"
-          "SUPER,w,spawn,zen-beta"
+          "SUPER,w,spawn,helium"
           "SUPER,d,spawn,neovide"
           "SUPER,e,spawn,dolphin"
 
@@ -127,6 +127,8 @@ in {
           "SUPER+ALT+SHIFT,Tab,overcircle,current_prev"
           "SUPER,Tab,overcircle,next"
           "SUPER+SHIFT,Tab,overcircle,prev"
+
+          "NONE,End,spawn,/etc/nixos/modules/features/mango/screenshot.sh freeze-region"
 
           "ALT,Tab,switcher,next"
           "ALT+SHIFT,Tab,switcher,prev"

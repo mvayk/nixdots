@@ -7,6 +7,7 @@
     ./hardware.nix
     ../../modules/core.nix
     ../../modules/profiles/default.nix
+    ../../modules/features/ly.nix
   ];
 
   my.bundles.workstation.enable = true;

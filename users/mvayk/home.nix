@@ -54,5 +54,4 @@
   };
 
   services.syncthing.enable = true;
-
 }

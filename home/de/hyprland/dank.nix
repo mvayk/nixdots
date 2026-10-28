@@ -1,11 +1,6 @@
 {pkgs, ...}: {
   imports = [../../themes/dank/default.nix];
 
-  home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 24;
-  };
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

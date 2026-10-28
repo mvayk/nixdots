@@ -68,7 +68,7 @@
         "SUPER,a,spawn,noctalia msg panel-toggle launcher"
         "SUPER,Page_Up,spawn,noctalia msg volume-up"
         "SUPER,Page_Down,spawn,noctalia msg volume-down"
-        "NONE,End,spawn,noctalia msg screenshot-region"
+        "NONE,Print,spawn,noctalia msg screenshot-region"
         "SUPER,Insert,spawn,noctalia msg panel-toggle ezequiel/mango_layouts:panel"
         #"SUPER+CTRL,w,spawn,noctalia msg panel-toggle nomadcxx/gslapper:picker"
         "SUPER+CTRL,w,spawn,noctalia msg panel-toggle noctalia/mpvpaper:picker"
