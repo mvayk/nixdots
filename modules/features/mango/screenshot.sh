@@ -1,4 +1,5 @@
 set -euo pipefail
+mkdir -p $HOME/Documents/sync/screenshots/
 filepath="$HOME/Documents/sync/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
 
 case "${1:-fullscreen}" in
@@ -25,3 +26,5 @@ case "${1:-fullscreen}" in
     grim "$filepath"; satty --filename "$filepath" --output-filename "$filepath" --actions-on-enter save-to-file --early-exit ;;
   *) grim "$filepath" ;;
 esac
+
+wl-copy --type image/png < "$filepath"
