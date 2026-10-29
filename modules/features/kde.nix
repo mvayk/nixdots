@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [../wayland.nix];
+
   services.displayManager.defaultSession = "plasma";
   services.desktopManager.plasma6.enable = true;
 

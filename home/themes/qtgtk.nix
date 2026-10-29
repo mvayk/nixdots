@@ -21,7 +21,7 @@
     qt6ctSettings = {
       Appearance = {
         style = "Darkly";
-        icon_theme = "WhiteSur-dark";
+        icon_theme = "Colloid-Dark";
         standard_dialogs = "xdgdesktopportal";
         custom_palette = true;
         color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/${
@@ -37,7 +37,7 @@
     qt5ctSettings = {
       Appearance = {
         style = "Darkly";
-        icon_theme = "WhiteSur-dark";
+        icon_theme = "Colloid-Dark";
         standard_dialogs = "xdgdesktopportal";
         custom_palette = true;
         color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/${
@@ -64,27 +64,17 @@
       package = pkgs.whitesur-gtk-theme;
     };
     iconTheme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-icon-theme;
     };
   };
 
   xdg.configFile."kdeglobals".text = ''
     [Icons]
-    Theme=WhiteSur-dark
+    Theme=Colloid-Dark
   '';
-
-  # xdg.configFile = let
-  #   t = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0";
-  # in {
-  #   "gtk-4.0/assets".source = "${t}/assets";
-  #   "gtk-4.0/gtk.css".source = "${t}/gtk.css";
-  #   "gtk-4.0/gtk-dark.css".source = "${t}/gtk-dark.css";
-  # };
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
-  home.packages = with pkgs; [
-    wl-clipboard
-  ];
+  home.packages = with pkgs; [];
 }

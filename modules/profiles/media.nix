@@ -29,9 +29,9 @@ in {
       environment.systemPackages = with pkgs; [
         libreoffice-qt
         onlyoffice-desktopeditors
-        zathura
+        #zathura
         foliate
-        calibre
+        #calibre
         kdePackages.okular
         #texlive.combined.scheme-medium
       ];

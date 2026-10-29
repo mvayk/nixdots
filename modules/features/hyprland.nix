@@ -1,8 +1,5 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
+  imports = [../wayland.nix];
   services.displayManager.defaultSession = "hyprland";
 
   programs.hyprland = {
@@ -12,9 +9,8 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   };
 
-  environment.etc."xdg/menus/applications.menu".source =
-    "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 }

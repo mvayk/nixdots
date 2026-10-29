@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [../wayland.nix];
+
   programs.mango = {
     enable = true;
   };

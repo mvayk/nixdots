@@ -47,7 +47,7 @@ in {
         osu-lazer-bin
         prismlauncher
         lunar-client
-        vinegar
+        #vinegar
         # (heroic.override { extraPkgs = ps: with ps; [gamescope gamemode]; })
       ];
     })

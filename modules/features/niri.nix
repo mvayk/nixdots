@@ -3,6 +3,8 @@
   inputs,
   ...
 }: {
+  imports = [../wayland.nix];
+
   programs.niri = {
     enable = true;
   };

@@ -366,16 +366,16 @@ transition = [ "disc", "honeycomb", "stripes", "wipe", "zoom" ]
     path = "/home/mvayk/Pictures/wallpapers/wallhaven-9mzjwk.jpg"
 
     [wallpaper.last]
-    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_nail_of_celestia_genshin_impact_moewalls_com_mp4.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_nail_of_celestia_genshin_impact_moewalls_com_mp4.jpg"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_nail_of_celestia_genshin_impact_moewalls_com_mp4.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_nail_of_celestia_genshin_impact_moewalls_com_mp4.jpg"
 
 [widget.clock]
 format = " {:%H:%M:%S}"

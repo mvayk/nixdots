@@ -33,13 +33,10 @@ in {
       jq
       zoxide
       btop
-      htop
       fastfetch
       tldr
       bottom
-      dust
       procs
-      nnn
       lazygit
       starship
       more

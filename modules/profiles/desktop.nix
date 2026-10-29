@@ -34,7 +34,7 @@ in {
       programs.firefox.enable = true;
       environment.systemPackages = [
         zen-browser.packages.${system}.beta
-        firefox-nightly.packages.${system}.firefox-nightly-bin
+        #firefox-nightly.packages.${system}.firefox-nightly-bin
         helium.packages.${system}.default
         pkgs.chromium
       ];
@@ -42,11 +42,9 @@ in {
 
     (lib.mkIf cfg.kde.enable {
       environment.systemPackages = with pkgs.kdePackages; [
-        dolphin
         kio
         kio-extras
         ark
-        kolourpaint
         kdenetwork-filesharing
         discover
         filelight
@@ -77,12 +75,7 @@ in {
       environment.systemPackages = with pkgs; [
         ghostty
         feh
-        swayimg
-        dmenu
-        yad
         zenity
-        xclip
-        xinput
         libnotify
         pavucontrol
         pamixer
@@ -98,7 +91,7 @@ in {
         qbittorrent
         mission-center
         gparted
-        rustdesk
+        #rustdesk
       ];
     })
 
