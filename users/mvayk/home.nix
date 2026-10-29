@@ -1,7 +1,6 @@
 {de, ...}: {
   imports = [
     (../../home/de + "/${de}/default.nix")
-
     ../../home/features/default.nix
   ];
 

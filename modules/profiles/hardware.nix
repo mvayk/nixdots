@@ -10,7 +10,7 @@ in {
   options.my.hardware = {
     enable = lib.mkEnableOption "hardware utilities";
     info.enable = mkSub cfg.enable "sensors, usb, system info";
-    input.enable = mkSub cfg.enable "brightness, ydotool, kdotool, libinput, VIA keyboards";
+    input.enable = mkSub cfg.enable "brightness, VIA keyboards";
     android.enable = mkSub cfg.enable "adb + scrcpy";
     filesystems.enable = mkSub cfg.enable "ntfs3g";
   };
@@ -21,9 +21,8 @@ in {
     })
 
     (lib.mkIf cfg.input.enable {
-      programs.ydotool.enable = true;
       services.udev.packages = [pkgs.via];
-      environment.systemPackages = with pkgs; [via brightnessctl libinput kdotool];
+      environment.systemPackages = with pkgs; [via brightnessctl];
     })
 
     (lib.mkIf cfg.android.enable {
