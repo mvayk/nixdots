@@ -8,7 +8,8 @@
   environment.systemPackages = with pkgs; [
     xfce4-pulseaudio-plugin
     xfce4-whiskermenu-plugin
-    xfce.xfce4-docklike-plugin
+    xfce4-docklike-plugin
+
     lxappearance
     redshift
     geoclue2

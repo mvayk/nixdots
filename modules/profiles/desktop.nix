@@ -73,7 +73,6 @@ in {
     (lib.mkIf cfg.utils.enable {
       programs.dconf.enable = true;
       environment.systemPackages = with pkgs; [
-        ghostty
         feh
         zenity
         libnotify
