@@ -13,6 +13,7 @@
   my.bundles.workstation.enable = true;
   my.hardware.info.enable = false;
   my.ai.enable = false;
+  my.ai.tools.enable = true;
   my.gaming.enable = true;
   my.gaming.games.enable = false;
   my.gaming.other.enable = false;

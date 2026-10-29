@@ -22,6 +22,10 @@ in {
 
   wayland.windowManager.mango = {
     enable = true;
+    # autostart_sh = ''
+    #   dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
+    #   systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr pipewire wireplumber
+    # '';
     extraConfig = ''
       window_rule=no_border:1,app_id:swayimg
       window_rule=no_shadow:1,app_id:swayimg
