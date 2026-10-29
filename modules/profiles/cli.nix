@@ -17,16 +17,13 @@ in {
     environment.systemPackages = with pkgs; [
       curl
       wget
-      vim
       file
       tree
       sops
       age
-      zsh
-      oh-my-zsh
       tmux
       bat
-      eza
+      lsd
       ripgrep
       fd
       fzf

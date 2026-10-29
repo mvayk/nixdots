@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   # [[ -f /etc/nixos/home/features/zsh/.p10k.zsh && ! -f ~/.p10k.zsh ]] && ln -s /etc/nixos/home/features/zsh/.p10k.zsh ~/.p10k.zsh
   ### home.file.".p10k.zsh".source = ./zsh/.p10k.zsh;
-
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -40,10 +39,13 @@
     ];
 
     shellAliases = {
-      ls = "eza --icons -l";
-      l = "eza --icons";
-      ll = "eza --icons -la";
-      tree = "eza --tree --icons";
+      ls = "lsd";
+      la = "lsd -a";
+      ll = "lsd -l";
+      lla = "lsd -la";
+
+      lt = "lsd --tree";
+      tree = "lsd --tree";
       vim = "nvim";
       sue = "sudo -E nvim";
       ghidra = "_JAVA_AWT_WM_NONREPARENTING=1 ghidra";
