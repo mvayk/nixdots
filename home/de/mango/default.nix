@@ -17,6 +17,7 @@
 in {
   imports = [
     ./${theme}.nix
+    ../../wayland.nix
     inputs.mango.hmModules.mango
   ];
 

@@ -5,6 +5,7 @@
 }: {
   imports = [
     ../../features/ghostty.nix
+    ../../wayland.nix
   ];
 
   /*

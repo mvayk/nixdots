@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./${theme}.nix
+    ../../wayland.nix
   ];
 
   programs.niri = {

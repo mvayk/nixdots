@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
+  imports = ["../../wayland.nix"];
   gtk = {
     enable = true;
     theme = {
@@ -27,11 +27,9 @@
     x11.enable = true;
   };
 
-  home.file.".local/share/themes/WhiteSur-Dark".source =
-    "${pkgs.whitesur-gtk-theme}/share/themes/WhiteSur-Dark";
+  home.file.".local/share/themes/WhiteSur-Dark".source = "${pkgs.whitesur-gtk-theme}/share/themes/WhiteSur-Dark";
 
-  home.file.".local/share/themes/Marble-gray-dark".source =
-    "${pkgs.marble-shell-theme}/share/themes/Marble-gray-dark";
+  home.file.".local/share/themes/Marble-gray-dark".source = "${pkgs.marble-shell-theme}/share/themes/Marble-gray-dark";
 
   home.packages = with pkgs; [
     gnome-tweaks
@@ -45,7 +43,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.multi-monitor-bar
   ];
-  home.sessionVariables = { };
+  home.sessionVariables = {};
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
