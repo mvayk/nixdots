@@ -6,6 +6,9 @@
   services.displayManager.defaultSession = "mango";
 
   xdg = {
+    mime = {
+      defaultApplications."inode/directory" = "org.kde.dolphin.desktop";
+    };
     portal = {
       enable = true;
       wlr = {

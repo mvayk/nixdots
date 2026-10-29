@@ -2,15 +2,7 @@
   imports = [
     (../../home/de + "/${de}/default.nix")
 
-    ../../home/features/zsh.nix
-    ../../home/features/yazi.nix
-    ../../home/features/fish.nix
-    ../../home/features/starship.nix
-    ../../home/features/btop.nix
-    ../../home/features/tmux.nix
-    ../../home/features/kitty.nix
-
-    ../../home/features/swayimg.nix
+    ../../home/features/default.nix
   ];
 
   home = {

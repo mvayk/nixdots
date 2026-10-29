@@ -1,0 +1,400 @@
+config_version = 16
+
+[bar]
+order = [ "default", "center", "right" ]
+
+    [bar.center]
+    center = [ "audio_visualizer", "media", "audio_visualizer" ]
+    enabled = false
+    end = []
+    margin_edge = 8
+    margin_ends = 1000
+    start = []
+
+    [bar.default]
+    background_opacity = 0.84999999999999998
+    border = "primary"
+    border_width = 1.0
+    center = [ "audio_visualizer", "media", "audio_visualizer" ]
+    contact_shadow = true
+    end = [ "tray", "input_volume", "volume", "brightness", "battery", "widget", "notifications", "session" ]
+    margin_edge = 11
+    margin_ends = 600
+    radius = 80
+    start = [ "workspaces", "clock" ]
+    widget_spacing = 22
+
+        [bar.default.monitor.DP-2]
+        border_width = 0.0
+        margin_edge = 0
+        margin_ends = 0
+        radius_top_left = 0
+        radius_top_right = 0
+
+        [bar.default.monitor.DP-3]
+        border_width = 0.0
+        center = [ "lock_keys", "weather", "clock" ]
+        end = [
+            "tray",
+            "battery",
+            "brightness",
+            "volume",
+            "input_volume",
+            "network",
+            "bluetooth",
+            "clipboard",
+            "notifications",
+            "session"
+        ]
+        margin_edge = 0
+        margin_ends = 0
+        position = "right"
+        radius = 0
+        start = [ "workspaces", "control-center" ]
+
+    [bar.right]
+    center = []
+    enabled = false
+    end = [ "tray", "clipboard", "bluetooth", "network", "volume", "brightness", "notifications", "battery", "session" ]
+    margin_edge = 8
+    margin_ends = 1000
+    start = []
+    widget_spacing = 16
+
+[brightness]
+sync_all_monitors = true
+
+[calendar]
+enabled = true
+
+[control_center.calendar]
+show_week_numbers = true
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [
+    "desktop-widget-0000000000000007",
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000004",
+    "desktop-widget-0000000000000005",
+    "desktop-widget-0000000000000006",
+    "desktop-widget-0000000000000008"
+]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 640.0
+    box_width = 736.0
+    cx = 1280.0
+    cy = 720.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "fancy_audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background = false
+        background_opacity = 0.0
+        bloom_intensity = 0.0
+        fade_when_idle = true
+        inner_diameter = 0.70000000000000007
+        primary_color = "primary"
+        rotation_speed = 2.0
+        secondary_color = "secondary"
+        sensitivity = 1.0
+        visualization_mode = "wave_rings"
+        wave_thickness = 0.80000000000000004
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 304.0
+    box_width = 352.0
+    cx = 1200.0
+    cy = 290.0
+    output = "DP-3"
+    placement_height = 2560.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    box_height = 144.0
+    box_width = 496.0
+    cx = 280.0
+    cy = 218.0
+    output = "DP-3"
+    placement_height = 2560.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "clock"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000006]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 340.0
+    cy = 515.0
+    output = "DP-3"
+    placement_height = 2560.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "calendar"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000007]
+    box_height = 224.0
+    box_width = 592.0
+    cx = 1080.0
+    cy = 576.0
+    output = "DP-3"
+    placement_height = 2560.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "media_player"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000008]
+    box_height = 144.0
+    box_width = 240.0
+    cx = 672.0
+    cy = 220.0
+    output = "DP-3"
+    placement_height = 2560.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "weather"
+
+[dock]
+background_opacity = 0.84999999999999998
+enabled = true
+icon_size = 31
+launcher_icon = "brand-snowflake"
+launcher_position = "start"
+layer = "overlay"
+margin_edge = 8
+pinned = [ "zen-beta", "vesktop", "helium", "steam" ]
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[keybinds]
+down = [ "Down", "Ctrl+j" ]
+up = [ "Up", "Ctrl+k" ]
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-3" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0001220703125
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.84999999999999998
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0001220703125
+    output = "DP-2"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_container"
+        background_opacity = 0.84999999999999998
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 720.0
+    cy = 2236.444580078125
+    output = "DP-3"
+    placement_height = 2560.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_container"
+        background_opacity = 0.84999999999999998
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+filter_order = [ "filter" ]
+layer = "overlay"
+offset_x = 25
+position = "top_center"
+
+    [notification.filter.filter]
+    allow_permanent = true
+    bypass_dnd = false
+    enabled = true
+    match = "firefox"
+    play_sound = true
+    save_history = true
+    show_toast = false
+
+[osd]
+background_opacity = 0.84999999999999998
+border = false
+offset_y = 100
+position = "bottom_center"
+position_vertical = "center_right"
+
+    [osd.kinds]
+    media = false
+
+[plugin_settings."ashur-d/wallpaper-widget"]
+notify_on_change = false
+wallpaper_dir = "/home/mvayk/Pictures/wallpapers"
+
+[plugin_settings."ezequiel/mango_layouts"]
+panel_position = "center"
+
+[plugin_settings."noctalia/mpvpaper"]
+auto_pause = "off"
+picker_placement = "floating"
+picker_position = "center"
+run_as_systemd = true
+video_directory = "/home/mvayk/Pictures/wallpapers"
+
+[plugin_settings."nomadcxx/gslapper"]
+picker_placement = "floating"
+picker_position = "center"
+video_directory = "/home/mvayk/Videos"
+
+[plugin_settings."remo/noctes"]
+save_path = "~/Documents/notes.json"
+
+[plugins]
+enabled = [ "ezequiel/mango_layouts", "noctalia/mpvpaper", "tausif/ncs-visualizer" ]
+
+[shell]
+avatar_path = "/home/mvayk/Pictures/G9rqK0MXQAEclQO.jpg"
+font_family = "JetBrainsMono Nerd Font Propo"
+screen_time_enabled = true
+
+    [shell.animation]
+    speed = 0.80000001192092896
+
+    [shell.panel]
+    control_center_placement = "floating"
+    session_placement = "floating"
+    transparency_mode = "glass"
+    wallpaper_placement = "floating"
+
+    [shell.shadow]
+    alpha = 0.99999997764825821
+    direction = "center"
+
+[theme]
+builtin = "Rosé Pine"
+community_palette = "Tokyo Night Moon"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "mango", "niri", "qt" ]
+    community_ids = [ "spicetify", "zen-browser", "discord", "neovim", "zed", "prismlauncher", "whitesur-icons" ]
+
+[wallpaper]
+directory = "/home/mvayk/Pictures/wallpapers"
+transition = [ "disc", "honeycomb", "stripes", "wipe", "zoom" ]
+
+    [wallpaper.default]
+    path = "/home/mvayk/Pictures/wallpapers/wallhaven-9mzjwk.jpg"
+
+    [wallpaper.last]
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Siberian_Husky_temper_tantrum__i82528KGDdo__webm.jpg"
+
+[widget.clock]
+format = " {:%H:%M:%S}"
+
+[widget.media]
+font_family = "JetBrainsMono NFM SemiBold"
+hide_when_no_media = true
+max_length = 398
+title_scroll = "always"
+
+[widget.tray]
+drawer = true
+
+[widget.widget]
+type = "ashur-d/wallpaper-widget:widget"
+
+[widget.workspaces]
+focused_output_only = true
+hide_when_empty = true
+labels_only_when_occupied = true
+show_icons = false
+style = "minimal"
