@@ -1,7 +1,7 @@
 {config, ...}: {
   programs.kitty = {
-    font.name = "ComicShannsMono Nerd Font";
-    font.size = 16;
+    font.name = "DaddyTimeMono Nerd Font Mono";
+    font.size = 14;
     shellIntegration.mode = "no-cursor";
     keybindings = {
       "ctrl+backspace" = "send_text all \\x1b\\x7f";
