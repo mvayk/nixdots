@@ -11,7 +11,6 @@
     settings = {
       font-family = "VictorMono Nerd Font Mono";
       font-size = 16;
-      window-decoration = false;
       background-opacity = 0.6;
       cursor-style = "underline";
       theme = "dankcolors";

@@ -8,7 +8,7 @@
     enable = true;
     package = pkgs.apple-cursor;
     name = "macOS";
-    size = 24;
+    size = 36;
   };
 
   qt = {

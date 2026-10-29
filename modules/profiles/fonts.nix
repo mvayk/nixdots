@@ -11,6 +11,8 @@
       nerd-fonts.iosevka
       nerd-fonts.jetbrains-mono
       nerd-fonts.victor-mono
+      nerd-fonts.daddy-time-mono
+      nerd-fonts.mononoki
       nerd-fonts.space-mono
       nerd-fonts.symbols-only
       nerd-fonts._3270
