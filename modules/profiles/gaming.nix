@@ -21,9 +21,13 @@ in {
       programs = {
         steam = {
           enable = true;
+          gamescopeSession.enable = true;
           extraCompatPackages = [pkgs.proton-ge-bin];
         };
-        gamescope.enable = true;
+        gamescope = {
+          enable = true;
+          capSysNice = true;
+        };
         gamemode.enable = true;
       };
       environment.systemPackages = with pkgs; [

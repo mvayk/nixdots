@@ -17,6 +17,7 @@
   my.gaming.enable = true;
   my.gaming.games.enable = false;
   my.gaming.other.enable = false;
+  my.dev.emacs.enable = false;
 
   boot = {
     kernel.sysctl = {
@@ -47,7 +48,7 @@
     ];
 
     ratbagd.enable = true;
-    hardware.openrgb.enable = true;
+    hardware.openrgb.enable = false;
 
     udev.extraRules = ''
       SUBSYSTEM=="usb",   ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
@@ -86,7 +87,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    openrgb-with-all-plugins
+    #openrgb-with-all-plugins
     (llama-cpp.override {
       cudaSupport = false;
     })

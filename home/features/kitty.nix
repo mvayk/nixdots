@@ -1,6 +1,6 @@
 {config, ...}: {
   programs.kitty = {
-    font.name = "DaddyTimeMono Nerd Font Mono";
+    font.name = "Terminess Nerd Font Mono";
     font.size = 14;
     shellIntegration.mode = "no-cursor";
     keybindings = {
@@ -8,11 +8,10 @@
     };
     settings = {
       cursor_shape = "beam";
-      background_opacity = "0.9";
-      cursor_blink_interval = "-1";
+      background_opacity = "1";
+      cursor_blink_interval = "1";
       confirm_os_window_close = 0;
       placement_strategy = "center";
-      # modify_font = "cell_height 110%";
     };
   };
 }

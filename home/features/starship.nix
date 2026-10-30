@@ -1,6 +1,5 @@
 {...}: {
   programs.starship = {
-    enable = false;
     settings = {
       format = ''
         $username

@@ -19,7 +19,7 @@
         "colored-man-pages"
         "command-not-found"
       ];
-      theme = "wuffers";
+      theme = "daveverwer";
     };
 
     plugins = [
@@ -76,25 +76,27 @@
     #   tmux attach 2>/dev/null || tmux new-session
     # fi
     initContent = ''
-                if [[ -n "$TMUX" ]]; then
-                  export TERM="tmux-256color"
-                fi
+                  if [[ -n "$TMUX" ]]; then
+                    export TERM="tmux-256color"
+                  fi
 
 
-                eval "$(zoxide init zsh)"
-                eval "$(direnv hook zsh)"
+                  eval "$(zoxide init zsh)"
+                  eval "$(direnv hook zsh)"
 
-                edit() { neovide "$@" & }
+                  edit() { neovide "$@" & }
 
-      _accept_suggestion_or_complete() {
-        if [[ -n $POSTDISPLAY ]]; then
-          zle forward-char
-        else
-          zle expand-or-complete
-        fi
-      }
-      zle -N _accept_suggestion_or_complete
-      bindkey '^I' _accept_suggestion_or_complete
+        _accept_suggestion_or_complete() {
+          if [[ -n $POSTDISPLAY ]]; then
+            zle forward-char
+          else
+            zle expand-or-complete
+          fi
+        }
+        zle -N _accept_suggestion_or_complete
+        bindkey '^I' _accept_suggestion_or_complete
+
+      ~/.local/bin/entry
     '';
     #bindkey '^[[13;2u' autosuggest-accept
     #[[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
