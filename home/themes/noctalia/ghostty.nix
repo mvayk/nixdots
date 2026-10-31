@@ -11,7 +11,8 @@
       window-padding-x = 10;
       window-padding-y = 10;
       cursor-style = "underline";
-      font-family = "Mononoki Nerd Font Mono";
+      #font-family = "Mononoki Nerd Font Mono";
+      font-family = "DaddyTimeMono Nerd Font Mono";
       #font-style = "Medium";
       adjust-cell-height = "+15%";
     };

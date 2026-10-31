@@ -4,20 +4,42 @@
   wayland.windowManager.mango = {
     extraConfig = ''
       source=./noctalia.conf
-      window_rule=no_blur:1,app_id:com.mitchellh.ghostty
-      layer_rule=layer_name:^noctalia-desktop-widget,no_blur:1
+
+      animation_curve_open=0.46,1.0,0.29,0.99
+      animation_curve_move=0.46,1.0,0.29,0.99
+      animation_curve_tag=0.46,1.0,0.29,0.99
+      animation_curve_close=0.46,1.0,0.29,0.99
+      animation_curve_focus=0.46,1.0,0.29,0.99
+      animation_curve_opacity_fade_in=0.46,1.0,0.29,0.99
+      animation_curve_opacity_fade_out=0.5,0.5,0.5,0.5
     '';
     settings = {
       env = [
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
+      animations = 1;
+      layer_animations = 1;
+
+      animation_type_open = "zoom";
+      animation_type_close = "slide";
+      layer_animation_type_open = "slide";
+      layer_animation_type_close = "slide";
+
+      zoom_initial_ratio = 0.2;
+      zoom_end_ratio = 0.8;
+
+      animation_duration_move = 500;
+      animation_duration_open = 400;
+      animation_duration_tag = 300;
+      animation_duration_close = 300;
+      animation_duration_focus = 0;
 
       gap_inner_horizontal = 14;
       gap_inner_vertical = 14;
       gap_outer_horizontal = 28;
       gap_outer_vertical = 28;
 
-      border_px = 1;
+      border_px = 0;
       focus_color = "0xFFFFFFFF";
       border_color = "0x000000FF";
       root_color = "0x00000000";

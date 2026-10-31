@@ -61,8 +61,7 @@
       ns = "niri msg action spawn --";
 
       cat = "bat --style=full";
-      top = "btm";
-      du = "dust";
+      top = "btop";
     };
 
     envExtra = ''

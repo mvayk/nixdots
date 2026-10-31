@@ -31,7 +31,7 @@
     };
 
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
+      url = "github:duxlabs-dev/dux-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -86,7 +86,7 @@
         cinnamon = ["default"];
         niri = ["noctalia" "dank"];
         hyprland = ["noctalia" "dank"];
-        mango = ["noctalia"];
+        mango = ["noctalia" "dank"];
       };
     };
 
