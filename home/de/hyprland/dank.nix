@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       exec-once = [
-        "dms"
+        "dms run"
       ];
 
       general = {

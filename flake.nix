@@ -17,7 +17,6 @@
 
     mango = {
       url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri = {
@@ -32,6 +31,11 @@
 
     dms = {
       url = "github:duxlabs-dev/dux-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dsearch = {
+      url = "github:duxlabs-dev/dux-search";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

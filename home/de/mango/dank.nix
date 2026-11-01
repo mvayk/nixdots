@@ -39,7 +39,7 @@
       gap_outer_horizontal = 28;
       gap_outer_vertical = 28;
 
-      border_px = 0;
+      border_px = 1;
       focus_color = "0xFFFFFFFF";
       border_color = "0x000000FF";
       root_color = "0x00000000";

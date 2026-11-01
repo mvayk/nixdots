@@ -38,7 +38,7 @@
       spawn-at-startup = [
         {
           command = [
-            "dms"
+            "dms run"
           ];
         }
         {

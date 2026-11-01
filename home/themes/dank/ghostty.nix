@@ -9,7 +9,7 @@
     enable = true;
 
     settings = {
-      font-family = "VictorMono Nerd Font Mono";
+      font-family = "DaddyTimeMono Nerd Font Mono";
       font-size = 16;
       background-opacity = 0.6;
       cursor-style = "underline";
