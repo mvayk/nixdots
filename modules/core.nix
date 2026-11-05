@@ -33,6 +33,11 @@
 
   environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   services = {
     udisks2.enable = true;
     flatpak.enable = true;

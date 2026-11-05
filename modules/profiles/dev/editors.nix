@@ -26,10 +26,11 @@ in {
     })
 
     (lib.mkIf cfg.emacs.enable {
-      services.emacs = {
-        enable = true;
-        package = pkgs.emacs;
-      };
+      # services.emacs = {
+      #   enable = true;
+      #   package = pkgs.emacs;
+      # };
+      environment.systemPackages = with pkgs; [emacs];
     })
   ];
 }

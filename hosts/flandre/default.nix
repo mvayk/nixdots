@@ -17,7 +17,7 @@
   my.gaming.enable = true;
   my.gaming.games.enable = false;
   my.gaming.other.enable = false;
-  my.dev.emacs.enable = false;
+  my.dev.emacs.enable = true;
 
   boot = {
     kernel.sysctl = {

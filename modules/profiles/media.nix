@@ -20,7 +20,7 @@ in {
       environment.systemPackages = with pkgs; [ffmpeg yt-dlp imagemagick poppler-utils];
     })
     (lib.mkIf cfg.players.enable {
-      environment.systemPackages = with pkgs; [mpv vlc cheese ffmpegthumbnailer];
+      environment.systemPackages = with pkgs; [mpv vlc cheese ffmpegthumbnailer pear-desktop];
     })
     (lib.mkIf cfg.creative.enable {
       environment.systemPackages = with pkgs; [kdePackages.kdenlive krita audacity];

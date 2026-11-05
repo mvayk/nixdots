@@ -18,7 +18,7 @@
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
       animations = 1;
-      layer_animations = 1;
+      layer_animations = 0;
 
       animation_type_open = "zoom";
       animation_type_close = "slide";

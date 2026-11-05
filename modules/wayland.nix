@@ -10,5 +10,6 @@
     kdePackages.dolphin
     libinput
     kdotool
+    wlr-randr
   ];
 }

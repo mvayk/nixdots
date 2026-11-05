@@ -15,6 +15,7 @@
       nerd-fonts.mononoki
       nerd-fonts.space-mono
       nerd-fonts.symbols-only
+      nerd-fonts.inconsolata
       nerd-fonts._3270
       nerd-fonts.terminess-ttf
       nerd-fonts.bigblue-terminal
@@ -27,6 +28,8 @@
       dejavu_fonts
       font-awesome
       unifont
+      fixedsys-excelsior
+      nerd-fonts.intone-mono
     ];
   };
 }
