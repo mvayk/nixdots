@@ -25,6 +25,7 @@
     };
 
     kernelParams = ["usbhid.mousepoll=8"];
+    blacklistedKernelModules = ["wacom" "hid_uclogic" "hid_huion"];
 
     kernelModules = [
       "uinput"
@@ -51,8 +52,9 @@
     hardware.openrgb.enable = false;
 
     udev.extraRules = ''
-      SUBSYSTEM=="usb",   ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
+      SUBSYSTEM=="usb",    ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
       SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", MODE="0666"
+      SUBSYSTEM=="input",  ATTRS{idVendor}=="28bd", ATTRS{idProduct}=="091b", ENV{LIBINPUT_IGNORE_DEVICE}="1"
     '';
 
     udev.packages = [
@@ -61,7 +63,10 @@
   };
 
   hardware = {
-    opentabletdriver.enable = true;
+    opentabletdriver = {
+      enable = true;
+      daemon.enable = true;
+    };
     bluetooth.enable = true;
     uinput.enable = true;
 

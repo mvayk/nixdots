@@ -7,7 +7,7 @@
       theme = "noctalia";
       #custom-shader-animation = "always";
       #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
-      background-opacity = 0.95;
+      background-opacity = 1;
       window-padding-x = 15;
       window-padding-y = 15;
       #font-family = "Mononoki Nerd Font Mono";

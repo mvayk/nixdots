@@ -3,6 +3,7 @@
   lib,
   config,
   mkSub,
+  inputs,
   ...
 }: let
   cfg = config.my.gaming;
@@ -48,6 +49,9 @@ in {
 
     (lib.mkIf cfg.launchers.enable {
       environment.systemPackages = with pkgs; [
+        (stable.lutris.override {
+          extraLibraries = pkgs: [pkgs.file];
+        })
         osu-lazer-bin
         prismlauncher
         lunar-client
@@ -61,7 +65,7 @@ in {
     })
 
     (lib.mkIf cfg.other.enable {
-      environment.systemPackages = with pkgs; [pcsx2 retroarch lutris];
+      environment.systemPackages = with pkgs; [pcsx2 retroarch];
     })
   ];
 }

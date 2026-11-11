@@ -106,6 +106,8 @@
     pam.services.sddm.enableGnomeKeyring = true;
   };
 
+  #nixpkgs.overlays = import ./overlays.nix;
+  imports = [./overlays.nix];
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
