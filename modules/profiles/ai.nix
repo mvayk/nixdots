@@ -17,7 +17,7 @@ in {
   config = lib.mkMerge [
     (lib.mkIf cfg.ollama.enable {services.ollama.enable = true;})
     (lib.mkIf cfg.tools.enable {
-      environment.systemPackages = with pkgs; [koboldcpp aichat];
+      environment.systemPackages = with pkgs; [koboldcpp];
     })
     (lib.mkIf cfg.dev.enable {
       environment.systemPackages = with pkgs; [opencode opencode-desktop];

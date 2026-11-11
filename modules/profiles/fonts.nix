@@ -30,6 +30,7 @@
       unifont
       fixedsys-excelsior
       nerd-fonts.intone-mono
+      nerd-fonts.martian-mono
     ];
   };
 }

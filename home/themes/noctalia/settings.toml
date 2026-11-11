@@ -1,7 +1,12 @@
 config_version = 16
 
 [bar]
-order = [ "default", "center", "right" ]
+order = [ "default", "center", "right", "bar-gruvvyyyy" ]
+
+    [bar.bar-gruvvyyyy]
+    concave_edge_corners = false
+    enabled = false
+    radius = 0
 
     [bar.center]
     center = [ "audio_visualizer", "media", "audio_visualizer" ]
@@ -381,8 +386,8 @@ screen_time_enabled = true
 
 [theme]
 builtin = "Rosé Pine"
-community_palette = "Tokyo Night Moon"
-source = "wallpaper"
+community_palette = "Macaron"
+source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
@@ -394,19 +399,19 @@ directory = "/home/mvayk/Pictures/wallpapers"
 transition = [ "disc", "honeycomb", "stripes", "wipe", "zoom" ]
 
     [wallpaper.default]
-    path = "/home/mvayk/Pictures/wallpapers/win11-d6k32g.jpg"
+    path = "/home/mvayk/Pictures/wallpapers/anime/c-494313.jpg"
 
     [wallpaper.last]
-    path = "/home/mvayk/Pictures/wallpapers/win11-d6k32g.jpg"
+    path = "/home/mvayk/Pictures/wallpapers/anime/c-494313.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/mvayk/Pictures/wallpapers/win11-d6k32g.jpg"
+    path = "/home/mvayk/Pictures/wallpapers/anime/c-494313.jpg"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/mvayk/Pictures/wallpapers/win11-d6k32g.jpg"
+    path = "/home/mvayk/Pictures/wallpapers/anime/c-494313.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/mvayk/Pictures/wallpapers/win11-d6k32g.jpg"
+    path = "/home/mvayk/Pictures/wallpapers/anime/c-494313.jpg"
 
     [wallpaper.monitors.WL-1]
     path = "/home/mvayk/.cache/noctalia/mpvpaper/_home_mvayk_Pictures_wallpapers_Lyrith____________________rum28o5J5Vo__webm.jpg"

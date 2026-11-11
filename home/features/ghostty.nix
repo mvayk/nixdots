@@ -8,7 +8,9 @@
       ];
       window-padding-color = "extend";
       confirm-close-surface = false;
-      copy-on-select = true;
+      copy-on-select = "clipboard";
+      clipboard-write = "allow";
+      shell-integration-features = "ssh-env,ssh-terminfo";
     };
   };
 }

@@ -14,6 +14,13 @@ in {
       git.enable = true;
     };
 
+    services.openssh = {
+      enable = true;
+      settings = {
+        X11Forwarding = true;
+      };
+    };
+
     environment.systemPackages = with pkgs; [
       curl
       wget
@@ -24,6 +31,8 @@ in {
       tmux
       bat
       lsd
+      atuin
+      pay-respects
       ripgrep
       fd
       fzf
@@ -47,6 +56,7 @@ in {
       rar
       gnupg
       socat
+      openssh
     ];
   };
 }

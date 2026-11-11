@@ -28,6 +28,7 @@ in {
     (lib.mkIf cfg.documents.enable {
       environment.systemPackages = with pkgs; [
         libreoffice-qt
+        trilium-desktop
         onlyoffice-desktopeditors
         #zathura
         foliate

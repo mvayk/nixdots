@@ -7,14 +7,14 @@
       theme = "noctalia";
       #custom-shader-animation = "always";
       #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
-      background-opacity = 0.6;
-      window-padding-x = 10;
-      window-padding-y = 10;
-      cursor-style = "underline";
+      background-opacity = 0.95;
+      window-padding-x = 15;
+      window-padding-y = 15;
       #font-family = "Mononoki Nerd Font Mono";
-      font-family = "DaddyTimeMono Nerd Font Mono";
+      font-family = "JetBrainsMono Nerd Font Mono";
       #font-style = "Medium";
       adjust-cell-height = "+15%";
+      cursor-style = "underline";
     };
   };
 
