@@ -36,6 +36,7 @@ in {
         ghidra
         binaryninja-free
         imhex
+        (callPackage ../nixpkgs/ida-free/package.nix {})
         #cutter
         #   nix-store --add-fixed sha256 ida-free-pc_92_x64linux.run
       ];

@@ -35,6 +35,7 @@
   my.gaming.games.enable = false;
   my.gaming.other.enable = false;
   my.dev.emacs.enable = true;
+  my.reversing.gui.enable = true;
 
   boot = {
     kernel.sysctl = {
