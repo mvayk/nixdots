@@ -147,7 +147,9 @@ in
       addAutoPatchelfSearchPath $IDADIR
 
       # Wrap the ida executable to set QT_PLUGIN_PATH
-      wrapProgram $IDADIR/ida --prefix QT_PLUGIN_PATH : $IDADIR/plugins/platforms
+      wrapProgram $IDADIR/ida \
+        --set QT_PLUGIN_PATH $IDADIR/plugins \
+        --unset QT_QPA_PLATFORM_PLUGIN_PATH
       ln -s $IDADIR/ida $out/bin/ida
 
       # runtimeDependencies don't get added to non-executables, and openssl is needed

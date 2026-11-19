@@ -10,6 +10,7 @@
       copy-on-select = "clipboard";
       clipboard-write = "allow";
       shell-integration-features = "ssh-env,ssh-terminfo";
+      theme = "Builtin Pastel Dark";
     };
   };
 }
