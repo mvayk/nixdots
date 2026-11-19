@@ -12,7 +12,7 @@
       '';
       resolution = "2560x1440";
       style = {
-        wallpapers = [./limine-theme/wallpaper.png];
+        wallpapers = [../../modules/styling/wallpaper.png];
         wallpaperStyle = "centered";
         backdrop = "000000";
         interface.resolution = "2560x1440";
@@ -24,7 +24,7 @@
     ./hardware.nix
     ../../modules/core.nix
     ../../modules/profiles/default.nix
-    ../../modules/features/ly.nix
+    ../../modules/features/gdm.nix
   ];
 
   my.bundles.workstation.enable = true;
@@ -41,7 +41,7 @@
       "kernel.yama.ptrace_scope" = 0;
     };
 
-    kernelParams = ["usbhid.mousepoll=8"];
+    kernelParams = ["usbhid.mousepoll=8" "nvidia-drm.fbdev=1" "nvidia-drm.modeset=1"];
     blacklistedKernelModules = ["wacom" "hid_uclogic" "hid_huion"];
 
     kernelModules = [
