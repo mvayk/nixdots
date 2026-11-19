@@ -30,6 +30,7 @@ in {
     extraConfig = ''
       window_rule=no_border:1,app_id:swayimg
       window_rule=no_shadow:1,app_id:swayimg
+      window_rule=confine_pointer:1,is_fullscreen:1,app_id:steam_app_1659040
     '';
     settings = {
       sloppy_focus = 1;
@@ -69,7 +70,6 @@ in {
           "name:^DP-2$,width:2560,height:1440,refresh:240,x:0,y:720"
           "name:^DP-1$,width:2560,height:1440,refresh:240,x:2560,y:720"
           "name:^DP-3$,width:2560,height:1440,refresh:240,x:5120,y:0,rr:3"
-          "name:^DP-4$,width:1920,height:1080,refresh:60,x:6560,y:0"
         ]
         else [
           "name:^eDP-1$,width:1920,height:1080,refresh:144,x:0,y:0"
@@ -79,7 +79,7 @@ in {
         [
           "SUPER,u,reload_config"
           "SUPER,t,spawn,ghostty"
-          "SUPER,w,spawn,helium"
+          "SUPER,w,spawn,firefox"
           "SUPER,d,spawn,neovide"
           "SUPER,e,spawn,dolphin"
 

@@ -34,6 +34,7 @@ in {
         foliate
         #calibre
         kdePackages.okular
+        easyeffects
         #texlive.combined.scheme-medium
       ];
     })

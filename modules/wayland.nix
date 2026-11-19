@@ -11,5 +11,6 @@
     libinput
     kdotool
     wlr-randr
+    wl-mirror
   ];
 }

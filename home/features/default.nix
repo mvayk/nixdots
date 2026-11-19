@@ -10,5 +10,6 @@
     ./tmux.nix
     ./yazi.nix
     ./zsh.nix
+    ./oh-my-posh.nix
   ];
 }

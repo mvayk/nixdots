@@ -31,12 +31,12 @@ in {
     })
 
     (lib.mkIf cfg.browsers.enable {
-      #programs.firefox.enable = true;
+      programs.firefox.enable = true;
       environment.systemPackages = [
-        zen-browser.packages.${system}.beta
+        #zen-browser.packages.${system}.beta
         #firefox-nightly.packages.${system}.firefox-nightly-bin
-        helium.packages.${system}.default
-        pkgs.chromium
+        #helium.packages.${system}.default
+        #pkgs.chromium
       ];
     })
 

@@ -134,12 +134,13 @@
       bindkey '^I' _accept_suggestion_or_complete
 
       eval "$(direnv hook zsh)"
-      eval "$(starship init zsh)"
+      eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
       eval "$(atuin init zsh --disable-up-arrow)"
       eval "$(pay-respects zsh --alias)"
 
       mtodo list
     '';
+    #eval "$(starship init zsh)"
     #~/.local/bin/entry
     #bindkey '^[[13;2u' autosuggest-accept
     #[[ "$TMUX_PANE" == "%0" || -z "$TMUX" ]] && fastfetch
