@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   imports = [../wayland.nix];
 
   services.displayManager.defaultSession = "plasma";
@@ -15,7 +20,8 @@
   environment.systemPackages = with pkgs; [
     darkly
     kde-rounded-corners
-    kdePackages.qtstyleplugin-kvantum
-    nwg-look
+    # kdePackages.qtstyleplugin-kvantum
+    # nwg-look
+    papirus-icon-theme
   ];
 }

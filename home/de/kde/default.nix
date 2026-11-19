@@ -1,6 +1,8 @@
 {
   pkgs,
-  kwin-effects-glass,
+  inputs,
+  lib,
+  config,
   ...
 }: {
   imports = [
@@ -29,7 +31,7 @@
   */
 
   home.packages = with pkgs; [
-    plasma-panel-colorizer
-    kwin-effects-glass.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # plasma-panel-colorizer
+    # kwin-effects-glass.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

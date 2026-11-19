@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   programs.ghostty = {
     settings = {
-      window-decoration = false;
       keybind = [
         "ctrl+backspace=text:\\x1b\\x7f"
         "ctrl+shift+c=copy_to_clipboard:plain"

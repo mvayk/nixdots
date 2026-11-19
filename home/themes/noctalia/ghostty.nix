@@ -3,6 +3,7 @@
 
   programs.ghostty = {
     settings = {
+      window-decoration = false;
       font-size = 16;
       theme = "noctalia";
       #custom-shader-animation = "always";
