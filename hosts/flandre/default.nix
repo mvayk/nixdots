@@ -10,6 +10,13 @@
             protocol: efi
             path: guid(e68c8506-3dcf-44b1-aee5-6e77f17cf45c):/EFI/Microsoft/Boot/bootmgfw.efi
       '';
+      resolution = "2560x1440";
+      style = {
+        wallpapers = [./limine-theme/wallpaper.png];
+        wallpaperStyle = "centered";
+        backdrop = "000000";
+        interface.resolution = "2560x1440";
+      };
     };
   };
 
