@@ -3,6 +3,16 @@
   pkgs,
   ...
 }: {
+  boot = {
+    loader.limine = {
+      extraEntries = ''
+        /Windows 11
+            protocol: efi
+            path: guid(e68c8506-3dcf-44b1-aee5-6e77f17cf45c):/EFI/Microsoft/Boot/bootmgfw.efi
+      '';
+    };
+  };
+
   imports = [
     ./hardware.nix
     ../../modules/core.nix

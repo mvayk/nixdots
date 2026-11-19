@@ -5,11 +5,10 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
 
-    loader.grub = {
+    loader.limine = {
       enable = true;
-      device = "nodev";
       efiSupport = true;
-      useOSProber = true;
+      maxGenerations = 10;
     };
   };
 
