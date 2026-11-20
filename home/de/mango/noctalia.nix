@@ -49,7 +49,7 @@
       shadows = 1;
       shadow_only_floating = 0;
       shadows_size = 4;
-      shadows_blur = 5;
+      shadows_blur = 0;
       shadows_position_x = 0;
       shadows_position_y = 0;
       shadows_color = "0x00000060";
@@ -58,9 +58,9 @@
       group_bar_decorate_corner_radius = 0;
       group_bar_decorate_font_desc = "JetBrainsMono Bold 8";
 
-      blur = 0;
+      blur = 1;
       blur_layer = 1;
-      blur_optimized = 1;
+      blur_optimized = 0;
       blur_params_radius = 2;
       blur_params_num_passes = 1;
       blur_params_noise = 0.02;

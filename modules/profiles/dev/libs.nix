@@ -22,6 +22,7 @@
   ];
 
   graphicsLibs = with pkgs; [
+    qt6.qtbase
     libGL
     libGLU
     mesa

@@ -85,7 +85,7 @@ in {
     (lib.mkIf cfg.apps.enable {
       environment.systemPackages = with pkgs; [
         vesktop
-        obsidian
+        # obsidian
         qalculate-qt
         qbittorrent
         mission-center

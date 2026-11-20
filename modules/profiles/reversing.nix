@@ -33,6 +33,7 @@ in {
 
     (lib.mkIf cfg.gui.enable {
       environment.systemPackages = with pkgs; [
+        edb
         ghidra
         binaryninja-free
         imhex

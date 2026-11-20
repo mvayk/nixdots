@@ -31,6 +31,8 @@ in {
       window_rule=no_border:1,app_id:swayimg
       window_rule=no_shadow:1,app_id:swayimg
       window_rule=confine_pointer:1,is_fullscreen:1,app_id:steam_app_1659040
+      layer_rule=no_animation:1,no_blur:1,layer_name:selection
+      layer_rule=no_animation:1,no_blur:1,layer_name:wayfreeze
     '';
     settings = {
       sloppy_focus = 1;
