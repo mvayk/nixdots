@@ -8,7 +8,7 @@
         {
           "foreground": "white",
           "style": "plain",
-          "template": "\u250c {{ .UserName }}@{{ .HostName }} ",
+          "template": "{{ .UserName }}@{{ .HostName }} ",
           "type": "session"
         },
         {
@@ -66,6 +66,11 @@
           "trailing_diamond": "\ue0b0",
           "template": " error ",
           "type": "status"
+        },
+        {
+          "style": "plain",
+          "template": " ",
+          "type": "text"
         }
       ],
       "type": "prompt"
@@ -94,26 +99,7 @@
           "template": " <white,>|</> {{ .CurrentDate | date .Format }}",
           "type": "time"
         }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "foreground": "white",
-          "style": "plain",
-          "template": "\u2514 ",
-          "type": "text"
-        },
-        {
-          "style": "plain",
-          "template": "$",
-          "type": "text"
-        }
-      ],
-      "type": "prompt"
+      ]
     }
   ],
   "transient_prompt": {

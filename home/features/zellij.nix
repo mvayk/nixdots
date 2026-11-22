@@ -8,6 +8,7 @@
       mouse_mode = true;
 
       theme = "noctalia";
+      ui.pane_frames.rounded_corners = true;
     };
     enableZshIntegration = true;
     attachExistingSession = true;

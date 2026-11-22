@@ -62,8 +62,8 @@ in {
       ];
 
       circle_layout = "scroller,tile,grid,dwindle,center_tile,monocle,deck";
-      monocle_tab_mode = 0;
-      deck_tab_mode = 0;
+      monocle_tab_mode = 1;
+      deck_tab_mode = 1;
       edge_scroller_pointer_focus = 0;
 
       monitor_rule =

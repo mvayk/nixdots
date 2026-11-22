@@ -7,7 +7,7 @@
       ];
       window-padding-color = "extend";
       confirm-close-surface = false;
-      copy-on-select = "clipboard";
+      #copy-on-select = "clipboard";
       clipboard-write = "allow";
       shell-integration-features = "ssh-env,ssh-terminfo";
       theme = "Builtin Pastel Dark";

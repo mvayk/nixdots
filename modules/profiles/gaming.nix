@@ -55,6 +55,7 @@ in {
         osu-lazer-bin
         prismlauncher
         lunar-client
+        (callPackage ../nixpkgs/curseforge/package.nix {})
         #vinegar
         # (heroic.override { extraPkgs = ps: with ps; [gamescope gamemode]; })
       ];

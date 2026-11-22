@@ -34,10 +34,14 @@
       animation_duration_close = 300;
       animation_duration_focus = 0;
 
-      gap_inner_horizontal = 14;
-      gap_inner_vertical = 14;
-      gap_outer_horizontal = 28;
-      gap_outer_vertical = 28;
+      # gap_inner_horizontal = 14;
+      # gap_inner_vertical = 14;
+      # gap_outer_horizontal = 28;
+      # gap_outer_vertical = 28;
+      gap_inner_horizontal = 1;
+      gap_inner_vertical = 1;
+      gap_outer_horizontal = 1;
+      gap_outer_vertical = 1;
 
       border_px = 1;
       focus_color = "0xFFFFFFFF";

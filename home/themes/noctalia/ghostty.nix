@@ -4,7 +4,7 @@
   programs.ghostty = {
     settings = {
       window-decoration = false;
-      font-size = 16;
+      font-size = 14;
       theme = "noctalia";
       #custom-shader-animation = "always";
       #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
