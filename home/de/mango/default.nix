@@ -28,8 +28,8 @@ in {
     #   systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr pipewire wireplumber
     # '';
     extraConfig = ''
-      window_rule=no_border:1,app_id:swayimg
-      window_rule=no_shadow:1,app_id:swayimg
+      window_rule=no_blur:1,no_border:1,app_id:swayimg
+      window_rule=no_blur:1,no_shadow:1,app_id:swayimg
       window_rule=confine_pointer:1,is_fullscreen:1,app_id:steam_app_1659040
       layer_rule=no_animation:1,no_blur:1,layer_name:selection
       layer_rule=no_animation:1,no_blur:1,layer_name:wayfreeze

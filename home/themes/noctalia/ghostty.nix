@@ -10,11 +10,12 @@
       #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
       background-opacity = 0.9;
       window-padding-x = 15;
+      background-opacity-cells = true;
       #window-padding-y = 15;
       #font-family = "Mononoki Nerd Font Mono";
       font-family = "JetBrainsMono Nerd Font Mono";
       #font-style = "Medium";
-      adjust-cell-height = "+15%";
+      adjust-cell-height = "+20%";
       cursor-style = "underline";
     };
   };

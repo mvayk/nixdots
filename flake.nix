@@ -59,6 +59,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
   };
 
   outputs = {
@@ -66,6 +70,7 @@
     nixpkgs-stable,
     home-manager,
     sops-nix,
+    zjstatus,
     spicetify-nix,
     ...
   } @ inputs: let
