@@ -93,7 +93,7 @@ in {
           "SUPER+SHIFT,f,togglefullscreen"
           "SUPER,v,togglefloating"
           "SUPER,r,switch_proportion_preset"
-          "SUPER,m,quit"
+          #"SUPER,m,quit"
 
           "SUPER,h,focusdir,left"
           "SUPER,l,focusdir,right"
