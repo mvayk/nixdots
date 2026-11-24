@@ -27,5 +27,6 @@ in
       description = "Curseforge";
       mainProgram = pname;
       platforms = ["x86_64-linux"];
+      license = lib.licenses.unfree;
     };
   }

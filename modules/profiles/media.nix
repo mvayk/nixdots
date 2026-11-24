@@ -35,6 +35,7 @@ in {
         #calibre
         kdePackages.okular
         easyeffects
+        drawy
         (callPackage ../nixpkgs/artcraft/package.nix {})
         #texlive.combined.scheme-medium
       ];

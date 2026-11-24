@@ -38,6 +38,7 @@ in {
         binaryninja-free
         imhex
         (callPackage ../nixpkgs/ida-free/package.nix {})
+        (callPackage ../nixpkgs/cheat-engine-trial/package.nix {})
         #cutter
         #   nix-store --add-fixed sha256 ida-free-pc_92_x64linux.run
       ];
