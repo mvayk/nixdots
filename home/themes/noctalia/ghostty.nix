@@ -8,7 +8,7 @@
       theme = "noctalia";
       #custom-shader-animation = "always";
       #custom-shader = "${config.xdg.configHome}/ghostty/shaders/cursor_tail.glsl";
-      background-opacity = 0.9;
+      background-opacity = 0.70;
       window-padding-x = 15;
       background-opacity-cells = true;
       #window-padding-y = 15;

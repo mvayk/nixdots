@@ -3,8 +3,10 @@
   stdenvNoCC,
   fetchurl,
   unzip,
-  buildFHSEnv,
+  writeShellScriptBin,
+  symlinkJoin,
   makeDesktopItem,
+  pkgs,
 }: let
   pname = "cheat-engine-trial";
   version = "7.7.1";
@@ -36,6 +38,33 @@
     '';
   };
 
+  libs = with pkgs; [
+    libsForQt5.qtbase
+    libsForQt5.libqtpas
+    qt6.qtbase
+    qt6Packages.libqtpas
+    libxkbcommon
+    libxcb
+    xcb-util-cursor
+    libxcb-image
+    libxcb-keysyms
+    libxcb-render-util
+    libxcb-wm
+    libx11
+    libxext
+    libxi
+    libxrender
+    libGL
+    fontconfig
+    freetype
+    dbus
+    glib
+    zlib
+    openssl
+    libpulseaudio
+    libxcrypt-legacy
+  ];
+
   desktopItem = makeDesktopItem {
     name = pname;
     desktopName = "Cheat Engine (Trial)";
@@ -43,45 +72,19 @@
     exec = pname;
     categories = ["Utility"];
   };
+
+  launcher = writeShellScriptBin pname ''
+    export QT_QPA_PLATFORM=xcb
+    export NIX_LD_LIBRARY_PATH=${lib.makeLibraryPath libs}:$NIX_LD_LIBRARY_PATH
+    cd ${unwrapped}/opt/cheat-engine
+    exec ./cheatengine-x86_64 "$@"
+  '';
 in
-  buildFHSEnv {
-    name = pname;
+  symlinkJoin {
+    name = "${pname}-${version}";
+    paths = [launcher desktopItem];
 
-    targetPkgs = pkgs:
-      with pkgs; [
-        unwrapped
-        libsForQt5.qtbase
-        libsForQt5.libqtpas
-        qt6.qtbase
-        qt6Packages.libqtpas
-        libxkbcommon
-        libxcb
-        xcb-util-cursor
-        libxcb-image
-        libxcb-keysyms
-        libxcb-render-util
-        libxcb-wm
-        libx11
-        libxext
-        libxi
-        libxrender
-        libGL
-        fontconfig
-        freetype
-        dbus
-        glib
-        zlib
-        openssl
-        libpulseaudio
-        libxcrypt-legacy
-      ];
-
-    runScript = ''
-      bash -c 'export QT_QPA_PLATFORM=xcb; cd ${unwrapped}/opt/cheat-engine && exec ./cheatengine-x86_64 "$@"' --
-    '';
-
-    extraInstallCommands = ''
-      install -Dm444 ${desktopItem}/share/applications/*.desktop -t $out/share/applications/
+    postBuild = ''
       install -Dm444 ${icon} $out/share/icons/hicolor/128x128/apps/${pname}.png
     '';
 
