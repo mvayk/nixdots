@@ -8,20 +8,32 @@
 
     settings = {
       show_startup_tips = false;
-      session_serialization = true;
+      session_serialization = false;
       mouse_mode = true;
 
       theme = "noctalia";
-      pane_frames = true;
-      ui.pane_frames = {
-        rounded_corners = false;
-      };
     };
-    enableZshIntegration = true;
+
+    enableZshIntegration = false;
     #attachExistingSession = true;
 
+    # load_plugins {
+    #     "https://github.com/dj95/zjstatus/releases/latest/download/zjframes.wasm" {
+    #         hide_frame_for_single_pane       "true"
+    #         hide_frame_except_for_search     "true"
+    #         hide_frame_except_for_fullscreen "true"
+    #     }
+    # }
+
     extraConfig = ''
-      pane_frames true
+      pane_frame_style "full"
+
+      ui {
+          pane_frames {
+              hide_session_name true
+          }
+      }
+
       keybinds {
           unbind "Ctrl b"
 
@@ -40,8 +52,10 @@
 
   xdg.configFile."zellij/layouts/default.kdl".text = ''
     layout {
-      pane size=1 borderless=false {
+      pane
+      pane size=1 borderless=true {
           plugin location="file:${zjstatus.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/zjstatus.wasm" {
+
               format_space "#[bg=default,fg=8]"
               format_left  "#[bg=default,fg=4,bold] {session}#[fg=8]: {tabs}"
               format_right "#[bg=default,fg=12,bold]{mode}{command_git_branch}#[fg=8]│#[fg=7] {datetime}"
@@ -72,7 +86,6 @@
               datetime_format "%H:%M %d %b"
           }
         }
-      pane
       }
   '';
 }

@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   mkSub,
   ...
 }: let
@@ -18,6 +19,7 @@ in {
     (lib.mkIf cfg.cli.enable {
       environment.systemPackages = with pkgs; [
         gdb
+        inputs.pwndbg.packages.${pkgs.system}.default
         gef
         radare2
         rizin

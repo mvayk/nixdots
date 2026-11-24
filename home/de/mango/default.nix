@@ -63,6 +63,8 @@ in {
 
       circle_layout = "scroller,tile,grid,dwindle,center_tile,monocle,deck";
       monocle_tab_mode = 1;
+      monocle_no_border = 1;
+      monocle_no_gap = 1;
       deck_tab_mode = 1;
       edge_scroller_pointer_focus = 0;
 

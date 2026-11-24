@@ -63,6 +63,10 @@
     zjstatus = {
       url = "github:dj95/zjstatus";
     };
+
+    pwndbg = {
+      url = "github:pwndbg/pwndbg";
+    };
   };
 
   outputs = {
