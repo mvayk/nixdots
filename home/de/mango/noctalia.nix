@@ -38,10 +38,10 @@
       # gap_inner_vertical = 14;
       # gap_outer_horizontal = 28;
       # gap_outer_vertical = 28;
-      gap_inner_horizontal = 1;
-      gap_inner_vertical = 1;
-      gap_outer_horizontal = 1;
-      gap_outer_vertical = 1;
+      gap_inner_horizontal = 0;
+      gap_inner_vertical = 0;
+      gap_outer_horizontal = 0;
+      gap_outer_vertical = 0;
 
       border_px = 1;
       focus_color = "0xFFFFFFFF";

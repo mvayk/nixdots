@@ -16,7 +16,8 @@
 
       #background-opacity-cells = true;
       #font-family = "Mononoki Nerd Font Mono";
-      font-family = "JetBrainsMono Nerd Font Mono";
+      #font-family = "JetBrainsMono Nerd Font Mono";
+      font-family = "IntoneMono Nerd Font Mono";
       #font-style = "Medium";
       adjust-cell-height = "+20%";
       #cursor-style = "underline";

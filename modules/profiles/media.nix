@@ -36,7 +36,10 @@ in {
         kdePackages.okular
         easyeffects
         drawy
+        xournalpp
+        activitywatch
         (callPackage ../nixpkgs/artcraft/package.nix {})
+        (callPackage ../nixpkgs/mechvibes/package.nix {})
         #texlive.combined.scheme-medium
       ];
     })

@@ -31,6 +31,7 @@ in {
       window_rule=no_blur:1,no_border:1,app_id:swayimg
       window_rule=no_blur:1,no_shadow:1,app_id:swayimg
       window_rule=confine_pointer:1,is_fullscreen:1,app_id:steam_app_1659040
+      window_rule=is_fullscreen:1,app_id:steam_app_223470
       layer_rule=no_animation:1,no_blur:1,layer_name:selection
       layer_rule=no_animation:1,no_blur:1,layer_name:wayfreeze
     '';
@@ -44,10 +45,12 @@ in {
       trackpad_natural_scrolling = 0;
       trackpad_scroll_factor = 0.25;
       tag_animation_direction = 0;
+      scroller_structs = 0;
 
       allow_tearing = 2;
 
       scroller_default_proportion = 1.0;
+      scroller_prefer_center = 0;
       scroller_proportion_preset = "0.5,0.333333,0.666667";
       tag_rule = [
         "id:1,layout_name:scroller"
@@ -61,10 +64,11 @@ in {
         "id:9,layout_name:scroller"
       ];
 
-      circle_layout = "scroller,tile,grid,dwindle,center_tile,monocle,deck";
+      circle_layout = "scroller,tile,grid,fair,deck,center_tile,vertical_tile,right_tile,vertical_scrollbar,vertical_grid,vertical_deck,dwindle,fair,vertical_fair";
       monocle_tab_mode = 1;
       monocle_no_border = 1;
       monocle_no_gap = 1;
+      monocle_no_radius = 1;
       deck_tab_mode = 1;
       edge_scroller_pointer_focus = 0;
 
