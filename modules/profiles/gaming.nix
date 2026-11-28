@@ -36,7 +36,7 @@ in {
 
         # protonup-rs
         # protonup-qt
-        # protontricks
+        protontricks
         # steamtinkerlaunch
         # xdotool
         # xwininfo

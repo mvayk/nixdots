@@ -123,7 +123,7 @@ in {
 
     settings = {
       show_startup_tips = false;
-      session_serialization = true;
+      session_serialization = false;
       mouse_mode = true;
 
       theme = "noctalia";

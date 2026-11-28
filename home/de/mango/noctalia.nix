@@ -21,18 +21,21 @@
       layer_animations = 1;
 
       animation_type_open = "zoom";
-      animation_type_close = "slide";
-      layer_animation_type_open = "slide";
-      layer_animation_type_close = "slide";
+      animation_type_close = "zoom";
+      layer_animation_type_open = "zoom";
+      layer_animation_type_close = "fade";
 
-      zoom_initial_ratio = 0.2;
+      animation_fade_in = 1;
+      animation_fade_out = 1;
+
+      zoom_initial_ratio = 0.6;
       zoom_end_ratio = 0.8;
 
-      animation_duration_move = 500;
-      animation_duration_open = 400;
-      animation_duration_tag = 300;
-      animation_duration_close = 300;
-      animation_duration_focus = 0;
+      animation_duration_move = 450;
+      animation_duration_open = 350;
+      animation_duration_tag = 350;
+      animation_duration_close = 250;
+      animation_duration_focus = 150;
 
       # gap_inner_horizontal = 14;
       # gap_inner_vertical = 14;
@@ -62,7 +65,7 @@
       group_bar_decorate_corner_radius = 0;
       group_bar_decorate_font_desc = "JetBrainsMono Bold 8";
 
-      blur = 1;
+      blur = 0;
       blur_layer = 1;
       blur_optimized = 0;
       blur_params_radius = 2;
